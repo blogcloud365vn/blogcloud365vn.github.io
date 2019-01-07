@@ -6,14 +6,14 @@ categories:
 	- Beginner
 description: Tài liệu hướng dẫn cài đặt CentOS-7-x86_64-Minimal-1810
 author: duydm
-tags: [Beginner]
+tags: [Beginner, Linux]
 type: Document
 ---
 Tài liệu hướng dẫn cài đặt CentOS-7-x86_64-Minimal-1810
 ## Mô tả
 
-- Phiên bản CentOS: `CentOS-7-x86_64-Minimal-1810`
-- Môi trường cài đặt: Vmware Workstation. Ngoài ra có thể cài đặt trên máy vật lý hoặc các môi trường ảo hóa khác.
+- Phiên bản CentOS `CentOS-7-x86_64-Minimal-1810`
+- Môi trường cài đặt `Vmware Workstation`. Ngoài ra có thể cài đặt trên máy vật lý hoặc các môi trường ảo hóa khác.
 
 ## Tải bộ cài CentOS 7.6 - 64 bit
 
