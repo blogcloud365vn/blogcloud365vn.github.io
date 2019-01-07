@@ -1,5 +1,5 @@
 ---
-date: 2019-01-01
+date: 2019-01-07
 title: Hướng dẫn cài đặt CentOS 7.6 - 64 bit
 categories:
   - Linux, Beginner
