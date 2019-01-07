@@ -1,8 +1,24 @@
+cloud365vn:
+    name: cloud365vn
+    email: support@nhanhoa.com.vn
+    web: https://cloud365.vn
+congto:
+    name: Công TÔ
+    email: congtt@nhanhoa.com.vn
+    web: https://nhanhoa.com.vn
 huytm:
-    name: Tran Huy
+    name: Trần Huy
     email: huytm@nhanhoa.com.vn
-    web: https://www.facebook.com/tran.huy.3576224
-robin_geall:
-    name: Robin Geall
-    email: robin@sorryapp.com
-    web: http://twitter.com/robingeall
+    web: https://nhanhoa.com.vn
+duydm:
+    name: Đỗ Mạnh Duy
+    email: huytm@nhanhoa.com.vn
+    web: https://nhanhoa.com.vn
+tuanda:
+    name: Đoàn Anh Tuấn
+    email: tuanda@nhanhoa.com.vn
+    web: https://nhanhoa.com.vn
+canhdx:
+    name: Đặng Xuân Cảnh
+    email: tuanda@nhanhoa.com.vn
+    web: https://nhanhoa.com.vn
