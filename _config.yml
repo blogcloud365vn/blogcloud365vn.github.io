@@ -11,9 +11,9 @@ newsletter_action:
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
 description: Trang blog của dịch vụ cloud365.vn.
-author: cloud365
-  name: cloud365
-  email: contact@cloud365.vn
+author: 
+  name: 
+  email: 
   twitter: # twitter username without the @ symbol
 social:
   name: blog.cloud365.vn
