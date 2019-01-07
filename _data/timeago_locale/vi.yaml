@@ -1,0 +1,16 @@
+vi:
+  today: 'Hôm nay'
+  yesterdat: 'Hôm qua'
+  tomorrow: 'Ngày mai'
+  past: '%{date_range trước}'
+  future: 'trong %{date_range}'
+  words_connector: ', '
+  years:
+    one: '1 năm'
+    other: '%{count} năm'
+  months:
+    one: '1 tháng'
+    other: '%{count} tháng'
+  days:
+    one: '1 ngày'
+    other: '%{count} ngày' 

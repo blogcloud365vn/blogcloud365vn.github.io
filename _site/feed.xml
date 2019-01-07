@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://10.10.11.171:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://10.10.11.171:4000/" rel="alternate" type="text/html" /><updated>2019-01-07T15:36:56+00:00</updated><id>http://10.10.11.171:4000/feed.xml</id><title type="html">HCD</title><subtitle>Trang hỗ trợ dành cho cloud365.vn.</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;twitter&quot;=&gt;nil}</name></author><entry><title type="html">Rebuild cloud server</title><link href="http://10.10.11.171:4000/cloud-server/rebuild-cloud-server/" rel="alternate" type="text/html" title="Rebuild cloud server" /><published>2019-01-05T00:00:00+00:00</published><updated>2019-01-05T00:00:00+00:00</updated><id>http://10.10.11.171:4000/cloud-server/rebuild-cloud-server</id><content type="html" xml:base="http://10.10.11.171:4000/cloud-server/rebuild-cloud-server/">&lt;p&gt;Khi đăng ký sử dụng dịch vụ cloud server của Nhân Hòa bạn sẽ được cung cấp portal để hoàn toàn chủ động thao tác quản trị, cài đặt đối với cloud server của mình. Một số nhà cung cấp cấp dịch vụ cloud server khác trường hợp bạn thao tác trên cloud server của mình bị lỗi mà bạn muốn cài đặt lại hệ điều hành hay chuyển sang hệ điều hành khác để phù hợp với ứng dụng của mình bạn phải liên lệ với nhà cung cấp để được hỗ trợ, thời gian chờ đợi lâu và thâm chí bạn còn phải trả phí cho những yêu cầu này.&lt;/p&gt;
+
+&lt;p&gt;Hướng tới sự thuận tiện nhất cho khách hàng Nhân Hòa cung cấp chức năng rebuild cloud server cho bạn để bạn tự thao tác và lựa chọn hệ điều hành muốn thay đổi. Bạn có thể cài lại chính hệ điều hành cũ cho cloud server hoặc chuyển đổi sang hệ điều hành mới mà vẫn giữ nguyên gói cấu hình và đặt biệt là nhanh chóng và không phải trả phí.&lt;/p&gt;
+
+&lt;p&gt;Chi tiết cách thức rebuild cloud server bạn thực hiện theo hướng dẫn dưới đây. Ở bài hướng dẫn này thực hiện rebuild cloud server hệ điều hành &lt;strong&gt;CentOS 6&lt;/strong&gt; sang cloud server hệ điều hành &lt;strong&gt;Windows 10&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;các-bước-thực-hiện&quot;&gt;Các bước thực hiện&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;#truycap&quot;&gt;Bước 1: Truy cập vào Nhân Hòa portal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#chon&quot;&gt;Bước 2: Lựa chọn cloud server cần rebuild&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#os&quot;&gt;Bước 3: Lựa chọn hệ điều hành rebuild&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#xacnhan&quot;&gt;Bước 4: Xác nhận rebuild&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#thongtin&quot;&gt;Bước 5: Lấy thông tin cloud server sau khi rebuild&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#kiemtra&quot;&gt;Bước 6: Kiểm tra&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;truycap&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-1-truy-cập-vào-nhân-hòa-portal&quot;&gt;Bước 1: Truy cập vào Nhân Hòa portal&lt;/h2&gt;
+
+&lt;p&gt;Bạn sử dụng thông tin đăng nhập bao gồm email/password để đăng nhập&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_568.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;chon&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-2-lựa-chọn-cloud-server-cần-rebuild&quot;&gt;Bước 2: Lựa chọn cloud server cần rebuild&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Danh sách server&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_569.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click vào tên cloud server cần xem thông tin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_570.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Quản lý máy ảo&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_571.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_574.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;os&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-3-lựa-chọn-hệ-điều-hành-rebuild&quot;&gt;Bước 3: Lựa chọn hệ điều hành rebuild&lt;/h2&gt;
+
+&lt;p&gt;Bạn lựa chọn hệ điều hành muốn rebuild cho cloud server của mình.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lưu ý: Khi rebuild dữ liệu ổ cứng sẽ không được giữ lại. Máy chủ sẽ chạy với hệ điều hành mà bạn xác nhận lựa chọn để rebuild.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bạn có thể rebuil sang hệ điều hành Windows, Linux trắng và Linux có cài đặt ứng dụng (Plesk, Direct Admin, WHM).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bạn không thể rebuil sang hệ điều hành Windows server có cài đặt ứng dụng.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_575.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;xacnhan&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-4-xác-nhận-rebuild&quot;&gt;Bước 4: Xác nhận rebuild&lt;/h2&gt;
+
+&lt;p&gt;Bạn nên đọc những cảnh bảo trước khi xác nhận rebuild.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_576.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Chờ một vài phút để quá trình rebuild hoàn tất.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;thongtin&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-5-lấy-thông-tin-cloud-server-sau-khi-rebuild&quot;&gt;Bước 5: Lấy thông tin cloud server sau khi rebuild&lt;/h2&gt;
+
+&lt;p&gt;Sau khi rebuild thành công thông tin sẽ được gửi về email của bạn.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_577.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_578.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;kiemtra&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bước-6-kiểm-tra&quot;&gt;Bước 6: Kiểm tra&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cloud server trước khi rebuild&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_572.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cloud server sau khi rebuild&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-rebuild-vps/Screenshot_579.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Quá trình rebuild hoàn thành.&lt;/p&gt;
+
+&lt;h3 id=&quot;đội-ngũ-kỹ-thuật-nhân-hòa-xin-chân-thành-cảm-ơn&quot;&gt;Đội ngũ kỹ thuật Nhân Hòa xin chân thành cảm ơn!&lt;/h3&gt;</content><author><name>huytm</name></author><summary type="html">Khi đăng ký sử dụng dịch vụ cloud server của Nhân Hòa bạn sẽ được cung cấp portal để hoàn toàn chủ động thao tác quản trị, cài đặt đối với cloud server của mình. Một số nhà cung cấp cấp dịch vụ cloud server khác trường hợp bạn thao tác trên cloud server của mình bị lỗi mà bạn muốn cài đặt lại hệ điều hành hay chuyển sang hệ điều hành khác để phù hợp với ứng dụng của mình bạn phải liên lệ với nhà cung cấp để được hỗ trợ, thời gian chờ đợi lâu và thâm chí bạn còn phải trả phí cho những yêu cầu này.</summary></entry><entry><title type="html">Vận hành cloud server</title><link href="http://10.10.11.171:4000/cloud-server/cloud-server-vanhanh/" rel="alternate" type="text/html" title="Vận hành cloud server" /><published>2019-01-04T00:00:00+00:00</published><updated>2019-01-04T00:00:00+00:00</updated><id>http://10.10.11.171:4000/cloud-server/cloud-server-vanhanh</id><content type="html" xml:base="http://10.10.11.171:4000/cloud-server/cloud-server-vanhanh/">&lt;p&gt;Bạn đăng ký sử dụng dịch vụ cloud server của Nhân Hòa. Bạn sẽ thực hiện quản trị, vận hành cloud server của mình qua portal do Nhân Hòa phát triển. Thực hiện một số thao tác vận hành cloud server như giám sát các thông số (RAM, Disk, CPU. Disk I/O), remote, quản lý mật khẩu, điểu khiển cloud server (Start, Stop, Restart, Pause, Resume), rebuild hệ điều hành cloud server. Chi tiết vận hành bạn thực hiện theo hướng dẫn ở dưới.&lt;/p&gt;
+
+&lt;h3 id=&quot;mục-lục&quot;&gt;Mục lục&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;#thongtin&quot;&gt;1. Kiểm tra thông tin cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#giamsatmayao&quot;&gt;2. Giám sát cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#consolemayao&quot;&gt;3. Truy cập remote cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#statusmayao&quot;&gt;4. Điều khiển trạng thái cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#logVPS&quot;&gt;5. Xem log hành động đối với cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#matkhauVPS&quot;&gt;6. Quản lý mật khẩu cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#rebuildVPS&quot;&gt;7. Rebuid cloud server&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;thongtin&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-kiểm-tra-thông-tin-cloud-server&quot;&gt;1. Kiểm tra thông tin cloud server&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Thông tin về máy ảo của bạn sẽ được Nhân Hòa gửi vào email đăng ký của bạn.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_540.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_541.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sử dụng thông tin truy cập cloud server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sau khi nhận được thông tin cloud server tùy thuộc vào cloud server của bạn chạy hệ điều hành Linux/Windows bạn hoàn toàn có thể truy cập vào cloud server của mình để sử dụng.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_542.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bạn-truy-cập-vào-portal-để-thực-hiện-một-số-chức-năng-vận-hành-cloud-server&quot;&gt;Bạn truy cập vào portal để thực hiện một số chức năng vận hành cloud server&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Danh sách server&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_543.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click vào tên cloud server cần xem thông tin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_544.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bạn lựa chọn thực hiện 1 trong các chức năng: &lt;strong&gt;giám sát, remote, điều khiển, log, quản lý mật khẩu, quản lý máy ảo&lt;/strong&gt; theo hướng dẫn ở dưới để vận hành cloud server của mình.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;giamsatmayao&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-giám-sát-cloud-server&quot;&gt;2. Giám sát cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng giám sát cho phép bạn giám giát tổng quan về cloud server RAM, DISK, CPU, Network theo cơ chế real time và có khả năng chọn khoảng thời gian view các metric (30 phút, 1 giờ, 6 giờ, 12 giờ, 24 giờ, 7 ngày, 30 ngày).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Giám sát&lt;/strong&gt;” -&amp;gt; Lựa chọn khoảng thời gian hiển thị&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_545.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Thông tin về RAM, Disk, CPU, Network&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_546.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;consolemayao&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-truy-cập-remote-cloud-server&quot;&gt;3. Truy cập remote cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng remote cloud server cho phép bạn truy cập vào cloud server của mình trong trường hợp bạn thao tác trên cloud server làm mất kết nối tới cloud server, không thể remote vào cloud server từ xa thông qua các tool như Puty, MobaXterm.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Remote&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_547.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hiển thị giao diện remote&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_548.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;statusmayao&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;4-điều-khiển-trạng-thái-cloud-server&quot;&gt;4. Điều khiển trạng thái cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng điều khiển cloud server cho phép bạn điều khiển cloud server của mình. Có các trạng thái như : Bật máy chủ ảo tương ứng với nút Start, tạm ngưng sử dụng tương ứng với Pause, muốn tiếp tục sử dụng sử dụng Resume tuy nhiên Resume chỉ được sử dụng khi máy chủ đang ở trạng thái tạm ngưng, khởi động lại máy ảo tương ứng với Restart, Tắt máy chủ tương ứng với Stop.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Điều khiển&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_549.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;logVPS&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;5-xem-log-hành-động-đối-với-cloud-server&quot;&gt;5. Xem log hành động đối với cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng Log cho phép bạn theo dõi  thao tác với cloud server (tạo, stop, start)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Log&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_550.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;matkhauVPS&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;6-quản-lý-mật-khẩu-cloud-server&quot;&gt;6. Quản lý mật khẩu cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng quản lý mật khẩu cho phép bạn đổi password mới một cách nhanh chóng trong trường hợp bạn không như password cloud server của mình.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Quản lý mật khẩu&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Chỉ định mật khẩu theo ý của bạn (Lưu ý: Mật khẩu cần có ít nhất 8 ký tự bao gồm 1 ký tự thường, 1 ký tự hoa, 1 số. )&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_542.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Auto generate password&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_543.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;rebuildVPS&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;7-rebuid-cloud-server&quot;&gt;7. Rebuid cloud server&lt;/h2&gt;
+
+&lt;p&gt;Chức năng Rebuild là tính năng cho phép thay đổi hệ điều hành của máy chủ và giữ nguyên các thông số như: IP, RAM, CPU, dung lượng ổ cứng. Chức năng sẽ giúp bạn cài mới lại cloud server của mình khi quá trình sử dụng bạn cài đặt có những lỗi ứng dụng hay bạn muốn chuyển sang sử dụng hệ điều hành khác để đáp ứng nhu cầu sử dụng của mình.&lt;/p&gt;
+
+&lt;p&gt;Lưu ý: Khi rebuild dữ liệu ổ cứng sẽ không được giữ lại. Máy chủ sẽ chạy với hệ điều hành mà bạn xác nhận lựa chọn để rebuild.&lt;/p&gt;
+
+&lt;p&gt;Bạn có thể rebuil sang hệ điều hành Windows, Linux trắng và Linux có cài đặt ứng dụng (Plesk, Direct Admin, WHM).&lt;/p&gt;
+
+&lt;p&gt;Bạn không thể rebuil sang hệ điều hành Windows server có cài đặt ứng dụng.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click “&lt;strong&gt;Quản lý máy ảo&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_557.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_558.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lựa chọn hệ điều hành muốn rebuild sang&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;OS cloud server trước khi rebuild&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_559.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Chọn hệ điều hành và xác nhận rebuild&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_560.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Xác nhận và chờ quá trình rebuil VPS hoàn tất.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_561.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Rebuild thành công bạn sẽ nhận được thông báo qua email&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_562.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bạn sử dụng thông tin Nhân Hòa gửi về sau khi rebuild cloud server thành công để thao tác với cloud server của mình.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_565.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;cloud server sau khi rebuild sang OS mới.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-vanhanh-vps/Screenshot_567.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;đội-ngũ-kỹ-thuật-nhân-hòa-xin-chân-thành-cảm-ơn&quot;&gt;Đội ngũ kỹ thuật Nhân Hòa xin chân thành cảm ơn!&lt;/h3&gt;</content><author><name>huytm</name></author><category term="cloud-server" /><summary type="html">Bạn đăng ký sử dụng dịch vụ cloud server của Nhân Hòa. Bạn sẽ thực hiện quản trị, vận hành cloud server của mình qua portal do Nhân Hòa phát triển. Thực hiện một số thao tác vận hành cloud server như giám sát các thông số (RAM, Disk, CPU. Disk I/O), remote, quản lý mật khẩu, điểu khiển cloud server (Start, Stop, Restart, Pause, Resume), rebuild hệ điều hành cloud server. Chi tiết vận hành bạn thực hiện theo hướng dẫn ở dưới.</summary></entry><entry><title type="html">Kích hoạt tài khoản portal</title><link href="http://10.10.11.171:4000/account-settings/kich-hoat-tai-khoan-portal/" rel="alternate" type="text/html" title="Kích hoạt tài khoản portal" /><published>2019-01-04T00:00:00+00:00</published><updated>2019-01-04T00:00:00+00:00</updated><id>http://10.10.11.171:4000/account-settings/kich-hoat-tai-khoan-portal</id><content type="html" xml:base="http://10.10.11.171:4000/account-settings/kich-hoat-tai-khoan-portal/">&lt;p&gt;Sau khi bạn đăng ký sử dụng dịch vụ cloud VPS của Nhân Hòa cung cấp. Bạn sẽ nhận được thông tin active Nhân Hòa portal - trang mà bạn có thể quản trị, giám sát thông tin về VPS đã đăng ký sử dụng. Để active tài portal bạn thực hiện theo các bước dưới đây.&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-1-kiểm-tra-email&quot;&gt;Bước 1: Kiểm tra email&lt;/h2&gt;
+
+&lt;p&gt;Nhân Hòa sẽ gửi link active tài khoản và email đăng ký của bạn. Bạn check email để nhận thông tin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_533.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-2-thực-hiện-active-tài-khoản&quot;&gt;Bước 2: Thực hiện active tài khoản&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Click vào link trong email&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_534.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_535.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-3-đổi-password-lần-đầu-tiên&quot;&gt;Bước 3: Đổi password lần đầu tiên&lt;/h2&gt;
+
+&lt;p&gt;Portal yêu cầu bạn đổi mật khẩu sau khi active tài khoản, bạn có thể đặt password cá nhân và tuân thủ chính sách về password (độ dài tối thiểu 8 ký tự, 1 ký tự hoa, 1 thường, 1 số).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nhập mật khẩu của bạn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_536.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Đổi password lần đầu thành công&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_537.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-4-login-portal&quot;&gt;Bước 4: Login portal&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sau khi thực hiện active tài khoản bạn có thể đăng nhập vào portal bằng tài khoản (email/password).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_538.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Login thành công&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-active-account-portal/Screenshot_539.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;đội-ngũ-kỹ-thuật-nhân-hòa-xin-chân-thành-cảm-ơn&quot;&gt;Đội ngũ kỹ thuật Nhân Hòa xin chân thành cảm ơn!&lt;/h3&gt;</content><author><name>huytm</name></author><category term="account" /><category term="user" /><summary type="html">Sau khi bạn đăng ký sử dụng dịch vụ cloud VPS của Nhân Hòa cung cấp. Bạn sẽ nhận được thông tin active Nhân Hòa portal - trang mà bạn có thể quản trị, giám sát thông tin về VPS đã đăng ký sử dụng. Để active tài portal bạn thực hiện theo các bước dưới đây.</summary></entry><entry><title type="html">Mật khẩu của máy ảo</title><link href="http://10.10.11.171:4000/policy/chinh-sach-mat-khau-mayao/" rel="alternate" type="text/html" title="Mật khẩu của máy ảo" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/policy/chinh-sach-mat-khau-mayao</id><content type="html" xml:base="http://10.10.11.171:4000/policy/chinh-sach-mat-khau-mayao/">&lt;p&gt;Tài khoản của máy ảo được hệ thống tự động sinh ra và đáp ứng các chính sách dưới đây.&lt;/p&gt;
+
+&lt;h2 id=&quot;chính-sách-mật-khẩu-của-máy-ảo&quot;&gt;Chính sách mật khẩu của máy ảo&lt;/h2&gt;
+
+&lt;p&gt;Các chính sách này được áp dụng để đảm bảo an toàn cho máy ảo của khách hàng.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- Có độ dài từ 08 ký tự trở lên
+- Có chứa ít nhất một ký tự viết hoa
+- Có chứa ít nhất một ký tự số
+- Có chứa ít nhất một ký tự đặc biệt.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Người dùng lưu ý khi đổi mật khẩu cần đảm bảo đáp ứng chính sách ở trên khi chủ động thay đổi.&lt;/p&gt;
+
+&lt;h2 id=&quot;cam-kết-của-nhà-cung-cấp-dịch-vụ&quot;&gt;Cam kết của nhà cung cấp dịch vụ&lt;/h2&gt;
+&lt;p&gt;Chúng tôi cam kết đảm bảo an toàn và không tự ý thay đổi mật khẩu của khách hàng.&lt;/p&gt;</content><author><name>huytm</name></author><category term="web" /><category term="jekyll" /><summary type="html">Tài khoản của máy ảo được hệ thống tự động sinh ra và đáp ứng các chính sách dưới đây.</summary></entry><entry><title type="html">Mật khẩu của portal</title><link href="http://10.10.11.171:4000/policy/chinh-sach-mat-khau-portal/" rel="alternate" type="text/html" title="Mật khẩu của portal" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/policy/chinh-sach-mat-khau-portal</id><content type="html" xml:base="http://10.10.11.171:4000/policy/chinh-sach-mat-khau-portal/">&lt;p&gt;Tài khoản portal của dịch vụ cloud365 được cung cấp dành cho khách hàng sử dụng dịch vụ do Nhân Hòa cung cấp. Các chính sách áp dụng đối với mật khẩu đăng nhập được áp dụng để đảm bảo an toàn cho người dùng. Các yêu cầu đối với mật khẩu bao gồm:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- Có độ dài từ 08 ký tự trở lên
+- Có ít nhất một ký tự viết hoa
+- Có chưa ít nhất một ký tự số
+- Có chứa ít nhất một ký tự đặc biệt.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>huytm</name></author><category term="password" /><category term="user" /><summary type="html">Tài khoản portal của dịch vụ cloud365 được cung cấp dành cho khách hàng sử dụng dịch vụ do Nhân Hòa cung cấp. Các chính sách áp dụng đối với mật khẩu đăng nhập được áp dụng để đảm bảo an toàn cho người dùng. Các yêu cầu đối với mật khẩu bao gồm:</summary></entry><entry><title type="html">Giới thiệu về cloud App</title><link href="http://10.10.11.171:4000/cloud-app/cloud-app-gioi-thieu/" rel="alternate" type="text/html" title="Giới thiệu về cloud App" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/cloud-app/cloud-app-gioi-thieu</id><content type="html" xml:base="http://10.10.11.171:4000/cloud-app/cloud-app-gioi-thieu/">&lt;p&gt;Tài liệu mô tả dịch vụ cloud application tại cloud365&lt;/p&gt;
+
+&lt;h2 id=&quot;cloud-application-là-gì&quot;&gt;Cloud application là gì&lt;/h2&gt;
+&lt;p&gt;Là một hình thức nâng cao của dịch vụ cloud server. Dịch vụ này cung cấp các app được đóng gói sẵn hoặc app tự động cài đặt khi người dùng đăng ký sử sụng. Đây là dịch vụ được đặt tên bởi nhà cung cấp dịch vụ và nằm trong hệ sinh thái điện toán đám mây của cloud365.&lt;/p&gt;
+
+&lt;h2 id=&quot;lợi-ích-của-khi-sử-dụng-cloud-application&quot;&gt;Lợi ích của khi sử dụng cloud application&lt;/h2&gt;
+&lt;p&gt;Các app đã được đóng gói sẵn và tối ưu các cấu hình để mang lại hiệu quả cao khi sử dụng. Ngoài ra, một số app sẽ được tự động cài đặt để tiết kiệm thời gian cho người sử dụng, ví dụ như: Wordpress, LAMP, LEMP, PHP, MySQL, Nginx.&lt;/p&gt;</content><author><name>huytm</name></author><category term="cloud-app" /><summary type="html">Tài liệu mô tả dịch vụ cloud application tại cloud365</summary></entry><entry><title type="html">Giới thiệu về cloud server</title><link href="http://10.10.11.171:4000/cloud-server/cloud-server-gioi-thieu/" rel="alternate" type="text/html" title="Giới thiệu về cloud server" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/cloud-server/cloud-server-gioi-thieu</id><content type="html" xml:base="http://10.10.11.171:4000/cloud-server/cloud-server-gioi-thieu/">&lt;p&gt;Tài liệu mô tả dịch vụ cloud server tại cloud365&lt;/p&gt;
+
+&lt;h2 id=&quot;cloud-server-là-gì&quot;&gt;Cloud Server là gì&lt;/h2&gt;
+&lt;p&gt;Cloud server hoặc Cloud VPS là tên dịch vụ máy chủ được cung cấp trên nền tảng điện toán đám mây. Cloud server có các tính năng chính và các thao tác vận hành sau đây&lt;/p&gt;
+
+&lt;h2 id=&quot;các-tính-năng-chính&quot;&gt;Các tính năng chính&lt;/h2&gt;
+&lt;p&gt;Cloud server là các máy chủ ảo, ngoài các tính năng cốt lõi của dịch vụ máy chủ, cloud server còn có các tính năng bổ trợ trên nền tảng điện toán đám mây cung cấp, bao gồm&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tính năng console&lt;/li&gt;
+  &lt;li&gt;Tính năng giám sát&lt;/li&gt;
+  &lt;li&gt;Tính năng thay đổi mật khẩu.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>huytm</name></author><category term="cloud-server" /><summary type="html">Tài liệu mô tả dịch vụ cloud server tại cloud365</summary></entry><entry><title type="html">Đăng nhập</title><link href="http://10.10.11.171:4000/account-settings/dang-nhap/" rel="alternate" type="text/html" title="Đăng nhập" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/account-settings/dang-nhap</id><content type="html" xml:base="http://10.10.11.171:4000/account-settings/dang-nhap/">&lt;p&gt;Hướng dẫn đăng nhập tài khoản portal của dịch vụ cloud365&lt;/p&gt;
+
+&lt;h2 id=&quot;truy-cập-vào-portal&quot;&gt;Truy cập vào portal&lt;/h2&gt;
+
+&lt;p&gt;Tài khoản portal dịch vụ cloud365 được xác thực theo email mà bạn cung cấp cho chúng tôi. Để đăng nhập vào portal xin vui lòng truy cập trang: https://portal.cloud365.vn&lt;/p&gt;
+
+&lt;h2 id=&quot;nhập-email-và-mật-khẩu&quot;&gt;Nhập email và mật khẩu&lt;/h2&gt;
+
+&lt;p&gt;Nhập email và mật khẩu vào màn hình đăng nhập
+&lt;img src=&quot;/images/dangnhap.png&quot; alt=&quot;login&quot; /&gt;&lt;/p&gt;</content><author><name>huytm</name></author><category term="user" /><summary type="html">Hướng dẫn đăng nhập tài khoản portal của dịch vụ cloud365</summary></entry><entry><title type="html">Khôi phục mật khẩu portal</title><link href="http://10.10.11.171:4000/account-settings/khoi-phuc-mat-khau-portal/" rel="alternate" type="text/html" title="Khôi phục mật khẩu portal" /><published>2019-01-01T00:00:00+00:00</published><updated>2019-01-01T00:00:00+00:00</updated><id>http://10.10.11.171:4000/account-settings/khoi-phuc-mat-khau-portal</id><content type="html" xml:base="http://10.10.11.171:4000/account-settings/khoi-phuc-mat-khau-portal/">&lt;p&gt;Nhân Hòa cung cấp cho bạn portal để quản trị cloud server của mình. Vì một lý do nào đó bạn quên mật khẩu login vào portal. Bạn làm theo các bước dưới đây để lấy lại mật khẩu của mình.&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-1-truy-cập-trang-portal&quot;&gt;Bước 1: Truy cập trang portal&lt;/h2&gt;
+
+&lt;p&gt;https://portal.cloud365.vn/&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_587.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-2-click-quên-mật-khẩu&quot;&gt;Bước 2: Click “Quên mật khẩu”&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_588.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-3-nhập-email-của-bạn&quot;&gt;Bước 3: Nhập email của bạn&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Lưu ý: Bạn nhập đúng email sử dụng đăng ký portal.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_589.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_590.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-4-truy-cập-email-để-lấy-link-thay-đổi-mật-khẩu&quot;&gt;Bước 4: Truy cập email để lấy link thay đổi mật khẩu.&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_591.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_592.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bước-5-nhập-mật-khẩu-mới-của-bạn&quot;&gt;Bước 5: Nhập mật khẩu mới của bạn&lt;/h2&gt;
+
+&lt;p&gt;Lưu ý: Bạn có thể đặt password cá nhân và phải tuân thủ chính sách về password (độ dài tối thiểu 8 ký tự, 1 ký tự hoa, 1 thường, 1 số).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_593.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/img-lay-pass-portal/Screenshot_594.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Quá trình lấy lại mật khẩu portal hoàn tất.&lt;/p&gt;
+
+&lt;h3 id=&quot;đội-ngũ-kỹ-thuật-nhân-hòa-xin-chân-thành-cảm-ơn&quot;&gt;Đội ngũ kỹ thuật Nhân Hòa xin chân thành cảm ơn!&lt;/h3&gt;</content><author><name>huytm</name></author><category term="password" /><category term="user" /><summary type="html">Nhân Hòa cung cấp cho bạn portal để quản trị cloud server của mình. Vì một lý do nào đó bạn quên mật khẩu login vào portal. Bạn làm theo các bước dưới đây để lấy lại mật khẩu của mình.</summary></entry></feed>

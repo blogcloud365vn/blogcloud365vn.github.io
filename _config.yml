@@ -1,0 +1,107 @@
+# ----
+# Site
+
+title: HCD
+url: "http://blogcloud365vn.github.io/"
+baseurl: 
+google_analytics_key:
+disqus_shortname: 
+newsletter_action:
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Trang blog của dịch vụ cloud365.vn.
+author: cloud365
+  name: cloud365.vn
+  email: contact@cloud365.vn
+  twitter: # twitter username without the @ symbol
+social:
+  name: blog.cloud365.vn
+  links:
+    - http://blogcloud365vn.github.io/
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+permalink: /:categories/:title/
+paginate: 8
+link-tags: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-extract-element
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-archives
+  - jekyll-gist
+  - jekyll-timeago
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+collections:
+  sets:
+
+
+jekyll-archives:
+  enabled: ['categories']
+
+jekyll_timeago:
+  depth: 2
+  translations_path: '/_data/timeago_locale/*.yaml'
+  default_locale: 'vi'
+  fallbacks: true
+  available_locales:
+    - 'en'
+    - 'es'
+    - 'fr'
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      comments: true
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  -
+    scope:
+      type: "sets"
+    values:
+      _hide_content: true
+  -
+    scope:
+      path: "index.html"
+    values:
+      body_class: "show_hero_search"
+
+# -----------
+# CloudCannon
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - Email
+  - RSS
+
+types:
+  - Document
+  - Video
+
+_comments:
