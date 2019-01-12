@@ -126,4 +126,5 @@ Chức năng quản lý thông tin về iLO như license, firmware, cài đặt 
 
 ![](/images/img-ilo-hp/ilo19.png)
 
-Xin chân thành cảm ơn!
+---
+Thực hiện bởi cloud365.vn
