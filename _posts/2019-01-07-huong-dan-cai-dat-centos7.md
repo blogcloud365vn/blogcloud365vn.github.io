@@ -96,15 +96,3 @@ Như vậy bạn đã cài đặt thành công hệ điều hành CentOS 7. Bạ
 
 ---
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
-
-
-
-
-
-
-
-
-
-
----
-Thực hiện bởi cloud365.vn
