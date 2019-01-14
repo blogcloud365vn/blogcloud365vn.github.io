@@ -2,10 +2,10 @@
 date: 2019-01-07
 title: Hướng dẫn cài đặt CentOS 7.6 - 64 bit
 categories:
-  - Linux, Beginner
+  - Linux
 description: Tài liệu hướng dẫn cài đặt CentOS-7-x86_64-Minimal-1810
 author: duydm
-tags: [Beginner, Linux]
+tags: [Beginner, Linux, CentOS7]
 type: Document
 ---
 Tài liệu hướng dẫn cài đặt CentOS-7-x86_64-Minimal-1810

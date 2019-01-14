@@ -1,10 +1,10 @@
 ---
 title: Hướng dẫn sử dụng tool ipscan trên windows
 categories:
-  - Linux, Beginner
+  - Windows
 description: Tài liệu download và sử dụng ipscan trên máy tính windows.
 author: duydm
-tags: [Beginner, Linux]
+tags: [Beginer, Windows]
 type: Document
 ---
 

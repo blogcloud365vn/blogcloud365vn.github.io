@@ -1,10 +1,10 @@
 ---
 title: Hướng dẫn cấu hình và sử dụng iLO server HP
 categories:
-  - Linux, Beginner
+  - Other
 description: Tài liệu Hướng dẫn cấu hình iLO và thao tác giám sát server HP
 author: duydm
-tags: [Beginner, Linux]
+tags: [iLO, HP DL160]
 type: Document
 ---
 
