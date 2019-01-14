@@ -14,6 +14,7 @@ Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
 
 - Phiên bản CentOS: `CentOS-7-x86_64-Minimal-1810`
 - Môi trường cài đặt: `WMware ESXi`. Ngoài ra có thể cài đặt trên máy vật lý hoặc các môi trường ảo hóa khác như KVM, WMware workstation, Hyper-V.
+- Một máy với cấu hình tối thiểu 1 vCPU, 1 GB RAM, 10 GB Disk
 
 ## 2. Tải bộ cài CentOS 7.6 - 64 bit
 
