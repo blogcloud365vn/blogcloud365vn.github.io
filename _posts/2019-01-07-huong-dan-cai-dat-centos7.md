@@ -9,13 +9,13 @@ tags: [Beginner, Linux, CentOS7]
 type: Document
 ---
 
-Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
-##1. Chuẩn bị
+Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810<br>
+## 1. Chuẩn bị
 
 - Phiên bản CentOS: `CentOS-7-x86_64-Minimal-1810`
 - Môi trường cài đặt: `WMware ESXi`. Ngoài ra có thể cài đặt trên máy vật lý hoặc các môi trường ảo hóa khác như KVM, WMware workstation, Hyper-V.
 
-##2. Tải bộ cài CentOS 7.6 - 64 bit
+## 2. Tải bộ cài CentOS 7.6 - 64 bit
 
 Có rất nhiều nguồn tải bộ cài của CentOS 7.6, trong hướng dẫn này download file cài đặt (file ISO) tại `http://isoredirect.centos.org/centos/7.6.1810/isos/x86_64/`
 
@@ -25,13 +25,13 @@ Có rất nhiều nguồn tải bộ cài của CentOS 7.6, trong hướng dẫn
 
 ![](/images/img-caidat-centos7/Screenshot_727.png)
 
-##3. Thiết lập môi trường cài đặt
+## 3. Thiết lập môi trường cài đặt
 
 - Nếu như bạn cài đặt trên máy vật lý bạn cần chuẩn bị USB hoặc phương pháp để gắn file ISO vừa down ở trên.
 
 - Trong hướng dẫn này thực hiện trên môi trường ESXi.
 
-##4. Các bước cài đặt
+## 4. Các bước cài đặt
 
 + Start máy ảo: Khi khởi động máy ảo lên bạn sẽ nhìn thấy màn hình cài đặt đầu tiên của CentOS 7. Bạn có thể `Enter` để tiến hành cài đặt ngay hoặc nhờ để tự động vào chế độ cài đặt.
 
@@ -85,7 +85,7 @@ Khi bạn vào mục này sẽ hiển thị cho bạn tất cả interface mà s
 
 ![](/images/img-caidat-centos7/Screenshot_741.png)
 
-##5. Kiểm tra
+## 5. Kiểm tra
 
 + Bạn sử dụng tài khoản root, password bạn thiết lập để login vào server CentOS 7 vừa cài đặt và kiểm tra thông số về server của mình.
 
