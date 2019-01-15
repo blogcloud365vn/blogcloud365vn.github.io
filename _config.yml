@@ -5,7 +5,7 @@ title: BlogCloud365
 url: "http://blogcloud365vn.github.io/"
 baseurl: 
 google_analytics_key:
-disqus_shortname: 
+disqus_shortname: congto
 newsletter_action:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
@@ -16,7 +16,7 @@ author:
   email: 
   twitter: # twitter username without the @ symbol
 social:
-  name: blog.cloud365.vn
+  name: cloud365.vn
   links:
     - http://blogcloud365vn.github.io/
 
