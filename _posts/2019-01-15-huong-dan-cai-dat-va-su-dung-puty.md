@@ -32,7 +32,7 @@ Lựa chọn thư mục cài đặt
 
 ![](/images/img-puty/Screenshot_771.png)
 
-Cài đặt tính năng
+Cài đặt tính năng cho putty
 
 ![](/images/img-puty/Screenshot_772.png)
 
