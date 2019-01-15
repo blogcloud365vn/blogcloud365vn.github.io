@@ -1,21 +1,22 @@
 ---
 title: Hướng dẫn cấu hình và sử dụng iLO server HP
 categories:
-  - Linux, Beginner
+  - Other
 description: Tài liệu Hướng dẫn cấu hình iLO và thao tác giám sát server HP
 author: duydm
-tags: [Beginner, Linux]
+tags: [iLO, HP DL160]
 type: Document
 ---
 
 ### Mục lục
 
-[1, Tìm hiểu về iLO](#timhieuveilo)
+[1. Tìm hiểu về iLO](#timhieuveilo)
 
-[2, Cài đặt iLO](#caidatilo)
+[2. Cài đặt iLO](#caidatilo)
 
+[3.Giám sát các thông tin trên iLO](#giamsatilo)
 <a name="timhieuveilo"></a>
-## 1, Tìm hiểu về iLO ##
+## 1. Tìm hiểu về iLO ##
 
 Đối với dòng server HP thế hệ mới iLO (intergrated Lights Out) cung cấp tính năng để quản lý các thông số hardware của server từ xa, troubleshoot, remote thông qua một giao diện. iLO là một cổng riêng biệt trên server, có chương trình và phần cứng độc lập, giúp quản lý phần cứng server độc lập, nó có chương trình WebGUI để quản lý cũng như command line tương ứng.
 
@@ -23,8 +24,8 @@ type: Document
 
 ![](/images/img-ilo-hp/ilo1.jpg)
 
-<a name="caidatilo"></a>
-## 2, Cài đặt iLO ##
+<a name="giamsatilo"></a>
+## 2. Cài đặt iLO ##
 
 Khởi động server HP để server chạy khi thấy dòng Config iLO thì ấn phím chức năng tương ứng F8
 
@@ -65,6 +66,7 @@ Login thành công
 
 ![](/images/img-ilo-hp/ilo8.png)
 
+<a name="caidatilo"></a>
 ## 3.Giám sát các thông tin trên iLO ##
 
 **3.1. Tab information**
@@ -83,7 +85,6 @@ Overview: Hiển thị tổng quan về server firmware, trạng thái tắt b�
 
 ![](/images/img-ilo-hp/ilo11.png)
 
-+ 
 **3.2. Tab Remote console**
 
 Cho phép người quản thị điều khiển màn hình console của server từ xa
@@ -127,4 +128,4 @@ Chức năng quản lý thông tin về iLO như license, firmware, cài đặt 
 ![](/images/img-ilo-hp/ilo19.png)
 
 ---
-Thực hiện bởi cloud365.vn
+Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
