@@ -4,7 +4,7 @@ categories:
   - Other
 description: Tài liệu Hướng dẫn cấu hình iLO và thao tác giám sát server HP
 author: duydm
-tags: [iLO, HP DL160]
+tags: [iLO, HPDL160]
 type: Document
 ---
 
