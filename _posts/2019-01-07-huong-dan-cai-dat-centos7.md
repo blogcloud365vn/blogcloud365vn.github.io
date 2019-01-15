@@ -5,7 +5,7 @@ categories:
   - Linux
 description: Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
 author: duydm
-tags: [Beginner, Linux, CentOS7]
+tags: [Beginer, Linux, CentOS7]
 type: Document
 ---
 
