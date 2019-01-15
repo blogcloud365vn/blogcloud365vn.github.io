@@ -1,22 +1,22 @@
 ---
-title: Hướng dẫn sử dụng phần mềm puty trên Windows
+title: Hướng dẫn sử dụng phần mềm putty trên Windows
 categories:
   - Windows
-description: Tài liệu hướng dẫn cài đặt và sử dụng phần mềm puty trên Windows
+description: Tài liệu hướng dẫn cài đặt và sử dụng phần mềm putty trên Windows
 author: duydm
 tags: [Beginer, Windows, Linux]
 type: Document
 ---
 
-- Putty là phần mềm miễn phí, được cài trên các hệ điều hành windows để truy cập vào các máy chủ linux hoặc các thiết bị mạng có hỗ trợ giao thức `SSH`.
+Putty là phần mềm miễn phí, được cài trên các hệ điều hành windows để truy cập vào các máy chủ linux hoặc các thiết bị mạng có hỗ trợ giao thức `SSH`.<br>
 
 Bài viết này sẽ hướng dẫn bạn:
-- Cài đặt phần mềm `putty` trên windows 10 64bit.
-- Hướng dẫn sử dụng `putty` để truy cập vào một máy linux (Centos hoặc Ubuntu ...) và một thiết bị mạng.
+   Cài đặt phần mềm `putty` trên windows 10 64bit.<br>
+   Hướng dẫn sử dụng `putty` để truy cập vào một máy linux (Centos hoặc Ubuntu ...) và một thiết bị mạng.<br>
 
 Yêu cầu cần phải có là: Máy chủ đã cài `SSH server` hoặc thiết bị mạng đã được khai báo để truy cập thông qua SSH.
 
-## 1. Tải và cài đặt Puty
+## 1. Tải và cài đặt Putty
 
 ## Tải file cài đặt
 
@@ -30,7 +30,7 @@ Sau đó sẽ được điều hướng sang trang mới, tiếp tục chọn m�
 
 ![](/images/img-puty/Screenshot_769.png)
 
-### Cài đặt Puty
+### Cài đặt Putty
 
 Bắt đầu cài đặt
 
