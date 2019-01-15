@@ -19,9 +19,313 @@ Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing 
 ### Phần hoạch
 | Hostname | Hardware                      | Interface                                               |
 |----------|-------------------------------|---------------------------------------------------------|
-| node1    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.11.20 (MNGT) - ens192: 10.10.11.86 (REPL) |
-| node2    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.11.24 (MNGT) - ens192: 10.10.11.87 (REPL) |
-| node3    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.11.27 (MNGT) - ens192: 10.10.11.88 (REPL) |
+| loadbalancer  | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.20 (Public) - eth1: 192.168.199.11 (Internal) |
+| web1    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.24 (Public) - eth1: 192.168.199.12 (Internal) |
+| web2    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.27 (Public) - eth1: 192.168.199.13 (Internal) |
 
 
+### Cấu hình IP
+- Tại node `loadbalancer`
+  ```
+  hostnamectl set-hostname loadbalancer
+
+  echo "Setup IP eth0"
+  nmcli c modify eth0 ipv4.addresses 10.10.11.20/24
+  nmcli c modify eth0 ipv4.gateway 10.10.11.1
+  nmcli c modify eth0 ipv4.dns 8.8.8.8
+  nmcli c modify eth0 ipv4.method manual
+  nmcli con mod eth0 connection.autoconnect yes
+
+  echo "Setup IP eth1"
+  nmcli c modify eth1 ipv4.addresses 192.168.199.11/24
+  nmcli c modify eth1 ipv4.method manual
+  nmcli con mod eth1 connection.autoconnect yes
+
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+  systemctl stop firewalld
+  systemctl disable firewalld
+  yum update -y
+
+  echo "192.168.199.11 loadbalancer" >> /etc/hosts
+  echo "192.168.199.12 web1" >> /etc/hosts
+  echo "192.168.199.13 web2" >> /etc/hosts
+
+  init 6
+  ```
+
+- Tại node `web1`
+  ```
+  hostnamectl set-hostname web1
+
+  echo "Setup IP eth0"
+  nmcli c modify eth0 ipv4.addresses 10.10.11.24/24
+  nmcli c modify eth0 ipv4.gateway 10.10.11.1
+  nmcli c modify eth0 ipv4.dns 8.8.8.8
+  nmcli c modify eth0 ipv4.method manual
+  nmcli con mod eth0 connection.autoconnect yes
+
+  echo "Setup IP eth1"
+  nmcli c modify eth1 ipv4.addresses 192.168.199.12/24
+  nmcli c modify eth1 ipv4.method manual
+  nmcli con mod eth1 connection.autoconnect yes
+
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+  systemctl stop firewalld
+  systemctl disable firewalld
+  yum update -y
+
+  echo "192.168.199.11 loadbalancer" >> /etc/hosts
+  echo "192.168.199.12 web1" >> /etc/hosts
+  echo "192.168.199.13 web2" >> /etc/hosts
+
+  init 6
+  ```
+
+- Tại node `web2`
+  ```
+  hostnamectl set-hostname web2
+
+  echo "Setup IP eth0"
+  nmcli c modify eth0 ipv4.addresses 10.10.11.27/24
+  nmcli c modify eth0 ipv4.gateway 10.10.11.1
+  nmcli c modify eth0 ipv4.dns 8.8.8.8
+  nmcli c modify eth0 ipv4.method manual
+  nmcli con mod eth0 connection.autoconnect yes
+
+  echo "Setup IP eth1"
+  nmcli c modify eth1 ipv4.addresses 192.168.199.13/24
+  nmcli c modify eth1 ipv4.method manual
+  nmcli con mod eth1 connection.autoconnect yes
+
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+  sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+  systemctl stop firewalld
+  systemctl disable firewalld
+  yum update -y
+
+  echo "192.168.199.11 loadbalancer" >> /etc/hosts
+  echo "192.168.199.12 web1" >> /etc/hosts
+  echo "192.168.199.13 web2" >> /etc/hosts
+
+  init 6
+  ```
+
+## 2. Cài đặt
+### Cài đặt Nginx
+- Thực hiện tại `loadbalancer`
+
+Lưu ý:
+- Cài đặt Nginx từ source đễ hỗ trợ bổ sung thêm các module không có sẵn (vts, sts, stream sts không có sẵn trên repository mặc định)
+- Bổ sung thêm các gói giám sát traffic mục địch phục vụ bài toán giám sát load balancing trên Nginx
+
+- Bổ sung bộ biên dịch
+  ```
+  yum -y install gcc gcc-c++ make zlib-devel pcre-devel openssl-devel git wget geoip-devel epel-release
+  ```
+- Cài đặt gói vts, sts, stream sts
+  ```
+  mkdir /opt/downloads
+  cd /opt/downloads
+
+  # vts
+  git clone https://github.com/vozlt/nginx-module-vts.git
+
+  # sts
+  git clone https://github.com/vozlt/nginx-module-sts.git
+
+  # stream sts
+  git clone https://github.com/vozlt/nginx-module-stream-sts.git
+  ```
+
+Lưu ý:
+- Các gói vts, sts, stream sts hỗ trợ tốt các phiển bản nginx từ 1.15.0 trở xuống, ở docs ta sẽ sử dụng 1.13.0
+
+- Tải mã nguồn `nginx`
+  ```
+  cd /opt/downloads
+  wget http://nginx.org/download/nginx-1.13.0.tar.gz
+  tar -zxf nginx-1.13.0.tar.gz
+  cd nginx-1.13.0
+  ```
+- Biên dịch
+  ```
+  ./configure --user=nginx --group=nginx \
+    --add-module=/opt/downloads/nginx-module-sts/ \
+    --add-module=/opt/downloads/nginx-module-vts/ \
+    --add-module=/opt/downloads/nginx-module-stream-sts/ \
+    --prefix=/etc/nginx \
+    --sbin-path=/usr/sbin/nginx \
+    --conf-path=/etc/nginx/nginx.conf \
+    --error-log-path=/var/log/nginx/error.log \
+    --http-log-path=/var/log/nginx/access.log \
+    --pid-path=/var/run/nginx.pid \
+    --lock-path=/var/run/nginx.lock \
+    --http-client-body-temp-path=/var/cache/nginx/client_temp \
+    --http-proxy-temp-path=/var/cache/nginx/proxy_temp \
+    --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
+    --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
+    --http-scgi-temp-path=/var/cache/nginx/scgi_temp \
+    --with-http_ssl_module \
+    --with-http_realip_module \
+    --with-http_addition_module \
+    --with-http_sub_module \
+    --with-http_dav_module \
+    --with-http_gunzip_module \
+    --with-http_gzip_static_module \
+    --with-http_random_index_module \
+    --with-http_secure_link_module \
+    --with-http_stub_status_module \
+    --with-mail \
+    --with-mail_ssl_module \
+    --with-file-aio \
+    --with-stream \
+    --with-http_geoip_module
+
+  make
+  make install
+  ```
+- Tạo user nginx và thư mục chứa cache nginx, phân quyền lại thư mục
+  ```
+  useradd -r nginx
+  mkdir -p /var/cache/nginx/client_temp/
+  chown nginx. /var/cache/nginx/client_temp/
+  ```
+- Tạo service `systemd` cho nginx
+  ```
+  echo '[Unit]
+  Description=The NGINX HTTP and reverse proxy server
+  After=syslog.target network.target remote-fs.target nss-lookup.target
+
+  [Service]
+  Type=forking
+  PIDFile=/run/nginx.pid
+  ExecStartPre=/usr/sbin/nginx -t
+  ExecStart=/usr/sbin/nginx
+  ExecReload=/bin/kill -s HUP $MAINPID
+  ExecStop=/bin/kill -s QUIT $MAINPID
+  PrivateTmp=true
+
+  [Install]
+  WantedBy=multi-user.target' > /lib/systemd/system/nginx.service
+
+  # Phân quyền
+  chmod a+rx /lib/systemd/system/nginx.service
+  ```
+- Chạy dịch vụ
+  ```
+  systemctl start nginx
+  systemctl enable nginx
+  ```
+- Cấu hình LB cho nginx
+  ```
+  cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+  rm -rf /etc/nginx/nginx.conf
+
+  echo '
+  #user  nobody;
+  worker_processes  1;
+
+  #error_log  logs/error.log;
+  #error_log  logs/error.log  notice;
+  #error_log  logs/error.log  info;
+
+  #pid        logs/nginx.pid;
+
+
+  events {
+      worker_connections  1024;
+  }
+
+  http {
+      include       mime.types;
+      default_type  application/octet-stream;
+      # Stream traffic module
+      stream_server_traffic_status_zone;
+
+      # Stream web module
+      vhost_traffic_status_zone;
+
+      # filter geoip
+      geoip_country /usr/share/GeoIP/GeoIP.dat;
+      vhost_traffic_status_filter_by_set_key $geoip_country_code country::*;
+
+
+      sendfile        on;
+      #tcp_nopush     on;
+
+      #keepalive_timeout  0;
+      keepalive_timeout  65;
+
+      #gzip  on;
+
+      upstream backend {
+          server 192.168.199.12:80;
+          server 192.168.199.13:80;
+      }
+
+      server {
+          listen 10.10.11.20:80;
+
+          location / {
+              proxy_pass http://backend;
+          }
+      }
+
+      server {
+          listen       8080;
+          server_name  status-page;
+
+          location / {
+              root   html;
+              index  index.html index.htm;
+          }
+          
+          location /status-stream {
+              stream_server_traffic_status_display;
+              stream_server_traffic_status_display_format html;
+          }
+
+          vhost_traffic_status_filter_by_set_key $geoip_country_code country::$server_name;
+
+          location /status-web {
+              vhost_traffic_status_display;
+              vhost_traffic_status_display_format html;
+          }
+
+          error_page   500 502 503 504  /50x.html;
+          location = /50x.html {
+              root   html;
+          }
+        
+      }
+  }' > /etc/nginx/nginx.conf
+  ```
+- Khởi động lại dịch vụ
+  ```
+  systemctl restart nginx
+  ```
+
+### Cài đặt Apache
+
+- Thực hiện tại `web1`
+  ```
+  yum install httpd -y
+  cat /etc/httpd/conf/httpd.conf | grep 'Listen 80'
+  sed -i "s/Listen 80/Listen 192.168.199.12:80/g" /etc/httpd/conf/httpd.conf
+
+  echo '<h1>Chào mừng tới Blog Cloud365 (Web1)</h1>' > /var/www/html/index.html
+  ```
+
+- Thực hiện tại `web2`
+  ```
+  yum install httpd -y
+  cat /etc/httpd/conf/httpd.conf | grep 'Listen 80'
+  sed -i "s/Listen 80/Listen 192.168.199.13:80/g" /etc/httpd/conf/httpd.conf
+
+  echo '<h1>Chào mừng tới Blog Cloud365 (Web2)</h1>' > /var/www/html/index.html
+  ```
+
+### Kiểm tra
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
