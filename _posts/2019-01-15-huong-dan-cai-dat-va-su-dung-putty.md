@@ -16,6 +16,8 @@ Bài viết này sẽ hướng dẫn bạn:
 
 Yêu cầu cần phải có là: Máy chủ đã cài `SSH server` hoặc thiết bị mạng đã được khai báo để truy cập thông qua SSH.
 
+![](/images/img-puty/photo_2019-01-16_00-32-46.jpg)
+
 ## 1. Tải và cài đặt Putty
 
 ## Tải file cài đặt

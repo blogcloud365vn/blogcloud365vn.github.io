@@ -16,8 +16,6 @@ Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
 - Môi trường cài đặt: `WMware ESXi`. Ngoài ra có thể cài đặt trên máy vật lý hoặc các môi trường ảo hóa khác như KVM, WMware workstation, Hyper-V.
 - Một máy với cấu hình tối thiểu 1 vCPU, 1 GB RAM, 10 GB Disk
 
-![](/images/img-caidat-centos7/photo_2019-01-16_00-32-46.jpg)
-
 ## 2. Chuẩn bị file cài CentOS 7.6 - 64 bit
 
 Có rất nhiều nguồn để download file ISO CentOS 7 để cài đặt Bạn thực hiện tải file ISO CentOS 7 `CentOS-7-x86_64-Minimal-1810.iso`
