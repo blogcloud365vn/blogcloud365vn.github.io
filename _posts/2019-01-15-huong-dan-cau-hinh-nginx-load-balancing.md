@@ -10,7 +10,10 @@ type: Document
 ---
 
 Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing cho Apache<br>
-## 1. Chuẩn bị
+## Tổng quan
+Load balancing là kỹ thuật phân phối tải trên các web site có lượng truy cập cao. Giải pháp hỗ trợ việc tối ưu hóa tài nguyên, tăng sự đảm bảo, giảm độ trễ trên hệ thống.
+
+## Phần 1. Chuẩn bị
 - Đăng ký trên 'portal365.vn' 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk
 
 ![](/images/img-caidat-nginx-lb/pic1.png)
@@ -84,14 +87,14 @@ Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing 
   init 6
   ```
 
-## 2. Cài đặt
+## Phần 2. Cài đặt
 ### Bước 1: Cài đặt Nginx
 
 > Thực hiện tại node `loadbalancer`
 
 Lưu ý:
 - Cài đặt Nginx từ source đễ hỗ trợ bổ sung thêm các module không có sẵn (vts, sts, stream sts không có sẵn trên repository mặc định)
-- Bổ sung thêm các gói giám sát traffic mục địch phục vụ bài toán giám sát load balancing trên Nginx
+- Bổ sung thêm các gói giám sát traffic, mục địch phục vụ bài toán giám sát load balancing trên Nginx
 
 - Bổ sung bộ biên dịch
   ```
@@ -312,9 +315,10 @@ Lưu ý:
   ![](/images/img-caidat-nginx-lb/pic2.png)
 
 - Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request sẽ tự đồng chia sẻ sang 2 trang `web1`, `web2` theo thật toán `round robin`
+- Kết quả lần 1
   ![](/images/img-caidat-nginx-lb/pic3.png)
-
-![](/images/img-caidat-nginx-lb/pic4.png)
+- Kết quả lần 2
+  ![](/images/img-caidat-nginx-lb/pic4.png)
 
 
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
