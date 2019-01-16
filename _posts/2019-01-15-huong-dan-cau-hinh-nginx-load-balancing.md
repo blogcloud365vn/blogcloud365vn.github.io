@@ -1,6 +1,6 @@
 ---
 date: 2019-01-15
-title: [Phần 1] Hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
+title: Hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
 categories:
   - Linux
 description: Tài liệu hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
