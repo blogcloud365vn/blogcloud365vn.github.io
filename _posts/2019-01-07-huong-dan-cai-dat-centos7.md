@@ -18,7 +18,7 @@ Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
 
 ## 2. Chuẩn bị file cài CentOS 7.6 - 64 bit
 
-Có rất nhiều nguồn để download file ISO CentOS 7 để cài đặt Bạn thực hiện tải file ISO CentOS 7 `CentOS-7-x86_64-Minimal-1810.iso`
+Có rất nhiều nguồn để download file ISO CentOS 7 để cài đặt. Bạn thực hiện tải file ISO CentOS 7 `CentOS-7-x86_64-Minimal-1810.iso`
 
 ## 3. Thiết lập môi trường cài đặt
 
