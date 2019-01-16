@@ -37,6 +37,7 @@ Sau đó sẽ được điều hướng sang trang mới, tiếp tục chọn m�
 Bắt đầu cài đặt
 
 Click vào file vừa tải về, sau đó chọn `Next`
+
 ![](/images/img-putty/Screenshot_770.png)
 
 Để mặc định các gợi ý cài đặt và chọn `Next` tiếp theo.
