@@ -73,7 +73,11 @@ Nhập tiếp mật khẩu của user `root` để thực hiện đăng nhập v
 
 Lựa chon giao thức telnet, nhập địa chỉ IP switch, port telnet của switch
 
+- Port của giao thức `Telnet`, mặc định là `23`.
+
 ![](/images/img-puty/Screenshot_776.png)
+
+Sau đó chọn `Open`, ta sẽ có cửa sổ mới hiện ra, sau đó nhập password để truy cập vào switch. 
 
 ![](/images/img-puty/Screenshot_777.png)
 
