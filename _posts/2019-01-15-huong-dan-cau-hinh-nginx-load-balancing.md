@@ -1,6 +1,6 @@
 ---
 date: 2019-01-15
-title: Hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
+title: [Phần 1] Hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
 categories:
   - Linux
 description: Tài liệu hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
@@ -11,71 +11,52 @@ type: Document
 
 Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing cho Apache<br>
 ## 1. Chuẩn bị
-- Đăng ký trên 'portal365.vn' 3 Máy ảo CentOS 7 với cấu hình 
+- Đăng ký trên 'portal365.vn' 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk
 
-### Mô hình
+![](/images/img-caidat-nginx-lb/pic1.png)
 
 
-### Phần hoạch
+### Phân hoạch
 | Hostname | Hardware                      | Interface                                               |
 |----------|-------------------------------|---------------------------------------------------------|
-| loadbalancer  | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.20 (Public) - eth1: 192.168.199.11 (Internal) |
-| web1    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.24 (Public) - eth1: 192.168.199.12 (Internal) |
-| web2    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.27 (Public) - eth1: 192.168.199.13 (Internal) |
+| Loadbalancer  | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.20 (Public) - eth1: 192.168.199.11 (Internal) |
+| Web1    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.24 (Public) - eth1: 192.168.199.12 (Internal) |
+| Web2    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.27 (Public) - eth1: 192.168.199.13 (Internal) |
 
 
-### Cấu hình IP
+### Thiết lập ban đầu
 - Tại node `loadbalancer`
   ```
+  # Thiết lập hostname
   hostnamectl set-hostname loadbalancer
 
-  echo "Setup IP eth0"
-  nmcli c modify eth0 ipv4.addresses 10.10.11.20/24
-  nmcli c modify eth0 ipv4.gateway 10.10.11.1
-  nmcli c modify eth0 ipv4.dns 8.8.8.8
-  nmcli c modify eth0 ipv4.method manual
-  nmcli con mod eth0 connection.autoconnect yes
-
-  echo "Setup IP eth1"
-  nmcli c modify eth1 ipv4.addresses 192.168.199.11/24
-  nmcli c modify eth1 ipv4.method manual
-  nmcli con mod eth1 connection.autoconnect yes
-
+  # Tắt Firewall và SELinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
   systemctl stop firewalld
   systemctl disable firewalld
   yum update -y
 
+  # Cấu hình Host file
   echo "192.168.199.11 loadbalancer" >> /etc/hosts
   echo "192.168.199.12 web1" >> /etc/hosts
   echo "192.168.199.13 web2" >> /etc/hosts
 
   init 6
   ```
-
 - Tại node `web1`
   ```
+  # Thiết lập hostname
   hostnamectl set-hostname web1
 
-  echo "Setup IP eth0"
-  nmcli c modify eth0 ipv4.addresses 10.10.11.24/24
-  nmcli c modify eth0 ipv4.gateway 10.10.11.1
-  nmcli c modify eth0 ipv4.dns 8.8.8.8
-  nmcli c modify eth0 ipv4.method manual
-  nmcli con mod eth0 connection.autoconnect yes
-
-  echo "Setup IP eth1"
-  nmcli c modify eth1 ipv4.addresses 192.168.199.12/24
-  nmcli c modify eth1 ipv4.method manual
-  nmcli con mod eth1 connection.autoconnect yes
-
+  # Tắt Firewall và SELinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
   systemctl stop firewalld
   systemctl disable firewalld
   yum update -y
 
+  # Cấu hình Host file
   echo "192.168.199.11 loadbalancer" >> /etc/hosts
   echo "192.168.199.12 web1" >> /etc/hosts
   echo "192.168.199.13 web2" >> /etc/hosts
@@ -85,26 +66,17 @@ Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing 
 
 - Tại node `web2`
   ```
+  # Thiết lập hostname
   hostnamectl set-hostname web2
 
-  echo "Setup IP eth0"
-  nmcli c modify eth0 ipv4.addresses 10.10.11.27/24
-  nmcli c modify eth0 ipv4.gateway 10.10.11.1
-  nmcli c modify eth0 ipv4.dns 8.8.8.8
-  nmcli c modify eth0 ipv4.method manual
-  nmcli con mod eth0 connection.autoconnect yes
-
-  echo "Setup IP eth1"
-  nmcli c modify eth1 ipv4.addresses 192.168.199.13/24
-  nmcli c modify eth1 ipv4.method manual
-  nmcli con mod eth1 connection.autoconnect yes
-
+  # Tắt Firewall và SELinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
   systemctl stop firewalld
   systemctl disable firewalld
   yum update -y
 
+  # Cấu hình Host file
   echo "192.168.199.11 loadbalancer" >> /etc/hosts
   echo "192.168.199.12 web1" >> /etc/hosts
   echo "192.168.199.13 web2" >> /etc/hosts
@@ -113,8 +85,9 @@ Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing 
   ```
 
 ## 2. Cài đặt
-### Cài đặt Nginx
-- Thực hiện tại `loadbalancer`
+### Bước 1: Cài đặt Nginx
+
+> Thực hiện tại node `loadbalancer`
 
 Lưu ý:
 - Cài đặt Nginx từ source đễ hỗ trợ bổ sung thêm các module không có sẵn (vts, sts, stream sts không có sẵn trên repository mặc định)
@@ -307,7 +280,9 @@ Lưu ý:
   systemctl restart nginx
   ```
 
-### Cài đặt Apache
+### Bước 2: Cài đặt Apache
+
+> Thực hiện tại node `web1`, `web2`
 
 - Thực hiện tại `web1`
   ```
@@ -316,6 +291,8 @@ Lưu ý:
   sed -i "s/Listen 80/Listen 192.168.199.12:80/g" /etc/httpd/conf/httpd.conf
 
   echo '<h1>Chào mừng tới Blog Cloud365 (Web1)</h1>' > /var/www/html/index.html
+  systemctl start httpd
+  systemctl enable httpd
   ```
 
 - Thực hiện tại `web2`
@@ -325,7 +302,19 @@ Lưu ý:
   sed -i "s/Listen 80/Listen 192.168.199.13:80/g" /etc/httpd/conf/httpd.conf
 
   echo '<h1>Chào mừng tới Blog Cloud365 (Web2)</h1>' > /var/www/html/index.html
+  systemctl start httpd
+  systemctl enable httpd
   ```
 
-### Kiểm tra
+### Bước 3: Kiểm tra
+
+- Truy cập điạ chỉ `http://10.10.11.20:8080/status-web`, trang giám sát traffic
+  ![](/images/img-caidat-nginx-lb/pic2.png)
+
+- Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request sẽ tự đồng chia sẻ sang 2 trang `web1`, `web2` theo thật toán `round robin`
+  ![](/images/img-caidat-nginx-lb/pic3.png)
+
+![](/images/img-caidat-nginx-lb/pic4.png)
+
+
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
