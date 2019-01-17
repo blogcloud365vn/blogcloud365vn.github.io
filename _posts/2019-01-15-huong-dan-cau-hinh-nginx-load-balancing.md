@@ -13,8 +13,13 @@ Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing 
 ## Tổng quan
 Load balancing là kỹ thuật phân phối tải trên các web site có lượng truy cập cao. Giải pháp hỗ trợ việc tối ưu hóa tài nguyên, tăng sự đảm bảo, giảm độ trễ trên hệ thống.
 
+Các thuật toán cân bằng tải cơ bản:
+- Round Robin: Các Request phân phối tuần tự tới các server, phương thức được sử dụng mặc định.
+- Least Connection: Request phân phối tới server có số kết nối tới ít nhất.
+- IP Hash: Lựa chọn Kết nối tới server bằng IP kết nối tới, tức IP A sẽ luôn kết nối tới server A trừ khi server A xảy ra sự cố.
+
 ## Phần 1. Chuẩn bị
-- Đăng ký trên 'portal365.vn' 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk
+- Đăng ký trên [cloud365.vn](https://cloud365.vn/) 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk
 
 ![](/images/img-caidat-nginx-lb/pic1.png)
 
@@ -26,6 +31,9 @@ Load balancing là kỹ thuật phân phối tải trên các web site có lư�
 | Web1    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.24 (Public) - eth1: 192.168.199.12 (Internal) |
 | Web2    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.27 (Public) - eth1: 192.168.199.13 (Internal) |
 
+### Mô hình
+
+![](/images/img-caidat-nginx-lb/pic5.png)
 
 ### Thiết lập ban đầu
 - Tại node `loadbalancer`
@@ -278,6 +286,28 @@ Lưu ý:
       }
   }' > /etc/nginx/nginx.conf
   ```
+Lưu ý:
+- Module `upstream`: Module load balancing theo thuật toán `round robin`
+- Cấu hình cân bằng tải
+    ```
+    upstream backend {
+        server 192.168.199.12:80;
+        server 192.168.199.13:80;
+    }
+    ```
+    - Các server được nhóm lại bằng `upstream` module, định nghĩa bằng `server` directive
+
+- Cấu hình chuyển request tới server group, ở đẩy ta sẽ dùng `proxy_pass` directive
+    ```
+    server {
+        listen 10.10.11.20:80;
+
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+    ```
+
 - Khởi động lại dịch vụ
   ```
   systemctl restart nginx
