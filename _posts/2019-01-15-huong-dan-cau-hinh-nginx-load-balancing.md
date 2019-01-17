@@ -344,7 +344,7 @@ Lưu ý:
 - Truy cập điạ chỉ `http://10.10.11.20:8080/status-web`, trang giám sát traffic
   ![](/images/img-caidat-nginx-lb/pic2.png)
 
-- Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request sẽ tự đồng chia sẻ sang 2 trang `web1`, `web2` theo thật toán `round robin`
+- Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request sẽ tự động chia sẻ sang 2 trang `web1`, `web2` theo thật toán `round robin`
 - Kết quả lần 1
   ![](/images/img-caidat-nginx-lb/pic3.png)
 - Kết quả lần 2
