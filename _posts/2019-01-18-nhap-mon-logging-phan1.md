@@ -1,6 +1,6 @@
 ---
 date: 2019-01-18
-title: Series bí kíp support dạo : Để trở thành cao thủ LOGGING
+title: Series bí kíp support dạo Để trở thành cao thủ LOGGING
 categories:
   - Logging
 description: Tuyển tập LOGGING từ mầm non tới đại học
