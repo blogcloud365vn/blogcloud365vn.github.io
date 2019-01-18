@@ -23,7 +23,7 @@ Trong loạt những bài viết này, mình sẽ giới thiệu một lĩnh v�
 
 Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản tới chi tiết và nâng cao về Log trong Linux. Đi kèm với đó là những tình huống thực tế hay gặp phải và những bài LAB để các bạn có thể tự mình kiểm chứng.
  
-** Ok ! Let's go to the LOG ! **
+#### Ok ! Let's go to the LOG ! 
 
 ## I. Nhập môn Logging. 
 
@@ -44,7 +44,7 @@ Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug :
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
-Trong Linux, các file log thường được đặt tại một thư mục */var/log/*. Các log của dịch vụ thường được đặt tại các thư mục con bên trong */var/log/*
+Trong Linux, các file log thường được đặt tại một thư mục **/var/log/** . Các log của dịch vụ thường được đặt tại các thư mục con bên **trong** */var/log/*
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
@@ -56,9 +56,9 @@ Thế nhưng, không hiểu sao cứ tạo máy ảo được 2 3 hôm thì máy
 Mọi người bắt đầu nghi ngờ hệ thống Cloud của Thành build ra ...lởm. Khách hàng trách móc, cấp trên ngờ vực. Thành vô cùng suy sụp. 
 Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành. Dạy Thành cách theo dấu vụ việc như sau : 
 
-	- Thu thập file log về SSH trên hệ thống.
-	- Tìm các log xóa máy ảo, sau đó xác định thời gian xóa máy ảo.
-	- Tìm các log ghi lại các tiến trình chạy lặp đi lặp lại trong crontab. 
+ - Thu thập file log về SSH trên hệ thống.
+ - Tìm các log xóa máy ảo, sau đó xác định thời gian xóa máy ảo.
+ - Tìm các log ghi lại các tiến trình chạy lặp đi lặp lại trong crontab. 
 
 ![log](/images/img-logging/log-01.png)
 
