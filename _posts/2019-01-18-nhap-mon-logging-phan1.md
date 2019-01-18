@@ -61,7 +61,7 @@ Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành.
  
 Chúng ta sẽ cùng Thành phân tích cách file log thu thập được như sau : 
 
-- File 2 : 
+- File 1 : 
 
 Với file 1, chúng ta có thể chú ý tới các log sau : 
 ```sh
@@ -70,11 +70,11 @@ Jan 18 15:39:30 web sshd[14838]: Accepted password for duydm from 27.72.59.135 p
 Jan 18 15:39:34 web su: (to root) duydm on pts/1
 ```
 
-- File 1 : Log chứa thông tin thực hiện command.
+- File 2 : Log chứa thông tin thực hiện command.
 
 ![log](/images/img-logging/log-02.png)
 
-Với file 1, chúng ta có thể chú ý tới các log sau : 
+Với file 2, chúng ta có thể chú ý tới các log sau : 
 
 ```sh
 Jan 18 15:40:07 web bash: root [14870]: 18/01/19 15:40:07 rm -rf /var/log/httpd/ [0]export
