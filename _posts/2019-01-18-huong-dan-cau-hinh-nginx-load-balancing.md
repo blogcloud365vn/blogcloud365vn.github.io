@@ -204,7 +204,7 @@ PrivateTmp=true
 WantedBy=multi-user.target' > /lib/systemd/system/nginx.service
 ```
 
-Phân quyền
+Phân quyền service `systemd` nginx
 ```
 chmod a+rx /lib/systemd/system/nginx.service
 ```
