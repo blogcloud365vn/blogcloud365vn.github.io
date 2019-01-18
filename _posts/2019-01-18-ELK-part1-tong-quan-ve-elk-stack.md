@@ -14,7 +14,7 @@ type: Document
 
 [2. ELK stack.](#2)
 
-[3. 3. Các thành phần trong ELK stack.](#3)
+[3. Các thành phần trong ELK stack.](#3)
 
 [4. Các trường hợp sử dụng ELK stack.](#4)
 
