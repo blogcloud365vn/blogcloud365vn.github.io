@@ -9,7 +9,7 @@ tags: [Beginer, Linux, Logging]
 type: Document
 ---
 
-### 1. Lời dạo đầu
+### Lời dạo đầu
 
 Đã bao nhiêu lần, các bạn sinh viên thực tập đã gặp phải trố mắt khi nhìn những bug nhỏ xinh, khiến mình khổ sở, đã được các Senior xử lý nuột nà chỉ trong 5p...
 
@@ -31,7 +31,11 @@ Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xe
 
 #### Tình huống 1 : 
 
-Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS của ``Cloud365`` tại trang https://nhanhoa.com/may-chu/may-chu-ao-vps.html để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
+Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. 
+
+Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS của ``Cloud365`` tại trang https://nhanhoa.com/may-chu/may-chu-ao-vps.html để dựng LAB.
+
+Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là **Gia Cát Tướng Công**, hiện đang nắm quân tại **Nhân Hòa**. 
 
 Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug khi cài đặt dịch vụ : 
 
@@ -64,6 +68,8 @@ Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành.
 Chúng ta sẽ cùng Thành phân tích cách file log thu thập được như sau : 
 
 - File 1 : 
+
+![log](/images/img-logging/log-03.png)
 
 Với file 1, chúng ta có thể chú ý tới các log sau : 
 ```sh
@@ -109,7 +115,6 @@ web su: (to root) duydm on pts/1
 web bash: root [14870]: 18/01/19 15:40:07 rm -rf /var/log/httpd/ [0]export
 
 web bash: root [14870]: 18/01/19 15:40:13 rm -rf /etc/httpd/ [0]export
-
 ```
 
 Chúng ta tạm bỏ qua các phần khá phức tạp ở phía đầu. Phần nội dung quan trọng cần chú ý chính là :
@@ -130,9 +135,9 @@ Thủ phạm là nhân viên Đặng Mạnh Duy nhanh chóng thừa nhận hành
 
 #### Chuyên mục tổng kết và rút kinh nghiệm 
 
-- Các cao thủ khi xử lý những lỗi như ở **ví dụ số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
+- Các cao thủ khi xử lý những lỗi như ở **tình huống số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
 
-- Và ở **ví dụ số 2**, những người có nhiều kinh nghiệm sẽ xác định được nhanh chóng cách thức tra vết và phân tích một sự việc xảy ra trong hệ thống từ những thông tin mà Log cung cấp.
+- Và ở **tình huống số 2**, những người có nhiều kinh nghiệm sẽ xác định được nhanh chóng cách thức tra vết và phân tích một sự việc xảy ra trong hệ thống từ những thông tin mà Log cung cấp.
 
 
 Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực của Log có thể thấy và áp dụng đó là : 
