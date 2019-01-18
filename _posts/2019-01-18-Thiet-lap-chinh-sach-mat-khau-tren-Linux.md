@@ -8,21 +8,15 @@ tags: [Security, Password]
 type: Document
 ---
 
-## Mục lục
-
-[1. Lời mở đầu.](#1)
-
-[2. Các chính sách mật khẩu an toàn trên Linux.](#2)
 
 
-<a name="1"></a>
 
 ## 1. Lời mở đầu.
 
 - Hiện nay có rất nhiều các bài viết hướng dẫn về tạo chính sách mật khẩu trên Windows, tuy nhiên thì các chính sách về mật khẩu trên Linux 
 thì không có nhiều, hôm nay mình sẽ giới thiệu về chính sách mật khẩu an toàn trên Linux để chúng ta có thể bảo đảm an toàn cho các tài khoản cũng như máy chủ của mình.
 
-<a name="2"></a>
+
 
 ## 2. Các chính sách mật khẩu an toàn trên Linux.
 
@@ -74,10 +68,10 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
 
 Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không thể đặt mật khẩu ngắn hơn số ký tự quy định
 
-```sh
-# Thiết lập mật khẩu ngắn nhất là 8 kí tự
-authconfig --passminlen=8 --update
-```
+    ```sh
+    # Thiết lập mật khẩu ngắn nhất là 8 kí tự
+    authconfig --passminlen=8 --update
+    ```
 
 **Thiết lập độ phức tạp của mật khẩu theo lớp**
 
@@ -123,6 +117,7 @@ authconfig --passminlen=8 --update
 
     ```sh
     vi /etc/security/pwquality.conf
+
     # Thêm vào cuối file dòng cấu hình
     maxsequence = 5
     ```
@@ -131,6 +126,7 @@ authconfig --passminlen=8 --update
 
     ```sh
     vi /etc/security/pwquality.conf
+
     # Thêm vào cuối file
     difok = 5
     ```
@@ -139,6 +135,7 @@ authconfig --passminlen=8 --update
 
     ```sh
     vi /etc/security/pwquality.conf
+
     # Thêm vào cuối file
     badwords = denywords1 denywords2 denywords3
     ```
