@@ -27,7 +27,7 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ### 1. Log là gì và dùng để làm gì? 
 
-Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xem 2 tình huống dưới đây.
+Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xem 2 tình huống dưới đây nhé !
 
 #### Tình huống 1 : 
 
