@@ -78,7 +78,8 @@ Ta có thể tạm chia dòng log trên thành 2 phần khác nhau :
 ```sh
 2018-10-08 15:53:12.706
 ```
-	- Phân tích nhỏ hơn cú pháp của phần này sẽ là : 
+
+	 - Phân tích nhỏ hơn cú pháp của phần này sẽ là : 
 
 ```sh
 Year-Month-Day Hour-Minute-Second.Millisecond
