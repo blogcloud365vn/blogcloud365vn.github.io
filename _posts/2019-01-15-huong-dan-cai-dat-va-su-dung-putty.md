@@ -61,6 +61,16 @@ Khởi động putty từ desktop hoặc từ thanh menu của windows. Ta sẽ 
 - Địa chỉ IP của máy chủ muốn remote
 - Port của giao thức SSH, thường là `22` nếu ta không thay đổi gì.
 
+Bạn thực hiện theo các bước trong hình ở dưới:
+
++ Bước 1: Lựa chọn giao thức kết nối `SSH`
+
++ Bước 2: Nhập IP máy chủ ssh server
+
++ Bước 3: Nhập port kết nối `SSH` của server.
+
++ Bước 4: Kết nối
+
 ![](/images/img-putty/Screenshot_774.png)
 
 Sau đó chọn `Open`, ta sẽ có cửa sổ mới hiện ra, sau đó nhập user là `root` hoặc user khác nếu ta đã tạo trước đó. Trong ví dụ này là user `root`. 
@@ -75,6 +85,16 @@ Nhập tiếp mật khẩu của user `root` để thực hiện đăng nhập v
 Lựa chon giao thức telnet, nhập địa chỉ IP switch, port telnet của switch
 
 - Port của giao thức `Telnet`, mặc định là `23`.
+
+Bạn thực hiện theo các bước trong hình ở dưới:
+
++ Bước 1: Lựa chọn giao thức kết nối `Telnet`
+
++ Bước 2: Nhập IP thiết bị switch
+
++ Bước 3: Nhập port kết nối `Telnet` của server.
+
++ Bước 4: Kết nối
 
 ![](/images/img-putty/Screenshot_776.png)
 
