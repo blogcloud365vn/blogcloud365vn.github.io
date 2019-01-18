@@ -9,7 +9,7 @@ tags: [Beginer, Linux, Logging]
 type: Document
 ---
 
-#### 1. Lời dạo đầu
+### 1. Lời dạo đầu
 
 Tuyển tập những thủ đoạn khiến 96,69% IT fresher phải trố mắt.
 
@@ -25,9 +25,9 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
  
 ** Ok ! Let's go to the LOG ! **
 
-### I. Nhập môn Logging. 
+## I. Nhập môn Logging. 
 
-####1. Log là gì? Tại sao phải đọc Log làm gì ???
+### 1. Log là gì? Tại sao phải đọc Log làm gì ???
 
 **Bài học 1 : **
 
