@@ -112,7 +112,10 @@ Lưu ý:
 
 Bổ sung bộ biên dịch
 ```
-yum -y install gcc gcc-c++ make zlib-devel pcre-devel openssl-devel git wget geoip-devel epel-release
+yum -y install gcc gcc-c++ \
+make zlib-devel pcre-devel \
+openssl-devel git wget \
+geoip-devel epel-release
 ```
 
 Cài đặt gói vts, sts, stream sts
