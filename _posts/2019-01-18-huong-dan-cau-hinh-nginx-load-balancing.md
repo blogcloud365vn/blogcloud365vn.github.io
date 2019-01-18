@@ -1,5 +1,5 @@
 ---
-date: 2019-01-15
+date: 2019-01-18
 title: Hướng dẫn cấu hình Nginx làm load balancing cho Apache trên CentOS 7
 categories:
   - Linux
@@ -20,7 +20,7 @@ Các thuật toán cân bằng tải cơ bản:
 
 ## Phần 1. Chuẩn bị
 
-Truy cập [Nhân hòa](https://nhanhoa.com/may-chu/may-chu-ao-vps.html), đăng ký 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk (Cấu hình gói B)
+Truy cập <a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" target="_blank">Nhân hòa</a>, đăng ký 3 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk (Cấu hình gói B)
 ![](/images/img-caidat-nginx-lb/pic6.png)
 
 
@@ -30,11 +30,7 @@ Kết quả sau khi đăng ký dịch vụ
 
 ### Phân hoạch
 
-| Hostname | Hardware                      | Interface                                               |
-|----------|-------------------------------|---------------------------------------------------------|
-| Loadbalancer  | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.20 (Public) - eth1: 192.168.199.11 (Internal) |
-| Web1    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.24 (Public) - eth1: 192.168.199.12 (Internal) |
-| Web2    | 2 Cpu - 2gb Ram - 25 gb Disk | eth0: 10.10.11.27 (Public) - eth1: 192.168.199.13 (Internal) |
+![](/images/img-caidat-nginx-lb/pic7.png)
 
 ### Mô hình
 
