@@ -99,7 +99,7 @@ Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa 
 
 Thủ phạm bị trừng trị, Thành lại được đồng nghiệp công nhận là Thành Bá như ngày nào.  
 
-##### Chuyên mục tổng kết và rút kinh nghiệm 
+#### Chuyên mục tổng kết và rút kinh nghiệm 
 
 - Các cao thủ khi xử lý những lỗi như ở **ví dụ số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
 
