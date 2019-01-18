@@ -29,7 +29,7 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ### 1. Log là gì? Tại sao phải đọc Log làm gì ???
 
-**Bài học 1 : **
+* Bài học 1 : *
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS Cloud tại trang https://cloud365.vn để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
 
@@ -43,16 +43,18 @@ Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug :
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
-Trong Linux, các file log thường được đặt tại một thư mục **/var/log/**. Các log của dịch vụ thường được đặt tại các thư mục con bên trong **/var/log/**
+Trong Linux, các file log thường được đặt tại một thư mục */var/log/*. Các log của dịch vụ thường được đặt tại các thư mục con bên trong */var/log/*
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
-**Bài học 2 : **
+* Bài học 2 : *
+
 Sau 6 tháng Thành cày cuốc học Cloud tại Nhân Hòa, đã được sếp tin tưởng giao cho triển khai một hệ thống Cloud khá lớn cho khách hàng. Thành làm rất hăng, ngày đêm dựng hệ thống. Sau 9,6 ngày đêm không ngủ, hệ thống Cloud Thành dựng cho khách hàng đã running. Cấp trên vui mừng, đồng nghiệp nể phục, khen Thành khá Bá
 
 Thế nhưng, không hiểu sao cứ tạo máy ảo được 2 3 hôm thì máy ảo lại không cánh mà bay.
 Mọi người bắt đầu nghi ngờ hệ thống Cloud của Thành build ra ...lởm. Khách hàng trách móc, cấp trên ngờ vực. Thành vô cùng suy sụp. 
 Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành. Dạy Thành cách theo dấu vụ việc như sau : 
+
 	- Thu thập file log về SSH trên hệ thống.
 	- Tìm các log xóa máy ảo, sau đó xác định thời gian xóa máy ảo.
 	- Tìm các log ghi lại các tiến trình chạy lặp đi lặp lại trong crontab. 
