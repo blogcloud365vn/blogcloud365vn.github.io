@@ -1,11 +1,11 @@
 ---
-date: 2019-01-07
-title: Hướng dẫn cài đặt CentOS 7.6 - 64 bit
+date: 2019-01-18
+title: Series bí kíp support dạo : Để trở thành cao thủ LOGGING
 categories:
-  - Linux
-description: Tài liệu hướng dẫn các bước cài đặt CentOS-7-x86_64-Minimal-1810
-author: duydm
-tags: [Beginer, Linux, CentOS7]
+  - Logging
+description: Tuyển tập LOGGING từ mầm non tới đại học
+author: manhdv
+tags: [Beginer, Linux, Logging]
 type: Document
 ---
 
