@@ -358,10 +358,10 @@ Truy cập điạ chỉ `http://10.10.11.20:8080/status-web`, trang giám sát t
 
 Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request sẽ tự động chia sẻ sang 2 trang `web1`, `web2` theo thật toán `round robin`
 
-Kết quả lần 1
+#### Kết quả lần 1
 ![](/images/img-caidat-nginx-lb/pic3.png)
 
-Kết quả lần 2
+#### Kết quả lần 2
 ![](/images/img-caidat-nginx-lb/pic4.png)
 
 
