@@ -99,6 +99,13 @@ Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa 
 
 Thủ phạm bị trừng trị, Thành lại được đồng nghiệp công nhận là Thành Bá như ngày nào.  
 
+##### Chuyên mục tổng kết và rút kinh nghiệm 
+
+- Các cao thủ khi xử lý những lỗi như ở **ví dụ số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
+
+- Và ở **ví dụ số 2**, những người có nhiều kinh nghiệm sẽ xác định được nhanh chóng cách thức tra vết và phân tích một sự việc xảy ra trong hệ thống từ những thông tin mà Log cung cấp.
+
+
 Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực của Log có thể thấy và áp dụng đó là : 
 
  - TroubleShooting trong quá trình cài đặt các service.
