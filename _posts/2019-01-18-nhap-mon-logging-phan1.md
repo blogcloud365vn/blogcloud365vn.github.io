@@ -27,7 +27,7 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ### 1. Log là gì? Tại sao phải đọc Log làm gì ???
 
-#### 1. Bài học 1 : 
+#### Bài học 1 : 
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS Cloud tại trang https://cloud365.vn để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
 
@@ -46,7 +46,7 @@ Trong Linux, các file log thường được đặt tại một thư mục ``/v
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
-#### 2. Bài học 2 : 
+#### Bài học 2 : 
 
 Sau khi vào Nhân Hòa được 1 tháng, Thành được giao cho nhiệm vụ quản lý một máy Web wordpress trên máy ảo VPS trên hệ thống Cloud Nhân Hòa. 
 
@@ -126,7 +126,7 @@ Có thể tóm tắt lại sự việc như nhau :
  
 Thủ phạm là nhân viên Đặng Mạnh Duy nhanh chóng thừa nhận hành vi phạm tội. Thành được minh oan và được cấp trên khen ngợi vì cách xử lý vấn đề rất tốt. Hôm sau đi liên hoan, Thành cảm ơn ngay anh Đạt 2 chục chén. 
 
-#### 3. Chuyên mục tổng kết và rút kinh nghiệm 
+#### Chuyên mục tổng kết và rút kinh nghiệm 
 
 - Các cao thủ khi xử lý những lỗi như ở **ví dụ số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
 
@@ -139,9 +139,13 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
  - Tra cứu nhanh các thông tin của hệ thống.
  - Truy vết các event đã và đang xảy ra.
 
+<<<<<<< HEAD
 ``Bật mí nhỏ `` : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
 
 #### 4. Ở bài tiếp theo sẽ có gì?
+=======
+#### Ở bài tiếp theo sẽ có gì?
+>>>>>>> 7b611d8b7ccf178a0fd6581a7d7a0c6a10537231
 
 Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
  
