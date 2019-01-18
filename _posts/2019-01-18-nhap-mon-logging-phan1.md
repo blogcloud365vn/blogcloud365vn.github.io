@@ -99,7 +99,7 @@ Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa 
 
 Thủ phạm bị trừng trị, Thành lại được đồng nghiệp công nhận là Thành Bá như ngày nào.  
 
-#### Chuyên mục tổng kết và rút kinh nghiệm 
+#### 3.Chuyên mục tổng kết và rút kinh nghiệm 
 
 - Các cao thủ khi xử lý những lỗi như ở **ví dụ số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
 
@@ -111,6 +111,8 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
  - TroubleShooting trong quá trình cài đặt các service.
  - Tra cứu nhanh các thông tin của hệ thống.
  - Truy vết các event đã và đang xảy ra.
+
+#### 4. Ở bài tiếp theo sẽ có gì?
 
 Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
  
