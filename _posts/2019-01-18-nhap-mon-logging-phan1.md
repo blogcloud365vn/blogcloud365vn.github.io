@@ -17,7 +17,7 @@ Các senior có bí quyết gì, giúp họ debug nhanh hơn bạn gấp mấy c
 
 Vậy thì nhầm to ! Các cao thủ chỉ hơn bạn về sự vững chắc trong nền tảng kiến thức và kinh nghiệm làm việc, những trải nghiệm về tình huống mà họ đã gặp trong thực tế. Và đi cùng với đó là những công cụ họ sử dụng, quan trọng hơn, đó là cách họ áp dụng. 
 
-Trong loạt những bài viết này, mình sẽ chia sẽ những kiến thức rất cơ bản, nhưng lại vô cùng hữu ích và hỗ trợ mang lại hiệu quả cao trong quá trình làm hệ thống, đó chính là LOG trong linux. 
+Trong loạt những bài viết này, mình sẽ chia sẻ những kiến thức rất cơ bản, nhưng mình thấy râts hữu ích và hỗ trợ mang lại hiệu quả cao trong quá trình làm hệ thống, đó chính là LOG trong linux. 
 
 Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản tới chi tiết và nâng cao về Log trong Linux. Đi kèm với đó là những tình huống thực tế hay gặp phải và những bài LAB để các bạn có thể tự mình kiểm chứng.
  
@@ -55,7 +55,7 @@ Mọi người bắt đầu nghi ngờ hệ thống Cloud của Thành build ra 
 
 Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành. Dạy Thành cách theo dấu vụ việc như sau : 
 
- - Thu thập file log về SSH trên hệ thống.
+ - Xác định cấu hình của dòng log mỗi khi có máy ảo bị xóa.
  - Tìm các log xóa máy ảo, sau đó xác định thời gian xóa máy ảo.
  - Tìm các log ghi lại các tiến trình chạy lặp đi lặp lại trong crontab. 
 
@@ -95,7 +95,7 @@ Chúng ta tạm bỏ qua các phần khá phức tạp ở phía đầu. Phần 
 
 Sau một tuần thu thập và phân tích log, cuối cùng Thành cũng đã nắm được quy luật. Cứ đến 2h sáng thứ 3,5,7 thì máy ảo bị xóa, và trước đó đều đặn lúc 1h55p thì crontap chạy file test.sh.
 
-Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa máy ảo, chạy dưới quyền xác thực của user DuyDM,, user dành cho nhân viên Đặng Mạnh Duy. Thủ phạm nhanh chóng thủ nhận, vì ghen ghét độ Bá của Thành nên tìm cách hãm hại. 
+Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa máy ảo, chạy dưới quyền xác thực của user DuyDM, user dành cho nhân viên Đặng Mạnh Duy. Thủ phạm nhanh chóng thủ nhận, vì ghen ghét độ Bá của Thành nên tìm cách hãm hại. 
 
 Thủ phạm bị trừng trị, Thành lại được đồng nghiệp công nhận là Thành Bá như ngày nào.  
 
@@ -105,4 +105,12 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
  - Tra cứu nhanh các thông tin của hệ thống.
  - Truy vết các event đã và đang xảy ra.
 
-Và vô vàn các công dụng khác sẽ được tiết lộ tại series của bài tiếp theo... !
+Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
+ 
+ - Phân loại các file log cơ bản và quan trọng
+ - Một số câu lệnh hay dùng để đọc và phân tích Log.
+ - Linux xử lý các file Log như thế nào?
+ - Các giao thức thường được áp dụng trong việc xử lý Log.
+ 
+Xin chào và hẹn gặp lại ở bài tiếp theo !
+ 
