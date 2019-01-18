@@ -93,7 +93,7 @@ Thành lập lại một bảng thống kê theo thời gian để xem có sự 
 
 Chúng ta tạm bỏ qua các phần khá phức tạp ở phía đầu. Phần nội dung quan trọng cần chú ý chính là `Instance destroyed successfully`. Thông tin trên chứng tỏ việc máy ảo đã bị xóa!
 
-Sau một tuần thu thập và phân tích log, cuối cùng Thành cũng đã nắm được quy luật. Cứ đến 2h sáng thứ 3,5,7 thì máy ảo bị xóa, và trước đó đều đặn lúc 1h55p thì crontap chạy file test.sh.
+Sau một tuần thu thập và phân tích log, cuối cùng Thành cũng đã nắm được quy luật. Cứ đến 2h sáng thứ 3,5,7 thì máy ảo bị xóa, và trước đó đều đặn lúc 1h55p thì crontap chạy file `test.sh`.
 
 Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa máy ảo, chạy dưới quyền xác thực của user DuyDM, user dành cho nhân viên Đặng Mạnh Duy. Thủ phạm nhanh chóng thủ nhận, vì ghen ghét độ Bá của Thành nên tìm cách hãm hại. 
 
