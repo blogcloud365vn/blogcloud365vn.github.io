@@ -53,7 +53,7 @@ cd certbot
 ```
   - Sau khi chạy lệnh trên hệ thống sẽ hiển thị thông tin cần nhập là domain bạn đang sử dụng cài đặt SSL, ví dụ ở bài viết này sử dụng mail.thangth.name.vn (cú pháp mail.tenmien)
   ```sh
-  ![](../images/1.png)
+  ![](/images/1.png)
   ```
   Note: Nhập tên domain của bạn đang dùng và bấm enter.Kết quả trả về như hình bên dưới
   ```sh
