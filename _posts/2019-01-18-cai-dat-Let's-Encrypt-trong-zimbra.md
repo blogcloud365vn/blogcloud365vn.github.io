@@ -53,15 +53,15 @@ cd certbot
 ```
   - Sau khi chạy lệnh trên hệ thống sẽ hiển thị thông tin cần nhập là domain bạn đang sử dụng cài đặt SSL, ví dụ ở bài viết này sử dụng mail.thangth.name.vn (cú pháp mail.tenmien)
   ```sh
-  ![](/images/1.png)
+  ![](/images/img-letencrypt-zimbra/1.png)
   ```
   Note: Nhập tên domain của bạn đang dùng và bấm enter.Kết quả trả về như hình bên dưới
   ```sh
-  ![](/images/2.png)
+  ![](/images/img-letencrypt-zimbra/2.png)
   ```
 - Người dùng có thể kiểm tra lại key đã được tạo ra trong đường dẫn /etc/letsencrypt/live/$domain với $domain là tên domain bạn vừa nhập ở bước trên.Kết quả sẽ hiển thị giống ảnh bên dưới
 ```sh
-![](/images/3.png)
+![](/images/img-letencrypt-zimbra/3.png)
 ```
 - Cần sửa lại file chain.pem trong thư mục trên để trust root CA
   - Mở file /etc/letsencrypt/live/$domain/chain.pem và chèn thêm đoạn mã sau vào cuối file (Thay thế $domain bằng tên miền bạn sử dụng ở bước trên)
@@ -89,7 +89,7 @@ cd certbot
   ```
   - Kết quả của file sau khi sửa sẽ hiển thị như bên dưới
   ```sh
-  ![](/images/4.png)
+  ![](/images/img-letencrypt-zimbra/4.png)
   ```
   
 - Tiếp theo tiến hành verify certificate
@@ -108,7 +108,7 @@ cd certbot
   /opt/zimbra/bin/zmcertmgr verifycrt comm privkey.pem cert.pem chain.pem
   ```
   Kết quả trả về như ảnh bên dưới
-  ![](/images/5.png)
+  ![](/images/img-letencrypt-zimbra/5.png)
   
 - Deploy Let's Encrypt SSL certificate mới, lệnh bên dưới sử dụng với quyền user root
   - Backup thư mục SSL của zimbra
