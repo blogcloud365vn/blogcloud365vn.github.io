@@ -29,7 +29,7 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ### 1. Log là gì? Tại sao phải đọc Log làm gì ???
 
-* Bài học 1 : 
+#### Bài học 1 : 
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS Cloud tại trang https://cloud365.vn để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
 
@@ -44,16 +44,17 @@ Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug :
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
-Trong Linux, các file log thường được đặt tại một thư mục **/var/log/** . Các log của dịch vụ thường được đặt tại các thư mục con bên trong **/var/log/**
+Trong Linux, các file log thường được đặt tại một thư mục **/var/log/** . Các log của dịch vụ thường được đặt tại các thư mục con bên trong như **/var/log/httpd/**
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
-* Bài học 2 : *
+#### Bài học 2 : 
 
 Sau 6 tháng Thành cày cuốc học Cloud tại Nhân Hòa, đã được sếp tin tưởng giao cho triển khai một hệ thống Cloud khá lớn cho khách hàng. Thành làm rất hăng, ngày đêm dựng hệ thống. Sau 9,6 ngày đêm không ngủ, hệ thống Cloud Thành dựng cho khách hàng đã running. Cấp trên vui mừng, đồng nghiệp nể phục, khen Thành khá Bá
 
 Thế nhưng, không hiểu sao cứ tạo máy ảo được 2 3 hôm thì máy ảo lại không cánh mà bay.
 Mọi người bắt đầu nghi ngờ hệ thống Cloud của Thành build ra ...lởm. Khách hàng trách móc, cấp trên ngờ vực. Thành vô cùng suy sụp. 
+
 Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành. Dạy Thành cách theo dấu vụ việc như sau : 
 
  - Thu thập file log về SSH trên hệ thống.
@@ -62,7 +63,8 @@ Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành.
 
 ![log](/images/img-logging/log-01.png)
 
-Đầu tiên, Thành đọc thông tin về việc tạo, xóa máy ảo sẽ được lưu tại file log : `/var/log/nova/nova-compute.log` với câu lệnh **cat**. Sau đó, sử dụng lệnh **grep** để lọc ra tất cả các dòng log chứa keyword **destroyed**, keyword này xuất hiện mỗi khi có máy ảo bị xóa. 
+ - Đầu tiên, Thành đọc thông tin về việc tạo, xóa máy ảo sẽ được lưu tại file log : `/var/log/nova/nova-compute.log` với câu lệnh **cat**. 
+ - Sau đó, sử dụng lệnh **grep** để lọc ra tất cả các dòng log chứa keyword **destroyed**, keyword này xuất hiện mỗi khi có máy ảo bị xóa. 
 
 Chúng ta sẽ cùng Thành phân tích file log bắt được : 
 
@@ -95,11 +97,12 @@ Chúng ta tạm bỏ qua các phần khá phức tạp ở phía đầu. Phần 
 Sau một tuần thu thập và phân tích log, cuối cùng Thành cũng đã nắm được quy luật. Cứ đến 2h sáng thứ 3,5,7 thì máy ảo bị xóa, và trước đó đều đặn lúc 1h55p thì crontap chạy file test.sh. Thành boàng hoàng nhận ra nội dung file chính là các câu lệnh xóa máy ảo, chạy dưới quyền xác thực của user DuyDM,, user dành cho nhân viên Đặng Mạnh Duy. Thủ phạm nhanh chóng thủ nhận, vì ghen ghét độ Bá của Thành nên tìm cách hãm hại. 
 Thủ phạm bị trừng trị, Thành lại được đồng nghiệp công nhận là Thành Bá như ngày nào.  
 
-Kinh nghiệm rút ra : Với những bạn sinh viên hoặc fresher, thường bỏ qua những cách fix bug vô cùng đơn giản mà hiệu quả. Đó chính là cách đọc log.
+**Kinh nghiệm rút ra** : Với những bạn sinh viên hoặc fresher, thường bỏ qua những cách fix bug vô cùng đơn giản mà hiệu quả. Đó chính là cách đọc log.
 
 Qua 2 ví dụ trên. Những vai trò thiết thực nhất của Log mà chúng ta có thể thấy được và áp dụng đó là : 
-	- TroubleShooting trong quá trình cài đặt các service.
-	- Tra cứu lại các thông tin của hệ thống.
-	- Truy vết các event đã và đang xảy ra.
+
+ - TroubleShooting trong quá trình cài đặt các service.
+ - Tra cứu lại các thông tin của hệ thống.
+ - Truy vết các event đã và đang xảy ra.
 
 Và vô vàn các công dụng khác sẽ được tiết lộ tại series của bài tiếp theo... !
