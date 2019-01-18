@@ -9,10 +9,10 @@ type: Document
 ---
 
 ## Mục Lục:
-[1. Giới thiệu về Let's Encrypt] (#gioithieu)
-[1.1 Giới thiệu về SSL] (#giothieussl)
-[1.2 Giới thiệu về Let's Encrypt] (#gioithieuletencrypt)
-[2. Hướng dẫn cài đặt Let' Encrypt cho zimbra] (#caidat)
+[1. Giới thiệu về Let's Encrypt] (#gioithieu)<br>
+[1.1 Giới thiệu về SSL] (#giothieussl)<br>
+[1.2 Giới thiệu về Let's Encrypt] (#gioithieuletencrypt)<br>
+[2. Hướng dẫn cài đặt Let' Encrypt cho zimbra] (#caidat)<br>
 
 <a name="gioithieu"></a>
 ## 1. Giới thiệu về Let's Encrypt ##
