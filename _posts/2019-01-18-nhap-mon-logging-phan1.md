@@ -139,13 +139,9 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
  - Tra cứu nhanh các thông tin của hệ thống.
  - Truy vết các event đã và đang xảy ra.
 
-<<<<<<< HEAD
 ``Bật mí nhỏ `` : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
 
 #### 4. Ở bài tiếp theo sẽ có gì?
-=======
-#### Ở bài tiếp theo sẽ có gì?
->>>>>>> 7b611d8b7ccf178a0fd6581a7d7a0c6a10537231
 
 Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
  
