@@ -202,8 +202,10 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target' > /lib/systemd/system/nginx.service
+```
 
-# Phân quyền
+Phân quyền
+```
 chmod a+rx /lib/systemd/system/nginx.service
 ```
 
