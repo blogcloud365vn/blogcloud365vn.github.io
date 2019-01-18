@@ -67,7 +67,7 @@ Thấy tội nghiệp, anh Đạt 09 đồng nghiệp liền giúp đỡ Thành.
  
 Chúng ta sẽ cùng Thành phân tích cách file log thu thập được như sau : 
 
-- File 1 : 
+- File 1 : Log chứa thông tin login SSH
 
 ![log](/images/img-logging/log-03.png)
 
