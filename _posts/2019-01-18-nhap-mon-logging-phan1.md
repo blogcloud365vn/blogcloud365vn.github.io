@@ -29,17 +29,18 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ### 1. Log là gì? Tại sao phải đọc Log làm gì ???
 
-* Bài học 1 : *
+* Bài học 1 : 
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS Cloud tại trang https://cloud365.vn để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
 
 Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug : 
-	- Xác định các dịch vụ được cài đặt sẽ bắn ra những file log nào? Và những file log đó được đặt ở đâu?
-	- Trong quá trình cài đặt dịch vụ, bật ngay một tab nữa để xem log cài đặt.
-	- Khi cài đặt xong, lại bật thêm một tab nữa để xem log start, stop của dịch vụ.
-	- Khi test dịch vụ. Lại soi thêm log lần nữa để xem có lỗi hay không?
+
+ - Xác định các dịch vụ được cài đặt sẽ bắn ra những file log nào? Và những file log đó được đặt ở đâu?
+ - Trong quá trình cài đặt dịch vụ, bật ngay một tab nữa để xem log cài đặt.
+ - Khi cài đặt xong, lại bật thêm một tab nữa để xem log start, stop của dịch vụ.
+ - Khi test dịch vụ. Lại soi thêm log lần nữa để xem có lỗi hay không?
 	
-![log](/images/img-logging/log-00.png)
+![log](/images/img-logging/log-02.png)
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
