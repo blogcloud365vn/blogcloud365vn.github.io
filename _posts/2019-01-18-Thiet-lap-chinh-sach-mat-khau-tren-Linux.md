@@ -66,7 +66,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
 
 **Thiết lập độ dài mật khẩu ngắn nhất**
 
-Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không thể đặt mật khẩu ngắn hơn số ký tự quy định
+- Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không thể đặt mật khẩu ngắn hơn số ký tự quy định
 
     ```sh
     # Thiết lập mật khẩu ngắn nhất là 8 kí tự
@@ -124,6 +124,8 @@ Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không
 
 **Thiết lập số kí tự trong mật khẩu mới không được có trong mật khẩu cũ**
 
+- Để thiết lập số kí tự trong mật khẩu mới không được có trong mật khẩu cũ chúng ta làm như sau :
+
     ```sh
     vi /etc/security/pwquality.conf
 
@@ -132,6 +134,8 @@ Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không
     ```
 
 **Cấu hình danh sách các ký tự không được xuất hiện trong mật khẩu**
+
+- Để thiết lập danh sách các ký tự không được xuất hiện trong mật khẩu, chúng ta làm như sau:
 
     ```sh
     vi /etc/security/pwquality.conf
@@ -142,6 +146,7 @@ Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không
 
 **Cấu hình thuật toán băm/mã hóa cho mật khẩu mới**
 
+- Để thiết lập thuật toán băm/mã hóa cho mật khẩu mới chúng ta làm như sau:
 
     ```sh
     # Kiểm tra thuật đang sử dụng hiện tại
