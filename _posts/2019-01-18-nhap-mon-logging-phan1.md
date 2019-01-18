@@ -25,9 +25,11 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ## I. Nhập môn Logging. 
 
-### 1. Log là gì? Tại sao phải đọc Log làm gì ???
+### 1. Log là gì và dùng để làm gì? 
 
-#### Bài học 1 : 
+Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xem 2 tình huống dưới đây.
+
+#### Tình huống 1 : 
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS của ``Cloud365`` tại trang https://nhanhoa.com/may-chu/may-chu-ao-vps.html để dựng LAB. Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là Gia Cát Tướng Công, hiện đang nắm quân tại Nhân Hòa. 
 
@@ -46,7 +48,7 @@ Trong Linux, các file log thường được đặt tại một thư mục ``/v
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
-#### Bài học 2 : 
+#### Tình huống 2 : 
 
 Sau khi vào Nhân Hòa được 1 tháng, Thành được giao cho nhiệm vụ quản lý một máy Web wordpress trên máy ảo VPS trên hệ thống Cloud Nhân Hòa. 
 
@@ -141,7 +143,7 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
 
 **Bật mí nhỏ** : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
 
-#### 4. Ở bài tiếp theo sẽ có gì?
+#### Ở bài tiếp theo sẽ có gì?
 
 Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
  
