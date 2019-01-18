@@ -44,7 +44,7 @@ Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug :
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
-Trong Linux, các file log thường được đặt tại một thư mục **/var/log/** . Các log của dịch vụ thường được đặt tại các thư mục con bên **trong** */var/log/*
+Trong Linux, các file log thường được đặt tại một thư mục **/var/log/** . Các log của dịch vụ thường được đặt tại các thư mục con bên trong **/var/log/**
 
 Sau khi áp dụng các theo dõi log mỗi khi cài đặt dịch vụ, Thành đã dựng được LAB thành công. Thành phục quá, liền khăn gói quả bí tới Nhân Hòa tầm sư học Cloud. 
 
