@@ -139,7 +139,7 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
  - Tra cứu nhanh các thông tin của hệ thống.
  - Truy vết các event đã và đang xảy ra.
 
-``Bật mí nhỏ `` : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
+**Bật mí nhỏ** : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
 
 #### 4. Ở bài tiếp theo sẽ có gì?
 
