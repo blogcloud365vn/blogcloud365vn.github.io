@@ -9,7 +9,7 @@ tags: [DirectAdmin, Linux, CentOS7]
 type: Document
 ---
 
-Bài viết này sẽ hướng dẫn cách cài đặt SSL với Let's Encrypt trên VPS/Server của Cloud365 và sử dụng control DirectAdmin.
+Let’s Encrypt là một nhà cung cấp chứng chỉ số SSL (Certificate Authority) hoàn toàn miễn phí, được nhiều cá nhân và tổ chức tin dùng. Trong bài viết này sẽ hướng dẫn cách cài đặt SSL với Let's Encrypt trên VPS/Server của Cloud365 và sử dụng control DirectAdmin.
 ![](/images/img-letencrypt-da/image1.png)
 ## Bước 1: Enable Let's Encrypt trên DirectAdmin 
 Kiểm tra và update version DirectAdmin lên bản 1.5 hoặc cao hơn
