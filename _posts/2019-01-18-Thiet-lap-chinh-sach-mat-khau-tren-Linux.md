@@ -20,9 +20,9 @@ thì không có nhiều, hôm nay mình sẽ giới thiệu về chính sách m�
 
 - Tất cả các thiết lập về mật khẩu an toàn trên Linux đều được lưu tại `/etc/login.defs`, mở file `/etc/login.defs` và thực hiện các chính sách về mật khẩu :
 
-	```sh
-	vi /etc/login.defs
-	```
+    ```sh
+    vi /etc/login.defs
+    ```
 
 ## 1. Thiết lập số ngày hế t hạn của mật khẩu
 
