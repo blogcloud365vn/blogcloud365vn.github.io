@@ -24,27 +24,27 @@ thì không có nhiều, hôm nay mình sẽ giới thiệu về chính sách m�
     vi /etc/login.defs
     ```
 
-**Thiết lập số ngày hế t hạn của mật khẩu**
+## 1. Thiết lập số ngày hế t hạn của mật khẩu
 
 - Với thiết lập này thì các users phải thay đổi mật khẩu của họ khi mật khẩu dùng tới giới hạn mà chúng ta đã thiết lập.
 
-- Tại dòng 25, đặt số ngày mà chúng ta muốn thiết lập, ở đây là 60
+- Tại dòng 25, đặt số ngày mà chúng ta muốn thiết lập, ở đây là 60:
 
     ```sh
     PASS_MAX_DAYS 60
     ```
-**Thiết lập thời gian tồn tại của mật khẩu**
+## 2. Thiết lập thời gian tồn tại của mật khẩu
 
 - Với thiết lập này thì khi bạn thay đổi mật khẩu hay đặt mật khẩu cho user, mật khẩu đó sẽ tồn tại trong khoảng thời gian mà 
 chúng ta quy định sau đó mới có thể đổi mật khẩu:
 
-- Tại dòng 26, đặt thời gian mật khẩu tồn tại, ở đây là 2 ngày.
+- Tại dòng 26, đặt thời gian mật khẩu tồn tại, ở đây là 2 ngày:
 
     ```sh
     PASS_MIN_DAYS 2
     ```
 
-**Cảnh báo thời gian hết hạn**
+## 3. Cảnh báo thời gian hết hạn
 
 - Thiết lập số ngày cảnh báo trước khi mật khẩu hết hạn. Thiết lập này chỉ áp dụng đối với user được tạo mới, không có tác dụng đối với user đang tồn tại trên hệ thống. Đối với user đang tồn tại trên hệ thống chúng ta sử dụng câu lệnh `change -W <số ngày> <user>`
 
@@ -54,7 +54,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     PASS_WARN_AGE 7
     ```
 
-**Giới hạn mật khẩu đã được đặt trước đó**
+## 4. Giới hạn mật khẩu đã được đặt trước đó
 
 - Giới hạn người dùng sử dụng password đã được đặt trước đó. Người dùng không thể thiết lập password quá số lượt quy định.
 
@@ -71,17 +71,17 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     use_authtok remember=5
     ```
 
-**Thiết lập độ dài mật khẩu ngắn nhất**
+## 5. Thiết lập độ dài mật khẩu ngắn nhất
 
 - Thiết lập độ dài ngắn nhất của mật khẩu. Người dùng không thể đặt mật khẩu ngắn hơn số ký tự quy định.
 
-- Thiết lập mật khẩu ngắn nhất là 8 kí tự
+- Thiết lập mật khẩu ngắn nhất là 8 kí tự:
 
     ```sh
     authconfig --passminlen=8 --update
     ```
 
-**Thiết lập độ phức tạp của mật khẩu theo lớp**
+## 6. Thiết lập độ phức tạp của mật khẩu theo lớp
 
 - Trong Linux có các class kí tự như sau : UpperCase / LowerCase / Digits / Others. Độ phức tạp của mật khẩu được thiết lập theo số class xuất hiện trong mật khẩu.
 
@@ -91,7 +91,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     authconfig --passminclass=2 --update
     ```
 
-**Thiết lập số lần lặp kí tự**
+## 7. Thiết lập số lần lặp kí tự
 
 - Thiết lập số lần lặp tối đa của một ký tự liền kề  đối với password mới.
 
@@ -101,7 +101,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     authconfig --passmaxrepeat=2 --update
     ```
 
-**Thiết lập độ phức tạp đối với mật khẩu mới**
+## 8.Thiết lập độ phức tạp đối với mật khẩu mới.
 
 - Yêu cầu có ít nhất một ký tự thường :
 
@@ -121,7 +121,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     authconfig --enablereqdigit --update
     ```
 
-**Thiết lập độ dài monotonic**
+## 9. Thiết lập độ dài monotonic.
 
 - Monotonic trong toán học được gọi là hàm số đơn điệu, là một chuỗi các số tăng hoặc giảm trong khoảng. Ở đây cấu hình hình có thể được hiểu là các ký tự tăng hoặc giảm trong khoảng được định sẵn, ví dụ thiết lập là 5 thì chỉ có thể đặt mật khẩu là `12345` hoặc `abcdf` chứ không thể đặt chuỗi dài hơn được.
 
@@ -137,7 +137,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     maxsequence = 5
     ```
 
-**Thiết lập số kí tự trong mật khẩu mới không được có trong mật khẩu cũ**
+## 10. Thiết lập số kí tự trong mật khẩu mới không được có trong mật khẩu cũ.
 
 - Để thiết lập số kí tự trong mật khẩu mới không được có trong mật khẩu cũ chúng ta làm như sau.
 
@@ -153,7 +153,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     difok = 5
     ```
 
-**Cấu hình danh sách các ký tự không được xuất hiện trong mật khẩu**
+## 11. Cấu hình danh sách các ký tự không được xuất hiện trong mật khẩu.
 
 - Để thiết lập danh sách các ký tự không được xuất hiện trong mật khẩu, chúng ta làm như sau.
 
@@ -169,7 +169,7 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     badwords = denywords1 denywords2 denywords3
     ```
 
-**Cấu hình thuật toán băm/mã hóa cho mật khẩu mới**
+## 12. Cấu hình thuật toán băm/mã hóa cho mật khẩu mới.
 
 - Để thiết lập thuật toán băm/mã hóa cho mật khẩu mới chúng ta làm như sau.
 
