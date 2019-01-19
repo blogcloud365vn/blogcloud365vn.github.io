@@ -33,7 +33,7 @@ Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xe
 
 Thành là một sinh viên gương mẫu, chăm chỉ và thích các công nghệ mới, đặc biệt là Cloud. Sau một thời gian dùi mài kinh sử, Thành quyết tâm làm đồ án về Cloud OpenStack để mong đạt tấm bằng giỏi mơ ước. 
 
-Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS của ``Cloud365`` tại trang https://nhanhoa.com/may-chu/may-chu-ao-vps.html để dựng LAB.
+Thành vùi đầu vào nghiên cứu, đọc docs, thuê cả VPS của <a href="https://cloud365.vn/" >Cloud365</a> tại trang <a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" >Nhân Hòa</a> để dựng LAB.
 
 Sau 7x7 49 lần cài đặt thất bại, Thành liền pm tới một cao thủ Cloud trong cộng đồng là **Gia Cát Tướng Công**, hiện đang nắm quân tại **Nhân Hòa**. 
 
