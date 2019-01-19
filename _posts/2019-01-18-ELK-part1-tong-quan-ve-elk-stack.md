@@ -8,6 +8,14 @@ tags: [Logging, Linux]
 type: Document
 ---
 
+**Lời mở đầu**
+
+- Logging là một công cụ đơn giản và mạnh mẽ, ghi lại toàn bộ những hoạt động của hệ thống. 
+
+- Nhờ có logging, ta có thể tra cứu lại trạng thái của hệ thống trong quá khứ, những code nào đã được chạy, từ đó tìm ra lỗi và fix dễ dàng hơn.
+
+- Tuy nhiên việc tập chung và phân tích log của hệ thống là vấn đề khó khăn đối với mỗi doanh nghiệp. Hôm nay mình xin giới thiệu về ELK stack một công cụ mạnh mẽ dùng để quản lý và phân tích log tập chung.
+
 ## Mục lục
 
 [1. Technical stack là gì?](#1)
@@ -49,7 +57,7 @@ type: Document
 
 - Hình dưới đây là cơ chế hoạt động của ELK stack :
 
-![](/images/datpt-image/elk-1.png)
+![](/images/img-elk/elk-1.png)
 
 - Đầu tiên, log sẽ được đưa đến Logstash. (Thông qua nhiều con đường, ví dụ như server gửi UDP request chứa log tới URL của Logstash, hoặc Beat đọc file log và gửi lên Logstash).
 
@@ -132,7 +140,7 @@ type: Document
 
 - Kibana được phát triển riêng cho ứng dụng ELK, thực hiển chuyển đổi các truy vấn của người dùng thành câu truy vấn mà Elasticsearch có thể thực hiện được. Kết quả hiển thị bằng nhiều cách: theo các dạng biểu đồ.
 
-![](/images/datpt-image/elk-2.png)
+![](/images/img-elk/elk-2.png)
 
 <a name="4"></a>
 
