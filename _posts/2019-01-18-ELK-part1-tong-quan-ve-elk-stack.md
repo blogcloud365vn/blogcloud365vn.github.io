@@ -49,7 +49,7 @@ type: Document
 
 - Hình dưới đây là cơ chế hoạt động của ELK stack :
 
-![](/images/datpt-image/elk-1.png)
+![](/images/img-elk/elk-1.png)
 
 - Đầu tiên, log sẽ được đưa đến Logstash. (Thông qua nhiều con đường, ví dụ như server gửi UDP request chứa log tới URL của Logstash, hoặc Beat đọc file log và gửi lên Logstash).
 
@@ -132,7 +132,7 @@ type: Document
 
 - Kibana được phát triển riêng cho ứng dụng ELK, thực hiển chuyển đổi các truy vấn của người dùng thành câu truy vấn mà Elasticsearch có thể thực hiện được. Kết quả hiển thị bằng nhiều cách: theo các dạng biểu đồ.
 
-![](/images/datpt-image/elk-2.png)
+![](/images/img-elk/elk-2.png)
 
 <a name="4"></a>
 
