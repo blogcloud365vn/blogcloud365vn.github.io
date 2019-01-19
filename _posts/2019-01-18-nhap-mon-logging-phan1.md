@@ -25,7 +25,7 @@ Chuỗi bài trong phần này sẽ là những kiến thức từ cơ bản t�
 
 ## I. Nhập môn Logging. 
 
-### 1. Log là gì và dùng để làm gì? 
+## 1. Log là gì và dùng để làm gì? 
 
 Trước khi đi vào những lý thuyết khô khan về LOG, chúng ta hãy xem 2 tình huống dưới đây nhé !
 
@@ -133,7 +133,7 @@ Có thể tóm tắt lại sự việc như nhau :
  
 Thủ phạm là nhân viên Đặng Mạnh Duy nhanh chóng thừa nhận hành vi phạm tội. Thành được minh oan và được cấp trên khen ngợi vì cách xử lý vấn đề rất tốt. Hôm sau đi liên hoan, Thành cảm ơn ngay anh Đạt 2 chục chén. 
 
-#### Chuyên mục tổng kết và rút kinh nghiệm 
+## 2. Chuyên mục tổng kết và rút kinh nghiệm 
 
 - Các cao thủ khi xử lý những lỗi như ở **tình huống số 1** , thay vì ngồi dò lại từng dòng cấu hình, xem lại từng câu lệnh. Họ sẽ dùng cách xử lý nhanh hơn đó chính là xác định xem nguyên nhân của lỗi xảy ra bằng cách đọc Log.
 
@@ -148,7 +148,7 @@ Qua 2 ví dụ trên. Chúng ta có thể thấy 1 số vai trò thiết thực 
 
 **Bật mí nhỏ** : File log `cmd.log` mà Thành tra cứu không tự sinh ra đâu các bạn nhé. Muốn biết bí quyết để tạo ra log như vậy, xin mời đọc các bài sau :D 
 
-#### Ở bài tiếp theo sẽ có gì?
+## 3. Ở bài tiếp theo sẽ có gì?
 
 Trên đây chỉ là một số những công dụng cơ bản nhất của Log trong Linux. Ở những bài tiếp theo, mình sẽ giới thiệu một số thông tin như :
  
