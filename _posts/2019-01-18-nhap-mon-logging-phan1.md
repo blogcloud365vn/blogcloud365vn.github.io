@@ -44,7 +44,7 @@ Gia Cát Tướng Công liền bày cho Thành 3 bước fix bug khi cài đặt
  - Khi cài đặt xong, lại bật thêm một tab nữa để xem log start, stop của dịch vụ.
  - Khi test dịch vụ. Lại soi thêm log lần nữa để xem có lỗi hay không?
 	
-![log](/images/img-logging/log-00.png)
+![log](/images/img-logging/log-01.png)
 
 Những file log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống. Mỗi file log đều có những công dụng riêng. Có những log chuyên để ghi lại các sự kiện về user đăng nhập SSH, có file log chuyên ghi lại các gói đã được cài đặt... Đặc biệt, các service được cài đặt thường có những thư mục chứa những file log riêng của chúng. 
 
