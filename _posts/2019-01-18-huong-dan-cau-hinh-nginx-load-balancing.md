@@ -10,6 +10,7 @@ type: Document
 ---
 
 Tài liệu hướng dẫn hướng dẫn cấu hình Nginx làm load balancing cho Apache<br>
+
 ## Tổng quan
 Load balancing là kỹ thuật phân phối tải trên các web site có lượng truy cập cao. Giải pháp hỗ trợ việc tối ưu hóa tài nguyên, tăng sự đảm bảo, giảm độ trễ trên hệ thống.
 
@@ -37,63 +38,84 @@ Kết quả sau khi đăng ký dịch vụ
 ![](/images/img-caidat-nginx-lb/pic5.png)
 
 ### Thiết lập ban đầu
-Tại node `loadbalancer`
+#### Tại node `loadbalancer`
+Thiết lập hostname, cập nhật hệ thống
 ```
-# Thiết lập hostname
 hostnamectl set-hostname loadbalancer
+yum update -y
+```
 
-# Tắt Firewall và SELinux
+Tắt Firewall và SELinux
+```
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 systemctl stop firewalld
 systemctl disable firewalld
-yum update -y
+```
 
-# Cấu hình Host file
+Cấu hình Host file
+```
 echo "192.168.199.11 loadbalancer" >> /etc/hosts
 echo "192.168.199.12 web1" >> /etc/hosts
 echo "192.168.199.13 web2" >> /etc/hosts
+```
 
+Khởi động lại hệ thống
+```
 init 6
 ```
 
-Tại node `web1`
+#### Tại node `web1`
+Thiết lập hostname, cập nhật hệ thống
 ```
-# Thiết lập hostname
 hostnamectl set-hostname web1
+yum update -y
+```
 
-# Tắt Firewall và SELinux
+Tắt Firewall và SELinux
+```
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 systemctl stop firewalld
 systemctl disable firewalld
-yum update -y
+```
 
-# Cấu hình Host file
+Cấu hình Host file
+```
 echo "192.168.199.11 loadbalancer" >> /etc/hosts
 echo "192.168.199.12 web1" >> /etc/hosts
 echo "192.168.199.13 web2" >> /etc/hosts
+```
 
+Khởi động lại hệ thống
+```
 init 6
 ```
 
-Tại node `web2`
+#### Tại node `web2`
+Thiết lập hostname, cập nhật hệ thống
 ```
-# Thiết lập hostname
 hostnamectl set-hostname web2
+yum update -y
+```
 
-# Tắt Firewall và SELinux
+Tắt Firewall và SELinux
+```
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 systemctl stop firewalld
 systemctl disable firewalld
-yum update -y
+```
 
-# Cấu hình Host file
+Cấu hình Host file
+```
 echo "192.168.199.11 loadbalancer" >> /etc/hosts
 echo "192.168.199.12 web1" >> /etc/hosts
 echo "192.168.199.13 web2" >> /etc/hosts
+```
 
+Khởi động lại hệ thống
+```
 init 6
 ```
 
