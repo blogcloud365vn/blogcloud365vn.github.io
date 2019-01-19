@@ -57,7 +57,7 @@ type: Document
 
 - Hình dưới đây là cơ chế hoạt động của ELK stack :
 
-![](/images/img-elk/elk-1.PNG)
+![](/images/img-elk/elk-1.png)
 
 - Đầu tiên, log sẽ được đưa đến Logstash. (Thông qua nhiều con đường, ví dụ như server gửi UDP request chứa log tới URL của Logstash, hoặc Beat đọc file log và gửi lên Logstash).
 
