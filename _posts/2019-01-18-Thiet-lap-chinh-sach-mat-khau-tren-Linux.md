@@ -9,16 +9,14 @@ type: Document
 ---
 
 
-
-
-## 1. Lời mở đầu.
+**Lời mở đầu**
 
 - Hiện nay có rất nhiều các bài viết hướng dẫn về tạo chính sách mật khẩu trên Windows, tuy nhiên thì các chính sách về mật khẩu trên Linux 
 thì không có nhiều, hôm nay mình sẽ giới thiệu về chính sách mật khẩu an toàn trên Linux để chúng ta có thể bảo đảm an toàn cho các tài khoản cũng như máy chủ của mình.
 
 
 
-## 2. Các chính sách mật khẩu an toàn trên Linux.
+## Các chính sách mật khẩu an toàn trên Linux.
 
 - Tất cả các thiết lập về mật khẩu an toàn trên Linux đều được lưu tại `/etc/login.defs`, mở file `/etc/login.defs` và thực hiện các chính sách về mật khẩu :
 

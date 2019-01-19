@@ -8,19 +8,7 @@ tags: [SSH, Piper]
 type: Document
 ---
 
-## Mục lục
-
-[1. Lời mở đầu](#1)
-
-[2. Mô hình triển khai và phân hoạch IP](#2)
-
-[3. Các bước cài đặt](#3)
-
-[4. Một số lưu ý](#4)
-
-<a name="1"></a>
-
-## 1. Lời mở đầu.
+**Lời mở đầu**
 
 - Trong một môi trường bị hạn chế truy cập bởi tường lửa hoặc những thiết bị tương tự khác thì chúng ta cần có một SSH proxy để phục vụ 
 cho việc remote từ xa.
@@ -28,15 +16,27 @@ cho việc remote từ xa.
 - Ngoài ra có một cách khác để thực hiện truy cập SSH từ xa khác là SSH connection via HTTP, tuy nhiên ở đây mình sẽ giới thiệu một phương pháp 
 đơn giản hơn rất nhiều đó là SSH R-Proxy.
 
-<a name="2"></a>
+## Mục lục
 
-## 2. Mô hình triển khai và phân hoạch IP.
+[1. Mô hình triển khai và phân hoạch IP.](#1)
+
+[2. Các bước cài đặt.](#2)
+
+[3. Một số lưu ý](#3)
+
+<a name="1"></a>
+
+
+
+<a name="1"></a>
+
+## 1. Mô hình triển khai và phân hoạch IP.
 
 ![](/images/img-ssh-pipper/ssh-piper.png)
 
-<a name="3"></a>
+<a name="2"></a>
 
-## 3. Các bước cài đặt.
+## 2. Các bước cài đặt.
 
 - Cài đặt `golang`:
 
@@ -153,9 +153,9 @@ Trong đó root là user của ssh của sv01, 10.10.10.148 là địa chỉ sv0
 
 - Kiểm tra xem đã vào đúng máy chủ trong LAN hay chưa.
 
-<a name="4"></a>
+<a name="3"></a>
 
-## 4. Một số lưu ý.
+## 3. Một số lưu ý.
 
 - Kiểm tra log của máy chủ SSH-piper : tailf /root/.sshpiperd/log/sshpiperd.log
 
