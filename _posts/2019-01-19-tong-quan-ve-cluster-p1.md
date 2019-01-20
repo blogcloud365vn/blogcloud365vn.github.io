@@ -74,11 +74,6 @@ http://people.redhat.com/tcameron/Summit2017/HAClustering/HA_Clustering_with_RHE
 
 http://clusterlabs.org/pacemaker/doc/en-US/Pacemaker/1.1/pdf/Clusters_from_Scratch/Pacemaker-1.1-Clusters_from_Scratch-en-US.pdf
 
-https://techblog.vn/tong-quan-ve-server-clustering
-
 https://www.itprotoday.com/compute-engines/clustering-terms-and-technologies
-
-
-
 
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
