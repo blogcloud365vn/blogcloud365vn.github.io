@@ -8,6 +8,8 @@ author: tuanda
 tags: [DirectAdmin, Linux, CentOS7]
 type: Document
 ---
+WordPress là một mã nguồn web mở để quản trị nội dung (CMS – Content Management System ) và cũng là một nền tảng blog (Blog Platform) được viết trên ngôn ngữ PHP, sử dụng hệ quản trị cơ sở dữ liệu MySQL.
+DirectAdmin (viết tắt DA) là một trình quản lý hosting cho phép người quản trị dễ dàng quản lý server của mình, cung cấp một giao diện quản lý đơn giản thuận tiện cho phép quản lý tài khoản hosting. Các bạn có thể tham khảo thêm tại [đây](https://support.cloud365.vn/cloud-app/gioi-thieu-direct-admin/)
 Bài viết hướng dấn cách cài đặt cơ bản 1 site wordpess trên DirectAdmin:
 
 ## Bước 1: Download bộ cài Wordpress
@@ -72,4 +74,4 @@ Hiện ra thông báo sau là trang đã được cài đặt thành công, bấ
 ![](/images/img-letencrypt-da/image18.png)
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
