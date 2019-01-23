@@ -1,9 +1,9 @@
 ---
 date: 2019-01-23
-title: "High Availability - Phần 2: Tổng quan về Pacemaker Corosybc"
+title: "High Availability - Phần 2: Tổng quan về Pacemaker Corosync"
 categories:
   - Linux
-description: Tổng quan về Pacemaker Corosybc
+description: Tổng quan về Pacemaker Corosync
 author: thanhnb
 tags: [Cluster, Load balancer, High Availability, Linux, CentOS7]
 type: Document
