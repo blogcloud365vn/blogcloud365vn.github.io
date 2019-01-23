@@ -167,4 +167,4 @@ type: Document
 - Cộng đồng mạnh => tutorial nhiều => dễ dàng tiếp cận.
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

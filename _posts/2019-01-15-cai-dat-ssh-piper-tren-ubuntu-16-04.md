@@ -162,4 +162,4 @@ Trong đó root là user của ssh của sv01, 10.10.10.148 là địa chỉ sv0
 - File ~/.sshpiperd/config/start.sh được coi như là initd của SSH-piper chúng ta có thể tạo một file trong /etc/init.d để cho dễ nhớ đường dẫn mỗi khi muốn khởi động.
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
