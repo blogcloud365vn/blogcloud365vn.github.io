@@ -17,7 +17,7 @@ type: Document
 <a name="tongquanveidrac"></a>
 ## 1. Tổng quan về iDRAC
 
-Ngày nay, đối với một người kỹ sư hệ thống 24 tiếng một ngày dường như không đủ để tối ưu cho hệ thống của mình. Thực tế đã xảy ra rất nhiều trường hợp server vật lý để ở Datacenter gặp sự cố về phần cứng mà người quản trị không thể giám sát và có cảnh báo kịp thời dẫn tới có những sự cố downtime đáng tiếc, mang lại thiệt hại lớn cho cá nhân, tổ chức, doanh nghiệp. Có những công cụ nhỏ tích hợp sẵn trong server nhưng không hẳn kỹ sư hệ thống nào cũng biết đó là việc sử dụng chức năng iDRAC.
+Ngày nay, đối với một người kỹ sư hệ thống 24 tiếng một ngày dường như không đủ để tối ưu cho hệ thống của mình. Thực tế đã xảy ra rất nhiều trường hợp server vật lý để ở Datacenter gặp sự cố về phần cứng mà người quản trị không thể giám sát và có cảnh báo kịp thời dẫn tới có những sự cố downtime đáng tiếc, mang lại thiệt hại lớn cho cá nhân, tổ chức, doanh nghiệp. Có những công cụ nhỏ tích hợp sẵn trong dòng server Dell nhưng không hẳn kỹ sư hệ thống nào cũng biết đó là việc sử dụng chức năng iDRAC.
 
 Đối với dòng server DELL thế hệ mới model Power Edge Server thế hệ thứ 12 của Dell thì đều có tích hợp `iDRAC` (Integrated Dell Remote Access Controller) cung cấp tính năng để quản lý các thông số hardware của server từ xa, troubleshoot, remote thông qua một giao diện web người quản trị có thể không phải di chuyển tới server cắm màn hình cũng có thể thao tác với server của mình.
 
