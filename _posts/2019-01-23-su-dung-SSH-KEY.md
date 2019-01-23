@@ -33,13 +33,13 @@ SSH Keys là một phương thức xác thực đăng nhập với máy chủ th
 - Đối với windows
   - Người dùng có thể sử dụng phần mềm PuTTY-Gen để tạo SSH key.Sau khi download phần mềm PuTTY-Gen về và cài đặt ta làm theo hướng dẫn như hình bên dưới
   
-  ![](./images/img-ssh-key/1.png)
+  ![](/images/img-ssh-key/1.png)
   - Sau khi click vào genarate bạn di chuyển chuột quanh màn hình để tạo key.Sau khi tạo key xong ta click vào Save private key như hình bên dưới để lưu lại private key được tạo ra
   
-  ![](./images/img-ssh-key/2.png)
+  ![](/images/img-ssh-key/2.png)
   - Sau đó ta lưu lại đoạn public key ra một file với nội dung copy đoạn mã như ảnh bên dưới
   
-  ![](./images/img-ssh-key/3.png)
+  ![](/images/img-ssh-key/3.png)
   
 - Đối với Linux
   - Trên server Linux chạy lệnh ssh-keygen -t rsa
