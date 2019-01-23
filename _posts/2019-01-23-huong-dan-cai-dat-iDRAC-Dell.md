@@ -4,7 +4,7 @@ categories:
   - Other
 description: Tài liệu Hướng dẫn cấu hình iDRAC và thao tác giám sát server Dell
 author: duydm
-tags: [iDRAC, DELLR720]
+tags: [iDRAC, DELL]
 type: Document
 ---
 
