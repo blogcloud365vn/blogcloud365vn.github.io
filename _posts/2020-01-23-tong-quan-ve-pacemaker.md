@@ -10,7 +10,7 @@ type: Document
 ---
 
 ## Tổng quan
-Pacemaker là trình quản lý tài nguyên trong cluster được phát triển bởi ClusterLabs. Pacemaker tương thích với rất nhiều dịch vụ phổ biến hiện có và hoàn toàn có thể tự phát triển module để quản lý các tài nguyên mà pacemaker chưa hỗ trợ.
+__Pacemaker__ là trình quản lý tài nguyên trong cluster được phát triển bởi ClusterLabs. Pacemaker tương thích với rất nhiều dịch vụ phổ biến hiện có và hoàn toàn có thể tự phát triển module để quản lý các tài nguyên mà pacemaker chưa hỗ trợ.
 
 Kiến trúc triển khai bới Pacemaker cho phép tùy biến, hỗ trợ tối đa để các tài nguyên (resource) thuộc cluster luôn sẵn sàng. Đồng thời pacemaker có khả năng phát hiện phục hồi các tài nguyên, các node đang xảy ra sự cố thông qua các engine hỗ trợ (Corosync, Heartbeat), cho phép tùy biến tùy theo các kiến trúc khác nhau.
 
@@ -21,18 +21,18 @@ Các tính năng chính của Pacemaker:
 - Hỗ trợ kỹ thuật `fencing`, kỹ thuật cô lập tài nguyên trên mỗi node
 - Hỗ trợ các cluster từ nhỏ tới lớn
 - Hỗ trợ kỹ thuật `Resource-driven cluster` - Kỹ thuật phân cấp, nhóm tài nguyên để quản lý độc lập
-- Hỗ trợ kỹ thuật `Quorate Clusters` - Kỹ thuật tính điểm của các node thuộc cluster, ý tưởng của kỹ thuật là khi cụm lớn bị phân mảnh thành 2 phần, cluster sẽ đánh giá so sánh số điểm của 2 cụm để quyết định cụm nào sẽ tiếp tục chạy, cụm nào sẽ bị đóng băng hoặc tắt hẳn.
+- Hỗ trợ kỹ thuật `Quorate Clusters` - Kỹ thuật tính điểm trên các node thuộc cluster, ý tưởng của kỹ thuật là khi cụm lớn bị phân mảnh thành 2 phần, cluster sẽ đánh giá so sánh số điểm của 2 cụm để quyết định cụm nào sẽ tiếp tục chạy, cụm nào sẽ bị đóng băng hoặc tắt hẳn.
 - Hỗ trợ các thiết lập dự phòng
 - Tự động nhân bản cấu hình tới các node thuộc cluster.
-- Có khả nhân thức tài nguyên
+- Có khả nhân thức sự thay đổi trên tài nguyên
 - Hỗ trợ các kiểu dịch vụ nâng cao
   - Nhân bản (Clone): Dịch vụ được nhân bản tới nhiều node dể tăng tinhs sẵn sàng
   - Đa trạng thái (Multi-state): Các dịch vụ có nhiều trạng thái (Master/Slave, Primary/ Secondary).
 - Thông thất quản trị cluster qua các công cụ hỗ trợ.
 
-Corosync hay Corosync Cluster Engine là dự án mã nguồn mở bắt nguồn từ dự án OpenAIS. Mục đích phát triển của Corosync là tạo ra hệ thống có tính liên kết, cung cấp tính sẵn sàng cao cho các ứng dụng chạy trên.
+__Corosync__ hay __Corosync Cluster Engine__ là dự án mã nguồn mở bắt nguồn từ dự án OpenAIS. Mục đích phát triển của Corosync là tạo ra hệ thống có tính liên kết, cung cấp tính sẵn sàng cao cho các ứng dụng chạy trên.
 
-Corosync cung cấp 4 API viết bằng ngôn ngữ C:
+__Corosync__ cung cấp 4 API viết bằng ngôn ngữ C:
 - Nhóm các tiến trình thành mô hình khép kín, bảo đảm trạng thái tiến trình nhân rộng trong nhóm
 - Cung cấp trình quản trị đơn giản cho phép khởi động lại tiến trình ứng dụng khi chúng xảy ra sự cố
 - Cung cấp cơ sở dữ liệu bộ nhớ (in-memory database) lưu trữ các cấu hình, thông kế trạng thái (in-memory database). Cho phép truy vấn, thiết lập, nhận thông báo khi thay đổi.
@@ -69,14 +69,17 @@ Pacemaker hỗ trợ bất kể các thiết Cluster đáp ứng theo thiết k�
 - N to M
 
 ### VD:
-- Mô hình Active / Passive
-  ![](/images/img-pacemaker-overview/pic3.png)
-  
-- Mô hình Shared Failover
-  ![](/images/img-pacemaker-overview/pic4.png)
+Mô hình Active / Passive
 
-- Mô hình Active/ Active ( N to N)
-  ![](/images/img-pacemaker-overview/pic5.png)
+![](/images/img-pacemaker-overview/pic3.png)
+  
+Mô hình Shared Failover
+
+![](/images/img-pacemaker-overview/pic4.png)
+
+Mô hình Active/ Active ( N to N)
+
+![](/images/img-pacemaker-overview/pic5.png)
 
 # Nguồn
 
@@ -88,3 +91,5 @@ https://www.usenix.org/legacy/publications/library/proceedings/usenix04/tech/sig
 
 https://www.usenix.org/legacy/publications/library/proceedings/usenix04/tech/sigs/full_papers/bottomley/bottomley_html/node6.html
 
+---
+Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
