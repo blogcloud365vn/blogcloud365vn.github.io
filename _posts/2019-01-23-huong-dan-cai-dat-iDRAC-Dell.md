@@ -66,6 +66,7 @@ Login thành công hiển thị giao diện dưới
 
 ![](/images/img-idrac-dell/idrac10.png)
 
+<a name="giamsatidrac"></a>
 ## 3.Giám sát các thông tin trên iDRAC ##
 
 ### 3.1. Tab server ###
