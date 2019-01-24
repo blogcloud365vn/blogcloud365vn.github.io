@@ -8,8 +8,6 @@ author: canhdx
 tags: [Beginer, Linux, Other]
 type: Document
 ---
-![](https://i.imgur.com/oNi9e15.png) 
-<center><h1 style="color:Tomato;"><b>Python cho Sysadmin - Hướng dẫn cài đặt Python3.6 trên CentOS7</b></h1></center>
 
 # 1. Tại sao lại sử dụng Python và ... sao lại là Python3
 
@@ -132,5 +130,4 @@ deactivate
 ```
 
 ---
-
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
