@@ -21,7 +21,7 @@ Theo đánh giá bản thân
 - Nhiều module hỗ trợ 
 - Cấu trúc câu lệnh dễ tiếp cận cho người mới
 
-![](/images/image-python/python2-vs-python3.jpg)
+![](/images/img-python/python2-vs-python3.jpg)
 
 Đa số các bản python cài đặt sẵn trong OS linux như CentOS, Ubuntu nhằm mục đích ổn định nên thường sử dụng bản mặc định là 2.7.x và hơn hết là chậm trong việc update các tính năng mới.
 
