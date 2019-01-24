@@ -9,17 +9,18 @@ tags: [Beginer, Linux, Other]
 type: Document
 ---
 ![](https://i.imgur.com/oNi9e15.png) 
-<center><h1 style="color:Tomato;"><b>Cài đặt Python3.6 trên CentOS7</b></h1></center>
+<center><h1 style="color:Tomato;"><b>Python cho Sysadmin - Hướng dẫn cài đặt Python3.6 trên CentOS7</b></h1></center>
 
-# 1. Tại sao lại là Python và sao lại là Python3
+# 1. Tại sao lại sử dụng Python và ... sao lại là Python3
 
 Python là một ngôn ngữ lập trình bậc cao không còn quá xa lạ với mọi người. Với quan điểm là một SystemAdmin thì việc sử dụng một ngôn ngữ nào đó hỗ trợ tốt nhất cho việc thao tác với hệ thống là điều khá quan trọng. 
 
 Theo các số liệu thực tế tổng hợp của [github.blog](https://github.blog/2018-11-15-state-of-the-octoverse-top-programming-languages/) thì Python là một ngôn ngữ đáng để tìm hiểu.
 
 Theo đánh giá bản thân 
-- Nhiều module hỗ trợ 
 - Cấu trúc câu lệnh dễ tiếp cận cho người mới
+- Nhiều module hỗ trợ 
+- ...
 
 ![](/images/img-python/python2-vs-python3.jpg)
 
