@@ -8,6 +8,9 @@ author: canhdx
 tags: [Beginer, Linux, Other]
 type: Document
 ---
+
+## Giới thiệu
+
 Gitlab là một mã nguồn mở của máy chủ Git để quản lý mã nguồn dự án được sử dụng rộng rãi trong các tổ chức doanh nghiệp. 
 
 ![](/images/img-gitlab/gitlab-00.jpeg)
@@ -19,32 +22,31 @@ Hiện tại Gitlab hỗ trợ 3 phiên bản là
 
 Bài viết sẽ hướng dẫn chi tiết cách cài đặt phiên bản Gitlab-CE trên Server CentOS7
 
-## Cài đặt cấu hình 
+## Chuẩn bị môi trường cài đặt
 
-Chuẩn bị: 
 - 1 Server CentOS7.5 
 - Cấu hình tối thiểu 
     + 1 CPU
     + RAM 2GB
     + Disk 10GB
-> Hoặc để phù hợp với yêu cầu chi tiết có thể tham khảo tại trang chủ [Gitlab](https://docs.gitlab.com/ee/install/requirements.html)
+> Hoặc để phù hợp với yêu cầu chi tiết có thể tham khảo tại trang chủ <a href="https://docs.gitlab.com/ce/install/requirements.html" target="_blank">Gitlab</a>
 - Có kết nối Internet 
 
-Thực hiện cài đặt các packages cần thiết 
+## Cài đặt các packages cần thiết 
 ```sh 
 yum install epel-release -y 
 yum update -y
 yum install curl policycoreutils-python openssh-server 
 ```
 
-Cấu hình firewalld 
+## Cấu hình firewalld 
 ```sh 
 sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 ```
 
-Cấu hình disable Selinux
+## Cấu hình disable Selinux
 ```sh 
 sudo setenforce 0
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
@@ -53,7 +55,7 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/selinux/config
 ```
 
-Tiếp theo chúng ta có thể cài đặt `Postfix` để gửi mail thông báo
+## Cài đặt `Postfix` để gửi mail thông báo
 ```sh 
 yum install postfix
 systemctl start postfix
@@ -61,12 +63,14 @@ systemctl enable postfix
 systemctl status postfix
 ```
 
-Bổ sung repo
+## Bổ sung repo cho gitlab-ce
 ```sh 
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
 ```
 
-Cấu hình domain và cài đặt 
+## Cấu hình domain và cài đặt 
+
+Cấu hình domain cho gitlab
 ```sh 
 EXTERNAL_URL="http://gitlab.nhanhoa.local" yum install -y gitlab-ce
 ```
@@ -76,7 +80,9 @@ Chúng ta có thể chỉnh sửa lại cấu hình cài đặt tại `/etc/gitl
 gitlab-ctl reconfigure
 ```
 
-Truy cập Dashboard và thao tác [http://gitlab.nhanhoa.local](http://gitlab.nhanhoa.local)
+## Truy cập Dashboard và thao tác 
+
+Truy cập trên trình duyệt địa chỉ vừa cài đặt phía trên
 
 - Cấu hình admin/root password cho Gitlab 
 
@@ -91,7 +97,7 @@ Truy cập Dashboard và thao tác [http://gitlab.nhanhoa.local](http://gitlab.n
 	![](/images/img-gitlab/gitlab-03.png)
 
 
-Để thêm thông tin chi tiết về cấu hình và khai thác có thể tham khảo tại trang chủ Gitlab
+Để thêm thông tin chi tiết về cấu hình và khai thác có thể tham khảo tại trên trang chủ <a href="https://docs.gitlab.com" target="_blank">Gitlab</a>
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
