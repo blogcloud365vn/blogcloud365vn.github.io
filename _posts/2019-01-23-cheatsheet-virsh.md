@@ -17,6 +17,7 @@ daemon (`libvirtd`) và các gói tiện tích giao diện dòng lệnh (`virsh`
 - Mục đích chính của `Libvirt` là cung cấp một cách duy nhất để quản lý ảo hóa từ các nhà cung cấp và các loại hypervisor khác nhau. Ví dụ, dòng lệnh `virsh list` có thể được sử dụng để liệt kê ra các máy ảo đang tồn tại cho một số hypervisor được hỗ trợ (KVM, Xen, Vmware ESX, … ). Không cần thiết phải sử dụng một tool xác định cho từng hypervisor.
 
 Cấu trúc cơ bản của `virsh` như sau:
+
 ```
 virsh [OPTION]... <command> <domain> [ARG]...
 ```
@@ -37,8 +38,78 @@ virsh list
 ```
 
 ## Tạo máy ảo
+Tạo file XML định nghĩa thông tin máy ảo. Ví dụ:
 
+``` sh
+<domain type='kvm'>
+  <name>tuan</name>
+  <memory unit='MB'>1024</memory>
+  <currentMemory unit='MB'>1024</currentMemory>
+  <uuid>dc985106-cfd8-11e8-af56-8f2ed6092233</uuid>
+  <vcpu>1</vcpu>
+  <os>
+    <type>hvm</type>
+    <boot dev='cdrom'/>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/kvm</emulator>
+    <disk type="file" device="disk">
+      <driver name="qemu" type="raw"/>
+      <source file="/var/lib/libvirt/images/tuan.img"/>
+      <target dev="vda" bus="virtio"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x04" function="0x0"/>
+    </disk>
+    <disk type="file" device="cdrom">
+      <driver name="qemu" type="raw"/>
+      <source file="/var/lib/libvirt/images/CentOS-6.9-x86_64-minimal.iso"/>
+      <target dev="hdc" bus="ide"/>
+      <readonly/>
+      <address type="drive" controller="0" bus="1" target="0" unit="0"/>
+    </disk>
+    <interface type='bridge'>
+      <source bridge='br0'/>    
+    </interface>
+    <controller type="ide" index="0">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
+    </controller>
+    <input type='mouse' bus='ps2'/>
+    <graphics type='vnc' port='-1' autoport="yes" listen='0.0.0.0'/>
+    <console type='pty'>
+      <target port='0'/>
+    </console>
+  </devices>
+</domain>
+```
+- `name`: Tên của máy ảo.
+- `uuid`: uuid của máy ảo
+- `maxMemory` : Dung lượng RAM tối đa có thể sử dụng
+- `currentMemory` : Dung lượng RAM thực tế đang được sử dụng
+- `vcpu placement='static'`: số lượng vCPU của máy
 
+- file domain xml phía trên sẽ tạo ra máy ảo với những thông số sau:
+    - 1 GB RAM, 1 vCPU, 1 ổ đĩa
+    - Đường dẫn tới ổ đĩa: `/var/lib/libvirt/images/tuan.img`
+    - Máy ảo được boot từ CDROM
+    - Sử dụng Linux Bridge br0
+
+- Tạo máy ảo từ file XML:
+
+```
+virsh define /tmp/new-guest.xml <define nhưng không start>
+virsh create /tmp/new-guest.xml <define và start>
+virsh start new-guest
+```
+- Thực hiện việc export thông tin máy ảo ra XML:
+```
+virsh dumpxml GUEST > /tmp/guest.xml
+```
 
 ## Các thao tác liên quan đến bật /tắt máy ảo:
 
@@ -59,6 +130,8 @@ virsh list
 |resume	    | Khởi động máy ảo từ trạng thái pause|
 |autostart  | Tự động start máy ảo khi hệ thống start|
 |autostart --disable | Tắt tự động start máy ảo |
+|undefine --domain vm1 | Thực hiện việc xóa máy ảo / sau đó thực hiện xóa file ổ đĩa |
+
 - Stop all máy ảo:
 
 ```
@@ -87,14 +160,6 @@ done
 |domxml-from-native	| Chuyển đổi cấu hình từ các lib khác sang libvirt XML (libxl ) |
 |domxml-to-native	| Chuyển đổi cấu hình libvirt XML sang các định dạng khác |
 
-
-define	Outputs an XML configuration file for a guest.
-undefine	Deletes all files associated with a guest.
-migrate	Migrates a guest to another host.
-create	Creates a guest from an XML configuration file and starts the new guest.
-dumpxml	Outputs the XML configuration file for the guest.
-
-
 ## Quản lý snapshot
 
 - Tạo snapshot:
@@ -113,8 +178,6 @@ virsh snapshot-create-as --domain vm1 \
  Name                 Creation Time             State
 ------------------------------------------------------------
  snapshot1            2019-01-24 11:14:22 +0700 running
-
-root@nhcephbka02:~#
 ```
 - Hiển thị thông tin snapshot:
 
@@ -143,6 +206,15 @@ virsh snapshot-revert --domain vm1  --snapshotname snapshot1  --running
 # virsh snapshot-delete --domain vm1 --snapshotname snapshot1
 Domain snapshot snapshot1 deleted
 ```
+
+## Clone máy ảo
+
+```
+sudo virt-clone -o web_devel -n database_devel -f /path/to/database_devel.img
+```
+- `-o` : Máy nguồn.
+- `-n` : Máy đích.
+- `-f` : Đường dẫn đến file / ổ đĩa máy ảo mới.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
