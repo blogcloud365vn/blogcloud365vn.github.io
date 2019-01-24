@@ -25,7 +25,7 @@ Chuẩn bị một [VPS](https://cloud365.vn/){:target="_blank"} có cấu hình
 
 ## 2. Stop firewall và SELinux
 
-Vì bài viết này là hướng dẫn cơ bản nên mình sẽ chạy các command phía dưới với quyền `root` và setup server của mình chạy trong môi trường lý tường. Nếu các bạn chạy trên __production__, để đảm bảo an toàn thì nhớ enable và set rule cho firewall nhé.
+Vì bài viết này là hướng dẫn cơ bản nên mình sẽ chạy các command phía dưới với quyền `root` và setup server của mình chạy trong môi trường lý tưởng. Nếu các bạn chạy trên __production__, để đảm bảo an toàn thì nhớ enable và set rule cho firewall nhé.
 
 ```
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
@@ -80,7 +80,7 @@ __bundler__ dùng để quản lý, install, uninstall.. các gem. Các gem là 
 
 Như đã nói, các bạn có thể tự build một blog cho riêng mình hoặc tải một theme free có sẵn trên mạng để deploy một blog cho riêng mình.
 
-Ở đây mình chọn blog của [__cloud365vn__](https://cloud365.vn){:target="_blank"}và Github của cloud365 ở [đây](https://github.com/blogcloud365vn/blogcloud365vn.github.io){:target="_blank"}. Các bạn cũng có thể contribute với __cloud365__ để chia sẻ kiến thức của mình cho những người khác nữa nhé :D.  
+Ở đây mình chọn blog của [__cloud365vn__](https://cloud365.vn){:target="_blank"} và Github của cloud365 ở [đây](https://github.com/blogcloud365vn/blogcloud365vn.github.io){:target="_blank"}. Các bạn cũng có thể contribute với __cloud365__ để chia sẻ kiến thức của mình cho những người khác nữa nhé :D.  
 
 Vì loài người rất đáng sợ, nên mình sẽ chạy blog của mình dưới quyền của `jekyll` !
 
@@ -168,4 +168,4 @@ Chúc các bạn thành công và cảm ơn các bạn đã theo dõi loạt bà
 
 ---
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
