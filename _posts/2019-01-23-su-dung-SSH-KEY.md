@@ -31,7 +31,7 @@ SSH Keys là một phương thức xác thực đăng nhập với máy chủ th
 ### 4. Cách tạo SSH Key
 
 - Đối với windows
-  - Người dùng có thể sử dụng phần mềm PuTTY-Gen để tạo SSH key.Sau khi download phần mềm PuTTY-Gen về và cài đặt ta làm theo hướng dẫn như hình bên dưới
+  - Người dùng có thể sử dụng phần mềm PuTTY-Gen ([huongdan](https://blog.cloud365.vn/windows/huong-dan-cai-dat-va-su-dung-putty/)) để tạo SSH key.Sau khi download phần mềm PuTTY-Gen về và cài đặt ta làm theo hướng dẫn như hình bên dưới
   
   ![](/images/img-ssh-key/1.png)
   - Sau khi click vào genarate bạn di chuyển chuột quanh màn hình để tạo key.Sau khi tạo key xong ta click vào Save private key như hình bên dưới để lưu lại private key được tạo ra
@@ -69,13 +69,27 @@ SSH Keys là một phương thức xác thực đăng nhập với máy chủ th
   +----[SHA256]-----+
   ```
  
- ### 5. Cách upload public lên server
- - Ta có thể dùng cách thủ công để upload public key lên server bằng cách sử dụng phần mềm winscp, sử dụng SFTP, FTP ...
- - Nếu không muốn sử dụng cách thủ công bạn có thể sử dụng lệnh copy key giữa 2 server linux như sau,Ví dụ nếu ta muốn copy Key từ server có IP là A lên server có IP là B thì ta ssh vào server A gà gõ lệnh 
+### 5. Cách upload public lên server
+ - Truy cập SSH từ windows client vào server linux
+ ![](/images/img-ssh-key/4.png)
+   - Ở mô hình này ta có thể upload public key (đã tạo ở phần trên bằng phần mềm putty-gen) lên server bằng cách sử dụng phần mềm winscp, sử dụng SFTP, FTP ... Ở ví dụ này chúng ta tạm sử dụng phần mềm Winscp để upload
+   - Chúng ta kết nối Winscp tới server linux với các thông tin đăng nhập như Host name (Địa chỉ IP server linux), User nam (root) , Password (password của user root)
+ ![](/images/img-ssh-key/5.png)
+   - Khi đã truy cập vào server linux bằng phần mềm winscp, ở khung bên trái giao diện ta tìm tới đường dẫn chứa public_key đã lưu (id_rsa.pub), ở khung bên phải giao diện ta tìm tới đường dẫn /root/.ssh và upload file id_rsa.pub lên sau đó rename file id_rsa.pub thành authorized_keys
+ ![](/images/img-ssh-key/6.png)
+   - Sau khi upload xong file public key ta tiến hành kết nối ssh tới server linux bằng phần mềm putty kết hợp với file private key lưu trên máy tính
+ ![](/images/img-ssh-key/7.png)
+   - Trong ảnh trên nhập thông tin IP của server Linux
+ ![](/images/img-ssh-key/8.png)
+   - Trong ảnh trên ta cần Browse tới đường dẫn chứa file private key (private.ppk) sau đó click vào open để kết nối
+ - Truy cập SSH giữa 2 server linux
+ ![](/images/img-ssh-key/9.png)
+   - Chúng ta sử dụng lệnh copy key giữa 2 server linux như sau,Ví dụ nếu ta muốn copy Key từ server có IP là A lên server có IP là B thì ta ssh vào server A gà gõ lệnh 
  ```sh
  ssh-copy-id -i /root/.ssh/id_rsa.pub B
  ```
  Với B là địa chỉ IP của server B, sau đó hiển thị thông báo nhập password của server B, bạn nhập pass root ssh của server B để copy key hoàn thành nhé
+   - Tương tự ta thao tác ngược lại với server A để copy public key từ server B về server A và kết nối ssh từ server B tới server A để kiểm tra
  
  ---
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
