@@ -71,19 +71,31 @@ SSH Keys là một phương thức xác thực đăng nhập với máy chủ th
  
 ### 5. Cách upload public lên server
  - Truy cập SSH từ windows client vào server linux
+ 
  ![](/images/img-ssh-key/4.png)
+ 
    - Ở mô hình này ta có thể upload public key (đã tạo ở phần trên bằng phần mềm putty-gen) lên server bằng cách sử dụng phần mềm winscp, sử dụng SFTP, FTP ... Ở ví dụ này chúng ta tạm sử dụng phần mềm Winscp để upload
    - Chúng ta kết nối Winscp tới server linux với các thông tin đăng nhập như Host name (Địa chỉ IP server linux), User nam (root) , Password (password của user root)
+   
  ![](/images/img-ssh-key/5.png)
+ 
    - Khi đã truy cập vào server linux bằng phần mềm winscp, ở khung bên trái giao diện ta tìm tới đường dẫn chứa public_key đã lưu (id_rsa.pub), ở khung bên phải giao diện ta tìm tới đường dẫn /root/.ssh và upload file id_rsa.pub lên sau đó rename file id_rsa.pub thành authorized_keys
+ 
  ![](/images/img-ssh-key/6.png)
+ 
    - Sau khi upload xong file public key ta tiến hành kết nối ssh tới server linux bằng phần mềm putty kết hợp với file private key lưu trên máy tính
+ 
  ![](/images/img-ssh-key/7.png)
+ 
    - Trong ảnh trên nhập thông tin IP của server Linux
+ 
  ![](/images/img-ssh-key/8.png)
+ 
    - Trong ảnh trên ta cần Browse tới đường dẫn chứa file private key (private.ppk) sau đó click vào open để kết nối
  - Truy cập SSH giữa 2 server linux
+ 
  ![](/images/img-ssh-key/9.png)
+ 
    - Chúng ta sử dụng lệnh copy key giữa 2 server linux như sau,Ví dụ nếu ta muốn copy Key từ server có IP là A lên server có IP là B thì ta ssh vào server A gà gõ lệnh 
  ```sh
  ssh-copy-id -i /root/.ssh/id_rsa.pub B
