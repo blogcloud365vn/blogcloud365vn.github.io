@@ -92,4 +92,4 @@ https://www.usenix.org/legacy/publications/library/proceedings/usenix04/tech/sig
 https://www.usenix.org/legacy/publications/library/proceedings/usenix04/tech/sigs/full_papers/bottomley/bottomley_html/node6.html
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
