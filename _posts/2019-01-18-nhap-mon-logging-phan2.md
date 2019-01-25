@@ -14,13 +14,12 @@ type: Document
 Xin chào mừng các bạn quay trở lại với lớp học về Log của mình ! 
 Trước khi đi vào phần 2, chúng ta sẽ điểm lại một số nội dung chính có trong phần 1 nhé. Link tham khảo <a href="https://blog.cloud365.vn/logging/nhap-mon-logging-phan1/" target="_blank">phần 1</a>
 
- - Log là gì và dùng để làm gì?
-Tại phần khái niệm này, mình đã đưa ra 2 tình huống mà việc phân tích Log đã được áp dụng. Từ đó, ta có thể thấy :
-
 **LOG là gì**
+
 File log của hệ thống giống như những quyển sổ nhật ký, ghi lại toàn bộ quá trình hoạt động của hệ thống.
 
 **LOG dùng để làm gì**
+
 Những vai trò dễ nhận thấy của LOG là : 
 
  - TroubleShooting trong quá trình cài đặt các service.
@@ -64,13 +63,13 @@ Nov  9 21:33:01 elk systemd: Started LSB: Bring up/down networking.
 
 File log message thể hiện rõ luồng xử lý của việc restart networking như sau : 
 
- - 1. Shutdown dịch vụ networking
+ - **1**. Shutdown dịch vụ networking
  
 ```sh
 Nov  9 21:32:51 elk systemd: Stopping LSB: Bring up/down networking...
 ```
 
- - 2. Các interface bị down xuống
+ - **2**. Các interface bị down xuống
  
 ```sh
 Nov  9 21:32:52 elk network: Shutting down interface ens160:  [  OK  ]
@@ -79,13 +78,13 @@ Nov  9 21:32:52 elk network: Shutting down loopback interface:  [  OK  ]
 Nov  9 21:32:52 elk systemd: Stopped LSB: Bring up/down networking.
 ```
 
- - 3. Dịch vụ network được bật lên
+ - **3**. Dịch vụ network được bật lên
 
 ```sh
 Nov  9 21:32:53 elk network: Bringing up loopback interface:  [  OK  ]
 ```
 
- - 4. Các interface được bật lên
+ - **4**. Các interface được bật lên
 
 ```sh
 Nov  9 21:32:53 elk network: Bringing up loopback interface:  [  OK  ]
@@ -97,7 +96,7 @@ Nov  9 21:32:57 elk kernel: vmxnet3 0000:0b:00.0 ens192: NIC Link is Up 10000 Mb
 Nov  9 21:33:01 elk network: Bringing up interface ens192:  [  OK  ]
 ```
 
- - 5. Dịch vụ network xác thực đã được bật
+ - **5**. Dịch vụ network xác thực đã được bật
 ```sh
 Nov  9 21:33:01 elk systemd: Started LSB: Bring up/down networking.
 ```
@@ -182,7 +181,7 @@ Chứa thông tin bộ đệm kernel ring. Khi hệ thống khởi động, file
 Chúng ta hãy thử xem 10 dòng log cuối cùng trong file log dmesg mỗi khi một máy ảo trên hệ thống Cloud Nhân Hòa được tạo :
 
 ```sh
-[root@com2-test1 ~]# tail -n 10 /var/log/dmesg
+tail -n 10 /var/log/dmesg
 ```
 
 ```sh
@@ -229,6 +228,7 @@ Các bạn thấy user **duydm** có chút quen thuộc bài không ạ?.
 Hãy dành 30s để đọc lại <a href="https://blog.cloud365.vn/logging/nhap-mon-logging-phan1/" target="_blank">Tính huống 2</a> của bài trước nhé. Chắc hẳn mọi người vẫn nhớ cách mà Thành đã thoát khỏi một bàn thua ngoạn mục nhờ việc phân tích log SSH chứ !
 
 Từ log SSH thành công, ta có thể phân tích thành các dữ liệu sau :
+
 	 - User login SSH (duydm)
 	 - IP login SSH (27.72.59.xxx)
 	 - Source Port của tiến trình SSH (49572)
