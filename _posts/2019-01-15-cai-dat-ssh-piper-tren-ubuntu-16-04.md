@@ -38,120 +38,120 @@ cho việc remote từ xa.
 
 ## 2. Các bước cài đặt.
 
-- Cài đặt `golang`:
+Cài đặt `golang`:
 
-    ```sh
-    apt install golang golang-go -y
-    ```
+```sh
+apt install golang golang-go -y
+```
 
-- Tạo `GOPATH` và thiết lập biến môi trường :
+Tạo `GOPATH` và thiết lập biến môi trường :
 
-    ```sh
-    mkdir ~/.go
-    export GOPATH=$HOME/.go
-    ```
+```sh
+mkdir ~/.go
+export GOPATH=$HOME/.go
+```
 
-- Cài đặt ssh-piper :
+Cài đặt ssh-piper :
 
-    ```sh
-    go get github.com/tg123/sshpiper/sshpiperd
-    ```
+```sh
+go get github.com/tg123/sshpiper/sshpiperd
+```
 
-- Tạo thư mục cấu hình host cũng như thư mục log :
+Tạo thư mục cấu hình host cũng như thư mục log :
 
-    ```sh
-    mkdir -p ~/.sshpiperd/config
-    mkdir -p ~/.sshpiperd/log
-    ```
+```sh
+mkdir -p ~/.sshpiperd/config
+mkdir -p ~/.sshpiperd/log
+```
 
 Ở đây thì ~/.sshpiper/config thì mình sẽ dùng để cấu hình các host ssh bên trong LAN và ~/.sshpiper/log mình dùng để lưu trữ log
 
-- Cấu trúc thư mục cấu hình host ssh piper như sau :
+Cấu trúc thư mục cấu hình host ssh piper như sau :
 
-    ```sh
-    ~/.sshpiperd/
-    |
-    |
-    |-----config
-    |       |
-    |       |----sv01
-    |       |      |
-    |       |      |----sshpiper_upstream
-    |       |
-    |       |
-    |       |-----sv02
-    |               |
-    |               |----sshpiper_upstream
-    ```
+```sh
+~/.sshpiperd/
+|
+|
+|-----config
+|       |
+|       |----sv01
+|       |      |
+|       |      |----sshpiper_upstream
+|       |
+|       |
+|       |-----sv02
+|               |
+|               |----sshpiper_upstream
+```
 
-Trong đó : thư mục sv01 và sv02 sẽ có file sshpiper_upstream dùng để lưu trữ thông tin cấu hình ssh đến sv01 và sv02.
+- Trong đó : thư mục sv01 và sv02 sẽ có file sshpiper_upstream dùng để lưu trữ thông tin cấu hình ssh đến sv01 và sv02.
 
-- Tạo thư mục sv01 và file sshpiper_upstream :
+Tạo thư mục sv01 và file sshpiper_upstream :
 
-    ```sh
-    mkdir ~/.sshpiperd/config/sv01
-    vi ~/.sshpiperd/config/sv01/sshpiper_upstream
-    ```
+```sh
+mkdir ~/.sshpiperd/config/sv01
+vi ~/.sshpiperd/config/sv01/sshpiper_upstream
+```
 
-- Thêm vào file ~/.sshpiperd/config/sv01/sshpiper_upstream nội dung sau :
+Thêm vào file ~/.sshpiperd/config/sv01/sshpiper_upstream nội dung sau :
 
-    ```sh
-    root@10.10.10.148:22
-    ```
+```sh
+root@10.10.10.148:22
+```
 
-Trong đó root là user của ssh của sv01, 10.10.10.148 là địa chỉ sv01, 22 là port ssh của sv01.
+- Trong đó root là user của ssh của sv01, 10.10.10.148 là địa chỉ sv01, 22 là port ssh của sv01.
 
-- Tạo file ~/.sshpiperd/config/start.sh với nội dung như sau :
+Tạo file ~/.sshpiperd/config/start.sh với nội dung như sau :
 
-    ```sh
-    #!/bin/bash
+```sh
+#!/bin/bash
 
-    if [ -z $GOPATH ]; then
-        export GOPATH=$HOME/.go
-    fi
+if [ -z $GOPATH ]; then
+    export GOPATH=$HOME/.go
+fi
 
-    SSHPIPERD_BIN="$GOPATH/bin/sshpiperd"
-    BASEDIR="$HOME/.sshpiperd"
-    LOGFILE="$BASEDIR/log/sshpiperd.log"
+SSHPIPERD_BIN="$GOPATH/bin/sshpiperd"
+BASEDIR="$HOME/.sshpiperd"
+LOGFILE="$BASEDIR/log/sshpiperd.log"
 
-    if [ ! -f $BASEDIR/sshpiperd_key ];then
-        ssh-keygen -N '' -f $BASEDIR/sshpiperd_key
-    fi
+if [ ! -f $BASEDIR/sshpiperd_key ];then
+    ssh-keygen -N '' -f $BASEDIR/sshpiperd_key
+fi
 
-    for u in `find $BASEDIR/config/ -name sshpiper_upstream`; do
-        chmod 400 $u
-        upstream=`cat $u`
+for u in `find $BASEDIR/config/ -name sshpiper_upstream`; do
+    chmod 400 $u
+    upstream=`cat $u`
 
-        username=`dirname $u`
-        username=`basename $username`
+    username=`dirname $u`
+    username=`basename $username`
 
-        echo "ssh 127.0.0.1 -p 2222 -l $username # connect to $upstream"
-    done
+    echo "ssh 127.0.0.1 -p 2222 -l $username # connect to $upstream"
+done
 
-    $SSHPIPERD_BIN -i $BASEDIR/sshpiperd_key --workingdir $BASEDIR/config --log $LOGFILE
-    ```
+$SSHPIPERD_BIN -i $BASEDIR/sshpiperd_key --workingdir $BASEDIR/config --log $LOGFILE
+```
 
-- Phân quyền cho file start :
+Phân quyền cho file start :
 
-    ```sh
-    chmod +x ~/.sshpiperd/config/start.sh
-    ```
+```sh
+chmod +x ~/.sshpiperd/config/start.sh
+```
 
-- Khởi chạy file start để bắt đầu :
+Khởi chạy file start để bắt đầu :
 
-    ```sh
-    ~/.sshpiperd/config/start.sh
-    ```
+```sh
+~/.sshpiperd/config/start.sh
+```
 
-- Đứng trên máy trạm bất kỳ ssh thử nghiệm với các thông số như sau :
+Đứng trên máy trạm bất kỳ ssh thử nghiệm với các thông số như sau :
 
-    ```sh
-    ip : 192.168.30.153
-    port : 2222
-    user : sv01
-    ```
+```sh
+ip : 192.168.30.153
+port : 2222
+user : sv01
+```
 
-- Kiểm tra xem đã vào đúng máy chủ trong LAN hay chưa.
+Kiểm tra xem đã vào đúng máy chủ trong LAN hay chưa.
 
 <a name="3"></a>
 

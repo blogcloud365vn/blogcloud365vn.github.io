@@ -1,7 +1,7 @@
 ---
 title: ELK part 1 - Tổng quan về ELK
 categories:
-  - Linux
+  - Logging
 description: Tài liệu về ELK stack
 author: datpt
 tags: [Logging, Linux]
