@@ -214,7 +214,7 @@ Tiếp theo, chúng ta hãy cùng phân tích một file log rất quan trọng 
 
 Việc SSH tới hệ thống có thể chia thành 3 trường hợp chính :
 
-- Login SSH thành công.
+#### Login SSH thành công.
 
 Mỗi khi user SSH thành công vào hệ thống, các dòng log sau sẽ xuất hiện tại `/var/log/secure`.
 
@@ -229,12 +229,12 @@ Hãy dành 30s để đọc lại <a href="https://blog.cloud365.vn/logging/nhap
 
 Từ log SSH thành công, ta có thể phân tích thành các dữ liệu sau :
 
-  - User login SSH (duydm)
-  - IP login SSH (27.72.59.xxx)
-  - Source Port của tiến trình SSH (49572)
-  - Kết quả việc SSH (Accepted password)
+ - User login SSH (duydm)
+ - IP login SSH (27.72.59.xxx)
+ - Source Port của tiến trình SSH (49572)
+ - Kết quả việc SSH (Accepted password)
 	
-- Login SSH thất bại
+#### Login SSH thất bại
  
 Vậy thì việc SSH bị thất bại, thì trong file log sẽ có gì?
 
@@ -246,9 +246,9 @@ Nov 10 20:54:32 elk sshd[26205]: Disconnected from 218.92.1.148 port 21450 [prea
 
 Về cơ bản, các thông tin được sàng lọc ra vẫn giống với khi có login SSH thành công. Tuy nhiên, kết quả việc SSH sẽ khác :
 
-  - Kết quả việc SSH : Failed password
+ - Kết quả việc SSH : Failed password
 	 
-- Logout SSH
+#### Logout SSH
 
 Và cuối cùng, mỗi khi user login phiên SSH thì các file log sẽ có các thông tin sau : 
 
