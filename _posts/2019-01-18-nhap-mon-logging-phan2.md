@@ -229,10 +229,10 @@ Hãy dành 30s để đọc lại <a href="https://blog.cloud365.vn/logging/nhap
 
 Từ log SSH thành công, ta có thể phân tích thành các dữ liệu sau :
 
-   - User login SSH (duydm)
-   - IP login SSH (27.72.59.xxx)
-   - Source Port của tiến trình SSH (49572)
-   - Kết quả việc SSH (Accepted password)
+	 - User login SSH (duydm)
+	 - IP login SSH (27.72.59.xxx)
+	 - Source Port của tiến trình SSH (49572)
+	 - Kết quả việc SSH (Accepted password)
 	
 - Login SSH thất bại
  
@@ -263,31 +263,31 @@ Nov 10 21:06:47 elk sshd[28511]: Connection closed by 27.72.59.xxx port 56673 [p
 
 Từ các ví dụ trong phần 2, chúng ta có thể tổng kết lại các câu lệnh hay được dùng trong việc đọc và phân tích log như sau :
 
- - Xem file log realtime với **tail -f**
+- Xem file log realtime với **tail -f**
 
 ```sh
 tail -f /var/log/messages
 ```
 
- - Lọc thông tin với **grep**
+- Lọc thông tin với **grep**
  
 ```sh
 cat /var/log/cron  | grep /backup/backup_database.sh
 ```
 
- - Đọc định dạng file `wtmp` với **utmpdump**, và sử dụng **less** để hiện thị một phần của file.
+- Đọc định dạng file `wtmp` với **utmpdump**, và sử dụng **less** để hiện thị một phần của file.
 
 ```sh
 utmpdump /var/log/wtmp | less
 ```
 
- - In ra màn hình 10 dòng log cuối cùng với **tail -n 10** . Thay 10 với số dòng bạn muốn in ra. 
+- In ra màn hình 10 dòng log cuối cùng với **tail -n 10** . Thay 10 với số dòng bạn muốn in ra. 
  
 ```sh
 tail -n 10 /var/log/dmesg
 ```
 
- - Có ai thấy user **duydm** này đáng nghi không ạ? Hãy cùng in ra tất cả các file log có chứa cụm từ duydm trong thư mục `/var/log/` với câu lệnh :
+- Có ai thấy user **duydm** này đáng nghi không ạ? Hãy cùng in ra tất cả các file log có chứa cụm từ duydm trong thư mục `/var/log/` với câu lệnh :
 
 ```sh
 grep -Rin "duydm" /var/log/
@@ -297,14 +297,14 @@ grep -Rin "duydm" /var/log/
 
 Qua các bài trên, hi vọng mọi người có thể nắm được các kiến thức sau : 
 
- - Phân loại và làm rõ chức năng của từng loại file log mặc định trong Linux
- - Thực hành được các câu lệnh đọc và phân tích log.
+- Phân loại và làm rõ chức năng của từng loại file log mặc định trong Linux
+- Thực hành được các câu lệnh đọc và phân tích log.
  
 ## 5. Ở bài tiếp theo sẽ có gì?
 
 Ở bài tiếp theo, chúng ta sẽ tìm hiểu 2 vấn đề chuyên sâu hơn một chút nhé :
 
- - Linux xử lý các file Log như thế nào?
- - Các giao thức thường được áp dụng trong việc xử lý Log.
+- Linux xử lý các file Log như thế nào?
+- Các giao thức thường được áp dụng trong việc xử lý Log.
  
 Cảm ơn và hẹn gặp mọi người tại bài tiếp theo ^.^ 
