@@ -229,10 +229,10 @@ Hãy dành 30s để đọc lại <a href="https://blog.cloud365.vn/logging/nhap
 
 Từ log SSH thành công, ta có thể phân tích thành các dữ liệu sau :
 
- - User login SSH (duydm)
-- IP login SSH (27.72.59.xxx)
-- Source Port của tiến trình SSH (49572)
-- Kết quả việc SSH (Accepted password)
+  - User login SSH (duydm)
+  - IP login SSH (27.72.59.xxx)
+  - Source Port của tiến trình SSH (49572)
+  - Kết quả việc SSH (Accepted password)
 	
 - Login SSH thất bại
  
