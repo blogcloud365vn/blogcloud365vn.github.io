@@ -63,13 +63,13 @@ Nov  9 21:33:01 elk systemd: Started LSB: Bring up/down networking.
 
 File log message thể hiện rõ luồng xử lý của việc restart networking như sau : 
 
- - **1**. Shutdown dịch vụ networking
+- **1**. Shutdown dịch vụ networking
  
 ```sh
 Nov  9 21:32:51 elk systemd: Stopping LSB: Bring up/down networking...
 ```
 
- - **2**. Các interface bị down xuống
+- **2**. Các interface bị down xuống
  
 ```sh
 Nov  9 21:32:52 elk network: Shutting down interface ens160:  [  OK  ]
@@ -78,13 +78,13 @@ Nov  9 21:32:52 elk network: Shutting down loopback interface:  [  OK  ]
 Nov  9 21:32:52 elk systemd: Stopped LSB: Bring up/down networking.
 ```
 
- - **3**. Dịch vụ network được bật lên
+- **3**. Dịch vụ network được bật lên
 
 ```sh
 Nov  9 21:32:53 elk network: Bringing up loopback interface:  [  OK  ]
 ```
 
- - **4**. Các interface được bật lên
+- **4**. Các interface được bật lên
 
 ```sh
 Nov  9 21:32:53 elk network: Bringing up loopback interface:  [  OK  ]
@@ -96,7 +96,7 @@ Nov  9 21:32:57 elk kernel: vmxnet3 0000:0b:00.0 ens192: NIC Link is Up 10000 Mb
 Nov  9 21:33:01 elk network: Bringing up interface ens192:  [  OK  ]
 ```
 
- - **5**. Dịch vụ network xác thực đã được bật
+- **5**. Dịch vụ network xác thực đã được bật
 ```sh
 Nov  9 21:33:01 elk systemd: Started LSB: Bring up/down networking.
 ```
@@ -214,7 +214,7 @@ Tiếp theo, chúng ta hãy cùng phân tích một file log rất quan trọng 
 
 Việc SSH tới hệ thống có thể chia thành 3 trường hợp chính :
 
- - Login SSH thành công.
+- Login SSH thành công.
 
 Mỗi khi user SSH thành công vào hệ thống, các dòng log sau sẽ xuất hiện tại `/var/log/secure`.
 
@@ -234,7 +234,7 @@ Từ log SSH thành công, ta có thể phân tích thành các dữ liệu sau 
    - Source Port của tiến trình SSH (49572)
    - Kết quả việc SSH (Accepted password)
 	
- - Login SSH thất bại
+- Login SSH thất bại
  
 Vậy thì việc SSH bị thất bại, thì trong file log sẽ có gì?
 
@@ -246,9 +246,9 @@ Nov 10 20:54:32 elk sshd[26205]: Disconnected from 218.92.1.148 port 21450 [prea
 
 Về cơ bản, các thông tin được sàng lọc ra vẫn giống với khi có login SSH thành công. Tuy nhiên, kết quả việc SSH sẽ khác :
 
-	 - Kết quả việc SSH : Failed password
+  - Kết quả việc SSH : Failed password
 	 
- - Logout SSH
+- Logout SSH
 
 Và cuối cùng, mỗi khi user login phiên SSH thì các file log sẽ có các thông tin sau : 
 
