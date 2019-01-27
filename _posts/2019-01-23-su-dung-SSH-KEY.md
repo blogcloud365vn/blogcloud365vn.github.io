@@ -33,70 +33,70 @@ SSH Keys là một phương thức xác thực đăng nhập với máy chủ th
 - Đối với windows
   - Người dùng có thể sử dụng phần mềm PuTTY-Gen ([huongdan](https://blog.cloud365.vn/windows/huong-dan-cai-dat-va-su-dung-putty/)) để tạo SSH key.Sau khi download phần mềm PuTTY-Gen về và cài đặt ta làm theo hướng dẫn như hình bên dưới
   
-  ![](/images/img-ssh-key/1.png)
+![](/images/img-ssh-key/1.png)
   - Sau khi click vào genarate bạn di chuyển chuột quanh màn hình để tạo key.Sau khi tạo key xong ta click vào Save private key như hình bên dưới để lưu lại private key được tạo ra
   
-  ![](/images/img-ssh-key/2.png)
+![](/images/img-ssh-key/2.png)
   - Sau đó ta lưu lại đoạn public key ra một file với nội dung copy đoạn mã như ảnh bên dưới
   
-  ![](/images/img-ssh-key/3.png)
+![](/images/img-ssh-key/3.png)
   
 - Đối với Linux
   - Trên server Linux chạy lệnh ssh-keygen -t rsa
   - Sau khi bạn chạy lệnh trên màn hình sẽ hiện ra thông báo hiển thị đường dẫn lưu key được tạo ra, mặc định key public và private sẽ được lưu trong đường dẫn /root/.ssh/ (Trong bước này bạn có thể đặt pass cho private key nếu cần)
   
-  ```sh
-  [root@vm1 ~]# ssh-keygen -t rsa
-  Generating public/private rsa key pair.
-  Enter file in which to save the key (/root/.ssh/id_rsa): 
-  Enter passphrase (empty for no passphrase): 
-  Enter same passphrase again: 
-  Your identification has been saved in /root/.ssh/id_rsa.
-  Your public key has been saved in /root/.ssh/id_rsa.pub.
-  The key fingerprint is:
-  SHA256:7yhHgSH3v8oSFurEJph1prGk1YekXKb2esS8rp4AY6k root@vm1.novalocal
-  The key's randomart image is:
-  +---[RSA 2048]----+
-  |                 |
-  |    = o          |
-  | . B + +         |
-  |  @ = + o        |
-  |o@ @ o .So       |
-  |B.+ X o ...      |
-  |E  B o o  ..     |
-  | ...+ o..o.      |
-  | .++.  ++..      |
-  +----[SHA256]-----+
-  ```
+```sh
+[root@vm1 ~]# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:7yhHgSH3v8oSFurEJph1prGk1YekXKb2esS8rp4AY6k root@vm1.novalocal
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|    = o          |
+| . B + +         |
+|  @ = + o        |
+|o@ @ o .So       |
+|B.+ X o ...      |
+|E  B o o  ..     |
+| ...+ o..o.      |
+| .++.  ++..      |
++----[SHA256]-----+
+```
  
 ## 5. Cách upload public lên server
-### 5.1 Truy cập SSH từ windows client vào server linux
+## 5.1 Truy cập SSH từ windows client vào server linux
  
- ![](/images/img-ssh-key/4.png)
+![](/images/img-ssh-key/4.png)
  
 - Ở mô hình này ta có thể upload public key (đã tạo ở phần trên bằng phần mềm putty-gen) lên server bằng cách sử dụng phần mềm winscp, sử dụng SFTP, FTP ... Ở ví dụ này chúng ta tạm sử dụng phần mềm Winscp để upload
 - Chúng ta kết nối Winscp tới server linux với các thông tin đăng nhập như Host name (Địa chỉ IP server linux), User nam (root) , Password (password của user root)
    
- ![](/images/img-ssh-key/5.png)
+![](/images/img-ssh-key/5.png)
  
 - Khi đã truy cập vào server linux bằng phần mềm winscp, ở khung bên trái giao diện ta tìm tới đường dẫn chứa public_key đã lưu (id_rsa.pub), ở khung bên phải giao diện ta tìm tới đường dẫn /root/.ssh và upload file id_rsa.pub lên sau đó rename file id_rsa.pub thành authorized_keys
  
- ![](/images/img-ssh-key/6.png)
+![](/images/img-ssh-key/6.png)
  
 - Sau khi upload xong file public key ta tiến hành kết nối ssh tới server linux bằng phần mềm putty kết hợp với file private key lưu trên máy tính
  
- ![](/images/img-ssh-key/7.png)
+![](/images/img-ssh-key/7.png)
  
 - Trong ảnh trên nhập thông tin IP của server Linux
  
- ![](/images/img-ssh-key/8.png)
+![](/images/img-ssh-key/8.png)
  
 - Trong ảnh trên ta cần Browse tới đường dẫn chứa file private key (private.ppk) sau đó click vào open để kết nối
-### 5.2 Truy cập SSH giữa 2 server linux
+## 5.2 Truy cập SSH giữa 2 server linux
  
- ![](/images/img-ssh-key/9.png)
+![](/images/img-ssh-key/9.png)
  
-- Chúng ta sử dụng lệnh copy key giữa 2 server linux như sau,Ví dụ nếu ta muốn copy Key từ server có IP là A lên server có IP là B thì ta ssh vào server A gà gõ lệnh 
+- Chúng ta sử dụng lệnh copy key giữa 2 server linux như sau,Ví dụ nếu ta muốn copy Key từ server có IP là A lên server có IP là B thì ta ssh vào server A và gõ lệnh 
  ```sh
  ssh-copy-id -i /root/.ssh/id_rsa.pub B
  ```
