@@ -23,9 +23,9 @@ Zabbix standard release được công bố sau đó sẽ có những thay đổ
 
 ![](/images/img-version-zabbix/versionzabbix2.png)
 
-+Thời gian phát triển version mới của sản phẩm  xấp xỉ 6 tháng<br>
-+Full support là thời gian 6 tháng<br>
-+Limited support là 1 tháng<br>
++ Thời gian phát triển version mới của sản phẩm  xấp xỉ 6 tháng<br>
++ Full support là thời gian 6 tháng<br>
++ Limited support là 1 tháng<br>
 
 ## 3. Vòng đời của một Zabbix LTS release
 
