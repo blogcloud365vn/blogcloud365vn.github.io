@@ -1,4 +1,5 @@
 ---
+date: 2019-01-12
 title: Hướng dẫn cấu hình và sử dụng iLO server HP
 categories:
   - Other
