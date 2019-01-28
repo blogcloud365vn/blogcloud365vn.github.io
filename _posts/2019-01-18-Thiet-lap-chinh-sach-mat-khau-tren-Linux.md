@@ -186,4 +186,4 @@ chúng ta quy định sau đó mới có thể đổi mật khẩu:
     ```
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
