@@ -23,7 +23,7 @@ OS : CentOS 7.6<br>
 
 ![](/images/img-zabbix-4lts/Screenshot_901.png)
 
-** Lưu ý **: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
+**Lưu ý**: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
 
 + Mô hình triển khai
 
