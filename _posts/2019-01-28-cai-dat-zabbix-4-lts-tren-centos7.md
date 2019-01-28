@@ -5,7 +5,7 @@ categories:
   - Monitor
 description: Tài liệu hướng dẫn các bước cài đặt Zabbix 4.0 LTS trên CentOS 7
 author: duydm
-tags: [Beginer, Zabbix]
+tags: [Zabbix]
 type: Document
 ---
 
