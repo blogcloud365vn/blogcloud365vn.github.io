@@ -1,6 +1,6 @@
 ---
 date: 2019-01-28
-title: Hướng dẫn cài đặt Zabbix 4.0 LTS trên CentOS 7
+title: Hướng dẫn cài đặt Zabbix 4.0 LTS trên CentOS 7 (Phần 1)
 categories:
   - Monitor
 description: Tài liệu hướng dẫn các bước cài đặt Zabbix 4.0 LTS trên CentOS 7
@@ -118,7 +118,7 @@ gunzip create.sql.gz
 mysql -u root -p zabbix_db < create.sql
 ```
 
-![](../images/img-zabbix-4ltsScreenshot_352.png)
+![](../images/img-zabbix-4lts/Screenshot_352.png)
 
 
 ### Bước 4: Config DB
@@ -141,7 +141,7 @@ sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 16M/g' /etc/php.ini
 echo "date.timezone = Asia/Ho_Chi_Minh" >> /etc/php.ini
 ```
 
-### Bước 7: Restart service `zabbix-server`, `http`, 
+### Bước 7: Restart service `zabbix-server`, `http`, `mariadb`
 
 ```
 systemctl start zabbix-server
@@ -150,17 +150,17 @@ systemctl start httpd
 systemctl enable httpd
 systemctl restart zabbix-server
 systemctl restart httpd
+systemctl restart mariadb
 ```
+![](../images/img-zabbix-4ltsScreenshot_904.png)
 
+### Bước 8: Truy cập web dashboard zabbix
 
+http://ipserver/zabbix
 
+![](../images/img-zabbix-4lts/Screenshot_353.png)
 
-
-
-
-
-
-
+Các thiết lập ban đầu trên web dashboard zabbix mời các bạn thực hiện theo hướng dẫn ở phần 2.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
