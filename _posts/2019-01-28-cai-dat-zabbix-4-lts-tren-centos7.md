@@ -69,7 +69,7 @@ yum -y install zabbix-server-mysql zabbix-web-mysql mysql mariadb-server httpd p
 
 ### Bước 2: Create Database
 
-Start service mariadb và auto start khi khởi động lại server
+Start service `mariadb` và tự động start khi khởi động lại server.
 
 ```
 systemctl start mariadb
@@ -110,8 +110,47 @@ EOF
 
 ![](../images/img-zabbix-4lts/Screenshot_349.png)
 
+### Bước 3: Import database zabbix
+
+```
+cd /usr/share/doc/zabbix-server-mysql-4.0.3
+gunzip create.sql.gz
+mysql -u root -p zabbix_db < create.sql
+```
+
+![](../images/img-zabbix-4ltsScreenshot_352.png)
 
 
+### Bước 4: Config DB
+
+```
+sed -i 's/# DBHost=localhost/DBHost=localhost/g' /etc/zabbix/zabbix_server.conf
+sed -i "s/DBName=zabbix/DBName=$nameDbZabbix/g" /etc/zabbix/zabbix_server.conf
+sed -i "s/DBUser=zabbix/DBUser=$userDbZabbix/g" /etc/zabbix/zabbix_server.conf
+sed -i "s/# DBPassword=/DBPassword=$passDbZabbix/g" /etc/zabbix/zabbix_server.conf
+```
+
+### Bước 5: Configure PHP Setting
+
+```
+sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php.ini
+sed -i 's/max_input_time = 60/max_input_time = 600/g' /etc/php.ini
+sed -i 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php.ini
+sed -i 's/post_max_size = 8M/post_max_size = 32M/g' /etc/php.ini
+sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 16M/g' /etc/php.ini
+echo "date.timezone = Asia/Ho_Chi_Minh" >> /etc/php.ini
+```
+
+### Bước 7: Restart service `zabbix-server`, `http`, 
+
+```
+systemctl start zabbix-server
+systemctl enable zabbix-server
+systemctl start httpd
+systemctl enable httpd
+systemctl restart zabbix-server
+systemctl restart httpd
+```
 
 
 
