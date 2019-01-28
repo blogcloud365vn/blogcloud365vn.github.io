@@ -13,7 +13,7 @@ type: Document
 
 ## 1. Yêu cầu cài đặt
 
-+ Cầu hình Zabbix server
++ Cấu hình Zabbix server
 
 Ram: 8 GB<br>
 CPU: 4 core<br>
