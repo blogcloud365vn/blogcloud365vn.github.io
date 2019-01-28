@@ -35,12 +35,11 @@ Thời gian phát triển version mới của sản phẩm  xấp xỉ 1,5 năm.
 Full support là thời gian 3 năm.<br>
 Limited support là 2 năm.<br>
 
-- Một vài điểm đặc biệt ở bản LTS:
-Support service lâu hơn: Cập nhật liên tục về các vấn đề gặp phải và bugs.<br>
-Chất lượng hơn và tính năng sâu hơn.<br>
-Nâng cấp phiên bản dễ dàng hơn.<br>
-
-+Không mất phí đối vơi phiên bản Zabbix LTS, bản phát hành phần mềm nguồn mở 100% có sẵn cho tất cả mọi người.
+- Một vài điểm đặc biệt ở bản LTS:<br>
+	Support service lâu hơn: Cập nhật liên tục về các vấn đề gặp phải và bugs.<br>
+	Chất lượng hơn và tính năng sâu hơn.<br>
+	Nâng cấp phiên bản dễ dàng hơn.<br>
+	Không mất phí đối vơi phiên bản Zabbix LTS, bản phát hành phần mềm nguồn mở 100% có sẵn cho tất cả mọi người.
 
 ## 4. Các phiên bản hiện tại, kế hoạch release
 
