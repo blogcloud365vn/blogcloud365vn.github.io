@@ -83,7 +83,7 @@ mysql_secure_installation
 
 ![](../images/img-zabbix-4lts/Screenshot_348.png)
 
-Thay vì phải mở thủ công file config để chỉnh sửa ở đây tôi hướng dẫn bạn khai báo các biến để chỉnh sửa config được nhanh hơn.
+**Thay vì phải mở thủ công file config để chỉnh sửa ở đây tôi hướng dẫn bạn khai báo các biến để chỉnh sửa config được nhanh hơn.**
 
 Khai báo biến và gán giá trị cho việc config database mysql
 
