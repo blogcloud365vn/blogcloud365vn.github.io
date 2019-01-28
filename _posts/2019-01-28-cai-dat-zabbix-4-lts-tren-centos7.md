@@ -126,7 +126,7 @@ mysql -u root -p zabbix_db < create.sql
 ![](../images/img-zabbix-4lts/Screenshot_352.png)
 
 
-### Bước 4: Config DB
+### Bước 4: Config Database
 
 ```
 sed -i 's/# DBHost=localhost/DBHost=localhost/g' /etc/zabbix/zabbix_server.conf
