@@ -11,6 +11,10 @@ type: Document
 
 ### Mục lục
 
+[1. Yêu cầu cài đặt](#yeucau)<br>
+[2. Các bước cài đặt](#cacbuoc)<br>
+
+<a name="yeucau"></a>
 ## 1. Yêu cầu cài đặt
 
 + Cấu hình Zabbix server
@@ -55,6 +59,7 @@ Kiểm tra firewall, selinux<br>
 
 ![](/images/img-zabbix-4lts/Screenshot_902.png)
 
+<a name="cacbuoc"></a>
 ## 2. Các bước cài đặt
 
 ### Bước 1: Download repo zabbix và cài đặt một số package
