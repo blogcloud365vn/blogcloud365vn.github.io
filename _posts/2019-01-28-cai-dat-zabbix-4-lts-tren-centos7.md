@@ -65,7 +65,7 @@ rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.e
 yum -y install zabbix-server-mysql zabbix-web-mysql mysql mariadb-server httpd php
 ```
 
-![](../images/img-install-zabbix4/Screenshot_347.png)
+![](../images/img-zabbix-4lts/Screenshot_347.png)
 
 ### Bước 2: Create Db
 
@@ -81,7 +81,7 @@ Thiết lập password root cho mysql
 mysql_secure_installation
 ```
 
-![](../images/img-install-zabbix4/Screenshot_348.png)
+![](../images/img-zabbix-4lts/Screenshot_348.png)
 
 Khai báo biến và gán giá trị cho việc config database mysql
 
@@ -106,7 +106,7 @@ exit
 EOF
 ```
 
-![](../images/img-install-zabbix4/Screenshot_349.png)
+![](../images/img-zabbix-4lts/Screenshot_349.png)
 
 
 
