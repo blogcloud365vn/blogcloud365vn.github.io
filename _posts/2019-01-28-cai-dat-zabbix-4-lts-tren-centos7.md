@@ -19,7 +19,7 @@ type: Document
 
 Mô hình triển khai một node zabbix-server, một hoặc nhiều các host zabbix client
 
-![](/images/img-zabbix-4lts/topozabbix3.png)
+![](/images/img-zabbix-4lts/topo-zabbix3.png)
 
 ## 2. IP Planning
 
