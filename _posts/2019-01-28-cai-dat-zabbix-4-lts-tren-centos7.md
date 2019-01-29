@@ -226,9 +226,7 @@ Bye
 [root@zabbix ~]# sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 16M/g' /etc/php.ini
 [root@zabbix ~]# echo "date.timezone = Asia/Ho_Chi_Minh" >> /etc/php.ini
 ```
-
 ![](../images/img-zabbix-4lts/Screenshot_914.png)
-
 
 ### Bước 7: Restart service `zabbix-server`, `http`, `mariadb`
 
