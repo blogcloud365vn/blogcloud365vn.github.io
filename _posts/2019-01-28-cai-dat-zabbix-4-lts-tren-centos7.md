@@ -11,22 +11,26 @@ type: Document
 
 ### Mục lục
 
-[1. Yêu cầu cài đặt](#yeucau)<br>
-[2. Các bước cài đặt](#cacbuoc)<br>
+[1. Mô hình triển khai](#mohinh)<br>
+[2. IP Planning](#planning)<br>
+[3. Thiết lập ban đầu](#thietlap)<br>
+[4. Các bước cài đặt](#cacbuoc)<br>
 
-
+<a name="mohinh"></a>
 ## 1. Mô hình triển khai
 
-Mô hình triển khai một node zabbix-server, một hoặc nhiều các host zabbix client
+Mô hình triển khai một node zabbix-server, một hoặc nhiều các host zabbix client.
 
 ![](/images/img-zabbix-4lts/topo-zabbix3.png)
 
+<a name="planning"></a>
 ## 2. IP Planning
 
 ![](/images/img-zabbix-4lts/Screenshot_906.png)
 
 **Lưu ý**: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
 
+<a name="thietlap"></a>
 ## 3. Thiết lập ban đầu
 
 Cài đặt chuẩn bị server ban đầu bao gồm các thao tác: 
@@ -70,6 +74,7 @@ Restart lại server để cập nhật cấu hình mới.
 [root@zabbix ~]# yum update -y
 ```
 
+<a name="cacbuoc"></a>
 ## 4. Các bước cài đặt
 
 ### Bước 1: Download repo zabbix và cài đặt một số package: zabbix-server, mariadb, php, http
