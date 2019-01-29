@@ -308,3 +308,6 @@ Qua các bài trên, hi vọng mọi người có thể nắm được các ki�
 - Các giao thức thường được áp dụng trong việc xử lý Log.
  
 Cảm ơn và hẹn gặp mọi người tại bài tiếp theo ^.^ 
+
+---
+Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
