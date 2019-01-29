@@ -89,4 +89,4 @@ Khi bạn vào mục này sẽ hiển thị cho bạn tất cả interface mà s
 Như vậy bạn đã cài đặt thành công hệ điều hành CentOS 7. Bạn có thể cài đặt tiếp theo các ứng dụng mà bạn mong muốn.
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
