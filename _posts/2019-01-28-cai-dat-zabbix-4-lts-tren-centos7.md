@@ -1,13 +1,15 @@
 ---
 date: 2019-01-28
-title: Hướng dẫn cài đặt Zabbix 4.0 LTS trên CentOS 7 (Phần 1)
-categories:
+title: Hướng dẫn cài đặt Zabbix 4.0 LTS trên CentOS 7
   - Monitor
 description: Tài liệu hướng dẫn các bước cài đặt Zabbix 4.0 LTS trên CentOS 7
 author: duydm
 tags: [Zabbix]
 type: Document
 ---
+
+Zabbix là một giải pháp `monitor` các thiết bị mạng, mã nguồn mở, có nhiều tính năng đặc biệt và khả năng tùy biến cao. 
+Zabbix có thể theo dõi các thông số về mạng và tình trạng của server, trạng thái của các thiết bị mạng, hỗ trợ các cách thức cảnh báo có độ tùy biến cao qua email, sms, telegram, slack. Chỉ cần cài đặt agent trên máy chủ Linux và Windows để theo dõi số liệu thống kê như tải CPU, sử dụng mạng, disk...Các thức cài đặt triển khai dễ dàng. Bài viết dưới đây của <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a> sẽ hướng dẫn bạn các bước cơ bản để cài đặt zabbix server.
 
 ### Mục lục
 
@@ -241,13 +243,45 @@ Bye
 ```
 ![](../images/img-zabbix-4ltsScreenshot_915.png)
 
-### Bước 8: Truy cập web dashboard zabbix
+### Bước 8: Cấu hình web dashboard zabbix
 
 http://ipserver/zabbix
 
-![](../images/img-zabbix-4lts/Screenshot_916.png)
++ Giao diện cài đặt ban đầu zabbix. Click `Next step`
 
-Các thiết lập ban đầu trên web dashboard zabbix mời các bạn thực hiện theo hướng dẫn ở phần 2.
+![](../images/img-zabbix-4lts/Screenshot_917.png)
+
++ Thông số config php. Click `Next step`
+
+![](../images/img-zabbix-4lts/Screenshot_918.png)
+
++ Nhập thông số về database zabbix đã thiết lập ở `bước 2`
+
+![](../images/img-zabbix-4lts/Screenshot_919.png)
+
++ Zabbix server details
+
+![](../images/img-zabbix-4lts/Screenshot_920.png)
+
++ Pre-installation summary
+
+![](../images/img-zabbix-4lts/Screenshot_921.png)
+
++ Kết thúc cài đặt. Click `Finish`
+
+![](../images/img-zabbix-4lts/Screenshot_922.png)
+
+### Bước 9: Login dashboard zabbix server
+
+Sử dụng tài khoản default để login zabbix server `Admin\zabbix`
+
+![](../images/img-zabbix-4lts/Screenshot_924.png)
+
+Login thành công.
+
+![](../images/img-zabbix-4lts/Screenshot_925.png)
+
+Hy vọng những hướng dẫn trên giúp bạn triển khai zabbix server thành công!
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
