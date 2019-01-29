@@ -245,7 +245,7 @@ Bye
 
 ### Bước 8: Cấu hình web dashboard zabbix
 
-http://ipserver/zabbix
+`http://ipserver/zabbix`
 
 + Giao diện cài đặt ban đầu zabbix. Click `Next step`
 
