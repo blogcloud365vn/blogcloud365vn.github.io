@@ -46,7 +46,7 @@ Top-level domain là phần xa nhất ở bên phải (được phân tách bằ
 - **Host** : 
 Với tên miền, chủ sở hữu có thể tham chiếu đến các máy tính hoặc dịch vụ riêng biệt. Chẳng hạn, hầu hết chủ sở hữu tên miền làm cho máy chủ web của họ có thể truy cập được thông qua tên miền (cloud365.vn) và cũng thông qua định nghĩa "máy chủ" "www" (www.cloud365.vn).
 
-![](/images/img-dns/dns_2.jpg)
+<span style="display:block;text-align:center">![](/images/img-dns/dns_2.jpg)</span>
 
 - **Tên miền con (Subdomain)** : 
 DNS hoạt động theo thứ bậc. TLD có thể có nhiều tên miền bên dưới. Chẳng hạn, TLD "com" có cả "google.com" và "nhanhoa.com" bên dưới nó. "Tên miền con" là tên miền thuộc một phần của tên miền lớn hơn. Trong trường hợp này, "nhanhoa.com" có thể được coi là tên miền con của "com". Phần "nhanhoa" được gọi là SLD (second level domain), có nghĩa là tên miền cấp hai.
@@ -63,6 +63,9 @@ Zone files đc coi là thành phần chính của một Name Server. Nó chứa 
 
 - **Bản ghi (record)** :
 Trong một zone, bản ghi được lưu giữ dùng để ánh xạ một tên miền thành một địa chỉ IP, xác định máy chủ phân giải cho tên miền, xác định máy chủ mail cho tên miền, v.v.
+
+## Tham khảo
+https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
