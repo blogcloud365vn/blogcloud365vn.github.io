@@ -34,29 +34,29 @@ Nó sẽ kết nối đến dịch vụ đám mây ngrok, dịch vụ này sẽ 
 
 ## 2. Cách cài đặt (Trên CentOS 7).
 
-- Cài đặt wget và unzip :
+Cài đặt wget và unzip :
 
-    ```sh
-    yum install -y wget unzip
-    ```
+```sh
+yum install -y wget unzip
+```
 
-- Tải bản cài đặt `ngrok` :
+Tải bản cài đặt `ngrok` :
 
-    ```sh
-    wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-    ```
+```sh
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+```
 
-- Giải nén `ngrok` :
+Giải nén `ngrok` :
 
-    ```sh
-    unzip ngrok-stable-linux-amd64.zip
-    ```
+```sh
+unzip ngrok-stable-linux-amd64.zip
+```
 
-- Sau khi giải nén xong , dùng lệnh sau để xem chi tiết về các lệnh được sử dụng bởi `ngrok` :
+Sau khi giải nén xong , dùng lệnh sau để xem chi tiết về các lệnh được sử dụng bởi `ngrok` :
 
-    ```sh
-    ./ngrok help
-    ```
+```sh
+./ngrok help
+```
 
 ![](/images/img-ngrok/ngrok_help.png)
 
@@ -66,32 +66,32 @@ Nó sẽ kết nối đến dịch vụ đám mây ngrok, dịch vụ này sẽ 
 
 ### 3.1. Phơi dịch vụ web ra ngoài internet sử dụng ngrok.
 
-- Cài đặt dịch vụ httpd:
+Cài đặt dịch vụ httpd:
 
-    ```sh
-    yum install -y httpd
-    ```
+```sh
+yum install -y httpd
+```
 
-- Khởi động dịch vụ :
+Khởi động dịch vụ :
 
-    ```sh
-    systemctl start httpd
-    systemctl enable httpd
-    ```
+```sh
+systemctl start httpd
+systemctl enable httpd
+```
 
-- Tạo file `index.html` :
+Tạo file `index.html` :
 
-    ```sh
-    echo "<h1>Performed by Cloud365</h1>" >> /var/www/html/index.html
-    ```
+```sh
+echo "<h1>Performed by Cloud365</h1>" >> /var/www/html/index.html
+```
 
-- Khởi tạo một tunel để dịch vụ http có thể ra ngoài internet :
+Khởi tạo một tunel để dịch vụ http có thể ra ngoài internet :
 
-    ```sh
-    ./ngrok http 80
-    ```
+```sh
+./ngrok http 80
+```
 
-- Kết quả thu được như sau :
+Kết quả thu được như sau :
 
 ![](/images/img-ngrok/ngrok_httpd.png)
 
@@ -105,15 +105,15 @@ Nó sẽ kết nối đến dịch vụ đám mây ngrok, dịch vụ này sẽ 
 
 ### 3.2. Phơi dịch vụ SSH ra ngoài internet sử dụng ngrok.
 
-- Để tạo được một tunel ssh chúng ta cần phải đăng nhập vào tài khoản của `ngrok`. Để đăng nhập, chúng ta vào đường [link này](https://dashboard.ngrok.com/user/login) .
+Để tạo được một tunel ssh chúng ta cần phải đăng nhập vào tài khoản của `ngrok`. Để đăng nhập, chúng ta vào đường [link này](https://dashboard.ngrok.com/user/login) .
 
-- SSH sử dụng port mặc định là 22, mình cũng sử dụng port đó nên sẽ mở tunnel thông qua port 22 với giao thức tcp:
+SSH sử dụng port mặc định là 22, mình cũng sử dụng port đó nên sẽ mở tunnel thông qua port 22 với giao thức tcp:
 
-    ```sh
-    ./ngrok tcp 22
-    ```
+```sh
+./ngrok tcp 22
+```
 
-- Thông tin nhận được như sau :
+Thông tin nhận được như sau :
 
 ![](/images/img-ngrok/ngrok_ssh.png)
 
@@ -123,7 +123,7 @@ Nó sẽ kết nối đến dịch vụ đám mây ngrok, dịch vụ này sẽ 
 
     - 11721 => là port ssh.
 
-- Chúng ta tiến hành ssh thử với các thông tin như bên trên:
+Chúng ta tiến hành ssh thử với các thông tin như bên trên:
 
 ![](/images/img-ngrok/ngrok_ssh_hq.png)
 

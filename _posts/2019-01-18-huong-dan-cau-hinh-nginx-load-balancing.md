@@ -388,4 +388,5 @@ Truy cập `http://10.10.11.20`, nhấn refresh trang liên tục, các request 
 ![](/images/img-caidat-nginx-lb/pic4.png)
 
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
+
