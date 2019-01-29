@@ -18,7 +18,6 @@ Theo các số liệu thực tế tổng hợp của [github.blog](https://githu
 Theo đánh giá bản thân 
 - Cấu trúc câu lệnh dễ tiếp cận cho người mới
 - Nhiều module hỗ trợ 
-- ...
 
 ![](/images/img-python/python2-vs-python3.jpg)
 
