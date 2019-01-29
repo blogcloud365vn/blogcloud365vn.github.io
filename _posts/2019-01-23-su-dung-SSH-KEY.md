@@ -1,5 +1,5 @@
 ---
-title: Hướng dẫn sử dụng SSK KEY
+title: Hướng dẫn sử dụng SSH KEY
 categories:
   - Other
 description: Tài liệu Hướng dẫn sử dụng SSH KEY
