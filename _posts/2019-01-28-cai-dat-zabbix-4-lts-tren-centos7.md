@@ -14,50 +14,75 @@ type: Document
 [1. Yêu cầu cài đặt](#yeucau)<br>
 [2. Các bước cài đặt](#cacbuoc)<br>
 
-<a name="yeucau"></a>
-## 1. Yêu cầu cài đặt
 
-+ Cấu hình Zabbix server
+## 1. Mô hình triển khai
 
-Ram: 8 GB<br>
-CPU: 4 core<br>
-Disk: 300GB<br>
-Interface: 1<br>
-OS : CentOS 7.6<br>
+Mô hình triển khai một node zabbix-server, một hoặc nhiều các host zabbix client
 
-![](/images/img-zabbix-4lts/Screenshot_901.png)
+![](/images/img-zabbix-4lts/topozabbix1.png)
+
+## 2. IP Planning
+
+![](/images/img-zabbix-4lts/Screenshot_906.png)
 
 **Lưu ý**: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
 
-+ Mô hình triển khai
+## 3. Thiết lập ban đầu
 
-![](/images/img-zabbix-4lts/topo-zabbix.png)
+Cài đặt chuẩn bị server ban đầu bao gồm các thao tác: 
 
-+ Thiết lập ban đầu
++ Đặt địa chỉ IP tĩnh cho server<br>
++ Đặt host-name<br>
++ Thiết lập firewalld, selinux<br>
 
-Set hostname<br>
-
-```
-hostnamectl set-hostname <host-name>
-```
-
-Set địa chỉ IP tĩnh<br>
+Ở màn command line của server bạn thực hiện các câu lệnh dưới.
 
 ```
-vi /etc/sysconfig/network-scripts/ifcfg-<interface>
+echo "Setup IP  ens160"
+nmcli con modify ens160 ipv4.addresses 10.10.10.115/24
+nmcli con modify ens160 ipv4.gateway 10.10.10.1
+nmcli con modify ens160 ipv4.dns 8.8.8.8
+nmcli con modify ens160 ipv4.method manual
+nmcli con modify ens160 connection.autoconnect yes
+
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+sudo systemctl disable NetworkManager
+sudo systemctl stop NetworkManager
+sudo systemctl enable network
+sudo systemctl start network
+
+hostnamectl set-hostname zabbix
+
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 ```
 
-![](/images/img-zabbix-4lts/Screenshot_903.png)
+![](/images/img-zabbix-4lts/Screenshot_907.png)
 
-Update các package<br>
+Restart lại server để cập nhật cấu hình mới.
+
+![](/images/img-zabbix-4lts/Screenshot_908.png)
+
++ Update các gói cài đặt
 
 ```
-yum update -yum
+[root@zabbix ~]# yum update -y
 ```
 
-Kiểm tra firewall, selinux<br>
 
-![](/images/img-zabbix-4lts/Screenshot_902.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 <a name="cacbuoc"></a>
 ## 2. Các bước cài đặt
