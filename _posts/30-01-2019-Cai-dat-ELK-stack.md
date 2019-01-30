@@ -8,14 +8,10 @@ tags: [Logging, Linux]
 type: Document
 ---
 
-**Lời mở đầu**
+## Lời mở đầu
 
 - Trong bài trước mình đã giới thiệu qua về mô hình ELK stack, trong bài lần này mình sẽ sơ lược qua các bước để chúng ta có thể  cài đặt ELK stack trên CentOS 7. Đây chỉ là bài hướng dẫn cài ELK áp dụng để thu thập log, cácbài mở rộng về ELK mình sẽ giới thiệu trong các bài sau.
 
-
-# Mục lục
-
-[1.](#1)
 
 ## 1. Yêu cầu hệ thống.
 
@@ -186,8 +182,7 @@ Kết quả:
 
 ![](/images/img-elk/elk-6.png)
 
----
-Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
+
 
 ## Cài đặt filebeat trên client Ubuntu để đẩy log về ELK server.
 
@@ -351,3 +346,6 @@ tcpdump -i 2 | grep 10.10.10.190
 Trong bài này mình đã tổng quan lại cách cài đặt ELK stack và cách cài đặt filebeat để đẩy log từ các OS Ubuntu và CentOS về ELK.
 
 Trong bài sau mình sẽ viết về các thao tác cơ bản với Dashboard của Kibana như cách tạo Index để nhận log trên Dashboard, cách setup biểu đồ, cách tìm kiếm hiệu quả cũng như một số lưu ý trong quá trình sử dụng ELK.
+
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
