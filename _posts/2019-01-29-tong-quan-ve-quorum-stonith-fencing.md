@@ -1,9 +1,9 @@
 ---
 date: 2019-01-23
-title: "High Availability - Phần 3: Tổng quan về Quorum Corosync, STONITH/Fencing"
+title: "High Availability - Phần 3: Tổng quan về Quorum, STONITH/Fencing"
 categories:
   - Linux
-description: Tổng quan về Quorum Corosync, STONITH/Fencing
+description: Tổng quan về Quorum, STONITH/Fencing
 author: thanhnb
 tags: [Cluster, Load balancer, High Availability, Linux, CentOS7]
 type: Document
