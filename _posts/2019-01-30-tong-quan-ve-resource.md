@@ -118,13 +118,14 @@ Các tham số cần lưu ý trong quá trình vận hành Resource:
   - `standby`: Di chuyển tất cả các resource ra khỏi node xảy ra sự cố
 - `enable`: Nếu thiết lập `false`, bỏ qua giám sát tài nguyên
 
-Ví dụ minh họa:
+Cấu trúc
 ```
-# Cấu trúc
-pcs resource create <Tên resource> <Tham số 1> <Tham số 2 ..> op <tham số vận hình>
+pcs resource create <Tên resource> <Tham số 1> <Tham số 2 ..> op <tham số vận hành>
+```
 
-# VD
-pcs resource create Virtual_IP IPaddr2 ip=172.16.69.254 cidr_netmask=24 op monitor interval=30s
+Ví dụ minh họa
+```
+pcs resource create Virtual_IP IPaddr2 ip=10.10.10.89 cidr_netmask=24 op monitor interval=30s
 
 # Mô tả
 [root@node1 ~]# pcs resource show Web_Cluster-clone
