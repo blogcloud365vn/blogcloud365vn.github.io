@@ -1,5 +1,5 @@
 ---
-date: 2019-01-23
+date: 2019-01-39
 title: "High Availability - Phần 3: Tổng quan về Quorum, STONITH/Fencing"
 categories:
   - Linux

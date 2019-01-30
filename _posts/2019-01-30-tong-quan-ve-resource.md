@@ -1,5 +1,5 @@
 ---
-date: 2019-01-23
+date: 2019-01-30
 title: "High Availability - Phần 4: Tổng quan về Resource trong Pacemaker"
 categories:
   - Linux
