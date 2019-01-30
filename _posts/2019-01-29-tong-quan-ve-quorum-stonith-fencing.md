@@ -85,5 +85,6 @@ https://github.com/hocchudong/ghichep-pacemaker-corosync
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/ch-operation-haao#s1-quorumoverview-HAAO
 
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/s1-fencing-haao
+
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
