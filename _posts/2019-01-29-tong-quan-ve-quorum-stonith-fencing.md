@@ -11,9 +11,11 @@ type: Document
 
 ## Tổng quan về Quorum
 ### Định nghĩa
-`split-brain` là hiện tượng cluster lớn bị tách ra thành nhiều cluster nhỏ. Điều này sẽ dẫn đến sự mất đồng bộ giữa các tài nguyên, ảnh hướng tới sự toàn vẹn của hệ thống. 
-Quorum là giải pháp phòng tránh hiện tượng "split brain" trong cluster. Cluster có quorum chỉ khi số node đang hoạt động nhiểu hơn một nửa số node thuộc cụm ((Số node hoạt động) > (tổng số node của cụm) / 2).
-Quorum được thiết lập bằng cơ chế `voting`. Khi node thuộc cluster xảy ra sự cố hoặc mất kết nối với phần còn lại của cluster, các node đang hoạt động sẽ `vote` cho việc node nào sẽ bị đóng băng cô lập, node nào sẽ tiếp tục hoạt động
+`split-brain` là hiện tượng cluster lớn bị tách ra thành nhiều cluster nhỏ. Điều này sẽ dẫn đến sự mất đồng bộ giữa các tài nguyên,ảnh hướng tới sự toàn vẹn của hệ thống. 
+
+Quorum là giải pháp ngăn chặn hiện tượng "split brain" trong cluster. Cluster có quorum chỉ khi số node đang hoạt động nhiều hơn một nửa số node thuộc Cluster ((Số node hoạt động) > (tổng số node của cụm) / 2).
+
+Quorum được thiết lập bằng cơ chế `voting`. Khi node thuộc cluster xảy ra sự cố hoặc mất kết nối với phần còn lại của cluster, các node đang hoạt động sẽ `vote` cho việc node nào sẽ bị đóng băng cô lập, node nào sẽ tiếp tục hoạt động.
 
 Kỹ thuật Quorm được hỗ trợ mặc định trong pacemaker, với 2 kỹ thuật:
 - Hỗ trợ kỹ thuật `Resource-driven cluster` - Kỹ thuật phân cấp, nhóm tài nguyên để quản lý độc lập
@@ -34,8 +36,7 @@ Kỹ thuật Quorm được hỗ trợ mặc định trong pacemaker, với 2 k�
 ![](/images/img-tong-quan-ve-quorum-stonith-fencing/pic2.png)
 
 
-Trong trường hợp cluster gồm 6 node bị phân mảnh thì cần ít nhất 4 node cùng hoạt động trong cluster để hình thành quorum nếu bị phân mảnh nhỏ hơn pacemaker sẽ cô lập hoặc ngừng cung cấp dịch vụ
-
+Trong trường hợp cluster gồm 6 node bị phân mảnh thì cần ít nhất 4 node cùng hoạt động trong cluster để hình thành quorum. Trong trường hợp bị phân mảnh nhỏ hơn pacemaker sẽ cô lập hoặc ngừng cung cấp dịch vụ.
 
 ![](/images/img-tong-quan-ve-quorum-stonith-fencing/pic3.png)
 
@@ -48,10 +49,11 @@ Các tùy chọn khi pacemaker mất Quorum (Số node hiện có không thể t
 
 ## Tổng quan STONITH/Fencing
 ### Định nghĩa
-STONITH viết tắt `Shoot-The-Other-Node-In-The-Head`, kỹ thuật bảo vễ dữ liệu khỏi các node xảy ra sự cố. Trong trường hợp node không phản hổi cluster nhưng không chắc chắn trạng thái của node, các dịch vụ trên node, cách tốt nhất để bảo đảm dữ liệu là tắt nóng, bảm đảm node thực sự offline. STONITH thường được hỗ trợ bởi phần cứng, giải pháp cho phép cluster nói chuyện trực tiếp với server vật lý. 
+STONITH viết tắt `Shoot-The-Other-Node-In-The-Head`, kỹ thuật bảo vễ dữ liệu khỏi các node xảy ra sự cố. Trong trường hợp node không phản hổi cluster nhưng không chắc chắn trạng thái của node, các dịch vụ trên node, cách tốt nhất để bảo đảm dữ liệu là tắt nóng, bảm đảm node thực sự offline. STONITH sẽ sử dụng các giao thực quản trị từ xa hỗ trợ bởi phần cứng, cho phép cluster thao tác trực tiếp với server vật lý.
 
-Trong hệ thống cluster, các node chia sẻ tài nguyên sử dụng, nếu một node xảy ra sự cố tài nguyên chia sẻ giữa các có thể bị ảnh hướng dẫn đến trạng thái các node khác trở nên thất thường. Để tránh hiện tượng này xảy ra, ta sẽ sử dụng kỹ thuật fencing để cô lập các tài nguyên của node đang xảy ra sự cố.
-Fencing sẽ loại bỏ kết nối giữa node tới các tài nguyên chia sẻ giữa cluster (shared storage, database, ..). Cluster thực hiện kỹ thuật `fencing` thông qua kỹ thuật `STONITH`.
+Trong hệ thống cluster, các node chia sẻ tài nguyên sử dụng, nếu một node xảy ra sự cố tài nguyên chia sẻ giữa các node có thể bị ảnh hướng dẫn đến trạng thái các node khác cũng trở nên thất thường. Để tránh hiện tượng này xảy ra, ta sẽ sử dụng kỹ thuật fencing để cô lập các tài nguyên của node đang xảy ra sự cố.
+
+Fencing sẽ loại bỏ kết nối giữa node tới các tài nguyên chia sẻ giữa cluster (shared storage, database, ..). Cluster thực hiện cô lập tài nguyên (`fencing`) thông qua kỹ thuật `STONITH`.
 
 Với pacemaker, khi nhận thấy node xảy ra sự cố, nó sẽ thông báo cho các node đang hoạt động về node lỗi và cô lập node thông qua `STONITH`.
 
