@@ -47,7 +47,7 @@ Các tùy chọn khi pacemaker mất Quorum (Số node hiện có không thể t
 - suicide: Cô lập các node đang xảy ra sự cố
 
 
-## Tổng quan STONITH/Fencing
+## Tổng quan về STONITH/Fencing
 ### Định nghĩa
 STONITH viết tắt `Shoot-The-Other-Node-In-The-Head`, kỹ thuật bảo vễ dữ liệu khỏi các node xảy ra sự cố. Trong trường hợp node không phản hổi cluster nhưng không chắc chắn trạng thái của node, các dịch vụ trên node, cách tốt nhất để bảo đảm dữ liệu là tắt nóng, bảm đảm node thực sự offline. STONITH sẽ sử dụng các giao thực quản trị từ xa hỗ trợ bởi phần cứng, cho phép cluster thao tác trực tiếp với server vật lý.
 
