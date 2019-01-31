@@ -12,11 +12,11 @@ type: Document
 
 KVM (Kernel-based Virtual Machine) được biết đến là một cơ sở hạ tầng ảo hóa cho nhân Linux dành cho những CPU hỗ trợ công nghệ ảo hóa như Intel VT hoặc ADM-V.
 
-[Bài viết trước](https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/){:target="_blank"} tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
+<a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-ubuntu/" target="_blank">Bài viết trước</a> tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
 
 ## Chuẩn bị
 
-- Một máy chạy hệ điều hành CentOS 7 với cấu hình tối thiểu 2 CPU, 2 GB RAM và 10 GB disk. Bạn có thể tham khảo [tại đây](https://cloud365.vn/#1#content-2) để mua một VPS phù hợp.
+- Một máy chạy hệ điều hành CentOS 7 với cấu hình tối thiểu 2 CPU, 2 GB RAM và 10 GB disk. Bạn có thể tham khảo <a href="https://cloud365.vn/#1#content-2" target="_blank">tại đây</a> để mua một VPS phù hợp.
 - Một file ISO của một hệ điều hành khác để cài máy ảo.
 
 *Lưu ý* để cài được KVM thì cần phải được CPU hỗ trợ. Để kiểm tra xem CPU có hỗ trợ hay không sử dụng lệnh
@@ -62,7 +62,7 @@ systemctl enable libvirtd
 
 ### Cài máy ảo
 
-Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager [tại đây](https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/#c%C3%A0i-%C4%91%E1%BA%B7t){:target="_blank"}
+Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager <a href="(https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/#c%C3%A0i-%C4%91%E1%BA%B7t)" target="_blank">tại đây</a>
 
 Bài viết này tôi sẽ sử dụng câu lệnh `virt-install` để tạo máy ảo.
 
@@ -121,4 +121,4 @@ centos7-test
 
 Chúc bạn thành công!
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/){:target="_blank"}
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
