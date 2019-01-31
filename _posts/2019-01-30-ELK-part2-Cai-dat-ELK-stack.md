@@ -6,6 +6,8 @@ description: Tài liệu về ELK stack
 author: datpt
 tags: [Logging, Linux]
 type: Document
+set: Gioi-thieu-ELK
+set_order: 2
 ---
 
 ## Lời mở đầu
