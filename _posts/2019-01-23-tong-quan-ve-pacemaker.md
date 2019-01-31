@@ -7,6 +7,8 @@ description: Tổng quan về Pacemaker Corosync
 author: thanhnb
 tags: [Cluster, Load balancer, High Availability, Linux, CentOS7]
 type: Document
+set: high-availability
+set_order: 14
 ---
 
 ## Tổng quan

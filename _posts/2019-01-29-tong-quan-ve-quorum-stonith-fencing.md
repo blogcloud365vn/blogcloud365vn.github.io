@@ -7,6 +7,8 @@ description: Tổng quan về Quorum, STONITH/Fencing
 author: thanhnb
 tags: [Cluster, Load balancer, High Availability, Linux, CentOS7]
 type: Document
+set: high-availability
+set_order: 13
 ---
 
 ## Tổng quan về Quorum
