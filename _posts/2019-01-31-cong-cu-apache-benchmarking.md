@@ -15,6 +15,10 @@ Kiểm tra, đánh giá tải là điều cần thiết trước khi trên khả
 Công cụ __Apache HTTP server benchmarking tool__ (ab) có thể tạo ra tải mô phỏng tới web server bằng cách gửi các request đồng thời tới máy chủ. Công cụ này được tích hợp mặc định sau khi cài dịch vụ HTTP Apache để đánh giá Web server sau khi cài đặt.
 
 ## Chuẩn bị
+### Mô hình
+
+![](/images/img-ab-tool/pic7.png)
+
 ### Đăng ký dịch vụ máy chủ Web
 Truy cập <a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" target="_blank">Nhân hòa</a>, đăng ký 1 Máy ảo CentOS 7 với cấu hình 2 CPU, 2GB RAM - 25 GB Disk (Cấu hình gói B)
 
