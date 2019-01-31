@@ -36,7 +36,7 @@ Mô hình triển khai một node zabbix-server, một hoặc nhiều các host 
 <a name="thietlap"></a>
 ## 3. Thiết lập ban đầu
 
-**Cài đặt chuẩn bị server ban đầu bao gồm các thao tác:**Đặt địa chỉ IP tĩnh cho server, đặt host-name, thiết lập firewalld, selinux.
+**Cài đặt chuẩn bị server ban đầu bao gồm các thao tác:** Đặt địa chỉ IP tĩnh cho server, đặt host-name, thiết lập firewalld, selinux.
 
 Ở màn command line của server bạn thực hiện các câu lệnh dưới.
 
