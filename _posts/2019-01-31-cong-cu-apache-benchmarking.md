@@ -241,7 +241,7 @@ Lưu ý:
 - `ttime`: Tổng thời gian (Tổng = ctime + dtime )
 - `wait`: Thời gian chờ (Waiting Time)
 
-pic time-explain
+![](/images/img-ab-tool/time-explain.jpg)
 
 ### Phần 3: Thực hiện Test với Web động
 Để có kết quả sát với thực tế, ta sẽ dùng AB Tool kiểm tra 1 web động (ở đây ta sẽ dùng flask python) để đối sánh kết quả
