@@ -40,11 +40,13 @@ systemctl start httpd
 systemctl enable httpd
 ```
 
+Kết quả
+
 ![](/images/img-ab-tool/pic5.png)
 
 ### Tại máy tính cá nhân
 
-Tại máy tính cá nhân (sử dụng ubuntu 18.04) cài đặt các gói sau
+Tại máy tính cá nhân (chạy hệ điều hành ubuntu 18.04) cài đặt các gói sau
 
 ```
 sudo apt-get install apache2-utils
