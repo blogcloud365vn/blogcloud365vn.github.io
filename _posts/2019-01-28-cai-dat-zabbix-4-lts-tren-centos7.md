@@ -184,7 +184,7 @@ Tạo database có tên `zabbix_db` cho zabbix server
 MariaDB [(none)]> create database zabbix_db character set utf8 collate utf8_bin;
 Query OK, 1 row affected (0.00 sec)
 ```
-Gán quyền cho user `zabbix_user` với mật khẩu `password` cho database `zabbix_db`.
+Gán quyền cho user `zabbix_user` với mật khẩu là `password` cho database `zabbix_db`.
 
 ```
 MariaDB [(none)]> grant all privileges on zabbix_db.* to zabbix_user@localhost identified by 'password';
