@@ -1,7 +1,7 @@
 ---
 title: ELK part 2 - Cài đặt ELK
 categories:
-  - logging
+  - Logging
 description: Tài liệu về ELK stack
 author: datpt
 tags: [Logging, Linux]
