@@ -29,18 +29,18 @@ Mô hình triển khai một node zabbix-server, một hoặc nhiều các host 
 <a name="planning"></a>
 ## 2. IP Planning
 
-![](/images/img-zabbix-4lts/Screenshot_928.png)
+![](/images/img-zabbix-4lts/Screenshot_929.png)
 
 **Lưu ý**: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
 
 <a name="thietlap"></a>
 ## 3. Thiết lập ban đầu
 
-Cài đặt chuẩn bị server ban đầu bao gồm các thao tác: 
+** Cài đặt chuẩn bị server ban đầu bao gồm các thao tác: **
 
-+ Đặt địa chỉ IP tĩnh cho server<br>
-+ Đặt host-name<br>
-+ Thiết lập firewalld, selinux<br>
+Đặt địa chỉ IP tĩnh cho server<br>
+Đặt host-name<br>
+Thiết lập firewalld, selinux<br>
 
 Ở màn command line của server bạn thực hiện các câu lệnh dưới.
 
@@ -68,7 +68,7 @@ Restart lại server để cập nhật cấu hình mới.
 
 ![](/images/img-zabbix-4lts/Screenshot_908.png)
 
-+ Update các gói cài đặt
+Update các gói cài đặt
 
 ```
 yum install epel-release
@@ -87,7 +87,7 @@ yum -y install zabbix-server-mysql zabbix-web-mysql mysql mariadb-server httpd p
 
 ### Bước 2: Create Database
 
-+ Start service `mariadb` và tự động start khi khởi động lại server.
+Start service `mariadb` và tự động start khi khởi động lại server.
 
 ```
 systemctl start mariadb
@@ -161,7 +161,9 @@ Thanks for using MariaDB!
 [root@zabbix ~]#
 ```
 
-+ Tạo một database cho zabbix
+** Tạo một database cho zabbix **
+
+Login database mysql
 
 ```
 [root@zabbix ~]# mysql -u root -p
@@ -173,16 +175,29 @@ Server version: 5.5.60-MariaDB MariaDB Server
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+```
+Xóa database `zabbix_db` nếu đã tồn tại.
 
+```
 MariaDB [(none)]> DROP DATABASE IF EXISTS zabbix_db;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
+```
+Tạo database có tên `zabbix_db` cho zabbix server
 
+```
 MariaDB [(none)]> create database zabbix_db character set utf8 collate utf8_bin;
 Query OK, 1 row affected (0.00 sec)
+```
+Gán quyền cho user `zabbix_user` với mật khẩu `password` cho database `zabbix_db`.
 
+```
 MariaDB [(none)]> grant all privileges on zabbix_db.* to zabbix_user@localhost identified by 'password';
 Query OK, 0 rows affected (0.00 sec)
+```
 
+Áp dụng thay đổi và thoát khỏi mysql.
+
+```
 MariaDB [(none)]> flush privileges;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -238,27 +253,27 @@ systemctl restart mariadb
 
 `http://ipserver/zabbix`
 
-+ Giao diện cài đặt ban đầu zabbix. Click `Next step`
+Giao diện cài đặt ban đầu zabbix. Click `Next step`
 
 ![](../images/img-zabbix-4lts/Screenshot_917.png)
 
-+ Thông số config php. Click `Next step`
+Thông số config php. Click `Next step`
 
 ![](../images/img-zabbix-4lts/Screenshot_918.png)
 
-+ Nhập thông số về database zabbix đã thiết lập ở `bước 2`
+Nhập thông số về database zabbix đã thiết lập ở `bước 2`
 
 ![](../images/img-zabbix-4lts/Screenshot_919.png)
 
-+ Zabbix server details
+Zabbix server details
 
 ![](../images/img-zabbix-4lts/Screenshot_920.png)
 
-+ Pre-installation summary
+Pre-installation summary
 
 ![](../images/img-zabbix-4lts/Screenshot_921.png)
 
-+ Kết thúc cài đặt. Click `Finish`
+Kết thúc cài đặt. Click `Finish`
 
 ![](../images/img-zabbix-4lts/Screenshot_922.png)
 
