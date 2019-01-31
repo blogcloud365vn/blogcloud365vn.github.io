@@ -148,4 +148,4 @@ Sau khi cài xong ta login vào và kiểm tra IP.
 
 Chúc bạn thành công!
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
