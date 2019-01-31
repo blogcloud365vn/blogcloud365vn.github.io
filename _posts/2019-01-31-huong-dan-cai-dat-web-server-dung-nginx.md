@@ -30,9 +30,14 @@ yum update -y
 init 6
 ```
 
-Tạo file repo cho nginx
+Sau khi reboot server online chúng ta truy cập lại ssh vào server với quyền root
+Chúng ta truy cập vào đường dẫn repo
 ```sh
 cd /etc/yum.repos.d/
+```
+
+Tạo file repo cho nginx
+```sh
 cat >> nginx.repo << "EOF"
 [nginx]
 name=nginx repo
@@ -69,6 +74,10 @@ Tiến hành download source nginx tại trang https://nginx.org/download/
 ```sh
 wget https://nginx.org/download/nginx-1.15.0.tar.gz
 tar -xzf nginx-1.15.0.tar.gz
+```
+
+Truy cập vào đường dẫn chứa source nginx vừa giải nén
+```sh
 cd nginx-1.15.0/
 ```
 
@@ -113,10 +122,18 @@ systemctl start nginx
 systemctl enable nginx
 ```
 
-Sửa file cấu hình Nginx
+Truy cập vào đường dẫn chứa file config của nginx
 ```sh
 cd /etc/nginx/conf
+```
+
+Backup lại file nginx.conf
+```sh
 mv nginx.conf nginx.conf.bak
+```
+
+Sửa file cấu hình Nginx
+```sh
 cat >> nginx.conf << "EOF"
 user  nginx;
 worker_processes  1;
@@ -150,6 +167,10 @@ http {
     include /etc/nginx/conf.d/*.conf;
 }
 EOF
+```
+
+Tạo thư mục chứa các file cấu hình virtualhost cho các website
+```sh
 mkdir -p /etc/nginx/conf.d/
 ```
 
@@ -165,12 +186,24 @@ sed -i 's/group = apache/group = nginx/'g /etc/php-fpm.d/www.conf
 service php-fpm restart
 ```
 
-Tạo virtualhost trong Nginx
+Truy cập vào đường dẫn chứa code chung của các website và tạo thư mục riêng chứa code của site thangth.name.vn
 ```sh
 cd /var/www/html
 mkdir thangth.name.vn
+```
+
+Truy cập đường dẫn chứa các file cấu hình của virtualhost
+```sh
 cd /etc/nginx/conf.d/
-mv default.conf default.conf
+```
+
+Backup file cấu hình default
+```sh
+mv default.conf default.conf.bak
+```
+
+Tạo virtualhost trong Nginx
+```sh
 cat >> thangth.name.vn.conf << "EOF"
 server {
     listen       80;
@@ -198,9 +231,13 @@ service nginx restart
 ```
 
 Trong bài viết này sử dụng domain thangth.name.vn để cấu hình virtualhost, người dùng cần thay đổi tên domain cũng như đường dẫn chứa code phù hợp
-Chúng ta tiến hành tạo 1 file info.php trong thư mục /var/www/html/thangth.name.vn để kiểm tra website
+Truy cập đường dẫn chứa code của site thangth.name.vn
 ```sh
 cd /var/www/html/thangth.name.vn
+```
+
+Chúng ta tiến hành tạo 1 file info.php trong thư mục /var/www/html/thangth.name.vn để kiểm tra website
+```sh
 cat >> info.php << "EOF"
 <?php
 phpinfo();
