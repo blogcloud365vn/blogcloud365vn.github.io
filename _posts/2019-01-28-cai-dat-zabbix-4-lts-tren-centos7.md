@@ -161,7 +161,7 @@ Thanks for using MariaDB!
 [root@zabbix ~]#
 ```
 
-** Tạo một database cho zabbix **
+**Tạo một database cho zabbix**
 
 Login database mysql
 
