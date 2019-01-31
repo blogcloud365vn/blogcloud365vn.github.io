@@ -29,7 +29,7 @@ set_order: 14
 ## 3. Phân hoặc địa chỉ IP.
 
 
-![](/images/img-elk/elk-5.png)
+![](/images/img-elk/elk-7.png)
 
 ## 4. Cài đặt trên máy chủ ELK.
 
