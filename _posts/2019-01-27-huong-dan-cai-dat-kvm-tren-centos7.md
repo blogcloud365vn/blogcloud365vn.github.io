@@ -12,7 +12,7 @@ type: Document
 
 KVM (Kernel-based Virtual Machine) được biết đến là một cơ sở hạ tầng ảo hóa cho nhân Linux dành cho những CPU hỗ trợ công nghệ ảo hóa như Intel VT hoặc ADM-V.
 
-[Bài viết trước](/_posts/2019-01-24-huong-dan-cai-dat-kvm-tren-ubuntu.md) tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
+[Bài viết trước](https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/){:target="_blank"} tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
 
 ## Chuẩn bị
 
@@ -62,7 +62,7 @@ systemctl enable libvirtd
 
 ### Cài máy ảo
 
-Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager [tại đây](/_posts/2019-01-24-huong-dan-cai-dat-kvm-tren-ubuntu.md)
+Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager [tại đây](https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/#c%C3%A0i-%C4%91%E1%BA%B7t){:target="_blank"}
 
 Bài viết này tôi sẽ sử dụng câu lệnh `virt-install` để tạo máy ảo.
 
@@ -121,4 +121,4 @@ centos7-test
 
 Chúc bạn thành công!
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi [cloud365.vn](https://cloud365.vn/){:target="_blank"}
