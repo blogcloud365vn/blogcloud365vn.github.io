@@ -12,7 +12,7 @@ type: Document
 
 KVM (Kernel-based Virtual Machine) được biết đến là một cơ sở hạ tầng ảo hóa cho nhân Linux dành cho những CPU hỗ trợ công nghệ ảo hóa như Intel VT hoặc ADM-V.
 
-Bài viết trước tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
+[Bài viết trước](/_posts/2019-01-24-huong-dan-cai-dat-kvm-tren-ubuntu.md) tôi đã giới thiệu bạn cách cài đặt KVM trên Ubuntu. Trong bài viết này tôi sẽ tiến hành cài đặt KVM trên máy chủ Centos 7 và sử dụng lệnh `virt-install` để tạo máy ảo.
 
 ## Chuẩn bị
 
@@ -62,7 +62,7 @@ systemctl enable libvirtd
 
 ### Cài máy ảo
 
-Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager [tại đây](/_posts/2019-01-24-huong-dan-cai-dat-centos7-kvm-bang-virt-manager.md)
+Có rất nhiều công cụ để tạo và quản lý máy ảo KVM. Bạn có thể sử dụng công cụ đồ họa `virt-manager` đã cài bên trên. Tham khảo cách tạo máy ảo bằng virt-manager [tại đây](/_posts/2019-01-24-huong-dan-cai-dat-kvm-tren-ubuntu.md)
 
 Bài viết này tôi sẽ sử dụng câu lệnh `virt-install` để tạo máy ảo.
 
