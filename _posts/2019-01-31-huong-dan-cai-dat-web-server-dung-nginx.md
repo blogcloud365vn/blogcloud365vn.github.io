@@ -18,8 +18,11 @@ Nginx tập trung vào việc phục vụ số lượng kết nối đồng th�
 
 ## 2. Mô hình lab
 Chúng ta sẽ tiến hành cài đặt webserver sử dụng Nginx trên server cài đặt OS Centos 7.6.1810
+
 Địa chỉ IP máy chủ: 10.10.11.162
+
 Cấu hình máy chủ: 
+
 Cài đặt: Cài đặt và cấu hình nginx kết hợp php 
 
 ## 3. Tiến hành cài đặt
