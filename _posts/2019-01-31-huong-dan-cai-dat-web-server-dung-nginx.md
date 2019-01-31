@@ -2,10 +2,10 @@
 date: 2019-01-31
 title: Hướng dẫn cài đặt web server dùng Nginx
 categories:
-  - 
+  - Linux
 description: Hướng dẫn cài đặt web server dùng Nginx
 author: quyenbx
-tags: [Webserver]
+tags: [Nginx, Linux, CentOS7]
 type: Document
 ---
 
