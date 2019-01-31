@@ -7,7 +7,7 @@ author: datpt
 tags: [Logging, Linux]
 type: Document
 set: Gioi-thieu-ELK
-set_order: 1
+set_order: 15
 ---
 
 **Lời mở đầu**
