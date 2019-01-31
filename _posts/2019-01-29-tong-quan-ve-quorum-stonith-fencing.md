@@ -69,7 +69,7 @@ Các giao thức hỗ trợ STONITH:
 - ILO - Integrated Lights-Out ( HP )
 - IMM - Integrated Management Module ( IBM )
 
-Ngoài ra, nếu dịch vụ chạy trên các máy ảo, các vật chủ hỗ trợ phương pháp giảm trị:
+Ngoài ra, nếu dịch vụ chạy trên các máy ảo, các vật chủ hỗ trợ phương pháp fencing:
 - fence_vmware_soap (vSphere Vmware)
 - Fence virtd, fence-agents-virsh  (Cho trình ảo hóa hỗ trợ lib virt
 
