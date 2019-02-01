@@ -7,7 +7,7 @@ congto:
     email: congtt@nhanhoa.com
     web: https://nhanhoa.com
 huytm:
-    name: Trần Huy
+    name: Trần Mạnh Huy
     email: huytm@nhanhoa.com
     web: https://nhanhoa.com
 duydm:
@@ -21,4 +21,20 @@ tuanda:
 canhdx:
     name: Đặng Xuân Cảnh
     email: tuanda@nhanhoa.com
+    web: https://nhanhoa.com
+thanhnb:
+    name: Nguyễn Bá Thành
+    email: thanhnb@nhanhoa.com
+    web: https://nhanhoa.com
+datpt:
+    name: Phạm Thành Đạt
+    email: datpt@nhanhoa.com
+    web: https://nhanhoa.com
+niemdt:
+    name: Đinh Trọng Niệm
+    email: niemdinhtrong@gmail.com
+    web: https://nhanhoa.com
+minhnv:
+    name: Nguyễn Văn Minh
+    email: nguyenvanminhkma@gmail.com
     web: https://nhanhoa.com
