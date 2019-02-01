@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01
+date: 2019-01-31
 title: Hướng dẫn cài đặt Nginx làm webserver trên centos 7
 categories:
   - Linux
@@ -38,6 +38,13 @@ init 6
 
 Khi server online truy cập lại ssh vào server với quyền root và tiến hành cài đặt
 
+Để cài đặt nginx chúng ta lựa chọn một trong hai cách bên dưới
+
+Cài đặt nginx theo lệnh yum [tại đây](#yum)
+
+Cài đặt nginx theo Source [tại đây](#source)
+
+<a name="yum"></a>
 ## 2.1 Cài đặt Nginx theo lênh yum
 Chúng ta truy cập vào đường dẫn repo
 ```sh
@@ -65,6 +72,7 @@ Start service nginx
 service nginx start
 ```
 
+<a name="source"></a>
 ## 2.2 Cài đặt Nginx theo source 
 Cài đặt các package cần thiết để compile Nginx từ source
 ```sh
