@@ -203,7 +203,7 @@ systemctl restart zabbix-server
 systemctl restart httpd
 systemctl restart mariadb
 ```
-![](../images/img-zabbix-4ltsScreenshot_915.png)
+![](/images/img-zabbix-4ltsScreenshot_915.png)
 
 ### Bước 8: Cấu hình web dashboard zabbix
 
@@ -211,37 +211,37 @@ systemctl restart mariadb
 
 Giao diện cài đặt ban đầu zabbix. Click `Next step`
 
-![](../images/img-zabbix-4lts/Screenshot_917.png)
+![](/images/img-zabbix-4lts/Screenshot_917.png)
 
 Thông số config php. Click `Next step`
 
-![](../images/img-zabbix-4lts/Screenshot_918.png)
+![](/images/img-zabbix-4lts/Screenshot_918.png)
 
 Nhập thông số về database zabbix đã thiết lập ở `bước 2`
 
-![](../images/img-zabbix-4lts/Screenshot_919.png)
+![](/images/img-zabbix-4lts/Screenshot_919.png)
 
 Zabbix server details
 
-![](../images/img-zabbix-4lts/Screenshot_920.png)
+![](/images/img-zabbix-4lts/Screenshot_920.png)
 
 Pre-installation summary
 
-![](../images/img-zabbix-4lts/Screenshot_921.png)
+![](/images/img-zabbix-4lts/Screenshot_921.png)
 
 Kết thúc cài đặt. Click `Finish`
 
-![](../images/img-zabbix-4lts/Screenshot_922.png)
+![](/images/img-zabbix-4lts/Screenshot_922.png)
 
 ### Bước 9: Login dashboard zabbix server
 
 Sử dụng tài khoản default để login zabbix server `Admin\zabbix`
 
-![](../images/img-zabbix-4lts/Screenshot_924.png)
+![](/images/img-zabbix-4lts/Screenshot_924.png)
 
 Login thành công.
 
-![](../images/img-zabbix-4lts/Screenshot_925.png)
+![](/images/img-zabbix-4lts/Screenshot_925.png)
 
 Hy vọng những hướng dẫn trên giúp bạn triển khai zabbix server thành công!
 
