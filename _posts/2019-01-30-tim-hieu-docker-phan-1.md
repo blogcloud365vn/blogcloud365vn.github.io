@@ -11,7 +11,7 @@ type: Document
 ## Mở đầu
 
 <p align="center">
-<img width="800" height="600" src="/images/img-docker/docker1/docker.png" title="Nguồn medium.com"/>
+<img src="/images/img-docker/docker1/docker.png" title="Nguồn medium.com"/>
 </p>
 
 __Docker__ là một ứng dụng mang lại lợi ích cho cả __SysAdmin, Developer (Dev)__ lẫn __Devops__. Đối với Dev, họ không cần phải biết nhiều về việc vận hành các chương trình, phần mềm phía dưới. Ngoài ra Dev cũng tận dụng được hàng nghìn các chương trình được đóng gói sẵn và chia sẻ trên mạng. Đối với SysAd, Docker mang đến sự linh hoạt trong quản lý, tăng khả năng tận dụng tài nguyên hệ thống. Đối với Devops, lợi ích chính là tận dụng cả hai lợi ích ở trên =)).
