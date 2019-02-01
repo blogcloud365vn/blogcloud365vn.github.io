@@ -1,5 +1,5 @@
 ---
-date: 2019-01-31
+date: 2019-01-30
 title: Hướng dẫn cài đặt web server dùng Nginx
 categories:
   - Linux
