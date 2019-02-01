@@ -161,9 +161,11 @@ nginx -t -c /etc/nginx/conf/nginx.conf
 ```
 
 Kết quả trả về như bên dưới là cài đặt đã thành công
+
 ![](/images/img-nginx/kiemtra.png)
 
 Chúng ta tiến hành truy cập website từ máy Win Client với kết quả trả về như sau là hoàn thành
+
 ![](/images/img-nginx/access.png)
 
 ---
