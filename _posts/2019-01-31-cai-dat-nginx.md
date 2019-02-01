@@ -72,6 +72,8 @@ Start service nginx
 service nginx start
 ```
 
+Chuyển tới bước [tiếp theo](#kiemtra)
+
 <a name="source"></a>
 ## 2.2 Cài đặt Nginx theo source 
 Cài đặt các package cần thiết để compile Nginx từ source
@@ -142,6 +144,9 @@ systemctl start nginx
 systemctl enable nginx
 ```
 
+Chuyển tới bước [tiếp theo](#kiemtra)
+
+<a name="kiemtra"></a>
 ## 2.3 Kiểm tra cài đặt cấu hình 
 Kiểm tra lại cấu hình nginx xem đã chính xác chưa bằng lệnh bên dưới 
 
@@ -157,6 +162,9 @@ nginx -t -c /etc/nginx/conf/nginx.conf
 
 Kết quả trả về như bên dưới là cài đặt đã thành công
 ![](/images/img-nginx/kiemtra.png)
+
+Chúng ta tiến hành truy cập website từ máy Win Client với kết quả trả về như sau là hoàn thành
+![](/images/img-nginx/access.png)
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
