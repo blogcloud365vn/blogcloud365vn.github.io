@@ -4,7 +4,7 @@ categories:
   - Other
 description: Lịch sử hình thành Linux
 author: huytm
-tags: [Linux]
+tags: [Linux, Kernel]
 type: Document
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Tìm hiểu về Docker - Phần 1 - Container"
 categories:
-  - Other
+  - Container
 description: Tìm hiểu về Docker - Phần 1 - Container
 author: huytm
 tags: [Docker, Centos]

@@ -1,7 +1,7 @@
 ---
 title: "Tìm hiểu về Docker - Phần 2 - Cài đặt Docker trên CentOS 7"
 categories:
-  - Other
+  - Container
 description: Tìm hiểu về Docker - Phần 2 - Cài đặt Docker trên CentOS 7
 author: huytm
 tags: [Docker, Centos]
