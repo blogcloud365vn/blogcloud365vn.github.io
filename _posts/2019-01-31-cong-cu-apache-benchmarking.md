@@ -319,18 +319,17 @@ Test với request bổ sung thêm các tùy chọn mở rộng (Thực hiện t
 ```
 ab -l -r -n 100 -c 1 -k -H "Accept-Encoding: gzip, deflate"  http://10.10.11.38:5000/
 ```
-
-Kết quả bài test nâng cao
-
-![](/images/img-ab-tool/pic3.png)
-
 Giải thích tham số:
 
 - `-l` - Cho phép nhiều độ dài file khác nhau (Dùng web động)
 - `-r` - Mặc định ab sẽ tự thoát khi nhận lỗi phản hồi từ webserver, với tham số `-r` ab sẽ thông báo lỗi nhưng bài test vẫn tiếp tục thực hiện
 - `-H` - Thêm các thông số vào header request (Tham số giúp request giống với thực tế hơn)
 
-Sẽ có sự khác biệt giữa test với các request đơn giản và các request với thêm các tùy chọn, từ đó ta sẽ có thểm các số liệu để đánh giá với hệ thống thực tế trước khi triển khai.
+Kết quả bài test nâng cao
+
+![](/images/img-ab-tool/pic3.png)
+
+Màn hình tay trái (thanhnb@thanhnb-pc:~$) là máy tính cá nhân của tôi, màn hình tay phải máy chủ Web (root@webserver-apache-centos7: ~). Sẽ có sự khác biệt giữa test với các request đơn giản và các request với thêm các tùy chọn. Dễ thấy nhất, trong lần đầu tiên test (với tham số mặc định) kết quả lại là `106.35` request trên 1s còn trong lần thứ 2 test(với tham số tùy chọn) kết quả trả lại là `85` request trên 1s. Từ đây ta sẽ có thểm các số liệu để đánh giá với hệ thống thực tế trước khi triển khai. 
 
 
 Tham số tùy chọn khác:
