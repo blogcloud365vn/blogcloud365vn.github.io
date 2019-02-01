@@ -18,7 +18,7 @@ Bày thịt gà xôi gấc
 Khấn cụ (server) : " Đừng tạch nha"
 ```
 
-![log](/images/img-logging/p3-01.png)
+![log](/images/img-logging/p3-log-01.png)
 
 Trước tiên xin chúc toàn thể các bạn đọc của Blog 365 có một cái Tết ấm no, hạnh phúc và đặc biệt AN TOÀN (server hệ thống dù Tết Tây hay Ta đều uptime 100%). 
 
@@ -171,7 +171,7 @@ File cấu hình của syslog cho ta thấy được nơi nơi lưu log của c�
 cron.*                                                  /var/log/cron
 ```
 
-![log](/images/img-logging/p3-01.png)
+![log](/images/img-logging/p3-log-02.png)
 
 Cấu hình Syslog như hình trên được chia thành 2 trường:
 
@@ -339,7 +339,7 @@ Khi số lượng server cần được xử lý tăng lên nhiều hơn thì sa
 
 Xin chào và hẹn gặp lại mọi người tại năm sau ! HAPPY NEW YEAR !
 
-![log](/images/img-logging/p3-00.png)
+![log](/images/img-logging/p3-log-00.png)
 
 ---
 Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
