@@ -179,7 +179,10 @@ Cấu hình Syslog như hình trên được chia thành 2 trường:
 	 - Trường Seletor : Chỉ ra nguồn tạo ra log và mức cảnh bảo của log đó.
 	 - Trong trường seletor có 2 thành phần và được tách nhau bằng dấu "."
 
-Các nguồn tạo log (Facility Level) thường dùng trong Linux đó là : 
+ - Trường 2: Trường action (số 2)
+	 - Chỉ ra nơi lưu log của tiến trình đó.Có 2 loại là lưu tại file trong localhost hoặc gửi đến IP của Máy chủ Log tập trung (tham khảo chi tiết tại phần sau nhé!)
+
+### Các nguồn tạo log (Facility Level) 
 
 |Nguồn tạo log | Ý nghĩa |
 |--------------|---------|
@@ -199,10 +202,7 @@ Các nguồn tạo log (Facility Level) thường dùng trong Linux đó là :
 |security|Kiểm tra đăng nhập|
 |console|Log cảnh báo hệ thống|
 local 0 -local 7|Log dự trữ cho sử dụng nội bộ|
-
- - Trường 2: Trường action (số 2)
-	 - Chỉ ra nơi lưu log của tiến trình đó.Có 2 loại là lưu tại file trong localhost hoặc gửi đến IP của Máy chủ Log tập trung (tham khảo chi tiết tại phần sau nhé!)
-
+	 
 ### Mức cảnh báo của Log (Severity Level)
 
 Các bản tin log trong hệ thống là vô cùng nhiều. Vì vậy để thuận tiện cho việc phân tích mức độ quan trọng của log, mỗi dòng log đều được gắn một mã cảnh báo, tương ứng mức độ quan trọng của dòng log đó.
