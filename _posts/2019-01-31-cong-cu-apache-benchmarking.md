@@ -10,9 +10,9 @@ type: Document
 ---
 
 ## Giới thiệu
-Kiểm tra, đánh giá tải là điều cần thiết trước khi trên khải sản phẩm. Và thật khó nếu sử dụng sức người để kiểm tra các kịch bản đặt ra.
+Kiểm tra, đánh giá tải là điều cần thiết trước khi triển khải sản phẩm. Và thật khó nếu sử dụng sức người để thử các kịch bản đặt ra. Lấy ví dụ cơ bản, để tạo ra tải mô phỏng cho 100 người truy cập cùng thời điểm chúng ta không thể tìm 100 người để thực hiện kịch bản này. Vậy để giải quyết vấn đề, ta sẽ sử dụng công cụ __Apache HTTP server benchmarking tool (ab)__ để tạo ra tải mô phỏng.
 
-Công cụ __Apache HTTP server benchmarking tool__ (ab) có thể tạo ra tải mô phỏng tới web server bằng cách gửi các request đồng thời tới máy chủ. Công cụ này được tích hợp mặc định sau khi cài dịch vụ HTTP Apache để đánh giá Web server sau khi cài đặt.
+Công cụ __Apache HTTP server benchmarking tool (ab)__ được phát triển bởi Apache Software Foundation, là công cụ tạo ra tải mô phỏng cho Web Server bằng cách gửi các request đồng thời tới máy chủ. Công cụ này được tích hợp mặc định sau khi cài dịch vụ HTTP Apache Web Server phục vụ việc đánh giá Web server sau khi cài đặt.
 
 ## Chuẩn bị
 ### Mô hình
@@ -68,8 +68,10 @@ __Hiển thị các tùy chọn__
 
 ```
 ab -h
+```
 
-# Kết quả
+Kết quả
+```
 thanhnb@thanhnb-pc:~$ ab -h
 Usage: ab [options] [http[s]://]hostname[:port]/path
 Options are:
@@ -127,9 +129,10 @@ ab -n <Số lượng request> -c <Số lượng đồng thời> <IP hoặc Domai
 
 Các tham số cơ bản:
 - `-n` - <Số lượng> Tổng số request thực hiện
-- `-c` - <Số lượng thực hiện> Số lượng request thực hiện đồng thời
+- `-c` - <Số lượng thực hiện> Số lượng request thực hiện đồng thời trong cùng một thời điểm
 
 ### Ví dụ minh họa
+Ở ví dụ này, ta sẽ sử dụng công cụ ab tool để tạo tải mô phỏng cho 200 người truy cập trong cùng một thời điểm. Và mỗi người truy cập sẽ thực hiện nhấn `refresh page` 50 lần. Để tạo ra kịch bản này, ta sẽ thiết tùy chọn `concurrency` bằng 200 và tùy chọn `requests` bằng 10000. Có thể hiểu đơn giản tùy chọn `concurrency` tức số người truy cập trong cùng thời điểm và tùy chọn `requests` là tổng số thao tác mà tất cả người truy cập cùng thực hiện (200 người thực hiện 50 lần vậy tổng thao tác là 10000).
 
 Thực hiện test (Thực hiện tại máy tính cá nhân)
 
@@ -247,8 +250,8 @@ Lưu ý:
 
 ![](/images/img-ab-tool/time-explain.jpg)
 
-### Phần 3: Thực hiện Test với Web động
-Để có kết quả sát với thực tế, ta sẽ dùng AB Tool kiểm tra 1 web động (ở đây ta sẽ dùng flask python) để đối sánh kết quả
+## Phần 3: Thực hiện Test với Web động
+Để tạo ra bài test sát với thực tể hơn, ta sẽ cài đặt một web động để test. Ở đây ta sẽ sử dụng Flask Python
 
 ### Cài đặt flask
 
@@ -302,6 +305,7 @@ Kết quả
 ![](/images/img-ab-tool/pic6.png)
 
 ### Thực hiện bài test và đánh giá
+AB Tool hỗ trợ nhiều tham số hỗ trợ cho việc mô phỏng tải thực tế. Việc hiểu và sử dụng các tham số hợp lý sẽ hỗ trợ việc đánh giá tải sát với thực tế hơn.
 
 Thực hiện Test với request cơ bản (Thực hiện tại máy tính cá nhân)
 ```
@@ -326,7 +330,7 @@ Giải thích tham số:
 - `-r` - Mặc định ab sẽ tự thoát khi nhận lỗi phản hồi từ webserver, với tham số `-r` ab sẽ thông báo lỗi nhưng bài test vẫn tiếp tục thực hiện
 - `-H` - Thêm các thông số vào header request (Tham số giúp request giống với thực tế hơn)
 
-Sẽ có sự khác biệt giữa test với các request đơn giản và các request với thêm các tùy chọn, từ đó ta sẽ có thểm các số liệu để đánh giá với hệ thống thực tế trước khi triển khai
+Sẽ có sự khác biệt giữa test với các request đơn giản và các request với thêm các tùy chọn, từ đó ta sẽ có thểm các số liệu để đánh giá với hệ thống thực tế trước khi triển khai.
 
 
 Tham số tùy chọn khác:
