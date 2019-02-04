@@ -8,7 +8,7 @@ author: manhdv
 tags: [Beginer, Linux, Logging]
 type: Document
 ---
-Trong phần tiếp theo, mình sẽ giới thiệu với anh em vào phần thực hành với syslog và rsyslog để mang lại tính thực tế về log đã được giới thiệu trong phần một và phần 2 ở các bài trước.
+Trong phần tiếp theo, mình sẽ giới thiệu với anh em vào phần thực hành với syslog và rsyslog để mang lại tính thực tế về log đã được giới thiệu trong phần một và phần hai ở các bài trước.
 
 ## 1. Chuyên mục điểm tin vắn
 
