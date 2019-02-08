@@ -10,7 +10,7 @@ type: Document
 
 ## Mở đầu
 
-Ở phần [trước](https://blog.cloud365.vn/other/tim-hieu-docker-phan-1/){:target="_blank"} mình đã giới thiệu tổng quan về container và Docker. Phần này mình sẽ viết tiếp về cách cài đặt Docker trên CentOS 7.
+Ở phần [trước](https://blog.cloud365.vn/container/tim-hieu-docker-phan-1/){:target="_blank"} mình đã giới thiệu tổng quan về container và Docker. Phần này mình sẽ viết tiếp về cách cài đặt Docker trên CentOS 7.
 
 Phiên bản cài đặt mình sử dụng là Docker CE. Để phân biệt Docker CE và Docker EE thì các bạn tham khảo thêm tại [đây](https://blog.docker.com/2017/03/docker-enterprise-edition/){:target="_blank"} nhé.
 
@@ -33,7 +33,7 @@ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 **Thêm Docker repo**
 
 ```
-sudo yum-config-manager --add-repo https://download.docker.com/li 
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 **Cài đặt bản lastest của Docker CE**
@@ -45,7 +45,6 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 **Kiểm tra lại cài đặt**
 
 ```
-sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 docker -v
 ```
