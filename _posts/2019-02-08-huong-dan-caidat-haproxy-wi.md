@@ -185,7 +185,8 @@ Sau khi thấy thông báo trên, sử dụng trình duyệt truy cập đườn
 Đăng nhập với tài khoản mặc định với user và mật khẩu như sau `admin/admin`
 
 Kết quả
-pic 1
+
+![](/images/img-caidat-haproxy-wi/wi-pic1.png)
 
 ### Bước 2: Cài đặt Apache
 
