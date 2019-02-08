@@ -119,7 +119,7 @@ init 6
 ```
 
 ## Phần 2. Cài đặt
-### Bước 1: Cài đặt HAProxy phiên bản 
+### Bước 1: Cài đặt HAProxy phiên bản 1.8
 
 Thực hiện tại node `loadbalancer`
 
