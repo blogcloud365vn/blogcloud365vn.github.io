@@ -106,3 +106,6 @@ https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-
 https://viblo.asia/p/huong-dan-su-dung-haproxy-cho-load-balancing-ung-dung-4P856jp95Y3
 
 https://www.haproxy.com/blog/load-balancing-affinity-persistence-sticky-sessions-what-you-need-to-know/
+
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

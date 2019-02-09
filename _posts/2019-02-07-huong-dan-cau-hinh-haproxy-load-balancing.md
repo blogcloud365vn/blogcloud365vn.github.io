@@ -281,6 +281,7 @@ Feb  8 10:42:59 localhost haproxy[22466]: 10.10.10.2:55519 [08/Feb/2019:10:42:59
 Feb  8 10:42:59 localhost haproxy[22466]: 10.10.10.2:55519 [08/Feb/2019:10:42:59.907] webcluster webcluster/web1 0/0/1/1/2 200 335 - - ---- 2/2/0/0/0 0/0 "GET / HTTP/1.1"
 Feb  8 10:43:00 localhost haproxy[22466]: 10.10.10.2:55519 [08/Feb/2019:10:43:00.077] webcluster webcluster/web2 0/0/0/1/1 200 335 - - ---- 2/2/0/0/0 0/0 "GET / HTTP/1.1"
 ```
+
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
 
