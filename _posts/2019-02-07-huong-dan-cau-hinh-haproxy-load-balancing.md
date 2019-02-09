@@ -1,5 +1,5 @@
 ---
-date: 2019-02-08
+date: 2019-02-07
 title: Hướng dẫn cấu hình HAProxy làm load balancing cho Apache trên CentOS 7
 categories:
   - Linux

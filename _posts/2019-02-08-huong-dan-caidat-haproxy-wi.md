@@ -269,7 +269,7 @@ Sau khi thêm backend bạn cần restart lại dịch vụ HAproxy, ở đây t
 
 ![](/images/img-caidat-haproxy-wi/wi-pic10.png)
 
-### Bước 3: Kiểm tra
+### Bước 4: Kiểm tra
 
 #### Kiểm tra HAProxy status page
 Truy cập địa chỉ `http://10.10.10.86:8085/stats` với tài khoản `admin/password`
