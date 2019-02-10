@@ -13,14 +13,17 @@ set_order: 11
 
 Hướng dẫn triển khai Haproxy Pacemaker cho Cluster Galera 3 node trên CentOS 7<br>
 
+## Tổng quan
+
+__HAProxy__ viết tắt của High Availability Proxy, là công cụ mã nguồn mở nổi tiếng ứng dụng cho giải pháp cân bằng tải TCP/HTTP cũng như giải pháp máy chủ Proxy (Proxy Server). HAProxy có thể chạy trên các mỗi trường Linux, Solaris, FreeBSD. Công dụng phổ biến nhất của HAProxy là cải thiện hiệu năng, tăng độ tin cậy của hệ thống máy chủ bằng cách phân phối khối lượng công việc trên nhiều máy chủ (như Web, App, cơ sở dữ liệu). HAProxy hiện đã và đang được sử dụng bởi nhiều website lớn như GoDaddy, GitHub, Bitbucket, Stack Overflow, Reddit, Speedtest.net, Twitter và trong nhiều sản phẩm cung cấp bởi Amazon Web Service.
+
+__MariaDB Galera Cluster__ là giải pháp sao chép đồng bộ nâng cao tính sẵn sàng cho MariaDB. Galera hỗ trợ chế độ Active-Active tức có thể truy cập, ghi dữ liệu đồng thời trên tất các node MariaDB thuộc Galera Cluster.
+
+__Pacemaker__ là trình quản lý tài nguyên trong cluster được phát triển bởi ClusterLabs. Pacemaker tương thích với rất nhiều dịch vụ phổ biến hiện có và hoàn toàn có thể tự phát triển module để quản lý các tài nguyên mà pacemaker chưa hỗ trợ.
+
 ## Phần 1. Chuẩn bị
 ### Phân hoạch
-| Hostname | Hardware                      | Interface                                               |
-|----------|-------------------------------|---------------------------------------------------------|
-| node1    | 2 Cpu - 2gb Ram - 100 gb Disk | ens160: 10.10.10.86 (MNGT) - ens192: 10.10.11.86 (REPL) |
-| node2    | 2 Cpu - 2gb Ram - 100 gb Disk | ens160: 10.10.10.87 (MNGT) - ens192: 10.10.11.87 (REPL) |
-| node3    | 2 Cpu - 2gb Ram - 100 gb Disk | ens160: 10.10.10.88 (MNGT) - ens192: 10.10.11.88 (REPL) |
-
+![](/images/img-haproxy-pacemaker-galera/pic2.png)
 ### Mô hình
 
 Mô hình Galera 3 node
@@ -136,13 +139,14 @@ systemctl stop haproxy
 systemctl disable haproxy
 ```
 
-Tạo user phục vụ option mysql check
+Tạo user `haproxy`, phục vụ plugin health check của HAProxy (`option mysql-check user haproxy`)
 ```
 CREATE USER 'haproxy'@'node1';
 CREATE USER 'haproxy'@'node2';
 CREATE USER 'haproxy'@'node3';
 CREATE USER 'haproxy'@'%';
 ```
+
 ## Phần 3. Triển khai Cluster Pacemaker
 
 ### Bước 1: Cài đặt pacemaker corosync
