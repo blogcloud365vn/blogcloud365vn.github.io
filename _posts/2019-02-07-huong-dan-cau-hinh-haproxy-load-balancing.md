@@ -26,11 +26,7 @@ HAProxy viết tắt (High Availability Proxy) là phần mềm mã nguồn mở
 ### Phân hoạch
 
 
-| Hostname | Hardware                      | Interface                                               |
-|----------|-------------------------------|---------------------------------------------------------|
-| loadbalancer    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.10.86 (Public) - ens192: 10.10.11.86 (Internal) |
-| web1    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.10.87 (Public) - ens192: 10.10.11.87 (Internal) |
-| web2    | 2 Cpu - 2gb Ram - 25 gb Disk | ens160: 10.10.10.88 (Public) - ens192: 10.10.11.88 (Internal) |
+![](/images/img-caidat-haproxy-lb/pic3.png)
 
 ### Mô hình
 
