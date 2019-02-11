@@ -1,7 +1,9 @@
 - name: Blog
   link: /
-- name: Videos
-  link: /videos/
+- name: Archives
+  link: /archives/
+- name: Tags
+  link: /tags/
 - name: FAQ
   link: /faq/
 - name: Home

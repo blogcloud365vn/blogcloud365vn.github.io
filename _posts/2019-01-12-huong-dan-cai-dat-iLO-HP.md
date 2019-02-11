@@ -1,4 +1,5 @@
 ---
+date: 2019-01-12
 title: Hướng dẫn cấu hình và sử dụng iLO server HP
 categories:
   - Other
@@ -128,4 +129,4 @@ Chức năng quản lý thông tin về iLO như license, firmware, cài đặt 
 ![](/images/img-ilo-hp/ilo19.png)
 
 ---
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

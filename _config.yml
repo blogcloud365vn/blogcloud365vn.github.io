@@ -4,7 +4,7 @@
 title: BlogCloud365
 url: "http://blogcloud365vn.github.io/"
 baseurl: 
-google_analytics_key:
+google_analytics_key: UA-132756645-1
 disqus_shortname: congto
 newsletter_action:
 
@@ -16,7 +16,7 @@ author:
   email: 
   twitter: # twitter username without the @ symbol
 social:
-  name: blog.cloud365.vn
+  name: cloud365.vn
   links:
     - http://blogcloud365vn.github.io/
 
@@ -84,7 +84,12 @@ defaults:
       path: "index.html"
     values:
       body_class: "show_hero_search"
-
+  -
+    scope:
+      path: "404.html"
+    values:
+      layout: "404layout"
+    
 # -----------
 # CloudCannon
 
