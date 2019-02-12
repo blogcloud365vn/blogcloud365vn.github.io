@@ -42,15 +42,9 @@ Top-level domain là phần xa nhất ở bên phải (được phân tách bằ
     - Org: Tên miền này được dùng cho các tổ chức khác.
     - Info: Tên miền này dùng cho việc phục vụ thông tin.
     - Arpa: Tên miền ngược.
-<<<<<<< HEAD
-=======
-    - Mã các nước trên thế giới tham gia vào mạng internet, các quốc gia này được qui định bằng hai chữ cái theo tiêu chuẩn ISO-3166. Ví dụ: Việt Nam là .vn, Singapo là sg….
 
 - **Host** : 
 Với tên miền, chủ sở hữu có thể tham chiếu đến các máy tính hoặc dịch vụ riêng biệt. Chẳng hạn, hầu hết chủ sở hữu tên miền làm cho máy chủ web của họ có thể truy cập được thông qua tên miền (cloud365.vn) và cũng thông qua định nghĩa "máy chủ" "www" (www.cloud365.vn).
-
-<span style="display:block;text-align:center">![](/images/img-dns/dns_2.jpg)</span>
->>>>>>> d28873a9eedcd2e7907836e4771965e584ada2fb
 
 - **Tên miền con (Subdomain)** : 
 DNS hoạt động theo thứ bậc. TLD có thể có nhiều tên miền bên dưới. Chẳng hạn, TLD "com" có cả "google.com" và "nhanhoa.com" bên dưới nó. "Tên miền con" là tên miền thuộc một phần của tên miền lớn hơn. Trong trường hợp này, "nhanhoa.com" có thể được coi là tên miền con của "com". Phần "nhanhoa" được gọi là SLD (second level domain), có nghĩa là tên miền cấp hai.
@@ -67,7 +61,6 @@ Zone files được coi là thành phần chính của một Name Server. Nó ch
 **Bản ghi (record)** :
 Trong một zone, bản ghi được lưu giữ dùng để ánh xạ một tên miền thành một địa chỉ IP, xác định máy chủ phân giải cho tên miền, xác định máy chủ mail cho tên miền, v.v.
 
-<<<<<<< HEAD
 **Tên miền (Domain) vs Zone**
 Tên miền được chia thành các zone - thuộc quyền quản lý của các máy chủ DNS.
 
@@ -117,6 +110,95 @@ The BIND name server can simultaneously act as a master for some zones, a slave 
 However, since the functions of authoritative name service and caching/recursive name service are logically separate, it is often advantageous to run them on separate server machines. A server that only provides authoritative name service (an authoritative-only server) can run with recursion disabled, improving reliability and security. A server that is not authoritative for any zones and only provides recursive service to local clients (a caching-only server) does not need to be reachable from the Internet at large and can be placed inside a firewall.
 
 
+Các loại bản ghi - Resource Record (RR) 
+1. SOA (Start of Authority) : Trong mỗi tập tin cơ sở dữ liệu DNS phải có một và chỉ một record SOA (Start of Authority). Bao gồm các thông tin về domain trên DNS Server, thông tin về zone transfer.
+
+Cú pháp :
+```sh
+[tên miền] IN SOA [tên-server-dns] [địa-chỉ-email] (
+                                  2014090401    ; serial
+                                        3600    ; refresh
+                                        1800    ; retry
+                                      604800    ; expire
+                                       86400 )  ; minimum
+```
+`Serial` : áp dụng cho mọi dữ liệu trong zone và có định dạng `YYYYMMDDNN` với YYYY là năm, MM là tháng, DD là ngày, NN là số lần sửa đổi dữ liệu zone trong ngày. Luôn luôn phải tăng số này lên mỗi lần sửa đổi dữ liệu zone. Khi máy chủ Secondary liên lạc với máy chủ Primary, trước tiên nó sẽ hỏi số serial. Nếu số serial của máy Secondary nhỏ hơn số serial của máy Primary tức là dữ liệu zone trên Secondary đã cũ và sao đó máy Secondary sẽ sao chép dữ liệu mới từ máy Primary thay cho dữ liệu đang có.
+
+`Refresh` : chỉ ra khoảng thời gian máy chủ Secondary kiểm tra sữ liệu zone trên máy Primary để cập nhật nếu cần. Giá trị này thay đổi tùy theo tuần suất thay đổi dữ liệu trong zone.
+
+`Retry` : nếu máy chủ Secondary không kết nối được với máy chủ Primary theo thời hạn mô tả trong `refresh` (ví dụ máy chủ Primary bị shutdown vào lúc đó thì máy chủ Secondary phải tìm cách kết nối lại với máy chủ Primary theo một chu kỳ thời gian mô tả trong `retry`. Thông thường, giá trị này nhỏ hơn giá trị `refresh`).
+
+`Expire` : nếu sau khoảng thời gian này mà máy chủ Secondary không kết nối được với máy chủ Primary thì dữ liệu zone trên máy Secondary sẽ bị quá hạn. Khi dữ liệu trên Secondary bị quá hạn thì máy chủ này sẽ không trả lời mỗi truy vấn về zone này nữa. Giá trị `expire` này phải lớn hơn giá trị `refresh` và giá trị `retry`.
+
+`TTL` (time to live) : giá trị này áp dụng cho mọi record trong zone và được đính kèm trong thông tin trả lời một truy vấn. Mục đích của nó là chỉ ra thời gian mà các máy chủ name server khác cache lại thông tin trả lời. Việc cache thông tin trả lời giúp giảm lưu lượng truy vấn DNS trên mạng.
+2. NS (Name Server) : Record tiếp theo cần có trong zone là NS (name server) record. Mỗi name server cho zone sẽ có một NS record. Chứa địa chỉ IP của DNS Server cùng với các thông tin về domain đó.
+
+Cú pháp :
+[domain_name] IN NS [DNS-Server_name]
+Ví dụ : Record NS sau :
+Matbao.com. IN NS ns1.matbao.com.
+Matbao.com. IN NS ns2.matbao.com.
+Chỉ ra hai name servers cho miền matbao.com.
+
+1. Record A
+
+Là một record căn bản và quan trọng, dùng để ánh xạ từ một domain thành địa chỉ IP cho phép có thể truy cập website. Đây là chức năng cốt lõi của hệ thống DNS. Record A có dạng như sau:
+
+example.com   A    123.30.108.142
+
+Qúy khách cũng có thể tạo bản ghi A cho subdomain muốn truy cập đến hosting – VPS – Server.
+
+sub.example.com   A   123.30.108.142
+
+Qúy Khách có thể trỏ subdomain khác nhau đến những IP khác nhau
+
+sub1.example.com   A   123.30.108.150
+
+2. Record CNAME (Canonical Name)
+
+Cho phép tên miền có nhiều bí danh khác nhau, khi truy cập các bí danh sẽ cũng về một địa chỉ tên miền. Để sử dụng bản ghi CNAME cần khai báo bản ghi A trước.
+
+www   CNAME   example.com
+
+mail CNAME example.com
+
+example.com   A   123.30.108.142
+
+Khi một yêu cầu đến địa chỉ alias.com thì DNS sẽ tìm đến  example thông qua bản ghi CNAME, một DNS mới sẽ tiếp tục tìm đến địa chỉ IP: 123.30.108.142 thông qua bản ghi A.
+
+3. Record DKIM
+
+Là bản ghi dùng để xác thực người gửi bằng cách mã hóa một phần email gửi bằng một chuỗi ký tự, xem như là chữ ký.
+
+Khi email được gửi đi máy chủ mail sẻ kiểm so sánh với thông tin bản ghi đã được cấu hình trong DNS để xác nhận. Bản ghi DKIM có dạng:
+
+        mail._domainkey.123host.vn     TXT  k=rsa;p=MIIBIjANBgkqhkiG9w0BA
+
+4. Record MX
+
+Bản ghi MX có tác dụng xác định, chuyển thư đến domain hoặc subdomain đích. Bản ghi MX có dạng
+
+example.com    MX    10    mail.example.com.
+mail.example.com    A    123.30.108.142
+
+Mức độ yêu tiên của được đánh từ 0 đến 10, độ ưu tiền càng cao thì số càng thấp.
+
+example.com MX 10 mail_1.example.com
+example.com MX 20 mail_2.example.com
+example.com MX 30 mail_3.example.com
+
+Bản ghi MX không nhất thiết phải trỏ đến hosting – VPS- Server của Khách hàng. Nếu Khách hàng đang sử dụng dịch vụ mail của bên thứ ba như google app, Khách hàng nên sử dụng bản nghi MX do họ cung cấp.
+
+5. Record SPF
+
+Record SPF được tạo ra nhầm đảm bảo các máy chủ mail sẽ chấp nhận mail từ tên miền của khách hàng chỉ được gửi đi từ server của khách hàng. Sẽ giúp chống spam và giả mạo email. Bản ghi SPF thể hiện dưới dạng:
+
+example.com   TXT     “v=spf1 a ~all”
+
+Với bản ghi SPF, máy chủ tiếp nhận mail sẽ kiểm tra IP của máy chủ gửi và IP của máy chủ đã đăng kí bản ghi SPF example.com. Nếu Khách hàng có nhiều máy chủ mail nên liệt kê tất cả trong bản ghi SPF giúp đảm bảo thư đến được chính xác và đầy đủ.
+
+
+
 dig cloud365.vn
 dig cloud365.vn ns
 dig cloud365.vn soa
@@ -126,9 +208,6 @@ dig -x 103.28.36.11 +short
 dig @8.8.8.8 cloud365.vn any 
 dig @8.8.8.8 mail.cloud365.vn +trace
 
-yum update -y
-yum -y install bind bind-utils
-vi /etc/named.conf
 
 
 
@@ -139,11 +218,7 @@ max-cache-size
 
 https://www.dns-school.org/Documentation/bind-arm/Bv9ARM.ch01.html
 ftp://ftp.isc.org/www/bind/arm95/Bv9ARM.ch06.html#acache
-=======
-## Tham khảo
-https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts
->>>>>>> d28873a9eedcd2e7907836e4771965e584ada2fb
-
+https://securitydaily.net/tim-hieu-he-thong-ten-mien-dns-domain-name-system/
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
 
