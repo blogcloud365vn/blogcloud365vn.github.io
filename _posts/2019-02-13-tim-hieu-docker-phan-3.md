@@ -10,7 +10,7 @@ type: Document
 
 ## Mở đầu
 
-Ở các phần trước mình đã giới thiệu tổng quan về container và hướng dẫn cài đặt `Docker` trên **CentOS7**. Phần này mình sẽ giới thiệu tổng quan các về các thành phần, các khái niệm cơ bản trong hệ sinh thái của `Docker`. 
+Ở các phần trước mình đã giới thiệu tổng quan về container và hướng dẫn cài đặt Docker trên **CentOS7**. Phần này mình sẽ giới thiệu tổng quan các về các thành phần, các khái niệm cơ bản trong hệ sinh thái của `Docker`. 
 
 <p align="center">
 <img src="/images/img-docker/docker3/1.jpg" title="Nguồn https://npalm.github.io/jfall-continuous-fun-docker/images/docker-overview.jpg">
@@ -18,19 +18,19 @@ type: Document
 
 ## 1. Docker Engine
 
-`Docker Engine` là một ứng dụng `client-server`. Có hai phiên bản `Docker Engine` phổ biến là:
+`Docker Engine` là một ứng dụng **client-server**. Có hai phiên bản Docker Engine phổ biến là:
 
 - **Docker Community Edition (CE)**: Là phiên bản miễn phí và chủ yếu dựa vào các sản phầm nguồn mở khác. Cũng sẽ là phiên bản mình sử dụng trong suốt serie này.
 
-- **Docker Enterprise**: Khi sử dụng phiên bản này bạn sẽ nhận được sự support của nhà phát hành, có thêm các tính năng quản lý và `security`. (Bản thân mình chưa được dùng thử Docker Enterprise bao giờ :v)
+- **Docker Enterprise**: Khi sử dụng phiên bản này bạn sẽ nhận được sự support của nhà phát hành, có thêm các tính năng quản lý và *security*. (Bản thân mình chưa được dùng thử Docker Enterprise bao giờ :v)
 
-Các thành phần chính của `Docker Engine` gồm có:
+Các thành phần chính của Docker Engine gồm có:
 
-- **server** hay còn được gọi là **docker daemon** (`dockerd`): chịu trách nhiệm tạo, quản lý các Docker *objects* như `images`, `containers`, `networks`, `volume`.
+- **server** hay còn được gọi là **docker daemon** (`dockerd`): chịu trách nhiệm tạo, quản lý các Docker *objects* như images,  containers, networks, volume.
 
 - **REST API**: docker daemon cung cấp các api cho Client sử dụng để thao tác `Docker`.
 
-- **Client** là thành phần đầu cuối cung cấp một tập hợp các câu lệnh sử dụng api để người dùng thao tác với `Docker`. (Ví dụ `docker images`, `docker ps`, `docker rmi image` v.v..)
+- **Client** là thành phần đầu cuối cung cấp một tập hợp các câu lệnh sử dụng api để người dùng thao tác với Docker. (Ví dụ *docker images*, *docker ps*, *docker rmi image* v.v..)
 
 <p align="center">
 <img src="/images/img-docker/docker3/2.png" title="Nguồn: docs.docker.com">
@@ -40,21 +40,21 @@ Các thành phần chính của `Docker Engine` gồm có:
 
 ## 2. Kiến trúc của Docker
 
-Docker sử dụng kiến trúc `client-server`. Docker **server** (hay còn gọi là daemon) sẽ chịu trách nhiệm build, run, distrubute `Docker container`. Docker **client** và Docker **server** có thể nằm trên cùng một server hoặc khác server. Chúng giao tiếp với nhau thông qua REST API dựa trên UNIX sockets hoặc network interface. 
+Docker sử dụng kiến trúc *client-server*. Docker **server** (hay còn gọi là daemon) sẽ chịu trách nhiệm build, run, distrubute Docker container. Docker **client** và Docker **server** có thể nằm trên cùng một server hoặc khác server. Chúng giao tiếp với nhau thông qua REST API dựa trên UNIX sockets hoặc network interface. 
 
 ### Docker daemon
 
-Docker daemon (`dockerd`) là thành phần core, lắng nghe API request và quản lý các **Docker object**. `Docker daemon` host này cũng có thể giao tiếp được với Docker daemon ở host khác.
+Docker daemon (`dockerd`) là thành phần core, lắng nghe API request và quản lý các **Docker object**. Docker daemon host này cũng có thể giao tiếp được với Docker daemon ở host khác.
 
 ### Docker client
 
-Docker client (`docker`) là phương thức chính để người dùng thao tác với Docker. Khi người dùng gõ lệnh `docker run imageABC` tức là người dùng sử dụng CLI và gửi request đến `dockerd` thông qua api, và sau đó Docker daemon sẽ xử lý tiếp.
+Docker client (`docker`) là phương thức chính để người dùng thao tác với Docker. Khi người dùng gõ lệnh `docker run imageABC` tức là người dùng sử dụng CLI và gửi request đến **dockerd** thông qua api, và sau đó Docker daemon sẽ xử lý tiếp.
 
 Docker client có thể giao tiếp và gửi request đến nhiều Docker daemon.
 
 ### Docker registry
 
-Docker registry là một kho chứa các `image`. Nổi tiếng nhất chính là `Docker Hub`, ngoài ra bạn có thể tự xây dựng một Docker registry cho riêng mình.
+Docker registry là một kho chứa các **Image**. Nổi tiếng nhất chính là **Docker Hub**, ngoài ra bạn có thể tự xây dựng một Docker registry cho riêng mình.
 
 ### Docker object
 
@@ -62,13 +62,13 @@ Các object này chính là các đối tượng mà bạn thường xuyên gặ
 
 **Images**
 
-Image là một `template read-only` sử dụng để chạy `container`.
+Image là một *template read-only* sử dụng để chạy **container**.
 
-Một image có thể base trên một image khác. Ví dụ bạn muốn tạo một image `nginx`, tất nhiên nginx phải chạy trên linux ubuntu chẳng hạn. Khi đó image nginx trước hết sẽ phải base trên ubuntu trước đã.
+Một image có thể base trên một image khác. Ví dụ bạn muốn tạo một image *nginx*, tất nhiên nginx phải chạy trên linux ubuntu chẳng hạn. Khi đó image nginx trước hết sẽ phải base trên ubuntu trước đã.
 
 Bạn có thể tự build image cho riêng mình hoặc tải các image có sẵn của người khác trên Docker registry.
 
-Ở các phần tiếp theo mình sẽ nói rõ hơn về việc tự build image sử dụng `Dockerfile` cũng như các `layer` trong image.
+Ở các phần tiếp theo mình sẽ nói rõ hơn về việc tự build image sử dụng **Dockerfile** cũng như các **layer** trong image.
 
 **Container**
 
@@ -105,7 +105,7 @@ Lý thuyết dông dài không bằng thực hành thực tế :v. Mình sẽ l�
 
 **b. Kiểm tra list image** 
 
-Theo lý thuyết, để chạy một `container` thì cần có một `image` tương ứng. Để kiểm tra image đã có chưa ta sử dụng lệnh 
+Theo lý thuyết, để chạy một **container** thì cần có một **image** tương ứng. Để kiểm tra image đã có chưa ta sử dụng lệnh 
 
 `docker images`
 
@@ -180,7 +180,7 @@ Ví dụ: `docker run -itd ubuntu`. Khi này Docker sẽ tự pull image về ho
 
 Các option khi chạy container (ví dụ trong bài này là `-itd`) mình sẽ giải thích trong các bài viết tiếp theo nhé :v. Để đảm bảo không bị lỗi, các bạn cứ chạy đủ và đúng option `-itd` nhé.
 
-Trong các bài tiếp theo mình sẽ viết hướng dẫn tạo image từ `Dockerfile`. Cảm ơn các bạn đã theo dõi.
+Trong các bài tiếp theo mình sẽ viết hướng dẫn tạo image từ **Dockerfile**. Cảm ơn các bạn đã theo dõi !
 
 
 >"if you have knowledge let others light their candles in it"
