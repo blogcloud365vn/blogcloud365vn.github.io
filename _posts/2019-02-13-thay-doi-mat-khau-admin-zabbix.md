@@ -45,7 +45,7 @@ Nhập mật khẩu mới -> Click `Update`
 - Có độ dài từ 08 ký tự trở lên
 - Có chứa ít nhất một ký tự viết hoa
 - Có chứa ít nhất một ký tự số
-- Có chứa ít nhất một ký tự đặc biệt.
+- Có chứa ít nhất một ký tự đặc biệt
 ```
 
 Ví dụ: `5_AA#jBsk^gfwSNb`, `jUu+4s2=*2cyngPY`, `*g7pz%9D38VM8#Jg`...
