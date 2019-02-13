@@ -26,7 +26,7 @@ type: Document
 
 Các thành phần chính của Docker Engine gồm có:
 
-- **server** hay còn được gọi là **docker daemon** (`dockerd`): chịu trách nhiệm tạo, quản lý các Docker *objects* như images,  containers, networks, volume.
+- **Server** hay còn được gọi là **docker daemon** (`dockerd`): chịu trách nhiệm tạo, quản lý các Docker *objects* như images,  containers, networks, volume.
 
 - **REST API**: docker daemon cung cấp các api cho Client sử dụng để thao tác `Docker`.
 
