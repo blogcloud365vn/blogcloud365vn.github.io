@@ -235,6 +235,8 @@ Kết thúc cài đặt. Click `Finish`
 
 ### Bước 9: Login dashboard zabbix server
 
+Truy cập địa chỉ trên trình duyệt: `http://ip_zabbix_server`
+
 Sử dụng tài khoản default để login zabbix server `Admin\zabbix`
 
 ![](/images/img-zabbix-4lts/Screenshot_924.png)
