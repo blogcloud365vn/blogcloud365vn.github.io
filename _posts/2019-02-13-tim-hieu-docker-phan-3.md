@@ -18,7 +18,7 @@ type: Document
 
 ## 1. Docker Engine
 
-`Docker Engine` là một ứng dụng **client-server**. Có hai phiên bản Docker Engine phổ biến là:
+**Docker Engine** là một ứng dụng **client-server**. Có hai phiên bản Docker Engine phổ biến là:
 
 - **Docker Community Edition (CE)**: Là phiên bản miễn phí và chủ yếu dựa vào các sản phầm nguồn mở khác. Cũng sẽ là phiên bản mình sử dụng trong suốt serie này.
 
@@ -28,7 +28,7 @@ Các thành phần chính của Docker Engine gồm có:
 
 - **Server** hay còn được gọi là **docker daemon** (`dockerd`): chịu trách nhiệm tạo, quản lý các Docker *objects* như images,  containers, networks, volume.
 
-- **REST API**: docker daemon cung cấp các api cho Client sử dụng để thao tác `Docker`.
+- **REST API**: docker daemon cung cấp các api cho Client sử dụng để thao tác với Docker
 
 - **Client** là thành phần đầu cuối cung cấp một tập hợp các câu lệnh sử dụng api để người dùng thao tác với Docker. (Ví dụ *docker images*, *docker ps*, *docker rmi image* v.v..)
 
