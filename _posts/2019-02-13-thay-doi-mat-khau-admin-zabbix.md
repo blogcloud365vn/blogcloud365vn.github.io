@@ -1,9 +1,9 @@
 ---
 date: 2019-01-13
-title: Hướng dẫn thay đổi mật khẩu admin zabbix
+title: Hướng dẫn thay đổi mật khẩu Admin zabbix
 categories:
   - Monitor
-description: Hướng dẫn thay đổi mật khẩu tài khoản admin zabbix đảm bảo an toàn cho hệ thống.
+description: Hướng dẫn thay đổi mật khẩu tài khoản Admin zabbix đảm bảo an toàn cho hệ thống.
 author: duydm
 tags: [Zabbix]
 type: Document
