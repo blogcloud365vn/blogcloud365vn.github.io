@@ -10,13 +10,11 @@ type: Document
 
 ## Mở đầu
 
-Ở các phần trước mình đã giới thiệu tổng quan về container và hướng dẫn cài đặt `Docker` trên `CentOS7`. Phần này mình sẽ giới thiệu tổng quan các về các thành phần, các khái niệm cơ bản trong hệ sinh thái của `Docker`. 
+Ở các phần trước mình đã giới thiệu tổng quan về container và hướng dẫn cài đặt `Docker` trên **CentOS7**. Phần này mình sẽ giới thiệu tổng quan các về các thành phần, các khái niệm cơ bản trong hệ sinh thái của `Docker`. 
 
 <p align="center">
 <img src="/images/img-docker/docker3/1.jpg" title="Nguồn https://npalm.github.io/jfall-continuous-fun-docker/images/docker-overview.jpg">
 </p>
-
-![log](/images/img-docker/docker3/1.jpg)
 
 ## 1. Docker Engine
 
@@ -37,8 +35,6 @@ Các thành phần chính của `Docker Engine` gồm có:
 <p align="center">
 <img src="/images/img-docker/docker3/2.png" title="Nguồn: docs.docker.com">
 </p>
-
-![log](/images/img-docker/docker3/2.png)
 
 Để biết thêm chi tiết về các thành phần, chúng ta hãy cũng xem phần 2 - Kiến trúc của Docker.
 
