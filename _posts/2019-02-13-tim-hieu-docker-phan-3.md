@@ -88,7 +88,7 @@ B1. Docker client (CLI) dùng lệnh sau để chạy một container centos tr�
 
 `docker run -itd centos`
 
-B2. Docker daemon sẽ kiểm tra xem nó có image centos nào không. Nếu có nó sẽ chạy container luôn. Nếu không nó sẽ pull image ubuntu (tag lastest) về từ Registry và sau đó mới chạy container. Kiểm tra xem container đang chạy sử dụng lệnh:
+B2. Docker daemon sẽ kiểm tra xem nó có image centos nào không. Nếu có nó sẽ chạy container luôn. Nếu không nó sẽ pull image centos (tag mặc định là lastest) về từ Registry và sau đó mới chạy container. Kiểm tra xem container đang chạy sử dụng lệnh:
 
 `docker ps`
 
