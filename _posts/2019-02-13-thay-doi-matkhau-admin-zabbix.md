@@ -9,7 +9,7 @@ tags: [Zabbix]
 type: Document
 ---
 
-Ở bài hướng dẫn <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">cài đặt</a> `Zabbix 4.0` LTS trên CentOS 7 đã giới thiệu cho các bạn mô hình triển khai, các bước cài đặt và login vào giao diện web dashboard của zabbix. Sau khi cài đặt thành công zabbix cung cấp cho bạn một tài khoản mặc định `Admin\zabbix` có quyền cao nhất Administrator trên hệ thống zabbix. Điều đầu tiên để hệ thống được bảo mật an toàn phải đổi mật khẩu của tài khoản Admin. Bài viết dưới đây sẽ hướng dẫn bạn các bước thực hiện.
+Ở bài hướng dẫn <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">cài đặt Zabbix 4.0 LTS</a> trên <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-centos7/" target="_blank">CentOS 7</a> đã giới thiệu cho các bạn mô hình triển khai, các bước cài đặt và login vào giao diện web dashboard của zabbix. Sau khi cài đặt thành công zabbix cung cấp cho bạn một tài khoản mặc định `Admin\zabbix` có quyền cao nhất Administrator trên hệ thống zabbix. Điều đầu tiên để hệ thống được bảo mật an toàn phải đổi mật khẩu của tài khoản Admin. Bài viết dưới đây sẽ hướng dẫn bạn các bước thực hiện.
 
 ## 1. Login dashboard zabbix
 
