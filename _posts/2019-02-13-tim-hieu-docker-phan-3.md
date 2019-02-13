@@ -84,11 +84,11 @@ Container cô lập tài nguyên với host và các container khác.
 
 Phía trên là một quá trình thao tác với Docker. Mình sẽ lấy ví dụ quá trình để chạy một container nhé:
 
-B1. Docker client (CLI) chạy lệnh để chạy một container centos trắng:
+B1. Docker client (CLI) dùng lệnh sau để chạy một container centos trắng:
 
 `docker run -itd centos`
 
-B2. Docker daemon sẽ kiểm tra xem nó có image ubuntu nào không. Nếu có nó sẽ chạy container luôn. Nếu không nó sẽ pull image ubuntu (tag lastest) về từ Registry và sau đó mới chạy container. Kiểm tra xem container đang chạy sử dụng lệnh:
+B2. Docker daemon sẽ kiểm tra xem nó có image centos nào không. Nếu có nó sẽ chạy container luôn. Nếu không nó sẽ pull image ubuntu (tag lastest) về từ Registry và sau đó mới chạy container. Kiểm tra xem container đang chạy sử dụng lệnh:
 
 `docker ps`
 
