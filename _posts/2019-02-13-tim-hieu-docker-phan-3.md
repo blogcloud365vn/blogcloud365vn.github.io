@@ -82,8 +82,6 @@ Container cô lập tài nguyên với host và các container khác.
 <img src="/images/img-docker/docker3/3.png" title="Nguồn: docs.docker.com">
 </p>
 
-![log](/images/img-docker/docker3/3.png)
-
 Phía trên là một quá trình thao tác với Docker. Mình sẽ lấy ví dụ quá trình để chạy một container nhé:
 
 B1. Docker client (CLI) chạy lệnh để chạy một container centos trắng:
