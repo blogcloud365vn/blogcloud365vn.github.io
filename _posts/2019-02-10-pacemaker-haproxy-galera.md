@@ -26,15 +26,11 @@ __Pacemaker__ là trình quản lý tài nguyên trong cluster được phát tr
 ![](/images/img-haproxy-pacemaker-galera/pic2.png)
 ### Mô hình
 
-Mô hình Galera 3 node
-
-![](/images/img-haproxy-pacemaker-galera/pic1.png)
-
 Mô hình triển khai
 
 ![](/images/img-haproxy-pacemaker-galera/pic3.png)
 
-Mô hình triển khai HAProxy
+Mô hình hoạt động
 
 ![](/images/img-haproxy-pacemaker-galera/pic4.png)
 
