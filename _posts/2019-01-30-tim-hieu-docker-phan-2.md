@@ -18,7 +18,7 @@ Có hai phiên bản chính của Docker là Docker EE, và Docker CE.
 
 - Docker EE (Docker Enterprise Edition)
 
-Docker EE có 3 versions chính là **Basic**, **Standard**, **Advanced**. Bản basic bao gồm Docker platform, hỗ trợ support và certification. Bản Standard và Advanced thêm các tính năng như container management (Docker Datacenter) và Docker Security Scanning.
+Docker EE có 3 versions chính là **Basic**, **Standard**, **Advanced**. Bản Basic bao gồm Docker platform, hỗ trợ support và certification. Bản Standard và Advanced thêm các tính năng như container management (Docker Datacenter) và Docker Security Scanning.
 
 Docker EE được support bởi Alibaba, Canonical, HPE, IBM, Microsoft...
 
@@ -62,7 +62,7 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 **Cài đặt bản lastest của Docker CE**
 
 ```
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 ```
 
 **Kiểm tra lại cài đặt**
