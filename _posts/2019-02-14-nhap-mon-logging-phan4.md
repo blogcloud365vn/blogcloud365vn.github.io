@@ -92,12 +92,11 @@ systemctl restart rsyslog
 
 Thực hiện khai báo IP của Syslog server (dưới mục Rule)
 
-``sh
+```sh
 *.*             @Syslog_IP:514
 ```
 
-![log](/images/img-logging/p4-log-03.png)
-
+![log](/images/img-logging/p4-log-04.png)
 
 Restart service Rsyslog
 
@@ -109,7 +108,9 @@ systemctl restart rsyslog
 
 Trên thư mục **/var/log/** của Syslog server sẽ xuất hiện thư mục log của Client. Thực hiện vào và kiểm tra log thu thập từ client.
 
-![log](/images/img-logging/p4-log-04.png)
+![log](/images/img-logging/p4-log-05.png)
+
+Như vậy là chúng ta đã lưu lại được log của client trên một server khác. Việc vận chuyển log sẽ được thực hiện liên tục tới khi kết nối network bị mất hoặc một trong 2 máy server, client có vấn đề
 
 ## 4. Chuyên mục tổng kết và rút kinh nghiệm 
 
