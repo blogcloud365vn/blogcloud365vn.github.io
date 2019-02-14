@@ -12,7 +12,7 @@ set_order: 13
 
 ## Lời mở đầu.
 
-- Ở [Part 2](https:://blog.cloud365.vn/logging/ELK-part2-Cai-dat-ELK-stack/) <a href="https://blog.cloud365.vn/logging/ELK-part2-Cai-dat-ELK-stack/" target="_blank">Visit W3Schools!</a> mình đã hướng dẫn cách để có thể cài đặt ELK với mô hình All in one và cách cấu hình trên client đẩy log về hệ thông ELK. 
+- Ở [Part 2](https:://blog.cloud365.vn/logging/ELK-part2-Cai-dat-ELK-stack/) mình đã hướng dẫn cách để có thể cài đặt ELK với mô hình All in one và cách cấu hình trên client đẩy log về hệ thông ELK. 
 
 - Ở bài này mình sẽ giới thiệu về Elasticsearch một search engine sử dụng trong ELK stack ngoài là một search engine nó cũng là backend chính trong mô hình ELK stack, ngoài ra mình cũng giới thiệu cách để join cluster Elasticsearch phục vụ cho scale hệ thống backend của ELK stack mà không ảnh hưởng đến hoạt động của hệ thống. 
 
