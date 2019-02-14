@@ -1,6 +1,6 @@
 ---
 date: 2019-01-23
-title: "Để trở thành cao thủ LOGGING - Phần 2"
+title: "Để trở thành cao thủ LOGGING - Phần 3"
 categories:
   - Logging
 description: Tuyển tập LOGGING từ mầm non tới đại học
