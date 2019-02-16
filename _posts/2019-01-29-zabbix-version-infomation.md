@@ -1,6 +1,6 @@
 ---
 date: 2019-01-29
-title: Zabbix release version information
+title: Thông tin về các phiên bản zabbix server
 categories:
   - Monitor
 description: Thông tin về chu kỳ phát triển và công bố các phiên bản của zabbix
