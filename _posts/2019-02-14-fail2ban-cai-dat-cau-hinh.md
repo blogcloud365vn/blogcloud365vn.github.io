@@ -15,7 +15,7 @@ Khi sử dụng các Server VPS Linux chúng ta thường sử dụng SSH remote
 Mặc dù SSH là một giao thức đã được bảo mật hoạt động ở lớp trên trong mô hình TCP/IP (thường) sử dụng port 22 nhưng cũng tồn tại những rủi ro nhất định cho trong quá trình vận hành lý do là vì ssh phơi ra phía ngoài internet. Việc bị dò mật khẩu là một trong những cách tấn công phổ biến nhất.
 
 <p align="center">
-<img src="images/img-fail2ban/brute-force.jpg">
+<img src="/images/img-fail2ban/brute-force.jpg">
 </p>
 
 Các biện pháp Secure SSH thường được sử dụng nhằm tránh, hạn chế bị tấn công `Brute force` (Dò và thử đến khi đăng nhập được)
@@ -84,7 +84,7 @@ Trường hợp vẫn bị quét và chúng ta muốn block hẳn IP của Clien
 - IP: 10.10.10.217/24
 
 <p align="center">
-<img src="images/img-fail2ban/topo.png">
+<img src="/images/img-fail2ban/topo.png">
 </p>
 
 ## Theo dõi ssh login failed trên Server
