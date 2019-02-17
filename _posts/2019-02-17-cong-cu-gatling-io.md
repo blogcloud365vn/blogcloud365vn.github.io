@@ -11,7 +11,7 @@ type: Document
 
 ## Giới thiệu
 
-Gatling là công cụ kiểm tra tải thông minh, cao cấp, dể dàng sử dụng. Gatling hỗ trợ rất tốt giao thức HTTP, ngoài ra gatling còn hỗ trợ để tạo tải trên nhiều giao thức khác (LDAP, DNS, ...).
+Gatling là công cụ kiểm tra tải thông minh, cao cấp, dể dàng sử dụng. Gatling hỗ trợ rất tốt giao thức HTTP, ngoài ra gatling còn hỗ trợ để tạo tải trên nhiều giao thức khác (WebSockets, JMS, MQTT, ...).
 
 Điểm khác biệt giữa Gatling.io công cụ test thông thường khác là gatling giải lập được các người dùng ảo, thực hiện các thao tác như trên trình duyết thông thường. Còn đối với các công cụ thông thường như `ab tool` sử dụng rất tốt khi test tải trên các URL đơn thuần nhưng không thể giải lập được hành vi người dùng. Đồng thời các người dùng giả lập được gatling tạo ra dưới dạng `message`, khác vào các công cụ khác sử dụng `thread` để tạo người dùng ảo, điều này khiến gatling tạo ra tải tốt hơn.
 
@@ -133,7 +133,7 @@ Quit the server with CONTROL-C.
 
 ## Hướng dẫn sử dụng `Gatling Recorder`
 
-Đề sử dụng Gatling đơn giản nhất, tôi sẽ sử dụng `Gatling Recorder`. `Gatling Recorder` là bộ thu thập thác tác người dùng, đơn giản nó sẽ quay lại các thao tác thực hiện trên `brower`, sau đó chuyển hóa các `thao tác` thành Gatling script (`.scala` script). Sau khi có Gatling script, chúng ta sẽ chỉnh sửa tạo ra các bài test khác nhau (như tăng số lượng người dùng truy cập, thay đổi tham số request, ...).
+Để sử dụng Gatling đơn giản nhất, tôi sẽ sử dụng `Gatling Recorder`. `Gatling Recorder` là bộ thu thập tháo tác người dùng, đơn giản nó sẽ quay lại các thao tác thực hiện trên `brower`, sau đó chuyển hóa các `thao tác` thành Gatling script (`.scala` script). Sau khi có Gatling script, chúng ta sẽ chỉnh sửa tạo ra các bài test khác nhau (như tăng số lượng người dùng truy cập, thay đổi tham số request, ...).
 
 
 Một kịch bản có thể đơn giản là:
@@ -174,20 +174,20 @@ Trong bài, tôi sẽ sử dụng Google Chrome
 
 
 
-Tại Popup settings proxy của Ubuntu, mở giao diện cấu hình proxy (mặc định settings của Ubuntu là `Disable`)
+Tại Giao diện cấu hình `Proxy` của Ubuntu, mặc định cấu hình Proxy của Ubuntu sẽ là `Disable`.
 
-- Bước 3.4: Chọn mở
+- Bước 3.4: Chọn mở Popup `Network Proxy`
   ![](/images/img-cong-cu-gatling-io/galing-4.png)
 
 
-Chỉnh settings `Network Proxy`
+Tại Popup `Network Proxy`, thiết lập như sau
 
 - Bước 3.5: Lựa chọn `Manual`
-- Bước 3.6: Nhập tại mục `HTTP Proxy` bằng `localhost` port 8000
+- Bước 3.6: Nhập `HTTP Proxy` bằng `localhost` port `8000`
 - Bước 3.7: Chọn đóng popup `Network Proxy`
   ![](/images/img-cong-cu-gatling-io/galing-5.png)
 
-Sau khi trỏ proxy về proxy server của Gatling, các thao tác trên trình duyệt sẽ được gatling thu thập từ đó tạo ra các kịch bản test
+Sau khi trỏ thiết proxy Ubuntu về Proxy Server của `Gatling Recorder`, các thao tác trên trình duyệt sẽ được Gatling thu thập từ đó tạo ra các kịch bản test.
 
 ### Bước 4: Thực hiện kịch bản
 
@@ -317,7 +317,7 @@ val scn = scenario("RecordedSimulation")
 			.headers(headers_0))
 ```
 
-Script đầy đủ (link ....)
+Script đầy đủ [tại đây](https://gist.github.com/lacoski/844d8a05a758d57cdc6710c755e37ccf)
 
 ### Chạy kịch bản vừa quay
 
@@ -366,25 +366,25 @@ __Tổng quan__
 
 ![](/images/img-cong-cu-gatling-io/galing-10.png)
 
-Biểu đồ thể hiện số request đã thực hiện, và thời gian phản hồi trên từng request. Theo biểu đồ trên, thời gian thực hiện mỗi request đều nhỏ hơn `800ms`
+Biểu đồ thể hiện số request đã thực hiện, và phân phối thời gian nhận lại phản hồi trên các request. Theo biểu đồ trên, thời gian thực hiện mỗi request đều nhỏ hơn `800ms`
 
 __Phân tích__
 
 ![](/images/img-cong-cu-gatling-io/galing-12.png)
 
-Biểu đồ thể hiện các file `CSS`, `JS`, các thao tác `GET`, `POST` đã thực hiện trong quá trình mô phỏng. Biểu đồ sẽ thông kế số request đã thực hiện, bao nhiều request trên mỗi giây, thời gian phản hồi trung bình (tính bằng ms). 
+Biểu đồ phân tích thời gian thực hiện các request đã xảy ra. Ở đây, các Request sẽ các file `CSS`, `JS`, các thao tác `GET`, `POST` đã thực hiện trong quá trình mô phỏng. Biểu đồ phân tích thời gian phản hồi của Request (Sớm nhất, chậm nhất, trung bình ...)
 
 __Phân phối người dùng giải lập theo thời gian__
 
 ![](/images/img-cong-cu-gatling-io/galing-13.png)
 
-Biểu đồ thể hiện số user giải lập phân phối theo khoảng thời gian thực hiện bài test. Trong bài, tôi sử dụng 1 user giải lập nên sẽ chỉ có 1 user trong suôt khoảng thời gian thực hiện test. Để tăng số user thực hiện giải lập chỉnh lên 10, chỉnh giá trị `atOnceUsers` trong `setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)`
+Biểu đồ thể hiện số user giải lập phân phối theo khoảng thời gian thực hiện bài test. Trong bài, tôi sử dụng 1 user giải lập nên sẽ chỉ có 1 user trong suôt khoảng thời gian thực hiện test. Để tăng số user thực hiện giải lập chỉnh lên 10 hoặc lớn hơn, chỉnh giá trị `atOnceUsers` trong `setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)` tại Gatling Script.
 
 ```
-# Thực hiện giả lập 1 user 
+# Thực hiện giả lập 1 user
 setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
 
-# Thực hiện giả lập 10 user 
+# Thực hiện giả lập 10 user đồng thời
 setUp(scn.inject(atOnceUsers(10))).protocols(httpProtocol)
 ```
 
@@ -398,13 +398,18 @@ __Số request thực hiện theo thời gian__
 
 ![](/images/img-cong-cu-gatling-io/galing-15.png)
 
-Thể hiện số request thực hiện trong khoảng thời gian thực hiện bài test. VD: trong khoảng thời gian `15:58:18` có 1 user thực hiện 6 request
+Thể hiện số request thực hiện trong từng khoảng thời gian thực hiện bài test. VD: trong khoảng thời gian `15:58:18` có 1 user thực hiện 6 request
 
 __Số phản hồi nhận được theo thời gian__
 
 ![](/images/img-cong-cu-gatling-io/galing-16.png)
 
-Thể hiện số phản hồi nhận được trong khoảng thời gian thực hiện bài test. VD: trong khoảng thời gian `15:58:18` có 1 user nhận được 6 phản hồi (ứng với phản hối request theo thời gian)
+Thể hiện số phản hồi nhận được trong từng khoảng thời gian thực hiện bài test. VD: trong khoảng thời gian `15:58:18` có 1 user nhận được 6 phản hồi (ứng với phản hối request theo thời gian)
+
+## Tổng kết
+`Gatling.io` là công cụ rất mạnh mẽ khi muốn đánh giá hiệu năng của Web Server . Ngoài giao thức HTTP, Gatling còn hỗ trợ nhiều giao thức khác như `WebSockets`, `JMS`. Đồng thời, Gatling cho phép tích hợp với một số IDE tăng tính tiện lợi khi thực hiện test (VD: Eclipse), tích hợp với Jenkins.
+
+Để tìm hiểu thêm, các bạn có thể truy cập [Gatling Blog](https://gatling.io/blog/) hoặc [Gatling Blog](https://gatling.io/docs/current/).
 
 # Nguồn
 
