@@ -124,6 +124,8 @@ MAINTERNER là author (tác giả) build image đó.
 RUN yum update -y
 ```
 
+RUN thực hiện một câu lệnh Linux. Tùy vào image gốc mà có các câu lệnh tương ứng (ví dụ Ubuntu sẽ là `RUN apt-get update -y`)
+
 ### COPY
 
 ```
@@ -139,6 +141,8 @@ COPY Copy một file từ Dockerhost vào image trong quá trình build image
 ENV source /var/www/html/
 COPY index.html ${source}
 ```
+
+ENV là biến môi trường sử dụng trong quá trình build image.
 
 ENV chỉ có thể được sử dụng trong các command sau:
 
@@ -572,7 +576,7 @@ http://<Docker_host_ip>:9000
 ```
 
 <p align="center">
-<img src="/images/img-docker/docker4/comlete.png">
+<img src="/images/img-docker/docker4/complete.png">
 </p>
 
 ---
