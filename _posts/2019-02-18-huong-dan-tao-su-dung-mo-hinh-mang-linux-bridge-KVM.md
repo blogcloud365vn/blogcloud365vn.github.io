@@ -28,7 +28,7 @@ Chúng ta có thể thấy rằng có một con switch được tạo ra nằm b
 
 Một máy chạy hệ điều hành Centos7 hoặc Ubuntu đã cài KVM bên trong đó đã có một VM. 
 
-*Chú ý* máy vật lý ở đây là máy cài KVM. Máy này có thể là một máy ảo nhưng ta có thể coi nó như một server vật lý.
+*Chú ý* máy vật lý ở đây là máy cài KVM. Máy này có thể là một máy ảo nhưng ở đây ta coi nó như một server vật lý.
 
 ## Cấu trúc linux bridge
 
@@ -118,7 +118,7 @@ Ta có thể thấy VM đã nhận IP
 
 Mô hình vừa tạo như sau
 
-![](/images/img-linux-bridge/17.png)
+![](/images/img-linux-bridge/17.jpeg)
 
 ## Tổng kết
 
