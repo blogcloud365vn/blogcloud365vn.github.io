@@ -26,7 +26,7 @@ type: Document
 
 Đây là cấu trúc một Dockerfile của ứng dụng **Wordpress**
 
-<pre style="height: 20pc; overflow-y: scroll;">
+<pre class="post-pre">
 FROM php:7.1-apache
 
 # install the PHP extensions we need
@@ -106,7 +106,6 @@ FROM chỉ định rằng image build này sẽ base trên image gốc nào
 LABEL "image-type"="huy-test"
 LABEL "image-type1"="huy-test1"
 LABEL "image-type2"="huy-test2"
-
 ```
 
 LABEL: Chỉ định label metadata của image. Để xem được các label này sử dụng câu lệnh `docker inspect <IMAGE ID>`
@@ -272,7 +271,7 @@ docker build -t huytm/centos7-httpd .
 
 Đây là toàn bộ log của quá trình build
 
-<pre style="height: 20pc; overflow-y: scroll;">
+<pre class="post-pre">
 Sending build context to Docker daemon  4.096kB
 Step 1/12 : FROM centos:centos7
  ---> 1e1148e4cc2c
