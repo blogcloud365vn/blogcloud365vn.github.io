@@ -41,6 +41,10 @@ small, .text_small {font-size: 0.8em;}
     min-height: calc(100% - 161.71875px);
 }
 
+code {
+    color: #fff !important;
+}
+
 .post-preview {
         margin-top: 1rem;
         border-bottom: 1px solid #e0e0e0;
@@ -125,4 +129,8 @@ small, .text_small {font-size: 0.8em;}
 
 .highlighter-rouge { 
   margin-bottom: 1rem;
+}
+
+.fa-search {
+  cursor: pointer;
 }
