@@ -36,7 +36,7 @@ Mô hình hoạt động
 
 ### Thiết lập ban đầu
 
-Thực hiện cấu hình theo docs triển galera 3 node. [Xem tại](2019-02-06-cai-dat-galera-mariadb.md)
+Thực hiện cấu hình theo docs triển galera 3 node. [Xem tại](https://blog.cloud365.vn/linux/cai-dat-galera-mariadb/)
 
 ## Phần 2. Cài đặt Haproxy bản 1.8
 
