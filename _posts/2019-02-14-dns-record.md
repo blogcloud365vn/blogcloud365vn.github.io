@@ -1,15 +1,16 @@
 ---
 date: 2019-02-14
-title: 
+title: Các loại bản ghi trên DNS
 categories:
   - Linux
-description: Giới thiệu cơ bản về DNS
+description: Các loại bản ghi trên DNS
 author: tuanda
 tags: [DNS, Linux, Windows]
 type: Document
 ---
 
-Các loại bản ghi - Resource Record (RR) 
+Sau khi tìm hiểu sơ lược về <a href="https://blog.cloud365.vn/linux/dns-introduction/" target="_blank">các khái niệm trong DNS</a>, bài viết này sẽ đi sâu vào tìm hiểu một số bản ghi ( Resource Record ) và chức năng của chúng trong hệ thống DNS.
+
 ## 1. SOA (Start of Authority) 
 
 Trong mỗi tập tin cơ sở dữ liệu DNS phải có một và chỉ một record SOA (Start of Authority). Bao gồm các thông tin về domain trên DNS Server, thông tin về zone transfer.
@@ -37,7 +38,7 @@ $TTL 86400
 
 `TTL` (time to live) : giá trị này áp dụng cho mọi record trong zone và được đính kèm trong thông tin trả lời một truy vấn. Mục đích của nó là chỉ ra thời gian mà các máy chủ name server khác cache lại thông tin trả lời. 
 
-## 2. NS (Name Server)  
+## 2. NS (Name Server)
 
 Record tiếp theo cần có trong zone là NS (name server) record. Mỗi name server cho zone sẽ có một NS record. Chứa địa chỉ IP của DNS Server cùng với các thông tin về domain đó.
 
@@ -59,7 +60,23 @@ Tên miền con (subdomain):
 
 `sub.cloud365.vn   A   103.101.161.201`
 
-## 4. Record SRV
+## 4. Record AAAA
+
+Có nhiệm vụ tương tự như bản ghi A, nhưng thay vì địa chỉ IPv4 sẽ là địa chỉ IPv6. 
+
+## 5. Record PTR
+
+Hệ thống tên miền thông thường cho phép chuyển đổi từ tên miền sang địa chỉ IP. Trong thực tế, một số dịch vụ Internet đòi hỏi hệ thống máy chủ DNS phải có chức năng chuyển đổi từ địa chỉ IP sang tên miền. Tên miền ngược thường được sử dụng trong một số trường hợp xác thực email gửi đi.
+
+Ví dụ về dạng thức một bản ghi PTR như sau:
+
+`90.163.101.103.in-addr.arpa       IN PTR     masterdns.tuanda.com.  `
+
+đối với IPv4, hoặc đối với IPv6:
+
+`0.0.0.0.0.0.0.0.0.0.0.0.d.c.b.a.4.3.2.1.3.2.1.0.8.c.d.0.1.0.0.2.ip6.arpa  IN PTR masterdns.tuanda.com. `
+
+## 6. Record SRV
 
 Bản ghi SRV được sử dụng để xác định vị trí các dịch vụ đặc biệt trong 1 domain, ví dụ tên máy chủ và số cổng của các máy chủ cho các dịch vụ được chỉ định. Ví dụ:
 
@@ -80,7 +97,7 @@ Một Client trong trường hợp này có thể nhờ DNS nhận ra rằng, tr
     - Port của dịch vụ (tcp hay udp).
     - Target chỉ định FQDN cho host hỗ trợ dịch vụ.
 
-## 5. Record CNAME (Canonical Name)
+## 7. Record CNAME (Canonical Name)
 
 Cho phép tên miền có nhiều bí danh khác nhau, khi truy cập các bí danh sẽ cũng về một địa chỉ tên miền. Để sử dụng bản ghi CNAME cần khai báo bản ghi A trước. Ví dụ bản ghi CNAME phổ biến nhất:
 
@@ -94,7 +111,7 @@ example.com   A   103.101.161.201
 
 Khi một yêu cầu đến địa chỉ www.example.com thì DNS sẽ tìm đến  example thông qua bản ghi CNAME, một truy vấn DNS mới sẽ tiếp tục tìm đến địa chỉ IP: 103.101.161.201 thông qua bản ghi A.
 
-## 6. Record MX
+## 8. Record MX
 
 Bản ghi MX có tác dụng xác định, chuyển thư đến domain hoặc subdomain đích. Bản ghi MX có dạng
 
@@ -111,13 +128,13 @@ example.com MX 20 mail_2.example.com
 example.com MX 30 mail_3.example.com
 ````
 
-Bản ghi MX không nhất thiết phải trỏ đến hosting – VPS- Server của khách hàng. Nếu khách hàng đang sử dụng dịch vụ mail của bên thứ ba như Gsuite Khách hàng nên sử dụng bản nghi MX do họ cung cấp.
+Bản ghi MX không nhất thiết phải trỏ đến hosting – VPS- Server của người dùng. Nếu người dùng đang sử dụng dịch vụ mail của bên thứ ba như Gmail thì cần sử dụng bản nghi MX do họ cung cấp.
 
-## 7. Record TXT
+## 9. Record TXT
 
 Bản ghi TXT(text) được sử dụng để cung cấp khả năng liên kết văn bản tùy ý với máy chủ. Chủ yếu dùng trong mục đích xác thực máy chủ với tên miền.
 
-## 8. Record DKIM
+## 10. Record DKIM
 
 Là bản ghi dùng để xác thực người gửi bằng cách mã hóa một phần email gửi bằng một chuỗi ký tự, xem như là chữ ký.
 
@@ -125,7 +142,7 @@ Khi email được gửi đi máy chủ mail sẽ kiểm so sánh với thông t
 
         mail._domainkey.cloud365.vn     TXT  k=rsa;p=MIIBIjANBgkqhkiG9w0BA
 
-## 9. Record SPF
+## 11. Record SPF
 
 Record SPF được tạo ra nhầm đảm bảo các máy chủ mail sẽ chấp nhận mail từ tên miền của khách hàng chỉ được gửi đi từ server của khách hàng. Sẽ giúp chống spam và giả mạo email. Bản ghi SPF thể hiện dưới dạng:
 
@@ -138,9 +155,15 @@ Với bản ghi SPF, máy chủ tiếp nhận mail sẽ kiểm tra IP của máy
 
 
 ** Tài liệu tham khảo:
+
+https://vnnic.vn/diachiip/hotro/c%C3%A1c-c%C3%A2u-h%E1%BB%8Fi-%C4%91%C3%A1p-v%E1%BB%81-t%C3%AAn-mi%E1%BB%81n-ng%C6%B0%E1%BB%A3c
+
+https://vnnic.vn/sites/default/files/tailieu/huong_dan_khai_bao_ten_mien_nguoc.pdf
+
 https://vi.wikipedia.org/wiki/SRV_Record#C%E1%BA%A5u_tr%C3%BAc
 
 https://www.dns-school.org/Documentation/bind-arm/Bv9ARM.ch01.html
+
 ftp://ftp.isc.org/www/bind/arm95/Bv9ARM.ch06.html#acache
 https://securitydaily.net/tim-hieu-he-thong-ten-mien-dns-domain-name-system/
 
