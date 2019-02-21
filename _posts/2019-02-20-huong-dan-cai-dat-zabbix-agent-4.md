@@ -32,7 +32,7 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 <a name="centos"></a>
 ## 3. Zabbix-agent CentOS
 
-### Cài đặt zabbix-agent
++ Cài đặt zabbix-agent
 
 **Truy cập host CentOS `10.10.10.118`**
 
