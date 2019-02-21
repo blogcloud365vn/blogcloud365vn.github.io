@@ -24,6 +24,8 @@ set_order: 12
 
 ## 2. Mô hình.
 
+![](/images/img-elk/elk-14.png)
+
 ## 3. Phân hoạch địa chỉ IP.
 
 ## 4. Giới thiệu về Kafka.
@@ -47,7 +49,7 @@ Các khái niệm cơ bản :
 
 ![kafka-1](/images/img-elk/kafka-1.png)
 
-### 1.1. Topic.
+### 4.1. Topic.
 
 Topic có thể hiểu là một ngôn ngữ chung giữa producer (người nói) và consumer (người nghe, sử dụng).
 Với mỗi topic, kafka sẽ duy trì thông qua partitioned log như dưới đây:
@@ -62,13 +64,13 @@ Kafka cluster sẽ lưu lại mọi message đã được published, cho dù mes
 
 Consumer sẽ điều khiển những gì mình muốn đọc thông qua offset của message, hay thậm chí là thứ tự đọc. Consumer có thể reset lại vị trí của offset để re-process lại một vài message nào đó.
 
-### 1.2. Producer.
+### 4.2. Producer.
 
 Như đã nói ở trên, producer nhằm mục đích chính là ném message vào topic. Cụ thể hơn là producer có nhiệm vụ là chọn message nào, để ném vào partition nào trong topic. Nhiệm vụ này rất quan trọng, giúp cho kafka có khả năng "scale" tốt.
 
 ![kafka-3](/images/img-elk/kafka-3.png)
 
-### 1.3. Consumer.
+### 4.3. Consumer.
 
 Thông thường thì một hệ thống messaging sẽ có 2 loại :
 
@@ -82,7 +84,7 @@ Thông thường thì một hệ thống messaging sẽ có 2 loại :
 
 - Nếu mỗi instance là một group, chúng ta sẽ có một hệ thống pub/sub.
 
-### 1.4. Use cases.
+### 4.4. Use cases.
 
 Sử dụng như một hệ thống message queue thay thế cho ActiveMQ hay RabbitMQ.
 
