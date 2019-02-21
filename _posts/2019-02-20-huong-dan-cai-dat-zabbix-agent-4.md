@@ -142,7 +142,7 @@ systemctl status zabbix-agent
 
 **Truy cập host Windows `10.10.10.109`**
 
-![](/images/img-agent-zabbix/Screenshot_986.png)
+![](/images/img-agent-zabbix/Screenshot_990.png)
 
 **Download zabbix agent Windows**
 
@@ -155,19 +155,38 @@ Lưu ý lựa chọn phiên bản phù hợp với hệ điều hành để tả
 
 **Cài đặt**
 
-![](/images/img-agent-zabbix/Screenshot_989.png)
+![](/images/img-agent-zabbix/Screenshot_991.png)
+![](/images/img-agent-zabbix/Screenshot_992.png)
 
+Đồng ý với điều khoản nhà cung cấp
 
+![](/images/img-agent-zabbix/Screenshot_993.png)
 
+Nhập thông tin zabbix server muốn kết nối tới.
 
+![](/images/img-agent-zabbix/Screenshot_994.png)
 
+Quá trình cài đặt
 
+![](/images/img-agent-zabbix/Screenshot_995.png)
+![](/images/img-agent-zabbix/Screenshot_996.png)
+![](/images/img-agent-zabbix/Screenshot_997.png)
 
+Kết thúc cài đặt
 
+![](/images/img-agent-zabbix/Screenshot_998.png)
 
++ Kiểm tra và thay đổi cấu hình
 
+Mở cửa sổ `cmd` -> Nhập `services.msc`
 
+![](/images/img-agent-zabbix/Screenshot_999.png)
 
+Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix_agentd.conf` ở thư mục `C:\Program Files\Zabbix Agent`
+
+![](/images/img-agent-zabbix/Screenshot_1000.png)
+
+Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
