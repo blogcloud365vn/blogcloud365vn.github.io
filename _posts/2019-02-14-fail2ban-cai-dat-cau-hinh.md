@@ -177,6 +177,19 @@ Trường hợp vẫn bị quét và chúng ta muốn block hẳn IP của Clien
     RETURN     all  --  anywhere             anywhere   
     ```
 
+- Kiểm tra rulues của fail2ban trên iptables
+    ```sh 
+    cat /var/log/secure | grep 'Failed password' | sort | uniq -c
+    ```
+    > Kết quả 
+    ```sh 
+    [root@server ~]# cat /var/log/secure | grep 'Failed password' | sort | uniq -c
+        1 Feb 14 14:39:49 centos7 sshd[4714]: Failed password for root from 10.10.10.217 port 43460 ssh2
+        1 Feb 14 14:39:54 centos7 sshd[4714]: Failed password for root from 10.10.10.217 port 43460 ssh2
+        1 Feb 14 14:40:12 centos7 sshd[4714]: Failed password for root from 10.10.10.217 port 43460 ssh2
+    [root@server ~]# 
+    ```
+
 
 ## Thực hiện kiểm tra sau khi cài đặt fail2ban 
 
