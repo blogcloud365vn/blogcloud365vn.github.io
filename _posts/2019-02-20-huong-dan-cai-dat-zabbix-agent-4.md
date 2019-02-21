@@ -9,7 +9,7 @@ tags: [Zabbix]
 type: Document
 ---
 
-Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix server</a> để có thể giám sát được các host client khác phải cài đặt zabbix-agent lên client, tùy theo cơ chế lựa chọn (active check, passive check, SSH check...) cho việc nhận metric từ các host. Ở bài hướng dẫn này giới thiệu cho bạn các bước để cài đặt zabbix-agent 4.0 lên host client trên hệ điều hành khác nhau (Windows, CentOS, Ubuntu).
+Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix server</a> để có thể giám sát được các host client khác phải cài đặt zabbix-agent lên client, tùy theo cơ chế lựa chọn (active check, passive check, SSH check...) cho việc nhận metric từ các host. Ở bài hướng dẫn này giới thiệu cho bạn các bước để cài đặt `zabbix-agent 4.0` lên host client trên hệ điều hành khác nhau (Windows, CentOS, Ubuntu).
 
 ### Mục lục
 
@@ -32,7 +32,7 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 <a name="centos"></a>
 ## 3. Zabbix-agent CentOS
 
-+ Cài đặt zabbix-agent
+### Cài đặt zabbix-agent
 
 **Truy cập host CentOS `10.10.10.118`**
 
