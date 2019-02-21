@@ -51,7 +51,7 @@ CentOS 6 / RHEL 6
 rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/6/x86_64/zabbix-release-4.0-1.el6.noarch.rpm
 ```
 
-**cài đặt**
+**Cài đặt**
 
 ```
 yum install -y zabbix-agent
@@ -65,8 +65,6 @@ zabbix_agentd -V
 ![](/images/img-agent-zabbix/Screenshot_981.png)
 
 + Cấu hình zabbix-agent
-
-Coppy file config gốc của zabbix-agent, nhập địa chỉ IP của zabbix server để client kết nối tới.
 
 ```
 cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
@@ -86,6 +84,55 @@ Như vậy `zabbix client` CentOS đã sẵn sàng gửi metric về `zabbix ser
 <a name="ubuntu"></a>
 ## 4. Zabbix-agent Ubuntu
 
+**Truy cập host CentOS `10.10.10.105`**
+
+![](/images/img-agent-zabbix/Screenshot_983.png)
+
+**Thêm zabbix agent repository**
+
+Ubuntu 18.04
+
+```
+wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+bionic_all.deb
+dpkg -i zabbix-release_4.0-2+bionic_all.deb
+apt-get update
+```
+
+Ubuntu 16.04
+
+```
+wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+xenial_all.deb
+dpkg -i zabbix-release_4.0-2+xenial_all.deb
+apt-get update
+```
+
+**Cài đặt**
+
+```
+apt-get install -y zabbix-agent
+```
+
+**Check zabbix-agent**
+
+```
+zabbix_agentd -V
+```
+![](/images/img-agent-zabbix/Screenshot_984.png)
+
++ Cấu hình zabbix-agent
+
+```
+cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
+sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+systemctl enable zabbix-agent
+systemctl start zabbix-agent
+systemctl restart zabbix-agent
+systemctl status zabbix-agent
+```
+
+![](/images/img-agent-zabbix/Screenshot_985.png)
 
 
 
