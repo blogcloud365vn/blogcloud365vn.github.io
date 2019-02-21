@@ -58,7 +58,6 @@ Các biện pháp Secure SSH thường được sử dụng nhằm tránh, hạn
 
 - Sử dụng key để ssh thay cho password 
     + Thao tác trên máy client 
-        <!-- -->
         ```sh 
         ssh-keygen -t rsa
         ```
