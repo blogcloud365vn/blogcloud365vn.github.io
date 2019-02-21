@@ -28,6 +28,8 @@ set_order: 12
 
 ## 3. Phân hoạch địa chỉ IP.
 
+![](/images/img-elk/elk-15.png)
+
 ## 4. Giới thiệu về Kafka.
 
 
