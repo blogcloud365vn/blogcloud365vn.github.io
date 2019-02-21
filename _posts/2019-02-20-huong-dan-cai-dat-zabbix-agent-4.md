@@ -17,6 +17,7 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 [2. IP Planning](#planning)<br>
 [3. Zabbix-agent CentOS](#centos)<br>
 [4. Zabbix-agent Ubuntu](#ubuntu)<br>
+[5. Zabbix-agent Windows](#windows)<br>
 
 <a name="mohinh"></a>
 ## 1. Mô hình triển khai
@@ -134,7 +135,27 @@ systemctl status zabbix-agent
 
 ![](/images/img-agent-zabbix/Screenshot_985.png)
 
+<a name="windows"></a>
+## 5. Zabbix-agent Windows
 
++ Cài đặt
+
+**Truy cập host Windows `10.10.10.109`**
+
+![](/images/img-agent-zabbix/Screenshot_986.png)
+
+**Download zabbix agent Windows**
+
+Truy cập đường link <a href="http://www.suiviperf.com/zabbix/old/" target="_blank">tại đây</a>.
+
+Lưu ý lựa chọn phiên bản phù hợp với hệ điều hành để tải về.
+
+![](/images/img-agent-zabbix/Screenshot_988.png)
+
+
+**Cài đặt**
+
+![](/images/img-agent-zabbix/Screenshot_989.png)
 
 
 
