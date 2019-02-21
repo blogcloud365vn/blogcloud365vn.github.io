@@ -34,9 +34,9 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 
 + Cài đặt zabbix-agent
 
-**Truy cập host CentOS `10.10.10.118`**
+**Truy cập host CentOS `10.10.10.119`**
 
-![](/images/img-agent-zabbix/Screenshot_980.png)
+![](/images/img-agent-zabbix/Screenshot_1001.png)
 
 **Thêm zabbix agent repository**
 
