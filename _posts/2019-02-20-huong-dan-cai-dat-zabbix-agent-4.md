@@ -13,24 +13,30 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 
 ### Mục lục
 
-[1. Mô hình triển khai](#mohinh)<br>
-[2. IP Planning](#planning)<br>
+[1. Chuẩn bị](#chuanbi)<br>
+
+[2. Cài đặt và cấu hình zabbix agent](#setup)<br>
 [3. Zabbix-agent CentOS](#centos)<br>
 [4. Zabbix-agent Ubuntu](#ubuntu)<br>
 [5. Zabbix-agent Windows](#windows)<br>
 
-<a name="mohinh"></a>
-## 1. Mô hình triển khai
+<a name="chuanbi"></a>
+## 1. Chuẩn bị
+
+**Mô hình triển khai**
 
 ![](/images/img-agent-zabbix/topo-agent.png)
 
-<a name="planning"></a>
-## 2. IP Planning
+**IP planning**
 
 ![](/images/img-agent-zabbix/Screenshot_978.png)
 
-<a name="centos"></a>
-## 3. Zabbix-agent CentOS
+<a name="setup"></a>
+## 2. Cài đặt zabbix agent
+
+### 2.1. Cài đặt zabbix agent trên Linux
+
+**2.1.1. Host Centos**
 
 + Cài đặt zabbix-agent
 
@@ -82,8 +88,7 @@ systemctl status zabbix-agent
 
 Như vậy `zabbix client` CentOS đã sẵn sàng gửi metric về `zabbix server`.
 
-<a name="ubuntu"></a>
-## 4. Zabbix-agent Ubuntu
+** 2.1.2. Host Ubuntu**
 
 **Truy cập host CentOS `10.10.10.105`**
 
@@ -135,8 +140,7 @@ systemctl status zabbix-agent
 
 ![](/images/img-agent-zabbix/Screenshot_985.png)
 
-<a name="windows"></a>
-## 5. Zabbix-agent Windows
+### 2.1. Cài đặt zabbix agent trên Windows
 
 + Cài đặt
 
