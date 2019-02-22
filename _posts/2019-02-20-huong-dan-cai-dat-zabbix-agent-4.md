@@ -179,6 +179,8 @@ Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix
 
 ![](/images/img-agent-zabbix/Screenshot_1000.png)
 
+**Lưu ý:** Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại service `zabbix-agent`.
+
 <a name="host"></a>
 ## 4. Add host zabbix agent lên zabbix server
 
