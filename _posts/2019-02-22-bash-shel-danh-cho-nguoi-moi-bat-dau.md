@@ -174,7 +174,7 @@ Manh
 Xin chao, Manh.
 ```
 
-### ví dụ 2
+### Ví dụ 2
 
 Bật mode debug để tìm lỗi có trong script `hello.sh` sau :
 
@@ -207,5 +207,5 @@ expr: non-integer argument
 
 Có thể thấy do `s` không phải là một chữ số vậy nên toán tử không thể thực hiện được.
 
-
+Trên đây là nội dung của Chương 1, hẹn gặp các bạn tại Chương 2 vào cuối tuần sau. Xin cảm ơn !
  
