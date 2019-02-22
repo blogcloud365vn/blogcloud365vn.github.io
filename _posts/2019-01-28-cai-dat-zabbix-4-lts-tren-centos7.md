@@ -29,7 +29,7 @@ Mô hình triển khai một node zabbix-server, một hoặc nhiều các host 
 <a name="planning"></a>
 ## 2. IP Planning
 
-![](/images/img-zabbix-4lts/Screenshot_930.png)
+![](/images/img-zabbix-4lts/Screenshot_979.png)
 
 **Lưu ý**: Bạn có thể tùy chỉnh cấu hình theo số lượng host bạn muốn giám sát. 
 
