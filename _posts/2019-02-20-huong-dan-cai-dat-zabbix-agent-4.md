@@ -157,7 +157,7 @@ Mở cửa sổ `cmd` -> Nhập `services.msc`
 
 ### 3.1. Đối với host Linux
 
-Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới để mở port `10050`, chỉ định IP zabbix server.<br>
+Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới để mở port `10050`, chỉ định `IP zabbix server`.<br>
 **Lưu ý:** Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại service `zabbix-agent`.
 
 ```
@@ -205,27 +205,27 @@ Agent interfaces:
 
 Chuyển sang tab `Temaplates` -> `Select`
 
-![](/images/img-agent-zabbix/Screenshot_1007.png
+![](/images/img-agent-zabbix/Screenshot_1007.png)
 
 Lựa chọn `Template` phù hợp với client của bạn.
 
 Click `Add`
 
-![](/images/img-agent-zabbix/Screenshot_1008.png
+![](/images/img-agent-zabbix/Screenshot_1008.png)
 
 **Add host thành công**
 
-![](/images/img-agent-zabbix/Screenshot_1009.png
+![](/images/img-agent-zabbix/Screenshot_1009.png)
 
 Chờ một lúc để client kết nối tới zabbix server. Khi biểu tượng zabbix agent đổi màu xanh là ta đã add host thành công.
 
-![](/images/img-agent-zabbix/Screenshot_1010.png
+![](/images/img-agent-zabbix/Screenshot_1010.png)
 
 **Kiểm tra thông số monitor**
 
 Click `Monitoring -> Lastest data -> Lựa chọn host -> Apply`
 
-![](/images/img-agent-zabbix/Screenshot_1011.png
+![](/images/img-agent-zabbix/Screenshot_1011.png)
 
 Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent và giám sát được các thông số của client.
 
