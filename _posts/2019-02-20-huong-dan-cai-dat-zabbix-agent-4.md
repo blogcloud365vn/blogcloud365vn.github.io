@@ -16,6 +16,7 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 [1. Chuẩn bị](#chuanbi)<br>
 [2. Cài đặt zabbix agent](#setup)<br>
 [3. Cấu hình zabbix agent](#config)<br>
+[4. Add host zabbix agent lên zabbix server](#host)<br>
 
 <a name="chuanbi"></a>
 ## 1. Chuẩn bị
@@ -145,6 +146,12 @@ Kết thúc cài đặt
 
 ![](/images/img-agent-zabbix/Screenshot_998.png)
 
++ Kiểm tra service zabbix-agent
+
+Mở cửa sổ `cmd` -> Nhập `services.msc`
+
+![](/images/img-agent-zabbix/Screenshot_999.png)
+
 <a name="config"></a>
 ## 3. Cấu hình zabbix agent
 
@@ -169,20 +176,12 @@ systemctl status zabbix-agent
 
 ### 3.1. Đối với host Windows
 
-+ Kiểm tra và thay đổi cấu hình
-
-Mở cửa sổ `cmd` -> Nhập `services.msc`
-
-![](/images/img-agent-zabbix/Screenshot_999.png)
-
 Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix_agentd.conf` ở thư mục `C:\Program Files\Zabbix Agent`
 
 ![](/images/img-agent-zabbix/Screenshot_1000.png)
 
-
-
-
-
+<a name="host"></a>
+## 4. Add host zabbix agent lên zabbix server
 
 
 Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent.
