@@ -9,9 +9,7 @@ tags: [DNS, Linux, Windows]
 type: Document
 ---
 
-## Giới thiệu
-
-**DNS (Domain Name System)**
+## NS (Domain Name System)
 
 Toàn bộ máy tính trên Internet, từ smart phone, laptop, PC đến các server phục vụ các service như websites, mail,.. đều giao tiếp với nhau thông qua địa chỉ IP. Tuy nhiên, địa chỉ IP này đối với các website có thể khác nhau và khó ghi nhớ đối với người dùng.
 
