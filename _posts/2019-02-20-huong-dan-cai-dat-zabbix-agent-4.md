@@ -14,12 +14,8 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 ### Mục lục
 
 [1. Chuẩn bị](#chuanbi)<br>
-
-[2. Cài đặt và cấu hình zabbix agent](#setup)<br>
-
-[3. Zabbix-agent CentOS](#centos)<br>
-[4. Zabbix-agent Ubuntu](#ubuntu)<br>
-[5. Zabbix-agent Windows](#windows)<br>
+[2. Cài đặt zabbix agent](#setup)<br>
+[3. Cấu hình zabbix agent](#config)<br>
 
 <a name="chuanbi"></a>
 ## 1. Chuẩn bị
@@ -72,24 +68,7 @@ zabbix_agentd -V
 ```
 ![](/images/img-agent-zabbix/Screenshot_981.png)
 
-+ Cấu hình zabbix-agent
-
-```
-cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
-sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-systemctl enable zabbix-agent
-systemctl start zabbix-agent
-systemctl restart zabbix-agent
-systemctl status zabbix-agent
-```
-
-![](/images/img-agent-zabbix/Screenshot_982.png)
-
-Như vậy `zabbix client` CentOS đã sẵn sàng gửi metric về `zabbix server`.
-
-** 2.1.2. Host Ubuntu**
+**2.1.2. Host Ubuntu**
 
 **Truy cập host CentOS `10.10.10.105`**
 
@@ -125,21 +104,6 @@ apt-get install -y zabbix-agent
 zabbix_agentd -V
 ```
 ![](/images/img-agent-zabbix/Screenshot_984.png)
-
-+ Cấu hình zabbix-agent
-
-```
-cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
-sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-systemctl enable zabbix-agent
-systemctl start zabbix-agent
-systemctl restart zabbix-agent
-systemctl status zabbix-agent
-```
-
-![](/images/img-agent-zabbix/Screenshot_985.png)
 
 ### 2.1. Cài đặt zabbix agent trên Windows
 
@@ -181,6 +145,30 @@ Kết thúc cài đặt
 
 ![](/images/img-agent-zabbix/Screenshot_998.png)
 
+<a name="config"></a>
+## 3. Cấu hình zabbix agent
+
+Để zabbix client có thể gửi metric về zabbix server ta phải thay đổi cấu hình trong file config của zabbix agent để client biết gửi về server nào.
+
+### 3.1. Đối với host Linux
+
+Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`
+
+```
+cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
+sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+systemctl enable zabbix-agent
+systemctl start zabbix-agent
+systemctl restart zabbix-agent
+systemctl status zabbix-agent
+```
+
+![](/images/img-agent-zabbix/Screenshot_985.png)
+
+### 3.1. Đối với host Windows
+
 + Kiểm tra và thay đổi cấu hình
 
 Mở cửa sổ `cmd` -> Nhập `services.msc`
@@ -190,6 +178,12 @@ Mở cửa sổ `cmd` -> Nhập `services.msc`
 Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix_agentd.conf` ở thư mục `C:\Program Files\Zabbix Agent`
 
 ![](/images/img-agent-zabbix/Screenshot_1000.png)
+
+
+
+
+
+
 
 Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent.
 
