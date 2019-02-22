@@ -16,6 +16,7 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 [1. Chuẩn bị](#chuanbi)<br>
 
 [2. Cài đặt và cấu hình zabbix agent](#setup)<br>
+
 [3. Zabbix-agent CentOS](#centos)<br>
 [4. Zabbix-agent Ubuntu](#ubuntu)<br>
 [5. Zabbix-agent Windows](#windows)<br>
