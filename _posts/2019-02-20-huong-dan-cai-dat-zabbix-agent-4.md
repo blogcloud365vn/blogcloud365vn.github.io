@@ -9,30 +9,32 @@ tags: [Zabbix]
 type: Document
 ---
 
-Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix server</a> để có thể giám sát được các host client khác phải cài đặt `zabbix-agent` lên client, tùy theo cơ chế lựa chọn (active check, passive check, SSH check...) cho việc nhận metric từ các host. Ở bài hướng dẫn này giới thiệu cho bạn các bước để cài đặt `zabbix-agent 4.0` lên host client trên hệ điều hành khác nhau (Windows, <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-centos7/" target="_blank">CentOS server</a>, Ubuntu).
+Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix server</a> để có thể giám sát được các host client khác phải cài đặt `zabbix-agent` lên client, tùy theo cơ chế lựa chọn (active check, passive check, SSH check...) cho việc nhận metric từ các host. Ở bài hướng dẫn này giới thiệu cho bạn các bước để cài đặt `zabbix-agent 4.0` lên host client trên hệ điều hành khác nhau (Windows, <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-centos7/" target="_blank">CentOS server</a>, Ubuntu) và giám sát thông số trên zabbix server.
 
 ### Mục lục
 
-[1. Mô hình triển khai](#mohinh)<br>
-[2. IP Planning](#planning)<br>
-[3. Zabbix-agent CentOS](#centos)<br>
-[4. Zabbix-agent Ubuntu](#ubuntu)<br>
-[5. Zabbix-agent Windows](#windows)<br>
+[1. Chuẩn bị](#chuanbi)<br>
+[2. Cài đặt zabbix agent](#setup)<br>
+[3. Cấu hình zabbix agent](#config)<br>
+[4. Add host zabbix agent lên zabbix server](#host)<br>
 
-<a name="mohinh"></a>
-## 1. Mô hình triển khai
+<a name="chuanbi"></a>
+## 1. Chuẩn bị
+
+**Mô hình triển khai**
 
 ![](/images/img-agent-zabbix/topo-agent.png)
 
-<a name="planning"></a>
-## 2. IP Planning
+**IP planning**
 
 ![](/images/img-agent-zabbix/Screenshot_978.png)
 
-<a name="centos"></a>
-## 3. Zabbix-agent CentOS
+<a name="setup"></a>
+## 2. Cài đặt zabbix agent
 
-+ Cài đặt zabbix-agent
+### 2.1. Cài đặt zabbix agent trên Linux
+
+**2.1.1. Host Centos**
 
 **Truy cập host CentOS `10.10.10.119`**
 
@@ -65,25 +67,7 @@ zabbix_agentd -V
 ```
 ![](/images/img-agent-zabbix/Screenshot_981.png)
 
-+ Cấu hình zabbix-agent
-
-```
-cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
-sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-systemctl enable zabbix-agent
-systemctl start zabbix-agent
-systemctl restart zabbix-agent
-systemctl status zabbix-agent
-```
-
-![](/images/img-agent-zabbix/Screenshot_982.png)
-
-Như vậy `zabbix client` CentOS đã sẵn sàng gửi metric về `zabbix server`.
-
-<a name="ubuntu"></a>
-## 4. Zabbix-agent Ubuntu
+**2.1.2. Host Ubuntu**
 
 **Truy cập host CentOS `10.10.10.105`**
 
@@ -120,23 +104,7 @@ zabbix_agentd -V
 ```
 ![](/images/img-agent-zabbix/Screenshot_984.png)
 
-+ Cấu hình zabbix-agent
-
-```
-cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
-sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
-systemctl enable zabbix-agent
-systemctl start zabbix-agent
-systemctl restart zabbix-agent
-systemctl status zabbix-agent
-```
-
-![](/images/img-agent-zabbix/Screenshot_985.png)
-
-<a name="windows"></a>
-## 5. Zabbix-agent Windows
+### 2.1. Cài đặt zabbix agent trên Windows
 
 + Cài đặt
 
@@ -176,17 +144,92 @@ Kết thúc cài đặt
 
 ![](/images/img-agent-zabbix/Screenshot_998.png)
 
-+ Kiểm tra và thay đổi cấu hình
++ Kiểm tra service zabbix-agent
 
 Mở cửa sổ `cmd` -> Nhập `services.msc`
 
 ![](/images/img-agent-zabbix/Screenshot_999.png)
 
+<a name="config"></a>
+## 3. Cấu hình zabbix agent
+
+Để zabbix client có thể gửi metric về zabbix server ta phải thay đổi cấu hình trong file config của zabbix agent để client biết gửi về server nào.
+
+### 3.1. Đối với host Linux
+
+Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới để mở port `10050`, chỉ định `IP zabbix server`.<br>
+**Lưu ý:** Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại service `zabbix-agent`.
+
+```
+cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
+sed -i 's/Server=127.0.0.1/Server=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/# ListenPort=10050/ListenPort=10050/g' /etc/zabbix/zabbix_agentd.conf
+sed -i 's/ServerActive=127.0.0.1/ServerActive=10.10.10.115/g' /etc/zabbix/zabbix_agentd.conf
+systemctl enable zabbix-agent
+systemctl start zabbix-agent
+systemctl restart zabbix-agent
+systemctl status zabbix-agent
+```
+
+![](/images/img-agent-zabbix/Screenshot_985.png)
+
+### 3.1. Đối với host Windows
+
 Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix_agentd.conf` ở thư mục `C:\Program Files\Zabbix Agent`
 
 ![](/images/img-agent-zabbix/Screenshot_1000.png)
 
-Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent.
+**Lưu ý:** Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại service `zabbix-agent`.
+
+<a name="host"></a>
+## 4. Add host zabbix agent lên zabbix server
+
+### 4.1. Truy cập zabbix server
+
+![](/images/img-agent-zabbix/Screenshot_1002.png)
+
+### 4.2. Add host
+
+Trên web dashboard của zabbix server click `Configuration -> Hosts -> Create Host -> Host`
+
+![](/images/img-agent-zabbix/Screenshot_1003.png)
+
+**Nhập thông tin host client**
+
+```
+Host name:
+Group:
+Agent interfaces:
+```
+![](/images/img-agent-zabbix/Screenshot_1006.png)
+
+**Lựa chọn template**
+
+Chuyển sang tab `Temaplates` -> `Select`
+
+![](/images/img-agent-zabbix/Screenshot_1007.png)
+
+Lựa chọn `Template` phù hợp với client của bạn.
+
+Click `Add`
+
+![](/images/img-agent-zabbix/Screenshot_1008.png)
+
+**Add host thành công**
+
+![](/images/img-agent-zabbix/Screenshot_1009.png)
+
+Chờ một lúc để client kết nối tới zabbix server. Khi biểu tượng zabbix agent đổi màu xanh là ta đã add host thành công.
+
+![](/images/img-agent-zabbix/Screenshot_1010.png)
+
+**Kiểm tra thông số monitor**
+
+Click `Monitoring -> Lastest data -> Lựa chọn host -> Apply`
+
+![](/images/img-agent-zabbix/Screenshot_1011.png)
+
+Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent và giám sát được các thông số của client.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
