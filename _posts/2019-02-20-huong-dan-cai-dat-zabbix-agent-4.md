@@ -36,8 +36,6 @@ Sau khi triển khai <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-
 
 **2.1.1. Host Centos**
 
-+ Cài đặt zabbix-agent
-
 **Truy cập host CentOS `10.10.10.119`**
 
 ![](/images/img-agent-zabbix/Screenshot_1001.png)
@@ -159,7 +157,8 @@ Mở cửa sổ `cmd` -> Nhập `services.msc`
 
 ### 3.1. Đối với host Linux
 
-Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`
+Trên host chạy hệ điều hành Linux file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới để mở port `10050`, chỉ định IP zabbix server.<br>
+**Lưu ý:** Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại service `zabbix-agent`.
 
 ```
 cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bk
@@ -183,8 +182,52 @@ Khi bạn muốn thay đổi cấu hình `zabbix-agent` thay đổi file `zabbix
 <a name="host"></a>
 ## 4. Add host zabbix agent lên zabbix server
 
+### 4.1. Truy cập zabbix server
 
-Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent.
+![](/images/img-agent-zabbix/Screenshot_1002.png)
+
+### 4.2. Add host
+
+Trên web dashboard của zabbix server click `Configuration -> Hosts -> Create Host -> Host`
+
+![](/images/img-agent-zabbix/Screenshot_1003.png)
+
+**Nhập thông tin host client**
+
+```
+Host name:
+Group:
+Agent interfaces:
+```
+![](/images/img-agent-zabbix/Screenshot_1006.png)
+
+**Lựa chọn template**
+
+Chuyển sang tab `Temaplates` -> `Select`
+
+![](/images/img-agent-zabbix/Screenshot_1007.png
+
+Lựa chọn `Template` phù hợp với client của bạn.
+
+Click `Add`
+
+![](/images/img-agent-zabbix/Screenshot_1008.png
+
+**Add host thành công**
+
+![](/images/img-agent-zabbix/Screenshot_1009.png
+
+Chờ một lúc để client kết nối tới zabbix server. Khi biểu tượng zabbix agent đổi màu xanh là ta đã add host thành công.
+
+![](/images/img-agent-zabbix/Screenshot_1010.png
+
+**Kiểm tra thông số monitor**
+
+Click `Monitoring -> Lastest data -> Lựa chọn host -> Apply`
+
+![](/images/img-agent-zabbix/Screenshot_1011.png
+
+Hy vọng những hướng dẫn trên giúp bạn có thể cài đặt thành công zabbix-agent và giám sát được các thông số của client.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
