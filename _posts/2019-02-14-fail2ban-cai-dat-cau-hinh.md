@@ -95,7 +95,8 @@ Trường hợp vẫn bị quét và chúng ta muốn block hẳn IP của Clien
     ```sh 
     cat /var/log/secure | grep 'Failed password' | sort | uniq -c
     ```
-    > Kết quả 
+
+- Kết quả trả về
     ```sh 
     [root@server ~]# cat /var/log/secure | grep 'Failed password' | sort | uniq -c
         1 Feb 14 14:39:49 centos7 sshd[4714]: Failed password for root from 10.10.10.217 port 43460 ssh2
@@ -160,7 +161,8 @@ Trường hợp vẫn bị quét và chúng ta muốn block hẳn IP của Clien
     ```sh 
     iptables -L
     ```
-    > Output 
+
+- Kết quả trả về
     ```sh 
     Chain INPUT (policy ACCEPT)
     target     prot opt source               destination         
@@ -197,7 +199,8 @@ Trường hợp vẫn bị quét và chúng ta muốn block hẳn IP của Clien
     ```sh 
     fail2ban-client status sshd
     ```
-    > Output trả về 
+
+- Kết quả trả về
     ```sh 
     [root@server ~]# fail2ban-client status sshd
     Status for the jail: sshd
