@@ -78,7 +78,7 @@ systemctl start zabbix-agent
 systemctl restart zabbix-agent
 systemctl status zabbix-agent
 ```
-**Lưu ý**: Nếu host của bạn mở firewall thì phải mởi port `10050` để zabbix client giao tiếp với zabbix server.s
+**Lưu ý**: Nếu host của bạn mở firewall thì phải mởi port `10050` để zabbix client giao tiếp với zabbix server.
 
 ```
 firewall-cmd --add-port=10050/tcp --permanent 
