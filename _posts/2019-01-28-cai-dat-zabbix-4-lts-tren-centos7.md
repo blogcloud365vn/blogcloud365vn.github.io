@@ -24,7 +24,7 @@ Zabbix có thể theo dõi các thông số về mạng và tình trạng của 
 
 Mô hình triển khai một node zabbix-server, một hoặc nhiều các host zabbix client.
 
-![](/images/img-zabbix-4lts/topo-zabbix5.png)
+![](/images/img-zabbix-4lts/topo-zabbix6.png)
 
 <a name="planning"></a>
 ## 2. IP Planning
