@@ -45,15 +45,21 @@ Switch ảo do Linux bridge tạo ra có chức năng tương tự với 1 con s
 
 Ta có thể thấy rõ hơn cách kết nối của VM ra ngoài internet. Khi máy vật lý của ta có card mạng kết nối với internet(không phải card wireless). Trên switch ảo của ta sẽ phải có đường để kết nối ra ngoài internet(cụ thể là kết nối với card mạng của máy vật lý). Ta có thể hình dung card mạng trên máy vật lý sẽ được gắn trực tiếp vào switch ảo nên ta có thể thấy sau khi add switch ảo và card vật lý có cùng địa chỉ MAC. Và trên card vật lý sẽ không còn địa chỉ IP mà nó được gắn cho switch ảo.
 
-![](/images/img-linux-bridge/4.png)
+![](/images/img-linux-bridge/a2.png)
 
-![](/images/img-linux-bridge/5.png)
+![](/images/img-linux-bridge/a1.png)
 
 Và bây giờ trên các VM muốn giao tiếp với nhau hoặc ra ngoài internet ta chỉ cần kết nối VM đó với switch ảo. Lúc này card mạng trên VM sẽ được gắn với 1 cổng của switch ảo thông qua  tap interface và cổng này có tên là `vnet`. Ở đây có tên là `vnet0`
 
 Khi ta kết nối vào switch ảo các VM sẽ nhận địa chỉ IP cùng với dải địa chỉ IP của card mà ta add và switch và các địa chỉ IP này sẽ được cấp bởi dịch vụ DHCP trên router.
 
-![](/images/img-linux-bridge/6.png)
+Địa chỉ của card mạng gắn với switch ảo
+
+![](/images/img-linux-bridge/a3.png)
+
+Địa chỉ của VM kết nối với switch ảo
+
+![](/images/img-linux-bridge/a4.png)
 
 Với mô hình này gói tin bên trong VM đi ra ngoài mạng sẽ đi từ VM đến thẳng card vật lý gắn với switch ảo và đi ra ngoài mạng.
 
@@ -62,30 +68,36 @@ Với mô hình này gói tin bên trong VM đi ra ngoài mạng sẽ đi từ V
 Để tạo một linux bridge(switch ảo) ta dùng lệnh 
 `brctl addbr tên_switch`
 
-![](/images/img-linux-bridge/8.png)
+```
+brctl addbr testbr
+```
 
 Tiếp theo là bước add card mạng cho switch dùng lệnh 
 `brctl addif tên_switch tên_card`
  * Tên swich ở đây là switch ta vừa mới tạo ở câu lệnh bên trên
  * Tên card ở đây là card mạng trên máy vật lý của ta (trừ card wireless).
 
-![](/images/img-linux-bridge/9.png)
+```
+brctl addif testbr ens9
+```
 
 Để kiểm tra những swtich ảo trên máy và những card đã được add vào switch ảo đó ta dùng lệnh 
-
 `brctl show`
 
-![](/images/img-linux-bridge/10.png)
+![](/images/img-linux-bridge/a5.png)
 
 Tiếp sau đó ta tiến hành xin cấp IP cho NIC. Ta dùng các câu lệnh sau để xóa IP của card ens9
-
 `ifconfig tên_card 0` 
 
-![](/images/img-linux-bridge/11.png)
+```
+ifconfig ens9 0
+```
 
 Sau đó xin cấp IP cho bridge bằng lệnh `dhclient tên_bridge`
 
-![](/images/img-linux-bridge/12.png)
+```
+dhclient testbr
+```
 
 *Lưu ý* hai câu lệnh trên chỉ có hiệu lực đến khi ta reboot lại máy vật lý. Để VM có thể nhận được địa chỉ IP ngay cả khi server vật lý bị reboot ta thực hiện ghi các dòng như sau vào file `/ect/network/interfaces`
 ```
@@ -125,5 +137,11 @@ Mô hình vừa tạo như sau
 Đến đây ta đã tạo được mô hình mạng linux bridge và đã đã kết nối VM vào với mô hình mạng đó. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
 
 Chúc bạn thành công!
+
+**Tài liệu tham khảo**
+
+https://cloudbuilder.in/blogs/2013/12/08/tap-interfaces-linux-bridge/
+
+https://github.com/hocchudong/Linux-bridge
 
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
