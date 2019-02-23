@@ -65,7 +65,7 @@ zabbix_agentd -V
 
 ### 2.2. Cấu hình zabbix agent
 
-Khi cài đặt zabbix agent lên CentoS file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới cấu hình để mở port `10050`, chỉ định `IP zabbix server`.<br>
+Khi cài đặt zabbix agent lên CentOS file cấu hình zabbix agent được đặt ở `/etc/zabbix/zabbix_agentd.conf`. Thực hiện các câu lệnh dưới cấu hình để mở port `10050`, chỉ định `IP zabbix server`.<br>
 Sau mỗi thay đổi config zabbix agent bạn phải khởi đông lại và kiểm tra trạng thái service `zabbix-agent`.
 
 ```
@@ -78,7 +78,7 @@ systemctl start zabbix-agent
 systemctl restart zabbix-agent
 systemctl status zabbix-agent
 ```
-**Lưu ý**: Nếu host của bạn mở firewall thì phải mởi port 10050 để zabbix client giao tiếp với zabbix server.s
+**Lưu ý**: Nếu host của bạn mở firewall thì phải mởi port `10050` để zabbix client giao tiếp với zabbix server.s
 
 ```
 firewall-cmd --add-port=10050/tcp --permanent 
@@ -133,5 +133,8 @@ Click `Monitoring -> Lastest data -> Lựa chọn host -> Apply`
 
 ![](/images/img-zabbix3-mon-centos/Screenshot_1011.png)
 
+Hy vọng những hướng dẫn trên giúp bạn có thể giám sát thành công một host CentOS trên zabbix server.
 
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
 
