@@ -105,9 +105,9 @@ flush privileges;
 
 Trong đó
 
- * `tên-database` là tên database sử dụng cho wordpress
- * `user` là tên user sử dụng để wordpress kết nối vào MySQL
- * `IP` là địa chỉ của máy Web Server để truy cập MySQL
+ * `tên-database` là tên database sử dụng cho wordpress.
+ * `user` là tên user sử dụng để wordpress kết nối vào MySQL.
+ * `IP` là địa chỉ của máy Web Server để truy cập MySQL.
 
 VD:
 
