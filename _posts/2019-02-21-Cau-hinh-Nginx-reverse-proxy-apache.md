@@ -140,13 +140,20 @@ Copy file Vhost vừa tạo tới thư mục /etc/nginx/sites-available
 cp /etc/nginx/sites-available/quyenbx.name.vn.conf /etc/nginx/sites-enabled/quyenbx.name.vn.conf
 ```
 
+Start lại service nginx
+
+```sh
+service nginx restart 
+chkconfig nginx on
+```
+
+## 4.2 Cấu hình apache:
+
 Sửa file /etc/httpd/conf/httpd.conf để tạo thêm Vhost cho domain quyenbx.name.vn trên apache
 
 ```sh
 sed -i 's/Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf 
 ```
-
-## 4.1 Cấu hình apache:
 
 Tạo file vhost trong apache
 
@@ -174,6 +181,13 @@ Tạo thư mục chứa code của website quyenbx.name.vn theo file cấu hình
 
 ```sh
 mkdir -p /var/www/html/quyenbx.name.vn
+```
+
+Start lại service httpd
+
+```sh
+service httpd start
+chkconfig httpd on
 ```
 
 Chúng ta sẽ tạo 1 file index.html trong thư mục /var/www/html/quyenbx.name.vn để kiểm tra việc truy cập sites-available
