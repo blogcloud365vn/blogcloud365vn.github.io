@@ -146,6 +146,8 @@ Sửa file /etc/httpd/conf/httpd.conf để tạo thêm Vhost cho domain quyenbx
 sed -i 's/Listen 80/Listen 8080/g' /etc/httpd/conf/httpd.conf 
 ```
 
+## 4.1 Cấu hình apache:
+
 Tạo file vhost trong apache
 
 ```sh
