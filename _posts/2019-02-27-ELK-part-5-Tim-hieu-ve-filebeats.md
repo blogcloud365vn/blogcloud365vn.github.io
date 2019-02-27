@@ -33,7 +33,7 @@ set_order: 11
 
 - Mô hình beats platform:
 
-![elk-16.PNG](/images/img-elk/kafka-16.PNG)
+![elk-16.PNG](/images/img-elk/elk-16.PNG)
 
 - Trong các beats pattern được kể ở trên thì filebeat thường được ưu tiên sử dụng tuy nhiên filebeat vẫn còn một số hạn chế cần lưu ý khi sử dụng như:
     - Khó khăn đối với người mới sử dụng cú pháp YAML.
