@@ -26,21 +26,17 @@ __Pacemaker__ là trình quản lý tài nguyên trong cluster được phát tr
 ![](/images/img-haproxy-pacemaker-galera/pic2.png)
 ### Mô hình
 
-Mô hình Galera 3 node
-
-![](/images/img-haproxy-pacemaker-galera/pic1.png)
-
 Mô hình triển khai
 
 ![](/images/img-haproxy-pacemaker-galera/pic3.png)
 
-Mô hình triển khai HAProxy
+Mô hình hoạt động
 
 ![](/images/img-haproxy-pacemaker-galera/pic4.png)
 
 ### Thiết lập ban đầu
 
-Thực hiện cấu hình theo docs triển galera 3 node. [Xem tại](2019-02-06-cai-dat-galera-mariadb.md)
+Thực hiện cấu hình theo docs triển galera 3 node. [Xem tại](https://blog.cloud365.vn/linux/cai-dat-galera-mariadb/)
 
 ## Phần 2. Cài đặt Haproxy bản 1.8
 
