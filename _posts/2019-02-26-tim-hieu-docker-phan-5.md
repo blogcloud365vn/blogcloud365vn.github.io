@@ -78,7 +78,7 @@ docker ps -a
 
 ```
 docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
-docker container [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
 - Ví dụ
@@ -118,13 +118,13 @@ docker container rm [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ xóa một container đã stop
 
 ```
-docker rm huytm-container
+docker rm my-container
 ```
 
 - Ví dụ xóa một container chưa stop
 
 ```
-docker rm -f huytm-container
+docker rm -f my-container
 ```
 
 - Ví dụ xóa tất cả các container
@@ -140,8 +140,8 @@ docker rm -f $(docker ps -aq)
 - Cú pháp 
 
 ```
+docker prune [OPTIONS]
 docker container prune [OPTIONS]
-
 ```
 
 - Ví dụ 
@@ -166,7 +166,7 @@ docker container start [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker start huytm-container
+docker start my-container
 ```
 
 #### 2. Stop container
@@ -183,7 +183,7 @@ docker container stop [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker stop huytm-container
+docker stop my-container
 ```
 
 #### 3. Restart container
@@ -200,7 +200,7 @@ docker container restart [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker restart huytm-container
+docker restart my-container
 ```
 
 #### 4. Pause container
@@ -217,7 +217,7 @@ docker container pause CONTAINER [CONTAINER...
 - Ví dụ
 
 ```
-docker pause huytm-container
+docker pause my-container
 ```
 
 #### 5. Unpause container
@@ -234,7 +234,7 @@ docker container unpause CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker unpause huytm-container
+docker unpause my-container
 ```
 
 #### 6. Kill container
@@ -251,7 +251,7 @@ docker container kill [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker kill huytm-container
+docker kill my-container
 ```
 
 ## Nhóm các Command hiển thị thông tin của container
@@ -270,7 +270,7 @@ docker container logs [OPTIONS] CONTAINER
 - Ví dụ
 
 ```
-docker logs huytm-container
+docker logs my-container
 ```
 
 
@@ -288,7 +288,7 @@ docker container inspect [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker inspect huytm-container
+docker inspect my-container
 ```
 
 #### 3. Hiển thị tài nguyên của contaier
@@ -305,7 +305,7 @@ docker container stats [OPTIONS] [CONTAINER...]
 - Ví dụ
 
 ```
-docker stats huytm-container
+docker stats my-container
 ```
 
 #### 4. Hiển thị các tiến trình đang chạy trong container
@@ -322,7 +322,7 @@ docker container top CONTAINER [ps OPTIONS]
 - Ví dụ
 
 ```
-docker top huytm-container
+docker top my-container
 ```
 
 #### 5. Hiển thị các port được map
@@ -339,7 +339,7 @@ docker container port CONTAINER [PRIVATE_PORT[/PROTO]]
 - Ví dụ
 
 ```
-docker port huytm-container
+docker port my-container
 ```
 
 #### 6. Hiển thị các thay đổi về filesystem trong container
@@ -356,7 +356,7 @@ docker container diff CONTAINER
 - Ví dụ
 
 ```
-docker diff huytm-container
+docker diff my-container
 ```
 
 ## Nhóm các Command thực thi với container
@@ -375,7 +375,7 @@ docker container attach [OPTIONS] CONTAINER
 - Ví dụ
 
 ```
-docker attach huytm-container
+docker attach my-container
 ```
 
 #### 2. Thực thi một câu lệnh trong container
@@ -392,7 +392,7 @@ docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 - Ví dụ
 
 ```
-docker exec huytm-container free -m
+docker exec my-container free -m
 ```
 
 #### 3. Update resource cho container
@@ -408,7 +408,7 @@ docker update [OPTIONS] CONTAINER [CONTAINER...]
 - Ví dụ
 
 ```
-docker update -m 512M --memory-swap 1024M huytm-container
+docker update -m 512M --memory-swap 1024M my-container
 ```
 
 #### 4. Copy file giữa host và container
@@ -425,11 +425,11 @@ docker container cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH
 - Ví dụ
 
 ```
-docker cp huytm-container:/opt/myfile /opt/
-docker cp myfile1.txt huytm-container:/opt/
+docker cp my-container:/opt/myfile /opt/
+docker cp myfile1.txt my-container:/opt/
 ```
 
-#### 4. Đổi tên container 
+#### 5. Đổi tên container 
 
 - Ý nghĩa: Đổi tên một container 
 
@@ -443,10 +443,10 @@ docker container rename CONTAINER NEW_NAME
 - Ví dụ
 
 ```
-docker rename huytm-container my-container1
+docker rename my-container my-container1
 ```
 
-#### 4. Export toàn bộ filesystem trong container 
+#### 6. Export toàn bộ filesystem trong container 
 
 - Ý nghĩa: Export toàn bộ filesysystem trong container thành một file **tar**
 
@@ -460,24 +460,23 @@ docker container export [OPTIONS] CONTAINER
 - Ví dụ
 
 ```
-docker export -o huytm.tar huytm-container
+docker export -o huytm.tar my-container
 ```
 
-#### 5. Tạo một image từ container đang chạy 
+#### 7. Tạo một image từ container đang chạy 
 
 - Ý nghĩa: Tạo một image từ container đang chạy
 
 - Cú pháp 
 
 ```
-docker [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 ```
 
 - Ví dụ
 
 ```
-docker container commit huytm-container my_new_image
+docker container commit my-container my_new_image
 ```
 
 ---
