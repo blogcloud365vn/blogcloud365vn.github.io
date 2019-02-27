@@ -16,7 +16,7 @@ Trong bài viết này mình sẽ tập trung viết về một số command cơ
 
 ## Một số lưu ý nhỏ
 
-**1. Trong bài viết mình sẽ viết viết hai command trong một block chẳng hạn như thế này** 
+**1. Trong bài viết mình sẽ viết hai command trong một block chẳng hạn như thế này** 
 
 ```
 docker run httpd
@@ -41,7 +41,7 @@ Vì đâu có sự tương đương này? Là do **Docker v1.13** đã tái cấ
 
 >Ví dụ nếu không có option này khi attach lại container thì khi gõ command sẽ không có kết quả trả về
 
-Theo khuyến cáo thì nên sử dụng cả 3 option này theo dạng `-itd` đối với các command như: *docker run*, *docker create* ... 
+> Theo khuyến cáo thì nên sử dụng cả 3 option này theo dạng `-itd` đối với các command như: *docker run*, *docker create* ... 
 
 **3. Docker làm việc, tương tác với các thành phần qua ID hoặc NAME** 
 
@@ -342,13 +342,151 @@ docker container port CONTAINER [PRIVATE_PORT[/PROTO]]
 docker port huytm-container
 ```
 
+#### 6. Hiển thị các thay đổi về filesystem trong container
+
+- Ý nghĩa: Hiển thị các thay đổi về filesystem trong container từ lúc create container
+
+- Cú pháp 
+
+```
+docker diff CONTAINER
+docker container diff CONTAINER
+```
+
+- Ví dụ
+
+```
+docker diff huytm-container
+```
+
+## Nhóm các Command thực thi với container
+
+#### 1. Attach container
+
+- Ý nghĩa: Attach một màn hình cho phép nhập input và hiển thị output đối với một container đang chạy
+
+- Cú pháp 
+
+```
+docker attach [OPTIONS] CONTAINER
+docker container attach [OPTIONS] CONTAINER
+```
+
+- Ví dụ
+
+```
+docker attach huytm-container
+```
+
+#### 2. Thực thi một câu lệnh trong container
+
+- Ý nghĩa: Thực thi một câu lệnh trong container đang chạy
+
+- Cú pháp 
+
+```
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+```
+
+- Ví dụ
+
+```
+docker exec huytm-container free -m
+```
+
+#### 3. Update resource cho container
+
+- Ý nghĩa: Update resource cho container, mở rộng, limit tài nguyên cho container
+
+- Cú pháp 
+
+```
+docker update [OPTIONS] CONTAINER [CONTAINER...]
+```
+
+- Ví dụ
+
+```
+docker update -m 512M --memory-swap 1024M huytm-container
+```
+
+#### 4. Copy file giữa host và container
+
+- Ý nghĩa: Copy file giữa Docker host và container
+
+- Cú pháp 
+
+```
+docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH
+docker container cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH
+```
+
+- Ví dụ
+
+```
+docker cp huytm-container:/opt/myfile /opt/
+docker cp myfile1.txt huytm-container:/opt/
+```
+
+#### 4. Đổi tên container 
+
+- Ý nghĩa: Đổi tên một container 
+
+- Cú pháp 
+
+```
+docker rename CONTAINER NEW_NAME
+docker container rename CONTAINER NEW_NAME
+```
+
+- Ví dụ
+
+```
+docker rename huytm-container my-container1
+```
+
+#### 4. Export toàn bộ filesystem trong container 
+
+- Ý nghĩa: Export toàn bộ filesysystem trong container thành một file **tar**
+
+- Cú pháp 
+
+```
+docker export [OPTIONS] CONTAINER
+docker container export [OPTIONS] CONTAINER
+```
+
+- Ví dụ
+
+```
+docker export -o huytm.tar huytm-container
+```
+
+#### 5. Tạo một image từ container đang chạy 
+
+- Ý nghĩa: Tạo một image từ container đang chạy
+
+- Cú pháp 
+
+```
+docker [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+```
+
+- Ví dụ
+
+```
+docker container commit huytm-container my_new_image
+```
+
 ---
 
 ## Tổng kết
 
-Như vậy, trong bài viết này mình đã giới thiệu cách build một image từ Dockerfile cũng như giải thích các **command** trong cấu trúc file của Dockerfile.
+Như vậy trong bài viết này mình đã giới thiệu một số các command cở bản để làm việc với container. Mỗi commnad có các option - hay còn gọi là flag đi kèm. Trong phạm vi bài viết mình chưa thể giới thiệu sâu về các option này, mình sẽ có một bài viết cụ thể cho từng command sau.
 
-Ở bài viết tiếp theo mình sẽ viết về một số CLI command cơ bản khi làm việc với container.
+Bài viết này chỉ giới thiệu các command cơ bản đủ để thao tác và tìm hiểu về Docker. Trong bài viết tiếp theo mình sẽ giới thiệu về các command cơ bản hay sử dụng đối với image.
 
 >"if you have knowledge let others light their candles in it"
 
