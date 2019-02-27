@@ -247,7 +247,7 @@ IP-ELK:5601
 
 Vào mục `Management` sau đó chọn `Create Index`:
 
-![elk-18](/images/img-elk/elk-17.png)
+![elk-18](/images/img-elk/elk-18.png)
 
 Điền vào ô `Define index pattern` dòng sau rồi nhấn `Next step`:
 
@@ -255,7 +255,7 @@ Vào mục `Management` sau đó chọn `Create Index`:
 
 Kiểm tra lại thông tin log được đẩy về ở phần `Discover` :
 
-![elk-20.jpg](/images/img-elk/elk-20.jpg)
+![elk-20.jpg](/images/img-elk/elk-20.png)
 
 ## Tổng kết.
 
