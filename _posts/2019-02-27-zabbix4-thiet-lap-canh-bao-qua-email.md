@@ -87,6 +87,89 @@ Như vậy scripts cảnh báo qua email đã chạy thành công.
 
 ## 2. Cấu hình cảnh báo email trên Web Zabbix
 
+### 2.1. Truy cập zabbix server
+
+![](/images/img-zabbix-alert-email/Screenshot_1002.png)
+
+
+### 2.2. Tạo media type
+
+Media type chính là các kênh kể zabbix server gửi cảnh báo có thể là Email, SMS hay một kênh được tạo ra bằng scripts.
+
+Click `Administrator -> Media types -> Create media type`
+
+![](/images/img-zabbix-alert-email/Screenshot_434.png)
+
+Nhập các thông tin về media type mới
+
+```
+Name: Gmail (Tên có thể tùy đặt)
+Type: Script
+Script name: Tên của script có trong thư mục alert script của server zabbix
+Script parameter:
+{ALERT.SENDTO}
+{ALERT.SUBJECT}
+{ALERT.MESSAGE}
+```
+
+![](/images/img-zabbix-alert-email/Screenshot_435.png)
+
+Tạo thành công `Media type` mới có tên là `Gmail`
+
+![](/images/img-zabbix-alert-email/Screenshot_436.png)
+
+### 2.3. Set user nhận alert qua email
+
+Click `Administrator -> User -> Lựa chọn user nhận email cảnh báo`
+
+![](/images/img-zabbix-alert-email/Screenshot_437.png)
+
+Click tab `Media` -> `Add` 
+
+![](/images/img-zabbix-alert-email/Screenshot_438.png)
+
+Nhập email nhận cảnh báo
+
+```
+Type: Chính là type mà đã tạo ở trên
+
+Sento: Địa chỉ emal sẽ nhận được alert
+
+Use of serverity: Các mức cảnh bảo
+
+Enable: Tích
+```
+
+![](/images/img-zabbix-alert-email/Screenshot_440.png)
+
+Như vậy user `Admin` đã được thiết lập nhận cảnh báo qua email.
+
+Click `Update`
+
+![](/images/img-zabbix-alert-email/Screenshot_441.png)
+
+### 2.4. Tạo action
+
+Tạo `action` để khi có sự bất thường đối với các thông số monitor sẽ có alert qua email.
+
+Click `Configuration -> Action -> Create action`
+
+![](/images/img-zabbix-alert-email/Screenshot_442.png)
+
+**Tại tab action**
+
+Nhập thông tin:
+
+```
+Name: Tên của action muốn tạo
+```
+
+**Tab operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi
+
+![](/images/img-zabbix-alert-email/Screenshot_443.png)
+
+
+
 
 
 
