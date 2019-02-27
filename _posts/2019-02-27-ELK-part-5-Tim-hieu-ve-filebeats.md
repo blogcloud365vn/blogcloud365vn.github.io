@@ -48,7 +48,7 @@ set_order: 11
 
 - Cấu trúc bên trong filebeat:
 
-![ELK-17](/images/img-elk/kafka-17.PNG)
+![ELK-17](/images/img-elk/elk-17.PNG)
 
 ## Cấu hình filebeat từ client Ubuntu về ELK stack.
 
@@ -247,15 +247,15 @@ IP-ELK:5601
 
 Vào mục `Management` sau đó chọn `Create Index`:
 
-![elk-18](/images/img-elk/kafka-18.png)
+![elk-18](/images/img-elk/elk-17.png)
 
 Điền vào ô `Define index pattern` dòng sau rồi nhấn `Next step`:
 
-![elk-19](/images/img-elk/kafka-19.png)
+![elk-19](/images/img-elk/elk-19.png)
 
 Kiểm tra lại thông tin log được đẩy về ở phần `Discover` :
 
-![elk-20.jpg](/images/img-elk/kafka-20.jpg)
+![elk-20.jpg](/images/img-elk/elk-20.jpg)
 
 ## Tổng kết.
 
