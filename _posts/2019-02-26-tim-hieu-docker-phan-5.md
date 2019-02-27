@@ -16,7 +16,7 @@ Trong bài viết này mình sẽ tập trung viết về một số command cơ
 
 ## Một số lưu ý nhỏ
 
-1. Trong bài viết mình sẽ viết viết hai command trong một block chẳng hạn như thế này 
+**1. Trong bài viết mình sẽ viết viết hai command trong một block chẳng hạn như thế này** 
 
 ```
 docker run httpd
@@ -27,9 +27,9 @@ Cả hai command trên đều tương tự như nhau. Các bạn có thể chọ
 
 Vì đâu có sự tương đương này? Là do **Docker v1.13** đã tái cấu trúc lại CLI. Thông tin cụ thể hơn các bạn có thể theo dõi tại [đây](https://blog.docker.com/2017/01/whats-new-in-docker-1-13/){:target="_blank"}
 
-2. Một số option hay sử dụng trong bài viết:
+**2. Một số option hay sử dụng trong bài viết:**
 
-**-d detach container (Có thể hiểu là chạy ngầm container cũng được)** 
+**-d detach container** (Có thể hiểu là chạy ngầm container cũng được)
 
 > Ví dụ nếu không có option này chạy container, cửa sổ dòng lệnh phải giữ phiên. Nếu kết thúc cửa sổ dòng lệnh, container cũng stop theo.
 
@@ -43,12 +43,12 @@ Vì đâu có sự tương đương này? Là do **Docker v1.13** đã tái cấ
 
 Theo khuyến cáo thì nên sử dụng cả 3 option này theo dạng `-itd` đối với các command như: *docker run*, *docker create* ... 
 
-3. Docker làm việc, tương tác với các thành phần qua ID hoặc NAME 
+**3. Docker làm việc, tương tác với các thành phần qua ID hoặc NAME** 
 
 
 ## Nhóm các Command liên quan đến Lifecycle của Container
 
-### 1. Hiển thị list các container 
+#### 1. Hiển thị list các container 
 
 - Ý nghĩa: Hiển thị list danh sách các container đang được Docker quản lý
 
@@ -70,7 +70,7 @@ docker ps -a
 ```
 
 
-### 2. Tạo mới một container
+#### 2. Tạo mới một container
 
 - Ý nghĩa: Tạo mới một container nhưng không start
 
@@ -87,7 +87,7 @@ docker container [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker create -itd centos
 ```
 
-### 2. Chạy một container
+#### 3. Chạy một container
 
 - Ý nghĩa: Tạo mới một container và start container đó luôn
 
@@ -104,7 +104,7 @@ docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker run -itd centos
 ```
 
-### 3. Xóa container
+#### 4. Xóa container
 
 - Ý nghĩa: Xóa Container
 
@@ -133,7 +133,7 @@ docker rm -f huytm-container
 docker rm -f $(docker ps -aq)
 ```
 
-### 4. Xóa tất cả container đang stop
+#### 5. Xóa tất cả container đang stop
 
 - Ý nghĩa: Xóa tất cả các container
 đang stop
@@ -152,7 +152,7 @@ docker prune
 
 ## Nhóm các Command quản lý trạng thái của container
 
-### 1. Start container
+#### 1. Start container
 
 - Ý nghĩa: Start một container
 
@@ -169,7 +169,7 @@ docker container start [OPTIONS] CONTAINER [CONTAINER...]
 docker start huytm-container
 ```
 
-### 2. Stop container
+#### 2. Stop container
 
 - Ý nghĩa: Stop một container
 
@@ -186,7 +186,7 @@ docker container stop [OPTIONS] CONTAINER [CONTAINER...]
 docker stop huytm-container
 ```
 
-### 3. Restart container
+#### 3. Restart container
 
 - Ý nghĩa: Restart một container
 
@@ -203,7 +203,7 @@ docker container restart [OPTIONS] CONTAINER [CONTAINER...]
 docker restart huytm-container
 ```
 
-### 4. Pause container
+#### 4. Pause container
 
 - Ý nghĩa: Tạm dừng lại một container
 
@@ -220,7 +220,7 @@ docker container pause CONTAINER [CONTAINER...
 docker pause huytm-container
 ```
 
-### 5. Unpause container
+#### 5. Unpause container
 
 - Ý nghĩa: Tiếp tục lại một container đang tạm dừng
 
@@ -237,7 +237,7 @@ docker container unpause CONTAINER [CONTAINER...]
 docker unpause huytm-container
 ```
 
-### 6. Kill container
+#### 6. Kill container
 
 - Ý nghĩa: Kill một hoặc nhiều container (Kill ở đây giống như stop, container chỉ bị stop chứ không mất đi)
 
@@ -257,7 +257,7 @@ docker kill huytm-container
 
 ## Nhóm các Command hiển thị thông tin của container
 
-### 1. Log container
+#### 1. Log container
 
 - Ý nghĩa: Hiển thị log của container
 
@@ -275,27 +275,7 @@ docker logs huytm-container
 ```
 
 
-## Nhóm các Command hiển thị thông tin của container
-
-### 1. Log container
-
-- Ý nghĩa: Hiển thị log của container
-
-- Cú pháp 
-
-```
-docker logs [OPTIONS] CONTAINER
-docker container logs [OPTIONS] CONTAINER
-```
-
-- Ví dụ
-
-```
-docker logs huytm-container
-```
-
-
-### 2. Hiển thị thông tin container
+#### 2. Hiển thị thông tin container
 
 - Ý nghĩa: Hiển thị thông tin chi tiết của container 
 
@@ -312,7 +292,7 @@ docker container inspect [OPTIONS] CONTAINER [CONTAINER...]
 docker inspect huytm-container
 ```
 
-### 3. Hiển thị tài nguyên của contaier
+#### 3. Hiển thị tài nguyên của contaier
 
 - Ý nghĩa: Hiển thị tài nguyên đang sử dụng của contaier
 
@@ -329,14 +309,14 @@ docker container stats [OPTIONS] [CONTAINER...]
 docker stats huytm-container
 ```
 
-### 4. Hiển thị các tiến trình đang chạy trong container
+#### 4. Hiển thị các tiến trình đang chạy trong container
 
 - Ý nghĩa: Hiển thị các tiến trình đang chạy trong container
 
 - Cú pháp 
 
 ```
-docker top top CONTAINER [ps OPTIONS]
+docker top CONTAINER [ps OPTIONS]
 docker container top CONTAINER [ps OPTIONS]
 ```
 
@@ -346,7 +326,7 @@ docker container top CONTAINER [ps OPTIONS]
 docker top huytm-container
 ```
 
-### 5. Hiển thị các port được map
+#### 5. Hiển thị các port được map
 
 - Ý nghĩa: Hiển thị các port mapping hoặc một port mapping cụ thể
 
@@ -376,7 +356,7 @@ Như vậy, trong bài viết này mình đã giới thiệu cách build một i
 ---
 
 ### Tài liệu tham khảo
-[https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/){:target="_blank"}
+[https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/){:target="_blank"}
 
 ---
 
