@@ -585,7 +585,7 @@ http://<Docker_host_ip>:9000
 
 Như vậy, trong bài viết này mình đã giới thiệu cách build một image từ Dockerfile cũng như giải thích các **command** trong cấu trúc file của Dockerfile.
 
-Ở bài viết tiếp theo mình sẽ viết về việc lưu trữ các image của bản thân lên DockerHub, một Docker Registry rất nổi tiếng :D.
+Ở bài viết tiếp theo mình sẽ viết về các command cở của Docker, để thao tác với container.
 
 >"if you have knowledge let others light their candles in it"
 
