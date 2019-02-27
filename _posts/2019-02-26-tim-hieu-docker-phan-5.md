@@ -246,7 +246,6 @@ docker unpause huytm-container
 ```
 docker kill [OPTIONS] CONTAINER [CONTAINER...]
 docker container kill [OPTIONS] CONTAINER [CONTAINER...]
-
 ```
 
 - Ví dụ
