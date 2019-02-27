@@ -116,11 +116,11 @@ Mục `frontend` định nghĩa địa chỉ IP và port mà client có thể k�
 Ví dụ:
 ```
 frontend www.mysite.com
-bind 10.0.0.3:80
-bind 10.0.0.3:443 ssl crt /etc/ssl/certs/mysite.pem
-http-request redirect scheme https unless { ssl_fc }
-use_backend api_servers if { path_beg /api/ }
-default_backend web_servers
+    bind 10.0.0.3:80
+    bind 10.0.0.3:443 ssl crt /etc/ssl/certs/mysite.pem
+    http-request redirect scheme https unless { ssl_fc }
+    use_backend api_servers if { path_beg /api/ }
+    default_backend web_servers
 ```
 
 - `bind`: IP và Port HAProxy sẽ lắng nghe để mở kết nối. IP có thể `bind` tất cả địa chỉ sẵn có hoặc chỉ 1 địa chỉ duy nhất, port có thể là một port hoặc nhiều port (1 khoảng hoặc 1 list).
@@ -134,12 +134,12 @@ Mục `backend` định nghĩa tập server sẽ được cân bằng tải khi 
 Ví dụ:
 ```
 backend web_servers
-balance roundrobin
-cookie SERVERUSED insert indirect nocache
-option httpchk HEAD /
-default-server check maxconn 20
-server server1 10.10.10.86:80 cookie server1
-server server2 10.10.10.87:80 cookie server2
+    balance roundrobin
+    cookie SERVERUSED insert indirect nocache
+    option httpchk HEAD /
+    default-server check maxconn 20
+    server server1 10.10.10.86:80 cookie server1
+    server server2 10.10.10.87:80 cookie server2
 ```
 
 - `balance`: Kiểm soát cách HAProxy nhận, điều phối request tới các backend server. Đây chính là các thuật toán cân bằng tải.
