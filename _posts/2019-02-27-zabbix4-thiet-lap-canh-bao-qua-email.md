@@ -9,7 +9,7 @@ tags: [Zabbix]
 type: Document
 ---
 
-Với hệ thống monitor zabbix - server người quản trị hệ thống hoàn toàn có thể thêm rất nhiều các host zabbix-client vào để giám sát các thông số về RAM, Disk, CPU, Network... Ở các bài hướng dẫn trước đã hướng dẫn các bạn cách để triển khai một hệ thống zabbix server và cách thức để giám sát host client. Câu hỏi đặt ra là "Ta phải ngồi trước màn hình monitor 24/24 để quan sát các thông số lên xuống hay sao ?", "Có cách nào để thông báo khi các thông số giám sát có dấu hiệu bất thường ?". Thật đơn giản ở bài hướng dẫn này sẽ hướng dẫn các bạn cách thiết lập cảnh báo qua email, các email sẽ được gửi tới email của bạn khi có điều bất thường xảy ra.
+Với hệ thống monitor <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix </a>- server người quản trị hệ thống hoàn toàn có thể thêm rất nhiều các host <a href="https://blog.cloud365.vn/monitor/zabbix4-giam-sat-host-centos7/" target="_blank">zabbix-client</a> vào để giám sát các thông số về RAM, Disk, CPU, Network... Ở các bài hướng dẫn trước đã hướng dẫn các bạn cách để triển khai một hệ thống zabbix server và cách thức để giám sát host client. Câu hỏi đặt ra là "Ta phải ngồi trước màn hình monitor 24/24 để quan sát các thông số lên xuống hay sao ?", "Có cách nào để thông báo khi các thông số giám sát có dấu hiệu bất thường ?". Thật đơn giản ở bài hướng dẫn này sẽ hướng dẫn các bạn cách thiết lập cảnh báo qua `email`, các email sẽ được gửi tới email của bạn khi có điều bất thường xảy ra.
 
 ### Mục lục
 
