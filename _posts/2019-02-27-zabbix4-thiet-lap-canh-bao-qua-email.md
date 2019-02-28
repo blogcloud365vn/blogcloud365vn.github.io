@@ -235,31 +235,15 @@ Sử dụng trigger (set up ngưỡng cảnh báo) sẵn có trong template đ�
 
 Click `Configuration -> Lựa chọn host -> Trigger`
 
-![](/images/img-zabbix-alert-email/Screenshot_1032.png)
+![](/images/img-zabbix-alert-email/Screenshot_1033.png)
 
-Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>5` biểu thị giá trị CPU load average trung bình trong 5 phút > 5 sẽ gửi cảnh báo.
+Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` biểu thị giá trị CPU load average trung bình trong 5 phút > 1 sẽ gửi cảnh báo.
 
 Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới email.
 
+![](/images/img-zabbix-alert-email/Screenshot_1034.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Với những hướng dẫn cơ bản trên hy vọng sẽ giúp bạn thiết lập thành công cảnh bảo zabbix qua email.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
