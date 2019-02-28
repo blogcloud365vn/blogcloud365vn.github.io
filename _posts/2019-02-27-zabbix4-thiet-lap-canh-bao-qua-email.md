@@ -11,6 +11,12 @@ type: Document
 
 Với hệ thống monitor zabbix - server người quản trị hệ thống hoàn toàn có thể thêm rất nhiều các host zabbix-client vào để giám sát các thông số về RAM, Disk, CPU, Network... Ở các bài hướng dẫn trước đã hướng dẫn các bạn cách để triển khai một hệ thống zabbix server và cách thức để giám sát host client. Câu hỏi đặt ra là "Ta phải ngồi trước màn hình monitor 24/24 để quan sát các thông số lên xuống hay sao ?", "Có cách nào để thông báo khi các thông số giám sát có dấu hiệu bất thường ?". Thật đơn giản ở bài hướng dẫn này sẽ hướng dẫn các bạn cách thiết lập cảnh báo qua email, các email sẽ được gửi tới email của bạn khi có điều bất thường xảy ra.
 
+### Mục lục
+
+[1. Cấu hình alert scripts email](#script)<br>
+[2. Cấu hình cảnh báo email trên Web Zabbix](#email)<br>
+
+<a name="script"></a>
 ## 1. Cấu hình alert scripts email
 
 ### 1.1. Cài đặt môi trường
@@ -85,6 +91,7 @@ Check email nhận cảnh báo
 
 Như vậy scripts cảnh báo qua email đã chạy thành công.
 
+<a name="email"></a>
 ## 2. Cấu hình cảnh báo email trên Web Zabbix
 
 ### 2.1. Truy cập zabbix server
@@ -168,10 +175,62 @@ Name: Tên của action muốn tạo
 
 ![](/images/img-zabbix-alert-email/Screenshot_443.png)
 
+Default subject (Tiêu đề của thông báo)
 
+```
+Disaster {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
 
+Default message (Nội dung của thông báo)
 
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status:{TRIGGER.STATUS}
+Severity:{TRIGGER.SEVERITY}
+Values:{ITEM.VALUE1}
 
+Item Graphic: [{ITEM.ID1}]
+```
+![](/images/img-zabbix-alert-email/Screenshot_1023.png)
+
+Set group hoặc chỉ định user nhận được cảnh báo.
+
+![](/images/img-zabbix-alert-email/Screenshot_1024.png)
+
+Set cho action gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
+
+![](/images/img-zabbix-alert-email/Screenshot_1025.png)
+
+Click `Add`
+
+![](/images/img-zabbix-alert-email/Screenshot_1028.png)
+
+**Tab Recovery operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi khi không vấn đề được giải quyết, dưới ngưỡng cảnh báo.
+
+Default subject (Tiêu đề của thông báo recovery)
+
+```
+OK Resolved: {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
+
+Default message (Nội dung của thông báo)
+
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status: {TRIGGER.STATUS}
+Severity: {TRIGGER.SEVERITY}
+Values: {ITEM.VALUE1}
+
+Item Graphic: [{ITEM.ID1}]
+```
+
+Sau khi nhập đủ thông tin click `Add`
+
+![](/images/img-zabbix-alert-email/Screenshot_1029.png)
+
+Vậy đã tạo thành công action mới.
+
+![](/images/img-zabbix-alert-email/Screenshot_1030.png)
 
 
 
