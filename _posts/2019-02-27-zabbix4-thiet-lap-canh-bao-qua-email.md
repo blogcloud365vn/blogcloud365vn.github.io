@@ -98,7 +98,6 @@ Như vậy scripts cảnh báo qua email đã chạy thành công.
 
 ![](/images/img-zabbix-alert-email/Screenshot_1002.png)
 
-
 ### 2.2. Tạo media type
 
 Media type chính là các kênh kể zabbix server gửi cảnh báo có thể là Email, SMS hay một kênh được tạo ra bằng scripts.
@@ -190,11 +189,11 @@ Item Graphic: [{ITEM.ID1}]
 ```
 ![](/images/img-zabbix-alert-email/Screenshot_1023.png)
 
-Set group hoặc chỉ định user nhận được cảnh báo.
+Set `group` hoặc chỉ định `user` nhận được cảnh báo.
 
 ![](/images/img-zabbix-alert-email/Screenshot_1024.png)
 
-Set cho action gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
+Set cho `action` gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
 
 ![](/images/img-zabbix-alert-email/Screenshot_1025.png)
 
@@ -243,7 +242,7 @@ Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới ema
 
 ![](/images/img-zabbix-alert-email/Screenshot_1034.png)
 
-Với những hướng dẫn cơ bản trên hy vọng sẽ giúp bạn thiết lập thành công cảnh bảo zabbix qua email.
+Với những hướng dẫn cơ bản trên hy vọng sẽ giúp bạn thiết lập thành công cảnh báo zabbix qua email.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
