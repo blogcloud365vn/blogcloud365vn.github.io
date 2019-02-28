@@ -139,12 +139,9 @@ Nhập email nhận cảnh báo
 
 ```
 Type: Chính là type mà đã tạo ở trên
-
 Sento: Địa chỉ emal sẽ nhận được alert
-
 Use of serverity: Các mức cảnh bảo
-
-Enable: Tích
+Enable: Tích chọn
 ```
 
 ![](/images/img-zabbix-alert-email/Screenshot_440.png)
@@ -231,6 +228,25 @@ Sau khi nhập đủ thông tin click `Add`
 Vậy đã tạo thành công action mới.
 
 ![](/images/img-zabbix-alert-email/Screenshot_1030.png)
+
+### 2.4. Test cảnh báo qua email
+
+Sử dụng trigger (set up ngưỡng cảnh báo) sẵn có trong template để test gửi cảnh báo.
+
+Click `Configuration -> Lựa chọn host -> Trigger`
+
+![](/images/img-zabbix-alert-email/Screenshot_1032.png)
+
+Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>5` biểu thị giá trị CPU load average trung bình trong 5 phút > 5 sẽ gửi cảnh báo.
+
+Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới email.
+
+
+
+
+
+
+
 
 
 
