@@ -31,7 +31,7 @@ Nếu kết quả trả về là khác `0` thì CPU có hỗ trợ.
 
 Cài KVM và các gói phụ trợ liên quan
 
-`yum install qemu-kvm libvirt-bin bridge-utils virt-manager`
+`yum install qemu-kvm libvirt-bin libvirt bridge-utils virt-manager`
 
 Trong đó:
 
