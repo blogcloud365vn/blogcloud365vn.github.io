@@ -201,7 +201,9 @@ docker image rm my_image
 
 ## Tổng kết
 
-Như vậy trong bài viết này mình đã giới thiệu một số các command cơ bản để làm việc với Image. Ở phần tiếp theo mình sẽ giới thiệu một khái niệm quan trọng trong Docker đó là **Docker Volume**
+Như vậy trong bài viết này mình đã giới thiệu một số các command cơ bản để làm việc với Image. Ở phần tiếp theo mình sẽ giới thiệu một khái niệm quan trọng trong Docker đó là **Docker Volume**.
+
+Cảm ơn các bạn đã theo dõi serie của mình ! :D
 
 >"if you have knowledge let others light their candles in it"
 
