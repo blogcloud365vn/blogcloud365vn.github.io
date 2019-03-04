@@ -10,160 +10,113 @@ type: Document
 ---
 
 ## Tổng quan
+
+Trong bài viết mình sẽ hướng dẫn các bạn một số cách kiếm tra dung lương bộ nhớ (RAM) sử dụng trong hệ điều hành Linux (Ở đây mình sử dụng OS CentOS 7).
+
 Linux hỗ trợ rất nhiều command khác nhau để kiếm tra dung lượng ram thực tế cũng như dung lượng ram đã sử dụng. Ví dụ như câu lệnh `free` hiển thị tổng dung lượng bộ nhớ vật lý (Physical memory) và dung lượng bộ nhớ chuyển đổi (Swap memory) đã sử dụng. Hoặc câu lệnh `top` để xem dung lượng ram đã sử dụng thời gian thực (realtime)
 
-## Kiểm tra số Ram có thể sử dụng
-File `/proc/meminfo` chứa thông tin cơ bản về bộ nhớ ram đã sử dụng trên các hệ điều hành Linux. File này cũng được sử dụng bởi các công cụ report như `free` để kiểm tra về bộ nhớ đã sử dụng (cả physical và swap) trên hệ thống cũng như bộ nhớ chia sẻ (shared memory) và bộ nhớ đệm sử dụng bởi kernel (buffer memory)
+## Chuẩn bị
 
-Cách kiểm tra
-```
-cat /proc/meminfo
-less /proc/meminfo
-egrep --color 'Mem|Cache|Swap' /proc/meminfo
-```
+Mình sẽ truy cập `https://cloud365.vn/`, đăng ký `gói Cloud VPS B` với cấu hình 2 core, 2 GB ram, 25 GB ở đĩa.
 
-Kết quả, ở đây mình chỉ tập trung vào một số tham số đơn giản thôi nhé
-```
-$ egrep --color 'Mem|Cache|Swap' /proc/meminfo
-MemTotal:        1882868 kB
-MemFree:         1584544 kB
-MemAvailable:    1615004 kB
-Cached:           163676 kB
-SwapCached:            0 kB
-SwapTotal:             0 kB
-SwapFree:              0 kB
-```
+![](/images/image-kiem-tra-dung-luong-ram/cloud365.png)
 
-Giải thích
-- `MemTotal`: Tổng số Ram hiện có (Đơn vị kilobyte). Ở đây, 1882868 kB tức 1838 MB và bằng 1,838 GB. Lưu ý số ram hiện có sẽ luôn nhỏ hơn số ram vật lý. Ở đây, mình tạo một Cloud VPS có dung lượng ram thực là 2 GB nhưng số ram hiện có là 1,838 GB. Lý do tại sao mình sẽ giải thích bên dưới.
-- `MemFree`: Số ram có thể sử dụng tại thời điểm kiếm tra, giá trị bằng tổng LowFree + HighFree (cùng file)
-- `MemAvailable`: Tổng số Ram có thể sử dụng cho việc khởi động một ứng dụng mới mà không phải sử dụng đến Ram Swap.
-- `Cached`: Dung lượng file được cache trên ram (Không bao gồm `SwapCached`)
-- `SwapCached`: Dung lượng bộ nhớ vật lý (Ram Physical) được cache lại trong bộ nhớ chuyển đối (Ram Swap).
-- `SwapTotal`: Tổng dung lượng Ram Swap hiện có
-- `SwapFree`: Số Ram Swap có thể sử dụng
+## Kiểm tra dung lượng bộ nhớ
+### Kiểm tra dung lượng bộ nhớ đơn giản
+Cách đơn giản nhất để kiếm tra dung lượng bộ nhớ của Cloud VPS là các bạn sử dụng câu lệnh `free`
 
-Kiếm tra dung lượng bộ nhớ bằng câu lệnh `free`
+ở đây mình sẽ thực hiện câu lệnh `free -h`
 ```
 free -h
 ```
 
 Kết quả
-```
-[root@thanhnb ~]# free -h
-              total        used        free      shared  buff/cache   available
-Mem:           1.8G         81M        1.5G         16M        223M        1.5G
-Swap:            0B          0B          0B
-```
+
+![](/images/image-kiem-tra-dung-luong-ram/pic1.png)
+
+Kết quả cho thấy, Cloud VPS của mình có thông số bộ nhớ ram như sau:
+- Tổng dung lượng bộ nhớ bằng 1,8 GB (`total`)
+- Đã sử dụng 78 MB (`used`)
+- Dung lượng rảnh rỗi bằng 1,5 GB
+- Dung lượng bộ nhớ sử dụng cho việc lưu đệm bằng 213 MB
 
 Lưu ý:
-- Số ram trống tại thời điểm kiểm tra bằng 1.5 GB (`free`) nhưng thực tế bạn có thể sử dụng nhiều hơn thế. Tổng số ram trống thực sự sẽ bằng `free` + `buff/cache`. Vậy ở đây, số ram thực sự có thể sử dụng được sẽ bằng 1.723 GB.
-- Lượng ram được `buff/cache` thường được sử dụng để cải thiện hiệu năng đọc ghi ổ đĩa. Vì bộ ram sẽ có tốc độ truy vấn, đọc ghi cao hơn rất nhiều so với tốc độ truy vấn, đọc ghi ổ đĩa nên hệ điều hành sử dụng lượng ram còn trống để cài thiện hiệu năng.
+- Số ram trống tuy chỉ bằng 1.5 GB (`free`) nhưng thực tế bạn có thể sử dụng nhiều hơn thế. Tổng số bộ nhớ có thể sử dụng sẽ bằng `free` + `buff/cache`. Vậy ở đây, số ram thực sự có thể sử dụng được sẽ bằng 1.713 GB.
+- Lượng bộ nhớ ram được `buff/cache` thường được sử dụng để cải thiện hiệu năng đọc ghi ổ đĩa. Vì bộ ram sẽ có tốc độ truy vấn, đọc ghi cao hơn rất nhiều so với tốc độ truy vấn, đọc ghi ổ đĩa nên hệ điều hành sử dụng lượng ram còn trống để cài thiện hiệu năng.
 
+Vậy mình đã hướng dẫn các kiểm tra thông số bộ nhớ đơn giản. Tiếp theo mình sẽ hướng dẫn phương pháp nâng cao.
+
+### Kiểm tra dung lượng bộ nhớ nâng cao
+
+Để kiếm tra các thông số chi tiết về bộ nhớ ram, chúng ta sẽ kiểm tra file `/proc/meminfo`. Bản thân câu lệnh `free` cũng sử dụng file `meminfo` để kiếm tra dung lượng bộ nhớ ram của Cloud VPS.
+
+Thống số trong file `/proc/meminfo` khá nhiều nên mình sẽ chỉ tập trung vào các tham số quan trọng về bộ nhớ.
+
+Thực hiện câu lệnh
+```
+egrep --color 'Mem|Cache' /proc/meminfo
+```
+
+![](/images/image-kiem-tra-dung-luong-ram/pic2.png)
+
+Mình sẽ giải thích kết quả ở bên dưới
+
+![](/images/image-kiem-tra-dung-luong-ram/pic3.png)
+- `MemTotal`: Đây là tổng số bộ nhớ Ram hiện có (Đơn vị kilobyte). Ở đây giá trị bằng `1882868 kB` tức bằng 1,8 GB đúng như kết quả của câu lệnh `free`
+
+![](/images/image-kiem-tra-dung-luong-ram/pic4.png)
+- `MemFree`: Đây là số bộ nhớ ram trống, giá trị bằng `1581892 kB` tức bằng 1,5 GB.
+
+
+![](/images/image-kiem-tra-dung-luong-ram/pic5.png)
+- `MemAvailable`: Đây tổng số Ram có thể sử dụng, giá trị bằng `1616352 kB` tức bằng 1,6 GB. Như mình đã nói tuy số dung lượng bộ nhớ trống bằng 1,5 GB tuy nhiên bạn có thể sử dụng nhiều hơn.
+
+![](/images/image-kiem-tra-dung-luong-ram/pic6.png)
+- `Cached`: Đây là dung lượng bố nhớ sử dụng làm bộ lưu đệm. Vì bộ nhớ ram sẽ có tốc độ truy vấn đọc ghi rất cao nên hệ điều hành sử dụng lượng ram còn trống để cài thiện hiệu năng, tuy nhiên khi cần sử dụng bộ nhớ ram hệ điều hành sẽ tự động giải phóng bộ nhớ đệm.
+
+Các cách kiểm tra tương tự
+```
+cat /proc/meminfo
+less /proc/meminfo
+```
 
 ## Một số câu lệnh kiểm tra thông dụng
-Hiện thị dung lượng bộ nhớ có thể sử dụng bằng câu lệnh free (dạng megabytes):
+Hiện thị dung lượng bộ nhớ có thể sử dụng bằng câu lệnh `free -m`, câu lệnh hiện thị dung lượng bộ nhớ dạng megabytes:
 ```
 free -m
 ```
 
 Kết quả
-```
-[root@thanhnb ~]# free -m
-              total        used        free      shared  buff/cache   available
-Mem:           1838          79        1536          16         222        1577
-Swap:             0           0           0
-```
+![](/images/image-kiem-tra-dung-luong-ram/pic7.png)
 
-Hiện dạng với đơn vị gigabytes
-```
-free -h
-```
 
-Kết quả
-```
-[root@thanhnb ~]# free -h
-              total        used        free      shared  buff/cache   available
-Mem:           1.8G         79M        1.5G         16M        223M        1.5G
-Swap:            0B          0B          0B
-```
-
-Hiện thị dụng lượng bộ nhớ có thể sử dụng bằng câu lệnh `vmstat`
+Hiện thị dung lượng bộ nhớ có thể sử dụng bằng câu lệnh `vmstat -s`
 ```
 vmstat -s
 ```
 
 Kết quả
-```
-[root@thanhnb ~]# vmstat -s
-      1882868 K total memory
-        80252 K used memory
-        93068 K active memory
-       119820 K inactive memory
-      1574280 K free memory
-         2600 K buffer memory
-       225736 K swap cache
-            0 K total swap
-            0 K used swap
-            0 K free swap
-         1581 non-nice user cpu ticks
-          102 nice user cpu ticks
-         1300 system cpu ticks
-       205325 idle cpu ticks
-          147 IO-wait cpu ticks
-            0 IRQ cpu ticks
-            2 softirq cpu ticks
-           67 stolen cpu ticks
-       157716 pages paged in
-        42562 pages paged out
-            0 pages swapped in
-            0 pages swapped out
-       136715 interrupts
-       194901 CPU context switches
-   1551621186 boot time
-        17126 forks
-```
+![](/images/image-kiem-tra-dung-luong-ram/pic8.png)
 
-## Giải thích lý do tại sao số ram hiện có lại nhỏ hơn số ram vật lý.
+## Giải thích lý do tại sao dung lượng bộ nhớ hiện có lại nhỏ hơn dung lượng bộ vật lý
 
-```
-$ free -m
-              total        used        free      shared  buff/cache   available
-Mem:           1838          80        1535          16         223        1576
-Swap:             0           0           0
-```
-Như mình đã nói ở trên, mình tạo một Cloud VPS có dung lượng 2 GB nhưng số ram mình có thể sử dụng chỉ là 1,838 GB. Có phải hệ điều hành đã nhận thiếu ram hoặc nhà cung cấp cấp phát thiếu ram cho Cloud VPS?. Thực ra hệ điều hành Linux đã nhận đủ số ram là 2 GB nhưng một phần ram đã bị chiếm dụng bởi Kernel Linux.
+![](/images/image-kiem-tra-dung-luong-ram/pic9.png)
 
-Thực hiện câu lệnh
+Đến đây mình nghĩ một số bạn sẽ thắc mắc tại sao mình đăng ký gói Cloud VPS gói B với 2 GB RAM bộ nhớ nhưng khi kiểm tra thì hệ điều hành chỉ nhận 1.8 GB. Vậy có phải hệ điều hành đã nhận thiếu ram hoặc nhà cung cấp đã cung cấp thiếu bộ nhớ cho Cloud VPS?.
+
+Thực ra, hệ điều hành Linux đã nhận đủ dung lượng bộ nhớ ram là 2 GB tuy nhiên trong quá trình khởi động hệ điều hành một phần ram đã bị chiếm dụng bởi nhân hệ thống (Kernel Linux).
+
+Mình sẽ kiểm tra bằng câu lệnh
 ```
 dmesg | grep -i memory
 ```
 
 Kết quả
-```
-[root@thanhnb ~]# dmesg | grep -i memory
-[    0.000000] Base memory trampoline at [ffff9f2000099000] 99000 size 24576
-[    0.000000] Reserving 161MB of memory at 640MB for crashkernel (System 0: 2047MB)
-[    0.000000] Early memory node ranges
-[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
-[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
-[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
-[    0.000000] Memory: 1837732k/2097124k available (7324k kernel code, 392k absent, 259000k reserved, 6305k data, 1832k init)
-[    0.000000] please try 'cgroup_disable=memory' option if you don't want memory cgroups
-[    0.541105] Initializing cgroup subsys memory
-[    1.640271] Freeing initrd memory: 41740k freed
-[    1.840650] Non-volatile memory driver v1.3
-[    1.846069] crash memory driver: version 1.1
-[    2.033498] Freeing unused kernel memory: 1832k freed
-[    2.041958] Freeing unused kernel memory: 856k freed
-[    2.045739] Freeing unused kernel memory: 684k freed
-[    4.926318] [TTM] Zone  kernel: Available graphics memory: 941434 kiB
-[    4.935019] [drm] qxl: 16M of VRAM memory size
-[    4.937533] [drm] qxl: 63M of IO pages memory ready (VRAM domain)
-[    4.940743] [drm] qxl: 16M of Surface memory size
-```
+![](/images/image-kiem-tra-dung-luong-ram/pic10.png)
 
-Như mình đã nói, số ram hệ điều hành Linux đã nhận thực sự là 2047 MB (`System RAM: 2047MB`). Nhưng để ý dòng (`Memory: 1837732k/2097124k available (7324k kernel code, 392k absent, 259000k reserved, 6305k data, 1832k init)`), `Kernel` hệ điều hành đã tự cấp phát một lượng ram nhỏ để xử lý một số tác vụ trong quá trình khởi động OS, số ram này sẽ được giải phóng một phần. Tức tuy tổng dung lượng ram là 1.838 GB nhưng thực tế bạn có thể sử dụng nhiều hơn thế.
+Lưu ý vào kết quả, dung lượng bộ nhớ hệ điều hành Linux đã nhận được thực sự là 2047 MB (`System RAM: 2047MB`). 
+
+Nhưng để ý dòng (`Memory: 1837732k/2097124k`), tổng dung lượng là 2 GB (`2097124kB`) nhưng lại chỉ sử dụng được 1,8 GB (`1837732k`). Để ý đến các giá trị tiếp theo, chúng ta sẽ lưu ý giá trị `259000k reserved`, giá thị thể hiện trong quá trình khởi động nhân hệ điều hành đã sử dụng 259 MB để thực hiện một số module đặc biệt. Nếu cộng giá trị `259000k` với dung lượng bộ nhớ có thể sử dụng `1837732k` chúng ta sẽ được giá trị gần bằng hoặc băng dung lượng bộ nhớ vật lý của Cloud VPS. Tuy nhiên, bạn không phải lo lắng vì dung lượng bộ nhớ sử dụng cho nhân hệ điều hành sẽ được giải phóng một phần, trả lại cho bộ nhớ ram. Vì vậy tuy dung lượng bộ nhớ là 1.8 GB nhưng bạn có thể sử dụng nhiều hơn thế.
 
 ## Nguồn
 
