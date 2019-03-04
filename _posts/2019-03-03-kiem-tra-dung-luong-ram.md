@@ -62,17 +62,17 @@ egrep --color 'Mem|Cache' /proc/meminfo
 Mình sẽ giải thích kết quả ở bên dưới
 
 ![](/images/image-kiem-tra-dung-luong-ram/pic3.png)
-- `MemTotal`: Đây là tổng số bộ nhớ Ram hiện có (Đơn vị kilobyte). Ở đây giá trị bằng `1882868 kB` tức bằng 1,8 GB đúng như kết quả của câu lệnh `free`
+- (1) `MemTotal`: Đây là tổng số bộ nhớ Ram hiện có (Đơn vị kilobyte). Ở đây giá trị bằng `1882868 kB` tức bằng 1,8 GB đúng như kết quả của câu lệnh `free`
 
 ![](/images/image-kiem-tra-dung-luong-ram/pic4.png)
-- `MemFree`: Đây là số bộ nhớ ram trống, giá trị bằng `1581892 kB` tức bằng 1,5 GB.
+- (2) `MemFree`: Đây là số bộ nhớ ram trống, giá trị bằng `1581892 kB` tức bằng 1,5 GB.
 
 
 ![](/images/image-kiem-tra-dung-luong-ram/pic5.png)
-- `MemAvailable`: Đây tổng số Ram có thể sử dụng, giá trị bằng `1616352 kB` tức bằng 1,6 GB. Như mình đã nói tuy số dung lượng bộ nhớ trống bằng 1,5 GB tuy nhiên bạn có thể sử dụng nhiều hơn.
+- (3) `MemAvailable`: Đây tổng số Ram có thể sử dụng, giá trị bằng `1616352 kB` tức bằng 1,6 GB. Như mình đã nói tuy số dung lượng bộ nhớ trống bằng 1,5 GB tuy nhiên bạn có thể sử dụng nhiều hơn.
 
 ![](/images/image-kiem-tra-dung-luong-ram/pic6.png)
-- `Cached`: Đây là dung lượng bố nhớ sử dụng làm bộ lưu đệm. Vì bộ nhớ ram sẽ có tốc độ truy vấn đọc ghi rất cao nên hệ điều hành sử dụng lượng ram còn trống để cài thiện hiệu năng, tuy nhiên khi cần sử dụng bộ nhớ ram hệ điều hành sẽ tự động giải phóng bộ nhớ đệm.
+- (4) `Cached`: Đây là dung lượng bố nhớ sử dụng làm bộ lưu đệm. Vì bộ nhớ ram sẽ có tốc độ truy vấn đọc ghi rất cao nên hệ điều hành sử dụng lượng ram còn trống để cài thiện hiệu năng, tuy nhiên khi cần sử dụng bộ nhớ ram hệ điều hành sẽ tự động giải phóng bộ nhớ đệm.
 
 Các cách kiểm tra tương tự
 ```
