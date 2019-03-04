@@ -123,7 +123,7 @@ Tới (2), chúng ta thấy tuy tổng dung lượng là 2 GB (`2097124kB`) như
 
 Để ý tới (3), chúng ta sẽ lưu ý giá trị `259000k reserved`, giá thị thể hiện trong quá trình khởi động nhân hệ điều hành đã sử dụng 259 MB để thực hiện một số module đặc biệt. 
 
-Nếu cộng giá trị `259000k` với dung lượng bộ nhớ có thể sử dụng `1837732k` chúng ta sẽ được giá trị gần bằng hoặc băng dung lượng bộ nhớ vật lý của Cloud VPS. Tuy nhiên, bạn không phải lo lắng vì dung lượng bộ nhớ sử dụng cho nhân hệ điều hành sẽ được giải phóng một phần, trả lại cho bộ nhớ ram. Vì vậy tuy dung lượng bộ nhớ là 1.8 GB nhưng bạn có thể sử dụng nhiều hơn thế.
+Nếu cộng giá trị `259000k` với dung lượng bộ nhớ có thể sử dụng `1837732k` chúng ta sẽ được giá trị gần bằng hoặc bằng dung lượng bộ nhớ vật lý của Cloud VPS. Tuy nhiên, bạn không phải lo lắng vì dung lượng bộ nhớ sử dụng cho nhân hệ điều hành sẽ được giải phóng một phần, trả lại cho bộ nhớ ram. Vì vậy tuy dung lượng bộ nhớ là 1.8 GB nhưng bạn có thể sử dụng nhiều hơn thế.
 
 ## Nguồn
 
