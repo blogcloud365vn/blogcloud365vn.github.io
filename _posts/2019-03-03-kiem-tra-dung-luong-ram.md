@@ -37,8 +37,8 @@ Kết quả
 Kết quả cho thấy, Cloud VPS của mình có thông số bộ nhớ ram như sau:
 - Tổng dung lượng bộ nhớ bằng 1,8 GB (`total`)
 - Đã sử dụng 78 MB (`used`)
-- Dung lượng rảnh rỗi bằng 1,5 GB
-- Dung lượng bộ nhớ sử dụng cho việc lưu đệm bằng 213 MB
+- Dung lượng rảnh rỗi bằng 1,5 GB (`free`)
+- Dung lượng bộ nhớ sử dụng cho việc lưu đệm bằng 213 MB (`buff/cache`)
 
 Lưu ý:
 - Số ram trống tuy chỉ bằng 1.5 GB (`free`) nhưng thực tế bạn có thể sử dụng nhiều hơn thế. Tổng số bộ nhớ có thể sử dụng sẽ bằng `free` + `buff/cache`. Vậy ở đây, số ram thực sự có thể sử dụng được sẽ bằng 1.713 GB.
@@ -87,6 +87,7 @@ free -m
 ```
 
 Kết quả
+
 ![](/images/image-kiem-tra-dung-luong-ram/pic7.png)
 
 
@@ -96,6 +97,7 @@ vmstat -s
 ```
 
 Kết quả
+
 ![](/images/image-kiem-tra-dung-luong-ram/pic8.png)
 
 ## Giải thích lý do tại sao dung lượng bộ nhớ hiện có lại nhỏ hơn dung lượng bộ vật lý
@@ -112,6 +114,7 @@ dmesg | grep -i memory
 ```
 
 Kết quả
+
 ![](/images/image-kiem-tra-dung-luong-ram/pic10.png)
 
 Lưu ý vào kết quả, dung lượng bộ nhớ hệ điều hành Linux đã nhận được thực sự là 2047 MB (`System RAM: 2047MB`). 
