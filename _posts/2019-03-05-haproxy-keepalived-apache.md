@@ -320,7 +320,7 @@ $ sysctl -p
 net.ipv4.ip_nonlocal_bind = 1
 ```
 
-Tắt dịch vụ HAProxy
+Khởi tạo dịch vụ HAProxy
 ```
 systemctl restart haproxy
 systemctl enable haproxy
