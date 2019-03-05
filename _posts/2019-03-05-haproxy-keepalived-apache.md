@@ -1,5 +1,5 @@
 ---
-date: 2019-03-03
+date: 2019-03-05
 title: "High Availability - Hướng dẫn triển khai Haproxy Keepalive cho Apache trên CentOS 7"
 categories:
   - Linux
