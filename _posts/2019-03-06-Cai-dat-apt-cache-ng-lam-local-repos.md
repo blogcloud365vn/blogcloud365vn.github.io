@@ -10,13 +10,13 @@ type: Document
 
 ## Lời mở đầu.
 
-Apt-Cacher-NG là một caching proxy server, sau khi cài đặt, nó sẽ "cache" các gói đã download từ trên internet về và đặt tại server cho những lần sử dụng sau. Nhờ vậy, các máy khác lần sau sẽ không cần phải mất thời gian tải các packages từ trên internet về nữa.
+- Apt-Cacher-NG là một caching proxy server, sau khi cài đặt, nó sẽ "cache" các gói đã download từ trên internet về và đặt tại server cho những lần sử dụng sau. Nhờ vậy, các máy khác lần sau sẽ không cần phải mất thời gian tải các packages từ trên internet về nữa.
 
-Hoạt động theo mô hình client server.
+- Hoạt động theo mô hình client server.
 
-Với apt-cacher-ng, chúng ta có thể theo dõi sự update và download các gói phần mềm được thiết lập và hỗ trợ sử dụng trong cả các môi trường.
+- Với apt-cacher-ng, chúng ta có thể theo dõi sự update và download các gói phần mềm được thiết lập và hỗ trợ sử dụng trong cả các môi trường.
 
-Các tính năng:
+- Các tính năng:
     - Tiết kiệm thời gian.
     - Tiết kiệm băng thông.
     - Người dùng có thể tích hợp dữ liệu từ file ISO hoặc DVD vào apt-cacher-ng bằng cách sử dụng tùy chọn "import".
