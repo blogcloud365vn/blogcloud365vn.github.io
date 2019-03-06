@@ -41,7 +41,7 @@ Kết quả cho thấy, Cloud VPS của mình có thông số bộ nhớ RAM nh�
 - (4) Dung lượng bộ nhớ sử dụng cho việc lưu đệm bằng 228 MB (`buff/cache`)
 
 Lưu ý:
-- Số RAM trống tuy chỉ bằng 1.5 GB (`free`) nhưng thực tế bạn có thể sử dụng nhiều hơn thế. Tổng số bộ nhớ có thể sử dụng sẽ bằng `free` + `buff/cache`. Vậy ở đây, số ram thực sự có thể sử dụng được sẽ bằng 1.728 GB.
+- Số RAM trống tuy chỉ bằng 1.5 GB (`free`) nhưng thực tế bạn có thể sử dụng nhiều hơn thế. Tổng số bộ nhớ có thể sử dụng sẽ bằng `free` + `buff/cache`. Vậy ở đây, số RAM thực sự có thể sử dụng được sẽ bằng 1.728 GB.
 - Lượng bộ nhớ RAM được `buff/cache` thường được sử dụng để cải thiện hiệu năng đọc ghi ổ đĩa. Vì bộ RAM sẽ có tốc độ truy vấn, đọc ghi cao hơn rất nhiều so với tốc độ truy vấn, đọc ghi ổ đĩa nên hệ điều hành sử dụng lượng RAM còn trống để cài thiện hiệu năng.
 
 Vậy mình đã hướng dẫn các kiểm tra thông số bộ nhớ đơn giản. Tiếp theo mình sẽ hướng dẫn phương pháp nâng cao.
