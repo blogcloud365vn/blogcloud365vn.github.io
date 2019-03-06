@@ -1,13 +1,11 @@
 ---
 title: Cài đặt apt-cache-ng làm local repo.
 categories:
-  - Logging
-description: Tìm hiểu về filebeat.
+  - Linux
+description: Cài đặt apt-cache-ng làm local repo.
 author: datpt
-tags: [Logging, Linux]
+tags: [Linux]
 type: Document
-set: Gioi-thieu-ELK
-set_order: 11
 ---
 
 ## Lời mở đầu.
@@ -25,7 +23,7 @@ Các tính năng:
 
 ## Mô hình cài đặt.
 
-![mohinh](/images/img-apt-cache/mohinh.png)
+![mohinh](/images/img-apt-cache-ng/mohinh.png)
 
 ## Cài đặt trên Ubuntu 16.04.
 
@@ -117,7 +115,7 @@ ip-server:3142
 
 Giao diện như sau:
 
-![web](/images/img-apt-cache/web.png)
+![web](/images/img-apt-cache-ng/web.png)
 
 Trên máy client chúng ta thêm các cấu hình để  khai báo repo:
 
