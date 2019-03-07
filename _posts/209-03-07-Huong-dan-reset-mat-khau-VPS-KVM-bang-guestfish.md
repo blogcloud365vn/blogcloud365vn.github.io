@@ -29,7 +29,7 @@ virsh list
 
 Dùng lệnh bên dưới để shutdown VM
 
-``sh
+```sh
 virsh shutdown generic
 ```
 
@@ -88,6 +88,8 @@ list-filesystems
 Tiếp theo chúng ta mount phân vùng root với disk tìm thấy ở lệnh trên.Ở ví dụ này là /dev/sda1
 
 ```sh
+mount /dev/sda1 /
+```
 
 ![](images\img-change-pass-vps-kvm\7.png)
 
@@ -99,7 +101,19 @@ vi /etc/shadow
 
 ![](images\img-change-pass-vps-kvm\8.png)
 
-Trong file /etc/shadow chú ý dòng **root:$6$lXwjyv8mdqrC5FQ2$57w0o6ddJp4OXaeKEWtHQ7mTg.Ai1xnzHnbbg6na93JxFnMmbH4/QEz2L1Y5K9rEA6bXy.RYO7JEwuSPAfEJl0::0:99999:7:::** , chúng ta thay thế đoạn mã đã tạo ra ở bước tạo pass mới phía trên vào đoạn **$6$lXwjyv8mdqrC5FQ2$57w0o6ddJp4OXaeKEWtHQ7mTg.Ai1xnzHnbbg6na93JxFnMmbH4/QEz2L1Y5K9rEA6bXy.RYO7JEwuSPAfEJl0** nằm giứa 2 dấu hai chấm đầu tiên.Kết quả của dòng này sẽ được thay thế thành
+Trong file /etc/shadow chú ý dòng 
+
+```sh
+root:$6$lXwjyv8mdqrC5FQ2$57w0o6ddJp4OXaeKEWtHQ7mTg.Ai1xnzHnbbg6na93JxFnMmbH4/QEz2L1Y5K9rEA6bXy.RYO7JEwuSPAfEJl0::0:99999:7:::
+```
+
+Chúng ta thay thế đoạn mã đã tạo ra ở bước tạo pass mới phía trên vào đoạn 
+
+```sh
+$6$lXwjyv8mdqrC5FQ2$57w0o6ddJp4OXaeKEWtHQ7mTg.Ai1xnzHnbbg6na93JxFnMmbH4/QEz2L1Y5K9rEA6bXy.RYO7JEwuSPAfEJl0
+```
+
+Nằm giứa 2 dấu hai chấm đầu tiên.Kết quả của dòng này sẽ được thay thế thành
 
 ```sh
 root:$1$Gty8euaX$7rziCnuUOlu9q2sYR/nKe0::0:99999:7:::
