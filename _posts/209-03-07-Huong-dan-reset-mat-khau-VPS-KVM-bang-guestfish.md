@@ -25,7 +25,7 @@ Kiểm tra hostname máy ảo đang chạy trên host KVM bằng lệnh sau
 virsh list
 ```
 
-![](images\img-change-pass-vps-kvm\1.png)
+![](images/img-change-pass-vps-kvm/1.png)
 
 Dùng lệnh bên dưới để shutdown VM
 
@@ -42,7 +42,7 @@ Chúng ta sử dụng lệnh bên dưới để tìm đường dẫn chứa imag
 virsh dumpxml generic | grep 'source file'
 ```
 
-![](images\img-change-pass-vps-kvm\2.png)
+![](images/img-change-pass-vps-kvm/2.png)
 
 Với generic là tên của VM.Kết quả hiển thị như ảnh bên dưới
 
@@ -53,7 +53,7 @@ Tạo một pass mới bằng lênh sau
 openssl passwd -1 QPZWg6YHf8
 ```
 
-![](images\img-change-pass-vps-kvm\3.png)
+![](images/img-change-pass-vps-kvm/3.png)
 
 Trong lệnh trên thì QPZWg6YHf8 chính là pass root ssh chúng ta muốn dùng để thay đổi cho password root ssh cũ của VM
 
@@ -67,7 +67,7 @@ guestfish --rw -a /var/lib/libvirt/images/generic.img
 
 Chạy lệnh trên với đường dẫn chứa file iamge của VM tìm được ở lênh phía trên.Sau khi chạy lệnh kết quả trả về như ảnh bên dưới
 
-![](images\img-change-pass-vps-kvm\4.png)
+![](images/img-change-pass-vps-kvm/4.png)
 
 Tiếp tục gõ lệnh
 
@@ -75,7 +75,7 @@ Tiếp tục gõ lệnh
 launch
 ```
 
-![](images\img-change-pass-vps-kvm\5.png)
+![](images/img-change-pass-vps-kvm/5.png)
 
 Tiếp tục sử dụng lệnh
 
@@ -83,7 +83,7 @@ Tiếp tục sử dụng lệnh
 list-filesystems
 ```
 
-![](images\img-change-pass-vps-kvm\6.png)
+![](images/img-change-pass-vps-kvm/6.png)
 
 Tiếp theo chúng ta mount phân vùng root với disk tìm thấy ở lệnh trên.Ở ví dụ này là /dev/sda1
 
@@ -91,7 +91,7 @@ Tiếp theo chúng ta mount phân vùng root với disk tìm thấy ở lệnh t
 mount /dev/sda1 /
 ```
 
-![](images\img-change-pass-vps-kvm\7.png)
+![](images/img-change-pass-vps-kvm/7.png)
 
 Tiếp sửa file shadow
 
@@ -99,7 +99,7 @@ Tiếp sửa file shadow
 vi /etc/shadow
 ```
 
-![](images\img-change-pass-vps-kvm\8.png)
+![](images/img-change-pass-vps-kvm/8.png)
 
 Trong file /etc/shadow chú ý dòng 
 
