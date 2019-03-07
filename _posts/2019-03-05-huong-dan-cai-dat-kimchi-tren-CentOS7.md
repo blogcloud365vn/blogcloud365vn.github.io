@@ -138,7 +138,7 @@ Tiếp theo click vào `Guests` và chọn `Add Guest`
 
 Để hiển thị màn hình của VM bạn chọn `View Console`
 
-![](/images/img-kimchi/7.png)
+![](/images/img-kimchi/a7.png)
 
 ## Tổng kết
 
