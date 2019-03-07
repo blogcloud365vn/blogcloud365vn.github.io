@@ -264,9 +264,79 @@ Restart libvirtd
 
 `systemctl restart libvirtd`
 
+## Sử dụng
+
+Truy cập vào đỉa chỉ của server cài webvirt ta có giao diện như sau
+
+![](/images/img-cai-dat-webvirtmgr/2.png)
+
+Ta dùng tài khoản ta tạo ở bên trên để đăng nhập vào. Để kết nối đến máy KVM click và `Add connection`
+
+![](/images/img-cai-dat-webvirtmgr/a1.png)
+
+Chỉ ra tên để phân biệt với các kết nối khác và IP của KVM muốn kết nối. Tên đăng nhập và mật khẩu là tên user và mật khẩu để đăng nhập vào server KVM.
+
+![](/images/img-cai-dat-webvirtmgr/a2.png)
+
+Kết nối thành công sẽ hiện lên giao diện như sau
+
+![](/images/img-cai-dat-webvirtmgr/a3.png)
+
+Sau đó bạn click vào kết nối đó chọn `Storages` sau đó là `New storages` để tạo vị trí lưu các file khi tạo máy ảo
+
+![](/images/img-cai-dat-webvirtmgr/a8.png)
+
+Chọn thư mục chứa disk của VM
+
+![](/images/img-cai-dat-webvirtmgr/a5.png)
+
+Chọn thư mục lưu file XML của VM
+
+![](/images/img-cai-dat-webvirtmgr/a6.png)
+
+Tôi lưu file ISO tại thư mục `root` nên tôi add thêm nó vào để có thể tìm thấy file ISO khi tạo VM
+
+![](/images/img-cai-dat-webvirtmgr/a7.png)
+
+Bạn cũng có thể thiết lập mạng cho các VM bằng cách click vào `Networks`
+
+![](/images/img-cai-dat-webvirtmgr/a9.png)
+
+Để tạo VM trước tiên ta cần tạo cho VM đó 1 file image. Để tạo file nào ta vào `Storage` chọn vị trí lưu file image trong các thư mục ta vừa thêm ở bên trên sau đó chọn `Add image`
+
+![](/images/img-cai-dat-webvirtmgr/a10.png)
+
+Chọn tên image, định dạng và dung lượng 
+
+![](/images/img-cai-dat-webvirtmgr/a11.png)
+
+Chọn `New instance` để tạo VM
+
+![](/images/img-cai-dat-webvirtmgr/a12.png)
+
+Chọn `Custom instance`
+
+![](/images/img-cai-dat-webvirtmgr/a13.png)
+
+Chú ý các thông số tên VM, số CPU, dung lượng RAM, HDD để chỉ ra file image của VM trỏ đến file vừa tạo, network để chọn mạng cho VM
+
+![](/images/img-cai-dat-webvirtmgr/a14.png)
+
+Chọn hệ điều hành cho VM bằng cách chỉ ra file ISO 
+
+![](/images/img-cai-dat-webvirtmgr/a15.png)
+
+Start VM
+
+![](/images/img-cai-dat-webvirtmgr/a16.png)
+
+Để hiển thị màn hình VM click vào biểu tượng như trên hình của VM
+
+![](/images/img-cai-dat-webvirtmgr/a17.png)
+
 ## Tổng kết 
 
-Đến đây ta đã tạo thành công công cụ Webvirtmgr trên CentOS 7 và có thể kết nó được với host KVM chạy CentOS 7. Để biết cách cài đặt Webvirtmgr trên Ubuntu 16 bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirtmgr-ubuntu16" target="_blank">tại đây</a>. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
+Đến đây ta đã tạo thành công công cụ Webvirtmgr trên CentOS 7 và biết một số bước cơ bản để tạo VM trên webvirtmgr. Để biết cách cài đặt Webvirtmgr trên Ubuntu 16 bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirtmgr-ubuntu16" target="_blank">tại đây</a>. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
 
 Chúc bạn thành công!
 
