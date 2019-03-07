@@ -190,7 +190,7 @@ service httpd start
 chkconfig httpd on
 ```
 
-Chúng ta sẽ tạo 1 file index.html trong thư mục /var/www/html/quyenbx.name.vn để kiểm tra việc truy cập sites-available
+Chúng ta sẽ tạo 1 file index.html trong thư mục /var/www/html/quyenbx.name.vn để kiểm tra việc truy cập website 
 
 ```sh
 cd /var/www/html/quyenbx.name.vn
