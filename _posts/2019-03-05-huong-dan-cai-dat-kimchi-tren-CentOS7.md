@@ -10,7 +10,7 @@ type: Document
 
 ## Tổng quan
 
-Kimchi là một trong những công cụ được sử dụng để quản lý máy ảo KVM. Nó có chức năng gần giống với Webvirtmgr nhưng có một điểm khác là nó chỉ có thể quản lý các VM tại máy cài đặt kimchi. Nó cũng cũng cho phép ta quản lý các VM trên máy cài kimchi ở bất kỳ đâu có internet.
+Kimchi có chức năng tượng tự như webvirt được dùng để quản lý VM trong KVM nhưng có nhược điểm không quản lý tập trung được nhiều KVM host so với webvirt và nó được cài trực tiếp lên KVM host đó.
 
 ## Chuẩn bị
 
@@ -110,11 +110,39 @@ Màn hình đăng nhập sẽ như sau
 
 ![](/images/img-kimchi/4.png)
 
-Bạn sử dụng user và password đăng nhập vào server của bạn để bạn có thể đăng nhập nó.
+## Sử dụng
+
+Để đăng nhập vào bạn sử dụng user name và password dùng để nhập vào KVM host để đăng nhạp vào Kimchi. Sau khi đăng nhập vào bạn sẽ thấy giao diện như sau
+
+![](/images/img-kimchi/a1.png)
+
+Để tạo máy ảo trước tiên bạn cần tạo templates. Click vào `Virtualization` chọn `Templates` và `Add template`
+
+![](/images/img-kimchi/a2.png)
+
+Sau đó điền tên của template. Bạn có điền đường dẫn đến file ISO của HĐH vào `File Path` hoặc chọn ở bên dưới. Nếu bạn chọn bên dưới mà trong máy của bạn ko có file đó thì nó sẽ download file đó về từ internet.
+
+![](/images/img-kimchi/a3.png)
+
+Tiếp theo click vào `Guests` và chọn `Add Guest`
+
+![](/images/img-kimchi/a4.png)
+
+Điền tên của VM và chọn template
+
+![](/images/img-kimchi/a5.png)
+
+Để start VM bạn di chuột vào `Actions` và chọn `Start`
+
+![](/images/img-kimchi/a6.png)
+
+Để hiển thị màn hình của VM bạn chọn `View Console`
+
+![](/images/img-kimchi/a7.png)
 
 ## Tổng kết
 
-Đến đây bạn đã cài đặt và đăng nhập thành công công cụ quản lý máy ảo KVM Kimchi trên CentOS 7.
+Đến đây bạn đã cài đặt, đăng nhập và tạo VM thành công bằng công cụ quản lý máy ảo KVM Kimchi trên CentOS 7.
 
 Chúc bạn thành công!
 
