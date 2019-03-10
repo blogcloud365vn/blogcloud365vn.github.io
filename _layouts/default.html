@@ -16,6 +16,12 @@
 	<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400italic,400,300italic,300,700,700italic|Open+Sans:400italic,600italic,700italic,700,600,400|Inconsolata:400,700">
 
+	<script>
+		function remove_accents(str) {
+			new_str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+			return new_str
+		}
+	</script>
 	{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 	<script>
 		window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;

@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-
 <section class="tutorial">
 	<section class="sidebar sticky">
 		<ul>
 			{% assign sub_navigation = content | extract_element: 'h2' %}
 			{% for item in sub_navigation %}
-				<li><a href="#{{ item.id }}">{{ item.text }}</a></li>
+				<li><a class="left-menu" href="#{{ item.id }}">{{ item.text }}</a></li>
 			{% endfor %}
 		</ul>
 	</section>
@@ -107,13 +106,23 @@ layout: default
 <script src="{{ site.baseurl }}/js/main.js"></script>
 
 <script>
+	$('.left-menu').each(function(){
+		old_link = $(this).attr('href');
+		new_link = remove_accents(old_link)
+		$(this).attr("href", new_link);
+	});
+
+	$('h2[id]').each(function(){
+   		this.id = remove_accents(this.id)
+	});
+
+
 	var headings = document.querySelectorAll("h2[id]");
 
-	console.log(headings);
 	for (var i = 0; i < headings.length; i++) {
 		var anchorLink = document.createElement("a");
 		anchorLink.innerText = "#";
-		anchorLink.href = "#" + headings[i].id;
+		anchorLink.href = "#" + remove_accents(headings[i].id);
 		anchorLink.classList.add("header-link");
 
 		headings[i].appendChild(anchorLink);
