@@ -277,11 +277,11 @@ Restart libvirt-bin
 service libvirt-bin restart
 ```
 
-Bạn có thể tham khảo cách sử dụng webvirtmgr <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirtmgr-centos7/" target="_blank">tại đây</a>
+Bạn có thể tham khảo cách sử dụng webvirtmgr <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirt-centos7/#su-dung" target="_blank">tại đây</a>
 
 ## Tổng kết 
 
-Đến đây ta đã tạo thành công công cụ Webvirtmgr trên Ubuntu 16 và có thể kết nó được với host KVM chạy hệ điều hành Ubuntu 16. Để biết cách cài đặt Webvirtmgr trên CentOS 7 bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirtmgr-centos7/" target="_blank">tại đây</a>. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
+Đến đây ta đã tạo thành công công cụ Webvirtmgr trên Ubuntu 16 và có thể kết nó được với host KVM chạy hệ điều hành Ubuntu 16. Để biết cách cài đặt Webvirtmgr trên CentOS 7 bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirt-centos7/" target="_blank">tại đây</a>. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
 
 Chúc bạn thành công!
 
