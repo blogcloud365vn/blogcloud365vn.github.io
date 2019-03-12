@@ -37,7 +37,7 @@ Nếu kết quả trả về là khác `0` thì CPU có hỗ trợ.
 
 Cài đặt KVM và công cụ quản trị `virt-manager`
 
-`sudo apt-get install quemu-kvm libvirt-bin bridge-utils virt-manager`
+`sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager`
 
 Trong đó:
 
