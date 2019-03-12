@@ -10,7 +10,7 @@ type: Document
 ---
 Guestfish là một công cụ shell và dòng lệnh để kiểm tra và sửa đổi hệ thống tập tin máy ảo. Vì vậy, chúng ta có thể sử dụng công cụ này để chỉnh sửa hệ thống tệp máy ảo, sau đó sửa đổi tệp /etc/shadow để thay đổi mật khẩu cho máy ảo
 
-1. Cài đặt Guestfish 
+### 1. Cài đặt Guestfish 
 Môi trường trong bài lab này được thực hiện trên host KVM Centos 7
 Chúng ta tiến hành cài đặt Guestfish bằng lênh
 
@@ -18,7 +18,7 @@ Chúng ta tiến hành cài đặt Guestfish bằng lênh
 yum install libguestfs-tools
 ```
 
-2. Tắt Máy ảo
+### 2. Tắt Máy ảo
 Kiểm tra hostname máy ảo đang chạy trên host KVM bằng lệnh sau
 
 ```sh
@@ -35,7 +35,7 @@ virsh shutdown generic
 
 Với generic là tên của VM cần reset pass
 
-3. Tìm đường dẫn chứa file Image của máy ảo
+### 3. Tìm đường dẫn chứa file Image của máy ảo
 Chúng ta sử dụng lệnh bên dưới để tìm đường dẫn chứa image của VM
 
 ```sh
@@ -46,7 +46,7 @@ virsh dumpxml generic | grep 'source file'
 
 Với generic là tên của VM.Kết quả hiển thị như ảnh bên dưới
 
-4. Reset password của VM sử dụng guestfish
+### 4. Reset password của VM sử dụng guestfish
 Tạo một pass mới bằng lênh sau
 
 ```sh
