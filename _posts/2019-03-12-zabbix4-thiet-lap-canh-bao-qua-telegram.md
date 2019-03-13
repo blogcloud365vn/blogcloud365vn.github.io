@@ -56,6 +56,8 @@ Bạn lưu lại chuôiz token để khai báo trong script gửi cảnh báo.
 <a name="script"></a>
 ## 2. Cấu hình alert scripts telegram
 
+### 2.1. Download scripts alert telegram
+
 Vào thưc mục để chứa scripts và download scripts về.
 
 ```
@@ -64,6 +66,13 @@ wget https://raw.githubusercontent.com/domanhduy/zabbix-monitor/master/Alert/Tel
 chmod +x zabbix-telegram.sh
 ```
 ![](/images/img-zabbix-alert-telegram/Screenshot_1124.png)
+
+### 2.2. Chỉnh sửa file scripts
+
+Để người quản trị có thể nhận được các cảnh báo thông qua telegram, phải sửa tham số `ZBX_URL` là địa chỉ zabbix server, `USERNAME`, `PASSWORD`, `BOT_TOKEN` là chuỗi token telegram bot đã tạo ở trên nhận cảnh cáo.
+
+![](/images/img-zabbix-alert-telegram/Screenshot_1125.png)
+
 
 
 
