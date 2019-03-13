@@ -221,3 +221,15 @@ Kiểm tra trên host 192.168.122.118 lúc này đã thấy VM `demo1` đang ch�
 Ta thấy trong qúa trình live migrate lệnh ping vẫn hoạt động
 
 ![](/images/img-live-migrate/1.1.png)
+
+## Tổng kết
+
+Đến đây bạn đã có thể thiết lập để live migrate thành công. Trong bài viết chắc chắn còn nhiều thiếu sót rất mong được sự góp ý của các bạn.
+
+Chúc bạn thành công!
+
+**Tài liệu tham khảo**
+
+https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=8
+
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
