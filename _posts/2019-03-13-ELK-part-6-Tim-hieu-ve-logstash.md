@@ -25,7 +25,7 @@ set_order: 10
 
 ## 2. Logstash hoạt động như thế nào.
 
-![elk-21](/images/img-elk/elk-21.png)
+![elk-21](/images/img-elk/elk-21.PNG)
 
 Đường ống xử lý sự kiện của Logstash có ba giai đoạn: input → filter → output. Các đầu vào tạo ra các sự kiện, bộ lọc sửa đổi chúng và các đầu ra sẽ chuyển chúng tới nơi khác. Đầu vào và đầu ra hỗ trợ codec cho phép bạn mã hóa hoặc giải mã dữ liệu khi nó vào hoặc thoát khỏi đường dẫn mà không phải sử dụng bộ lọc riêng biệt.
 
