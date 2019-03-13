@@ -9,7 +9,7 @@ tags: [Zabbix]
 type: Document
 ---
 
-Zabbix hỗ trợ cảnh báo qua nhiều kênh khác nhau để người quản trị có thể chủ động nhận được thông tin cảnh báo, giúp xử lý kịp thời các sự cố hệ thống của mình. 
+Zabbix hỗ trợ cảnh báo qua nhiều kênh khác nhau để người quản trị có thể chủ động nhận được thông tin cảnh báo, giúp xử lý kịp thời các sự cố hệ thống của mình. Ngoài email là kênh truyền thống phổ thông nhất hiện nay `telegram` cũng là một ứng dụng được dân kỹ thuật sử dụng, telegram gọn, nhẹ, nhanh, nhạy, có hỗ trợ app trên thiết bị di động.
 
 
 
