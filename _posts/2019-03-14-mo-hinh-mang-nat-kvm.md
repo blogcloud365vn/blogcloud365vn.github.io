@@ -51,7 +51,17 @@ Như vậy ta có thể thấy như sau
 
 ![](/images/img-nat-kvm/6.png)
 
-Như vậy VM có thể biết được địa chỉ ở bên ngoài internet nhưng các máy ở bên ngoài sẽ không thể thấy được VM. Như vậy địa chỉ của KVM host sẽ đại diện cho các VM khi giao tiếp với bên ngoài.
+Như vậy VM có thể biết được địa chỉ ở bên ngoài internet nhưng các máy ở bên ngoài sẽ không thể thấy được VM. Như vậy địa chỉ của KVM host sẽ đại diện cho các VM khi giao tiếp với bên ngoài. Để thấy rõ hơn tôi sẽ sử dụng lệnh `iptables` để thấy các rule được đặt để cho dải mạng được NAT đi ra ngoài.
+
+Các rule trong bảng NAT. 
+
+![](/images/img-nat-kvm/5.png)
+
+Rule trong chain FORWARD 
+
+![](/images/img-nat-kvm/16.png)
+
+Ta thấy được KVM host cho phép forward tất cả các gói tin của dải mạng này theo cả 2 chiều vào và ra.
 
 ## Tạo mô hình NAT trên KVM
 
@@ -88,6 +98,14 @@ Ta có thể kiểm tra VM đã nhận đúng dải mạng
 Ping thử để kiểm tra xem mạng có hoạt động
 
 ![](/images/img-nat-kvm/12.png)
+
+Như đã nói ở bên trên iptables có các rule để NAT địa chỉ mạng mạng này để ra ngoài. Bây giờ tôi thử xóa các rule trong bảng NAT đi
+
+![](/images/img-nat-kvm/17a.png)
+
+Tôi dùng lệnh ping để kiểm tra lại hoạt động của mạng thì lúc này mạng này đã không thể ra được internet
+
+![](/images/img-nat-kvm/18.png)
 
 ## Tổng kết
 
