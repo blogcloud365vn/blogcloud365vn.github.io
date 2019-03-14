@@ -50,7 +50,7 @@ Khi tạo bot thành công telegram sẽ trả lại cho bạn thông tin của 
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1140.png)
 
-Bạn lưu lại chuôiz token để khai báo trong script gửi cảnh báo.
+Bạn lưu lại chuỗi token để khai báo trong script gửi cảnh báo.
 
 <a name="script"></a>
 ## 2. Cấu hình alert scripts telegram
