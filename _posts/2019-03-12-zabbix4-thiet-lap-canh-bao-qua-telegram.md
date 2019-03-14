@@ -144,7 +144,84 @@ Click `Update`
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1135.png)
 
-### 3.4. Test cảnh báo qua telegram
+### 3.4. Tạo action
+
+Tạo `action` để khi có sự bất thường đối với các thông số monitor sẽ có alert qua email.
+
+Click `Configuration -> Action -> Create action`
+
+![](/images/img-zabbix-alert-email/Screenshot_442.png)
+
+**Tại tab action**
+
+Nhập thông tin:
+
+```
+Name: Tên của action muốn tạo
+```
+
+**Tab operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi
+
+![](/images/img-zabbix-alert-email/Screenshot_443.png)
+
+Default subject (Tiêu đề của thông báo)
+
+```
+Disaster {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
+
+Default message (Nội dung của thông báo)
+
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status:{TRIGGER.STATUS}
+Severity:{TRIGGER.SEVERITY}
+Values:{ITEM.VALUE1}
+
+Item Graphic: [{ITEM.ID1}]
+```
+![](/images/img-zabbix-alert-email/Screenshot_1023.png)
+
+Set `group` hoặc chỉ định `user` nhận được cảnh báo.
+
+![](/images/img-zabbix-alert-email/Screenshot_1024.png)
+
+Set cho `action` gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
+
+![](/images/img-zabbix-alert-email/Screenshot_1025.png)
+
+Click `Add`
+
+![](/images/img-zabbix-alert-email/Screenshot_1028.png)
+
+**Tab Recovery operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi khi không vấn đề được giải quyết, dưới ngưỡng cảnh báo.
+
+Default subject (Tiêu đề của thông báo recovery)
+
+```
+OK Resolved: {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
+
+Default message (Nội dung của thông báo)
+
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status: {TRIGGER.STATUS}
+Severity: {TRIGGER.SEVERITY}
+Values: {ITEM.VALUE1}
+
+Item Graphic: [{ITEM.ID1}]
+```
+
+Sau khi nhập đủ thông tin click `Add`
+
+![](/images/img-zabbix-alert-email/Screenshot_1029.png)
+
+Vậy đã tạo thành công action mới.
+
+![](/images/img-zabbix-alert-email/Screenshot_1030.png)
+
+### 3.5. Test cảnh báo qua telegram
 
 Sử dụng trigger (set up ngưỡng cảnh báo) sẵn có trong template để test gửi cảnh báo.
 
