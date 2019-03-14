@@ -156,17 +156,7 @@ Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` bi�
 
 Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới email.
 
-
-
-
-
-
-
-
-
-
-
-
+![](/images/img-zabbix-alert-telegram/Screenshot_1041.png)
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
