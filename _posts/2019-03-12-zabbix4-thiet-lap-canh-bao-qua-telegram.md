@@ -33,7 +33,6 @@ Thực hiện tạo bot
 ```
 /newbot
 ```
-![](/images/img-zabbix-alert-telegram/Screenshot_1122.png)
 
 Đặt tên cho bot telegram. Chú ý tên của bot phải là chữ thường và kết thúc bằng chuỗi `bot`
 
@@ -49,7 +48,7 @@ namebot
 
 Khi tạo bot thành công telegram sẽ trả lại cho bạn thông tin của bot: kênh telegram vừa tạo, chuỗi token.
 
-![](/images/img-zabbix-alert-telegram/Screenshot_1123.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1140.png)
 
 Bạn lưu lại chuôiz token để khai báo trong script gửi cảnh báo.
 
