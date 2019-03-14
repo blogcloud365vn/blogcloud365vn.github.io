@@ -110,11 +110,11 @@ Mỗi user muốn nhận cảnh báo zabbix gửi về telegram ta phải lấy 
 
 https://api.telegram.org/bot${TOKEN}/getUpdates
 
-Với ${TOKEN} chính là cả chuỗi token API mà khi tạo bot telegram trả về ở trên.
+Với `${TOKEN}` chính là cả chuỗi token API mà khi tạo bot telegram trả về ở trên.
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1130.png)
 
-Chat trên app ở kênh của mình vừa tạo và F5 trình duyệt sẽ thấy thông tin vừa chat, sẽ lấy được `CHAT ID`
+Chat trên app ở kênh của mình vừa tạo và `F5` trình duyệt sẽ thấy thông tin vừa chat, sẽ lấy được `CHAT ID`.
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1131.png)
 
