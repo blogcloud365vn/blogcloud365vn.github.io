@@ -15,7 +15,7 @@ Zabbix hỗ trợ cảnh báo qua nhiều kênh khác nhau để người quản
 
 [1. Tạo bot telegram](#script)<br>
 [2. Cấu hình alert scripts telegram](#script)<br>
-[3. Cấu hình cảnh báo telegram trên Web Zabbix](#email)<br>
+[3. Cấu hình cảnh báo telegram trên Web Zabbix](#telegram)<br>
 
 <a name="bot"></a>
 ## 1. Tạo bot telegram
@@ -72,7 +72,7 @@ chmod +x zabbix-telegram.sh
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1125.png)
 
-<a name="email"></a>
+<a name="telegram"></a>
 ## 3. Cấu hình cảnh báo telegram trên Web Zabbix
 
 ### 3.1. Truy cập zabbix server
@@ -231,7 +231,7 @@ Click `Configuration -> Lựa chọn host -> Trigger`
 
 Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` biểu thị giá trị CPU load average trung bình trong 5 phút > 1 sẽ gửi cảnh báo.
 
-Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới email.
+Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới telegram.
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1141.png)
 
