@@ -150,7 +150,7 @@ Tạo `action` để khi có sự bất thường đối với các thông số 
 
 Click `Configuration -> Action -> Create action`
 
-![](/images/img-zabbix-alert-email/Screenshot_442.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_442.png)
 
 **Tại tab action**
 
@@ -162,7 +162,7 @@ Name: Tên của action muốn tạo
 
 **Tab operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi
 
-![](/images/img-zabbix-alert-email/Screenshot_443.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_443.png)
 
 Default subject (Tiêu đề của thông báo)
 
@@ -180,19 +180,19 @@ Values:{ITEM.VALUE1}
 
 Item Graphic: [{ITEM.ID1}]
 ```
-![](/images/img-zabbix-alert-email/Screenshot_1023.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1023.png)
 
 Set `group` hoặc chỉ định `user` nhận được cảnh báo.
 
-![](/images/img-zabbix-alert-email/Screenshot_1024.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1024.png)
 
 Set cho `action` gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
 
-![](/images/img-zabbix-alert-email/Screenshot_1025.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1142.png)
 
 Click `Add`
 
-![](/images/img-zabbix-alert-email/Screenshot_1028.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1028.png)
 
 **Tab Recovery operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi khi không vấn đề được giải quyết, dưới ngưỡng cảnh báo.
 
@@ -215,11 +215,11 @@ Item Graphic: [{ITEM.ID1}]
 
 Sau khi nhập đủ thông tin click `Add`
 
-![](/images/img-zabbix-alert-email/Screenshot_1029.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1029.png)
 
 Vậy đã tạo thành công action mới.
 
-![](/images/img-zabbix-alert-email/Screenshot_1030.png)
+![](/images/img-zabbix-alert-telegram/Screenshot_1030.png)
 
 ### 3.5. Test cảnh báo qua telegram
 
