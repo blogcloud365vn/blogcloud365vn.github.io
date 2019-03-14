@@ -146,7 +146,7 @@ Click `Update`
 
 ### 3.4. Tạo action
 
-Tạo `action` để khi có sự bất thường đối với các thông số monitor sẽ có alert qua telegram. 
+Tạo `action` để khi có sự bất thường đối với các thông số monitor sẽ có alert qua telegram.
 
 Click `Configuration -> Action -> Create action`
 
