@@ -235,5 +235,7 @@ Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới ema
 
 ![](/images/img-zabbix-alert-telegram/Screenshot_1141.png)
 
+Với những hướng dẫn cơ bản trên hy vọng sẽ giúp bạn thiết lập thành công cảnh báo zabbix qua telegram.
+
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
