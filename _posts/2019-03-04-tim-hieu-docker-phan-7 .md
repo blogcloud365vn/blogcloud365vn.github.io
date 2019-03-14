@@ -36,11 +36,27 @@ Bằng việc mount này, data trong container giờ đây sẽ được an toà
 Có 3 kiểu mount của Docker Volume đó là:
 
 - **Volumes**: Mount-point sẽ nằm ở */var/lib/docker/volumes/* của Docker Host.
-- **Bind mounts**: Mount-point có thể nằm ở bất kỳ đâu Docker Host.
+- **bind mounts**: Mount-point có thể nằm ở bất kỳ đâu Docker Host.
 - **tmpfs mounts**: Data sẽ được lưu và memory của Docker Host và không bao giờ được ghi vào file system
 
+**-v và -mount flag**
 
-## 
+Ban đầu -v hoặc -volume flag được dùng cho standalone container và -mount flag được dùng cho swarm services. Tuy nhiên từ phiên bản Docker 17.06 bạn có thể sử dụng -mount flag cho standalone container. Nói chung điểm khác biệt duy nhất chính là là cú pháp. Trong khi -v flag, các option được gói gọn làm một thì -mount flag lại phân chia chúng rõ ràng hơn với từng option các nhau bởi dấu phẩy. Trong bài viết này mình sẽ sử dụng cả 2 option là -v và -mount.
+
+## Volumes
+
+Về hoạt động Volume tương tự như Bind mounts, nhưng **Volume** được quản lý bởi Docker. Trong khi mount file hoặc thư mục trong container với đường dẫn tuyệt đối của Dockerhost.
+
+Volume khi tạo ra sẽ nằm ở thư mục */var/lib/docker/volumes/*
+
+Volume cũng support cơ chế của volume drivers, cho phép lưu trữ dữ liệu tới một server remote hoặc cloud ...
+
+**Sử dụng Volume khi nào**
+
+- Khi chia sẻ dữ liệu giữa nhiều container đang chạy.
+- Lưu dữ liệu tới một server remote hoặc cloud.
+- Khi cần backup, restore hoặc migrate dữ liệu từ Docker Host này sang Docker Host khác.
+
 
 --
 ## Tổng kết
