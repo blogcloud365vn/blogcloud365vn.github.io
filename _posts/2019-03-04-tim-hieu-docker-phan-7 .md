@@ -183,8 +183,7 @@ docker exec test_container bash -c "ls /opt/test_folder/"
 
 > test_file.txt
 
-*3. Chạy contaier sử dụng chính image đó với **bind mounts** và kiểm tra thư mục mount
-*
+*3. Chạy contaier sử dụng chính image đó với **bind mounts** và kiểm tra thư mục mount*
 ```
 mkdir /opt/docker_host_folder
 docker run -itd --privileged --name another_container --mount type=bind,src=/opt/docker_host_folder,dst=/opt/test_folder/ image-test
