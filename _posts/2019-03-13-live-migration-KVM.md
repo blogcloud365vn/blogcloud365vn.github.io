@@ -146,7 +146,7 @@ Lưu ý mỗi khi reboot lại máy ta cần mount lại các thư mục này. N
 
 **Cài đặt KVM**
 
-Thực hiện cài đặt KVM trên cả 2 máy KVM host. Để cài đặt KVM bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/#cai-%C4%91at" target=_blank>tại đây</a>.
+Thực hiện cài đặt KVM trên cả 2 máy KVM host. Để cài đặt KVM bạn tham khảo <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-kvm-tren-centos7/#cai-%C4%91at" target="_blank">tại đây</a>.
 
 Khi cài đặt VM ta cần lưu file disk của VM vào thư mục đã mount với thư mục được share của NFS server. Khi cài máy ảo xong ta cần thêm thông tin sau vào trong file `xml` của VM bằng cách dùng lệnh 
 
