@@ -75,7 +75,7 @@ MAIL_PASSWORD = 'password email cua ban'
 
 ![](/images/img-zabbix-alert-email/Screenshot_431.png)
 
-## 1.4. Gửi test cảnh báo
+### 1.4. Gửi test cảnh báo
 
 Đứng tại thư mục chứa scripts `/usr/lib/zabbix/alertscripts` chạy lệnh test dưới
 
