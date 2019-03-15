@@ -86,7 +86,7 @@ echo $temp_password
 
 - Đặt password mới 
 ```sh 
-"NEW_PASSWORD"
+mysql_passwd="NEW_PASSWORD"
 ```
 > với `NEW_PASSWORD` là password mới của bạn
 
@@ -101,7 +101,7 @@ echo "validate_password_policy=LOW" >> /etc/my.cnf
 systemctl restart mysqld || service mysqld restart
 ```
 
--Tiến hành đổi mật khẩu `root` của MySQL
+Tiến hành đổi mật khẩu `root` của MySQL
 ```sh 
 mysql -u root --password=$temp_password --connect-expired-password < reset_pass.sql
 ```
@@ -110,7 +110,9 @@ mysql -u root --password=$temp_password --connect-expired-password < reset_pass.
 ```sh 
 mysql -uroot -p
 ```
-> Kết quả thành công 
+
+Kết quả thành công 
+
 ```sh 
 [root@mysql-server ~]# mysql -uroot -p
 Enter password: 
