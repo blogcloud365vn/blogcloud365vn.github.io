@@ -66,7 +66,7 @@ Ban đầu -v hoặc --volume flag được dùng cho standalone container và -
 
 Tạo một volume và chạy container mount với volume đó
 
-1. Tạo Volume
+*1. Tạo Volume*
 
 ```
 docker volume create my-volume    ## Tạo một volume
@@ -75,7 +75,7 @@ docker volume inspect my-volume   ## Hiển thị thông tin của Volume
 ll /var/lib/docker/volumes        ## Kiểm tra volume được tạo ra
 ```
 
-2. Chạy container với volume
+*2. Chạy container với volume*
 
 ```
 docker run -itd -v my-volume:/opt/mount_point/ centos
@@ -85,7 +85,7 @@ docker run -itd --mount type=volume,src=my-volume,dst=/opt/mount_point/ centos
 docker run -itd --mount type=volume,source=my-volume,target=/opt/mount_point/ centos
 ```
 
-3. Kiểm tra lại
+*3. Kiểm tra lại*
 
 ```
 docker exec my-container bash -c "echo 'This is test file' > /opt/mount_point/test.txt"
@@ -123,7 +123,7 @@ Khi sử dụng bind mount thì một file hoặc một folder trong docker host
 
 Chạy một container với **bind mounts** theo hai cách
 
-1. Sử dụng flag -v
+*1. Sử dụng flag -v*
 
 Khi sử dụng flag -v nếu source folder trên docker host chưa tồn tại, Docker sẽ tự động tạo mới folder
 
@@ -133,7 +133,7 @@ docker exec my_contanier bash -c "touch /opt/cloud365.vn"
 ll /opt/docker_host_folder
 ```
 
-2. Sử dụng flag --mount
+*2. Sử dụng flag --mount*
 
 Khi sử dụng flag --mount, thì đảm bảo folder trên docker host đã được tồn tại, nếu không sẽ bị lỗi
 
@@ -151,7 +151,7 @@ ll /opt/docker_host_folder
 
 - Không giống như volume, nếu folder trong Container "không trống" và được mount với folder của docker host thì tất cả các file trong folder của container sẽ bị ẩn đi. Điều này giống với khi bạn save dữ liệu của mình trong */mnt*, sau đó cắm USB và mount USB với thư mục */mnt* thì những file dữ liệu có từ trước sẽ bị ẩn đi đến khi USB được umount. Để test trường hợp này mình có một ví dụ sau:
 
-1. Tạo một Image từ Dockerfile đảm bảo rằng có một folder "không trống" khi chạy container
+*1. Tạo một Image từ Dockerfile đảm bảo rằng có một folder "không trống" khi chạy container*
 
 ```
 cd ~
@@ -174,7 +174,7 @@ docker build -t image-test .
 docker images
 ```
 
-2. Chạy một container và đảm bảo image tạo ra một container có một folder "không trống"
+*2. Chạy một container và đảm bảo image tạo ra một container có một folder "không trống"*
 
 ```
 docker run -itd --name test_container image-test
@@ -183,8 +183,8 @@ docker exec test_container bash -c "ls /opt/test_folder/"
 
 > test_file.txt
 
-3. Chạy contaier sử dụng chính image đó với **bind mounts** và kiểm tra thư mục mount
-
+*3. Chạy contaier sử dụng chính image đó với **bind mounts** và kiểm tra thư mục mount
+*
 ```
 mkdir /opt/docker_host_folder
 docker run -itd --privileged --name another_container --mount type=bind,src=/opt/docker_host_folder,dst=/opt/test_folder/ image-test
@@ -193,7 +193,7 @@ docker exec another_container bash -c "ls /opt/test_folder/"
 
 *Kết quả trả về là không có gì cả chứng tỏ file đã bị ẩn đi*
 
-4. Unmount thư mục trong container và kiểm tra lại
+*4. Unmount thư mục trong container và kiểm tra lại*
 
 ```
 docker exec another_container bash -c "umount  /opt/test_folder/"
