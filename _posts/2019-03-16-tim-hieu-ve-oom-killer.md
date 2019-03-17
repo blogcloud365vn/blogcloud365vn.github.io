@@ -79,7 +79,7 @@ cat  /var/log/messages | grep "Killed process"
 
 Kết quả như sau : 
 
-![log](/images/img-oom/oom-02.png)
+![oom](/images/img-oom/oom-03.png)
 
 Đối chiếu lại tiến trình máy ảo đã chụp ở trên, chứng tỏ OOM Killer đã thực hiện việc kill 2 tiến trình máy ảo chạy nhiều RAM nhất.
 
