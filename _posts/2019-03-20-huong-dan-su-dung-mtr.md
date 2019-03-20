@@ -143,20 +143,65 @@ mtr -–xml “domainName/IP”
 
 ### 2.1. Cài đặt
 
+**Download**
+
+`MTR` trên windows thuộc dạng file .exe chạy không cần cài đặt lên máy. Thực hiện download <a href="https://github.com/domanhduy/ghichep/blob/master/DuyDM/Linux/scripts/winmtr_bin_0.8.zip" target="_blank"> tại đây</a>.
+
+**Chạy chường trình MTR trên windows**
+
+Sau khi tải về bạn tiến hành giải nén và run file `WinMTR.exe` 
+
+![](/images/img-mtr/Screenshot_1239.png)
+
 ### 2.2. Thao tác sử dụng
 
+**Một số option tùy biến**
 
+![](/images/img-mtr/Screenshot_1240.png)
 
++ Interval (sec): Khoảng thời gian giữa mỗi package mtr gửi đi.
 
++ Ping size (bytes): Kích thức gói tin mtr gửi đi.
 
++ Max hosts in LRU list: Số hope đi qua.
 
++ Reslove name: Hiển thị hoặc không hiển thị hostname các hope đi qua.
 
+**Bạn chỉ cần nhập IP/Domain và click `Start`**
 
+![](/images/img-mtr/Screenshot_1241.png)
 
+**Kết quả**
 
+![](/images/img-mtr/Screenshot_1242.png)
 
+MTR trên windows hỗ trợ export kết quả ra dạng `text`, `html`.
 
+## 3. Đọc và phân tích kết quả**
 
+Khi sử dụng tool `mtr` sẽ trả về kết quả bạn cần chú ý một số thông tin sau:
+
+![](/images/img-mtr/Screenshot_1244.png)
+
++ Hostname: Các hope package đi qua trước khi tới được host đích cần kiểm tra.
+
++ Lost %: Tỷ lệ phần trăm các package bị mất khi truyền tới hope đó.
+
++ Sent: Số package gửi đi.
+
++ Recv: Số package phản hồi về.
+
++ Avrg: Thời gian phản hổi trung bình (ms). 
+
++ Best: Thời gian phản rồi nhanh nhất (ms).
+
++ Worst: Thời gian phản hồi lâu nhất (ms).
+
++ Last: Thời gian phản hồi của gói tin gần đây nhất (ms).
+
++ StDev: Độ lệch chuẩn.
+
+Hy vọng bài hướng dẫn này giúp bạn biết thêm một công cụ nữa để troubleshoot hệ thống của mình.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
