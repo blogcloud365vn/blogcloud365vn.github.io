@@ -185,7 +185,7 @@ Khi sử dụng tool `mtr` sẽ trả về kết quả bạn cần chú ý một
 
 + Hostname: Các hope package đi qua trước khi tới được host đích cần kiểm tra.
 
-+ Lost %: Tỷ lệ phần trăm các package bị mất khi truyền tới hope đó.
++ Lost %: Tỷ lệ phần trăm các package bị mất khi truyền tới hope đó. (**Thông tin quan trọng cần thu thập**)
 
 + Sent: Số package gửi đi.
 
