@@ -71,18 +71,68 @@ mtr -r -c [n] “domainname/IP” >”report-name”
 ```
 ![](/images/img-mtr/Screenshot_1229.png)
 
+**Sắp xếp lại thông số đầu ra của kết quả với flag `o`**
 
+```
+mtr -o “[Output Format]” “domainname/IP”
+``
 
+![](/images/img-mtr/Screenshot_1231.png)
 
+![](/images/img-mtr/Screenshot_1230.png)
 
+**Chỉnh khoảng thời gian gửi mỗi gói tin  ICMP và ECHO với flag `o`**
 
+Mặc định khoảng thười gian liên tiếp giữa mỗi gói itn ICMP, ECHO là 1 giây bạn có thể thay đổi lại tham số này.
 
+```
+mtr -i [time-in-seconds] “domainName/IP”
+```
+![](/images/img-mtr/Screenshot_1232.png)
 
+**Sử dụng TCP SYN packets hoặc UDP datagrams với flag `tcp`, `udp`**
 
+Mặc định `mtr` sẽ gửi đi các gói tin ICMP ECHO requests bạn có thể tùy chọn sử dụng TCP SYN packets hoặc UDP datagrams.
 
+```
+mtr –tcp “domainName/IP”
+```
 
+```
+mtr –udp “domainName/IP”
+```
+![](/images/img-mtr/Screenshot_1233.png)
 
+**Chỉ định package size bytes với flag -s**
 
+```
+mtr –r -s [packetsize] “domainName/IP”
+```
+
+![](/images/img-mtr/Screenshot_1234.png)
+
+**Chỉ định số hope tối đa giữa host mtr và host đích với flag `m`**
+
+```
+mtr -m [timeInSeconds] “domainName/IP”
+```
+![](/images/img-mtr/Screenshot_1236.png)
+
+![](/images/img-mtr/Screenshot_1235.png)
+
+**Xuất file kết quả ra dạng cvs với flag `csv`**
+
+```
+mtr –-csv “domainName/IP”
+```
+![](/images/img-mtr/Screenshot_1237.png)
+
+**Xuất file kết quả ra dạng xml  với flag `xml`**
+
+```
+mtr -–xml “domainName/IP”
+```
+![](/images/img-mtr/Screenshot_1238.png)
 
 ## 2. MTR trên Windows
 
