@@ -49,6 +49,7 @@ mtr [domainName/IP]
 ```
 mtr -b [domainName/IP]
 ```
+
 ![](/images/img-mtr/Screenshot_1226.png)
 
 ![](/images/img-mtr/Screenshot_1224.png)
@@ -58,6 +59,7 @@ mtr -b [domainName/IP]
 ```
 mtr -c [n] “domainname/IP”
 ```
+
 ![](/images/img-mtr/Screenshot_1228.png)
 
 ![](/images/img-mtr/Screenshot_1227.png)
@@ -69,6 +71,7 @@ Thay vì hiển thị kết quả lên trên màn hình command line bạn có t
 ```
 mtr -r -c [n] “domainname/IP” >”report-name”
 ```
+
 ![](/images/img-mtr/Screenshot_1229.png)
 
 **Sắp xếp lại thông số đầu ra của kết quả với flag `o`**
