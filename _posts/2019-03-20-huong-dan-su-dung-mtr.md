@@ -44,7 +44,7 @@ mtr [domainName/IP]
 
 ![](/images/img-mtr/Screenshot_1222.png)
 
-**Hiển thị địa chỉ IP và hostname tương ứng của các điểm kết nối**
+**Hiển thị địa chỉ IP và hostname tương ứng của các điểm kết nối với flag `b`**
 
 ```
 mtr -b [domainName/IP]
@@ -53,7 +53,7 @@ mtr -b [domainName/IP]
 
 ![](/images/img-mtr/Screenshot_1224.png)
 
-**Giới hạn số lượng gói tin ping gửi đi**
+**Giới hạn số lượng gói tin ping gửi đi với flag `c`**
 
 ```
 mtr -c [n] “domainname/IP”
@@ -62,7 +62,7 @@ mtr -c [n] “domainname/IP”
 
 ![](/images/img-mtr/Screenshot_1227.png)
 
-**Xuất kết quả ra file**
+**Xuất kết quả ra file với flag `r`**
 
 Thay vì hiển thị kết quả lên trên màn hình command line bạn có thể xuất ra file để lưu và theo dõi.
 
