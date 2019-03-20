@@ -177,7 +177,7 @@ Sau khi tải về bạn tiến hành giải nén và run file `WinMTR.exe`
 
 MTR trên windows hỗ trợ export kết quả ra dạng `text`, `html`.
 
-## 3. Đọc và phân tích kết quả**
+## 3. Đọc và phân tích kết quả
 
 Khi sử dụng tool `mtr` sẽ trả về kết quả bạn cần chú ý một số thông tin sau:
 
