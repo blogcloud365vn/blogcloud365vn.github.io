@@ -132,6 +132,7 @@ mtr –-csv “domainName/IP”
 ```
 mtr -–xml “domainName/IP”
 ```
+
 ![](/images/img-mtr/Screenshot_1238.png)
 
 ## 2. MTR trên Windows
