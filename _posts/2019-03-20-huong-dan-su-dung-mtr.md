@@ -69,7 +69,7 @@ mtr -c [n] “domainname/IP”
 Thay vì hiển thị kết quả lên trên màn hình command line bạn có thể xuất ra file để lưu và theo dõi.
 
 ```
-mtr -r -c [n] “domainname/IP” >"report-name"
+mtr –rw -c [n] “domainname/IP” >”report-name”
 ```
 
 ![](/images/img-mtr/Screenshot_1229.png)
@@ -77,8 +77,8 @@ mtr -r -c [n] “domainname/IP” >"report-name"
 **Sắp xếp lại thông số đầu ra của kết quả với flag `o`**
 
 ```
-mtr -o "[Output Format]" "domainname/IP"
-``
+mtr -o “[Output Format]” “domainname/IP”
+```
 
 ![](/images/img-mtr/Screenshot_1231.png)
 
