@@ -53,6 +53,24 @@ mtr -b [domainName/IP]
 
 ![](/images/img-mtr/Screenshot_1224.png)
 
+**Giới hạn số lượng gói tin ping gửi đi**
+
+```
+mtr -c [n] “domainname/IP”
+```
+![](/images/img-mtr/Screenshot_1228.png)
+
+![](/images/img-mtr/Screenshot_1227.png)
+
+**Xuất kết quả ra file**
+
+Thay vì hiển thị kết quả lên trên màn hình command line bạn có thể xuất ra file để lưu và theo dõi.
+
+```
+mtr -r -c [n] “domainname/IP” >”report-name”
+```
+![](/images/img-mtr/Screenshot_1229.png)
+
 
 
 
