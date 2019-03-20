@@ -40,7 +40,7 @@ apt-get install mtr
 ```
 mtr [domainName/IP]
 ```
-![](/images/img-mtr/Screenshot_1221.png)
+![](/images/img-mtr/Screenshot_1225.png)
 
 ![](/images/img-mtr/Screenshot_1222.png)
 
@@ -49,9 +49,10 @@ mtr [domainName/IP]
 ```
 mtr -b [domainName/IP]
 ```
-![](/images/img-mtr/Screenshot_1223.png)
+![](/images/img-mtr/Screenshot_1226.png)
 
 ![](/images/img-mtr/Screenshot_1224.png)
+
 
 
 
