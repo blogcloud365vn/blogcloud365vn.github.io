@@ -1,4 +1,5 @@
 ---
+date: 2019-03-21
 title: Hướng dẫn sử dụng câu lệnh stress trên linux
 categories:
   - Linux
