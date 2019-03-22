@@ -14,7 +14,7 @@ Bạn thường xuyên làm việc với Git? Nhưng lại [cài đặt và sử
 
 Nếu bạn sử dụng máy tính cá nhân thì không nói, nhưng nếu bạn có công chuyện không thể sử dụng máy tính một vài ngày thì sao có thể track được xem công việc của nhóm tới đâu.
 
-Giải pháp mình đưa ra là tích hợp Gitlab với Slack để làm một nhận thông báo các sự kiện quan trọng đối với source code của bạn.
+Giải pháp mình đưa ra là tích hợp Gitlab với Slack để làm một kênh nhận thông báo các sự kiện quan trọng đối với source code của bạn.
 
 ## Tại sao lại chọn Slack ?
 
@@ -101,7 +101,7 @@ Chọn **Slack notifications**
 Chọn **Active**, nhập Webhooks URL copy từ bước trước vào ô **Webhooks**. Sau đó chọn **Test settings and save changes** 
 
 <p align="center">
-<img width="600" height="400" src="/images/img-gitlab-slack/Anh12.png">
+<img src="/images/img-gitlab-slack/Anh12.png">
 </p>
 
 Nếu nhận được một thông báo được gửi đến channel ở Slack thì tức là Setting đã thành công.
