@@ -111,13 +111,36 @@ Như thế là đã cài đặt thành công trên CentOS 7, ở bài viết sau
 ## Cài đặt check_mk trên ubuntu 16.04.
 
 
+Download bản cài đặt về cho Ubuntu 16.04:
 
+```sh
+wget https://mathias-kettner.de/support/1.5.0p13/check-mk-raw-1.5.0p13_0.xenial_amd64.deb
+```
 
+Cài đặt gói `gdebi` để hỗ trợ cài đặt các gói dependencies:
 
+```sh
+apt install gdebi-core -y
+```
+
+Cài đặt checkmk:
+
+```sh
+gdebi check-mk-raw-1.5.0p13_0.xenial_amd64.deb
+```
+
+Chờ từ 3 đến 5 phút để quá trình cài đặt kết thúc, tạo site mới :
+
+```sh
+omd create cloud365
+```
+
+Các bước tiếp theo thực hiện giống như cài đặt trên CentOS 7.
 
 
 ## Tổng kết.
 
+Hôm nay mình đã giới thiệu về checkmk và cách để cài đặt trên 2 OS đó là CentOS 7 và Ubuntu 16.04, trong bài viết sau mình sẽ giới thiệu về cách thu thập một số thông số giám sát cơ bản. Hãy ghé thăm cloud365 để tìm được các bài viết hay hơn.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
