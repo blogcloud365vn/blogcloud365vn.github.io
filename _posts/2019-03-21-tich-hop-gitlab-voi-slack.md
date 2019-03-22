@@ -110,7 +110,7 @@ Nếu nhận được một thông báo được gửi đến channel ở Slack 
 <img width="600" height="400" src="/images/img-gitlab-slack/Anh13.png">
 </p>
 
-### Tạo một Issue để kiểm tra lại
+### 4. Tạo một Issue để kiểm tra lại
 
 Vẫn trong Project đang setting, chọn **Issue**
 
