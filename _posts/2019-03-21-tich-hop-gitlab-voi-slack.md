@@ -1,7 +1,7 @@
 ---
 title: "Tích hợp Gitlab với Slack"
 categories:
-  - Container
+  - Others
 description: Tích hợp Gitlab với Slack
 author: huytm
 tags: [Git]
