@@ -50,7 +50,8 @@ Chỉnh sửa firewall cho phép traffic của web đi qua
 ```sh 
 sudo ufw app list
 ```
-> Kết qủa 
+
+- Kết qủa 
 ```sh 
 root@ubuntu:~# sudo ufw app list
 Available applications:
@@ -65,7 +66,8 @@ root@ubuntu:~#
 ```sh 
 sudo ufw app info "Apache Full"
 ```
-> Kết quả 
+
+- Kết quả 
 ```sh 
 root@ubuntu:~# sudo ufw app info "Apache Full"
 Profile: Apache Full
@@ -81,8 +83,8 @@ Ports:
 ```sh 
 http://your_server_ip
 ```
-> Kết quả 
 
+- Kết quả 
 <p align="center">
 <img src="/images/img-lamp/default_apache.png">
 </p>
@@ -99,6 +101,7 @@ Cài đặt mật khẩu `root` cho MariaDB
 ```sh 
 sudo mysql_secure_installation
 ```
+
 > Mặc đinh mật khẩu root của mysql sẽ để trống. Bước này có thể có hoặc không có tùy nhu cầu của Administrators
 
 Cấu hình DB, user cho `OwnCloud`
@@ -123,6 +126,7 @@ Cài đặt
 ```sh 
 sudo apt install php libapache2-mod-php php-mysql php-cli
 ```
+
 > Mặc định repo PHP trên Ubuntu18 sẽ sử dụng php7.2
 
 # Cài đặt OwnCloud 
@@ -153,7 +157,8 @@ Kiểm tra file vhost mặc định của apache
 ```sh 
 sudo apache2ctl -t -D DUMP_VHOSTS | grep $IP
 ```
-> Kết quả 
+
+Kết quả 
 ```sh 
 root@ubuntu:/var/www# sudo apache2ctl -t -D DUMP_VHOSTS | grep 192.168.70.183
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.70.183. Set the 'ServerName' directive globally to suppress this message
@@ -169,7 +174,8 @@ Kiểm tra config
 ```sh 
 sudo apache2ctl configtest
 ```
-> Kết quả OK 
+
+Kết quả OK 
 ```sh 
 ...
 Syntax OK
