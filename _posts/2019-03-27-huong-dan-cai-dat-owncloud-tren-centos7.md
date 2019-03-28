@@ -52,7 +52,7 @@ sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/selinux/config
 sudo yum -y install httpd 
 ```
 
-Khởi dộng httpd 
+Khởi động httpd 
 ```sh 
 sudo systemctl start httpd.service
 ```
@@ -92,6 +92,7 @@ Cài đặt mật khẩu `root` cho MariaDB
 ```sh 
 sudo mysql_secure_installation
 ```
+
 > Mặc đinh mật khẩu root của mysql sẽ để trống. Bước này có thể có hoặc không có tùy nhu cầu của Administrators
 
 Khởi động MariaDB
