@@ -46,12 +46,12 @@ sudo systemctl enable apache2
 
 Chỉnh sửa firewall cho phép traffic của web đi qua 
 
-- Kiểm tra `ufw` 
+Kiểm tra `ufw` 
 ```sh 
 sudo ufw app list
 ```
 
-- Kết qủa 
+Kết qủa 
 ```sh 
 root@ubuntu:~# sudo ufw app list
 Available applications:
@@ -62,12 +62,12 @@ Available applications:
 root@ubuntu:~# 
 ```
 
-- Cho phép traffic trên port 80 và 443 cho httpd 
+Cho phép traffic trên port 80 và 443 cho httpd 
 ```sh 
 sudo ufw app info "Apache Full"
 ```
 
-- Kết quả 
+Kết quả 
 ```sh 
 root@ubuntu:~# sudo ufw app info "Apache Full"
 Profile: Apache Full
@@ -79,12 +79,12 @@ Ports:
   80,443/tcp
 ```
 
-- Truy cập trình duyệt 
+Truy cập trình duyệt 
 ```sh 
 http://your_server_ip
 ```
 
-- Kết quả 
+Kết quả 
 <p align="center">
 <img src="/images/img-lamp/default_apache.png">
 </p>
