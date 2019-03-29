@@ -168,7 +168,7 @@ Kết quả
 Trong bài, tôi sẽ sử dụng Google Chrome
 
 - Bước 3.1: Truy cập `chrome://settings/`
-- Bước 3.2: Vào mục `System` lựa chọn `Openstack proxy settings`
+- Bước 3.2: Vào mục `System` lựa chọn `Open proxy settings`
 - Bước 3.3: Mở popup tùy chỉnh
   ![](/images/img-cong-cu-gatling-io/galing-3.png)
 
