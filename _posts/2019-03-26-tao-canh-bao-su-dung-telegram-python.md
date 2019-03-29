@@ -36,7 +36,7 @@ Sau khi hoàn tất bạn sẽ nhận được 1 token, và ở ví dụ này c�
 **Bước 2**: Thêm bot vào group:
 
 - Chọn group cần thêm
-- Chọn *Add member* → *@your_ot*. Ở ví dụ này của mình sẽ là *@test_bot*
+- Chọn *Add member* → *@your_bot*. Ở ví dụ này của mình sẽ là *@test_bot*
 - Khởi động bot bằng cách chat với bot trong room. Ở ví dụ này của mình sẽ là `/my_id @TenCuaBot`
 
 **Bước 3**: Lấy chat_id
@@ -98,10 +98,10 @@ import random
 def send_test_message():
     try:
         random_number = random.randint(0, 1000)
-        telegram_notify = telegram.Bot("898403994:AAH30k7kRpUw9gGaXoW25kl4-AYFcx4UldA")
+        telegram_notify = telegram.Bot("[TOKEN]")
         message = "`Số random là {}`".format(random_number) 
     
-        telegram_notify.send_message(chat_id="-384207829", text=message,
+        telegram_notify.send_message(chat_id="[CHAT_ID]", text=message,
                                 parse_mode='Markdown')
     except Exception as ex:
         print(ex)
@@ -123,7 +123,8 @@ python test_script.py
 
 ## Tổng kết
 
-Trong bài này mình đã viết cách cài đặt Docker trên CentOS 7. Hy vọng sẽ giúp các bạn cài đặt thành công trong quá trình tìm hiểu Docker. Ở phần tiếp theo mình sẽ viết về một số câu lệnh CLI để quản lý **image** và **container**
+Như vậy trong bài viết này mình đã giới thiệu đến các bạn thêm một kênh để nhận cảnh báo về hệ thống. Trong bài viết mình đã giới thiệu cách tạo bot telegram và một số cách sử dụng bot và api của telegram để gửi thông báo.
+Hy vọng bài viết có thể giúp ích được cho các bạn, cảm ơn các bạn đã theo dõi và chúc các bạn áp dụng thành công :D
 
 >"if you have knowledge let others light their candles in it"
 
