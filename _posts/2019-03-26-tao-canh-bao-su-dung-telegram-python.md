@@ -28,7 +28,7 @@ Trong phạm vi bài viết này mình sẽ giới thiệu một kênh thông ti
 Quá trình tạo bot diễn ra như sau:
 
 <p align="center">
-<img src="/images/img-telegram-python/anh1.png">
+<img src="/images/img-telegram-python/img1.png">
 </p>
 
 Sau khi hoàn tất bạn sẽ nhận được 1 token, và ở ví dụ này của mình sẽ là:  `Part00000:Part1111111111111111-Part22222222222222`
@@ -65,63 +65,61 @@ Cú pháp
 curl -X POST "https://api.telegram.org/bot[TOKEN]/sendMessage" -d "chat_id=[CHAT_ID]&text=[MY_MESSAGE_TEXT]"
 ```
 
-## Gửi cảnh báo sử dụng thư viện telegram của python
+## Gửi cảnh báo sử dụng thư viện python-telegram-bot của python
 
 Hai cách ở trên mình sử dụng để mình kiểm tra hoạt động của bot mà thôi. 
-Thật ra các bạn cũng có thể sử dụng thêm các công cụ khác như postman, JMeter... Sử dụng bash/shell, php, javascript ... là tùy ở bạn. Nhưng như đã nói từ đầu, trong phạm vi bài viết này mình sẽ sử dụng python.
-Server của mình là [SSD Cloud VPS](https://cloud365.vn){:target="_blank"}  CentOS7
+Thật ra các bạn cũng có thể sử dụng thêm các công cụ khác như postman, JMeter... Sử dụng bash/shell, php, javascript ... đó là tùy ở bạn. Nhưng như đã nói từ đầu, trong phạm vi bài viết này mình sẽ sử dụng python và server của mình là [SSD Cloud VPS](https://cloud365.vn){:target="_blank"}  CentOS7
 
 **1. Cài đặt Python**
 
 Cài đặt Python 3.6 các bạn có thể tham khảo bài viết này [Cài đặt Python](https://blog.cloud365.vn/linux/other/huong-dan-cai-dat-python36-tren-centos7/){:target="_blank"}
 
-Một [SSD Cloud VPS](https://cloud365.vn){:target="_blank"}  CentOS7 có cấu hình như sau:
+**2. Tạo virtual environment và cài đặt thư viện python-telegram-bot**
+
+```
+virtualenv env
+source env/bin/activate
+pip install python-telegram-bot
+```
+
+**3. Viết một script nho nhỏ để gửi thông báo đến Telegram**
+
+- Script sẽ sinh một số ngẫu nhiên trong khoảng từ 0-1000 và gửi thông báo đến telegram.
+- Chú ý lúc này bạn vẫn đang activate virtual environment.
+
+>(env) [root@cloud365.vn ~]#
+
+Tạo mới file `test_script.py` với nội dung như sau:
+
+```python
+import telegram
+import random
+
+def send_test_message():
+    try:
+        random_number = random.randint(0, 1000)
+        telegram_notify = telegram.Bot("898403994:AAH30k7kRpUw9gGaXoW25kl4-AYFcx4UldA")
+        message = "`Số random là {}`".format(random_number) 
+    
+        telegram_notify.send_message(chat_id="-384207829", text=message,
+                                parse_mode='Markdown')
+    except Exception as ex:
+        print(ex)
+
+send_test_message()
+```
+
+Chạy script
+
+```
+python test_script.py
+python test_script.py
+python test_script.py
+```
 
 <p align="center">
-<img src="/images/img-docker/docker2/r.png">
+<img src="/images/img-telegram-python/img2.png">
 </p>
-
-## 2. Cài đặt Docker sử dụng yum và repository
-
-**Cài đặt các gói cần thiết**
-
-```
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-```
-
-**Thêm Docker repo**
-
-```
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-```
-
-**Cài đặt bản lastest của Docker CE**
-
-```
-sudo yum install -y docker-ce docker-ce-cli containerd.io
-```
-
-**Kiểm tra lại cài đặt**
-
-```
-sudo systemctl start docker
-docker -v
-```
-
-*Docker version 18.09.1, build 4c52b90*
-
-**Chạy container đầu tiên với Docker**
-
-```
-sudo docker run hello-world
-```
-
-<p align="center">
-<img width="600" height="400" src="/images/img-docker/docker2/docker-done.png">
-</p>
-
-
-Bản chất của câu lệnh trên, Docker sẽ pull một image là **hello-world** trên **Docker hub** về server và chạy container với image đó.
 
 ## Tổng kết
 
