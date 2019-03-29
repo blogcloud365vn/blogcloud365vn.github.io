@@ -1,6 +1,6 @@
 ---
 date: 2019-03-29
-title: "Performance Testing Seri -Tổng quan về khái niệm Performance Testing"
+title: "Performance Testing Seri - Tổng quan về khái niệm Performance Testing"
 categories:
   - Linux
 description: Tổng quan về khái niệm Performance Testing
