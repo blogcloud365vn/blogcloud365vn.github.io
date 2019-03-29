@@ -1,9 +1,9 @@
 ---
 date: 2019-03-29
-title: "Hướng dẫn sử dụng Gatling Recoder"
+title: "Performance Testing - Phần 2 - Hướng dẫn sử dụng Gatling Recoder"
 categories:
   - Linux
-description: Hướng dẫn sử dụng Gatling Recoder
+description: Performance Testing - Phần 2 - Hướng dẫn sử dụng Gatling Recoder
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document

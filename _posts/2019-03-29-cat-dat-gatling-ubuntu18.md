@@ -1,9 +1,9 @@
 ---
 date: 2019-03-29
-title: "Hướng dẫn cài đặt Gatling.IO trên Ubuntu 18.04"
+title: "Performance Testing - Phần 1 - Hướng dẫn cài đặt Gatling.IO trên Ubuntu 18.04"
 categories:
   - Linux
-description: Hướng dẫn cài đặt Gatling.IO trên Ubuntu 18.04
+description: Performance Testing - Phần 1 - Hướng dẫn cài đặt Gatling.IO trên Ubuntu 18.04
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document

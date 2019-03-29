@@ -1,9 +1,9 @@
 ---
 date: 2019-03-29
-title: "Hướng dẫn sử dụng Gatling Test"
+title: "Performance Testing - Phần 3 - Hướng dẫn sử dụng Gatling Test"
 categories:
   - Linux
-description: Hướng dẫn sử dụng Gatling Test
+description: Performance Testing - Phần 3 - Hướng dẫn sử dụng Gatling Test
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
