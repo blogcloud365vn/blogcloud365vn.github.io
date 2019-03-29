@@ -5,7 +5,7 @@ categories:
   - Linux
 description: Hướng dẫn sử dụng Gatling.IO Tool trên Ubuntu 18.04
 author: thanhnb
-tags: [Load balancer, Linux, CentOS7]
+tags: [Gatling, Load balancer, Linux, CentOS7]
 type: Document
 ---
 
