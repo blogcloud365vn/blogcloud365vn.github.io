@@ -1,6 +1,6 @@
 ---
 date: 2019-03-30
-title: Sử dụng IPv6 trên hạ tầng IPv4
+title: Sử dụng IPv6 trên hạ tầng IPv4 có sẵn
 categories:
   - IPv6
 description: Sử dụng IPv6 trên hạ tầng IPv4
@@ -10,7 +10,7 @@ type: Document
 ---
 
 
-# Sử dụng IPv6 trên hạ tầng IPv4 có sẵn.
+
 
 ## Kịch bản
 
