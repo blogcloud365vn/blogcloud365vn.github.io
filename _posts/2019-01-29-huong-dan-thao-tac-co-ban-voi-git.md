@@ -1,7 +1,6 @@
 ---
 title: Hướng dẫn thao tác cơ bản với Git
 categories:
-  - Linux
   - Other
 description: Hướng dẫn thao tác cơ bản với Git
 author: canhdx
