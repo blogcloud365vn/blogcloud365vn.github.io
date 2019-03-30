@@ -25,7 +25,7 @@ Chúng ta hãy xem viêc tạo tunneling để giải quyết bài toán trên
 Môi trường: 
 
 - Thực hiện bài lab trên GNS3
-- IOS router là: `c3640-jk9s-mz.124-16.bin`. Bạn có thể tải xuống ở < href="https://doc.lagout.org/network/Cisco/IOS%20Collection/c3640/c3640-jk9s-mz.124-16.bin">đây>.
+- IOS router là: `c3640-jk9s-mz.124-16.bin`. Bạn có thể tải xuống ở <a href="https://doc.lagout.org/network/Cisco/IOS%20Collection/c3640/c3640-jk9s-mz.124-16.bin" target="_blank">đây</a>.
 
 ## Mục tiêu bài LAB 
 
