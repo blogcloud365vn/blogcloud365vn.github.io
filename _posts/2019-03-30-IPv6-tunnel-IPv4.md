@@ -36,7 +36,7 @@ Môi trường:
 - Định tuyến RIPNG trên các routers `HN`, `HCM`, `HP69_HN`, `HP69_HCM`
 - Đảm bảo bạn có kết nối giữa mạng `2000::/64` và `4000::/64`.
 
-### Here we go!
+# Here we go!
 
 ## Bước 1: Chuẩn bị môi trường
 
@@ -44,8 +44,8 @@ Môi trường:
 
 Phần chuẩn bị này tôi chia là hai phần:
 
-    + Phần thứ nhất: Thiết lập IPv4 cho domain sau đó sử dụng định tuyến OSPF giữa các routers trong domain 
-    + Phần thứ hai: Thiết lập IPv6 cho mô hình mạng 
+- Phần thứ nhất: Thiết lập IPv4 cho domain sau đó sử dụng định tuyến OSPF giữa các routers trong domain 
+- Phần thứ hai: Thiết lập IPv6 cho mô hình mạng 
 
 ## Bước 1.1: Thiết lập domain IPv4 
 
