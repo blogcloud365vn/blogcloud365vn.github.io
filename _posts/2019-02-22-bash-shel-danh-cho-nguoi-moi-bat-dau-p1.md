@@ -15,13 +15,12 @@ type: Document
 
 Chuỗi bài viết về Bash Shell sau được biên dịch lại từ cuốn **Bash Notes for Professionals** thuộc bản quyền của trang https://goalkicker.com, đi kèm với những thực hành của mình trong quá trình học về Shell. Hi vọng chuỗi bài đây sẽ giúp các bạn có những kiến thức nền tảng vững chắc về ngôn ngữ script thú vị này.
 
-## Chương 1 : Bắt đầu với Bash
 
-### Phần 1.1. : Hello World
+## 1. Bash Shell:  Hello World
 
 ### Chế độ Shell tương tác (Interactive Shell)
 
-Bash shell thông thường được sử dụng như một dạng tương tác với hệ điều hành : Người dùng có thể nhập, sửa và xử lý câu lệnh. Rất nhiều OS sử dụng Bash là dạng shell mặc định như các OS Unix-based Linux hoặc MacOS
+Chúng ta có thể hiểu đơn giản Shell interactive là dạng sử dụng câu lệnh trực tiếp trên môi trường Unix như ví dụ dưới.
 
 Ví dụ, sử dụng Bash để in ra output là **Hello World** như sau :
 
@@ -32,7 +31,7 @@ echo "Hello World"
 
 ### Chế độ Shell không tương tác (Non-Interactive Shell)
 
-Bash shell có thể từ non-interactively từ một script, khiến shell cần yêu cầu sự tương tác với con người. Các hành vi tương tác và các hành vi được thực hiện dưới dạng script nên giống nhau. Vì thế tất cả các hành động có thể thực hiện bằng commandline đều có thể được đặt trong script để có thể sử dụng lại.
+Thay vì thực hiện từng câu lệnh Bash một. Chúng ta có thể tổ hợp chúng vào một file script và có thể sử dụng lại nhiều lần. 
 
 Ví dụ, tạo một script **Hello World**
 
@@ -42,24 +41,28 @@ Ví dụ, tạo một script **Hello World**
 touch hello-world.sh
 ```
 
-- Khiến script có thể thực thi được với câu lệnh `chmod +x hello-world.sh`
+- Phân quyền thực thi được với câu lệnh 
 
-- Thêm dòng code này :
+```sh
+chmod +x hello-world.sh
+```
+
+- Thêm nội dung sau vào script
 ```sh
 #!/bin/bash
 echo "Hello World"
 ```
-	 - Dòng 1 : Dòng đầu tiên của script phải bắt đầu với ký tự `#!`, theo đúng cấu trúc `shebang1`. Cấu trúc shebang sẽ chỉ cho OS chạy chương trình `/bin/bash` để thực hiện các nội dung của script. VD : `/bin/bash hello-world`
+	 - Dòng 1 : Dòng đầu tiên của script phải bắt đầu với ký tự `#!`, theo đúng cấu trúc shebang1. Cấu trúc shebang sẽ chỉ cho OS chạy chương trình `/bin/bash` để thực hiện các nội dung của script. VD : `/bin/bash hello-world`
 	 - Dòng 2 : Sử dụng câu lệnh `echo` để ghi dòng `Hello World` ra output. 
 
-- Thực hiện chạy sript `hello-world.sh` từ một trong các cách sau :
+- Thực hiện chạy sript `hello-world.sh` theo 1 trong 3 cách sau : 
 ```sh
 ./hello-world.sh 
 /bin/bash hello-world.sh
 bash hello-world.sh 
 ```
 
-### Phần 1.2 : Hello World sử dụng các biến
+## 2. Sử dụng các biến trong Linux
 
 Tạo một file mới tên gọi `hello.sh` với nội dung bên dưới và cấp quyền thực thi `chmod +x hello.sh`
 
@@ -91,7 +94,7 @@ Phân tích từng dòng của script sẽ như sau :
 
 Ngoài cách gọi trực tiếp biến bằng tên, chúng ta có thể sử dụng biến thay thế là `$1`. Biến này đại diện cho đối số ở dòng đầu tiên và biến `$1` vẫn phải là dạng string. 	 
 
-## Phần 1.3: Hello World với User Input
+## 3. Truyên tham số vào biến với User Input
 
 Các biến còn có thể được truyền vào trực tiếp từ người dùng như sau :
 
@@ -112,7 +115,7 @@ Manh
 Xin chao, Manh.
 ```
 
-## Phần 1.4 : Tầm quan trọng của các dấu nháy (quoting) với String
+## 4. Tầm quan trọng của các dấu nháy (quoting) với String
 
 Việc sử dụng dấu nháy rất quan trọng trong việc thể hiện string trong bash. 
 
@@ -153,7 +156,7 @@ world="World"
 echo "Hello \$world"
 ```
 
-## Phần 1.5 : Hello World với chế độ **Debug**
+## 5. Chế độ **Debug** trong Shell
 
 Để có thể theo dõi quá trình thực thi script nhằm hiểu rõ hơn về cách script thực hiện, hoặc tìm lỗi trong script, chúng ta có thể dùng chế độ **Debug**.
  
@@ -207,5 +210,6 @@ expr: non-integer argument
 
 Có thể thấy do `s` không phải là một chữ số vậy nên toán tử không thể thực hiện được.
 
-Trên đây là nội dung của Chương 1, hẹn gặp các bạn tại Chương 2 vào cuối tuần sau. Xin cảm ơn !
+
+Trên đây là nội dung của Chương 1, hẹn gặp các bạn tại Chương 1 phần 2 vào cuối tuần sau. Xin cảm ơn !
  
