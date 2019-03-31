@@ -1,5 +1,5 @@
 ---
-date: 2019-03-29
+date: 2019-04-01
 title: "Performance Testing - Phần 4 - Hướng dẫn sử dụng Gatling Report"
 categories:
   - Linux
