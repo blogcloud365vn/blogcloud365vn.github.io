@@ -3,7 +3,7 @@ date: 2019-04-01
 title: "Performance Testing - Phần 4 - Hướng dẫn sử dụng Gatling Report"
 categories:
   - Linux
-description: Tổng quan về khái niệm Performance Testing
+description: Hướng dẫn sử dụng Gatling Report
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
