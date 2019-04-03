@@ -41,7 +41,7 @@ Năm **1977** do được sửa mã nguồn nên trường đại học **Berkel
 
 Đó, dựa vào việc phát triển Unix và cũng cảm ơn luôn luật chống độc quyền của Mỹ mà ngày nay chúng ta có khá nhiều hệ điều hành cả mở cả đóng dựa trên ý tưởng của Unix. Có thể kể đến như **Mac OS** hay **Free BSD** đều là những phiên bản nổi trội nhất.
 
->_**Có thể bạn lại biết rồi**_: Hệ điều hành của PlayStation 4 là Orbis là một nhánh fork của FreeBSD verion 9.0.
+>_**Có thể bạn lại biết rồi**_: Hệ điều hành của PlayStation 4 - Orbis là một nhánh fork của FreeBSD version 9.0.
 
 ## 2. Linux
 
@@ -74,7 +74,7 @@ Và [Linus Torvalds](https://vi.wikipedia.org/wiki/Linus_Torvalds){:target="_bla
 </p>
 
 
-Torvalds lần đầu tiên biết đến dự án GNU vào năm 1991, sau khi được bạn mình là Lars Wirzenius, đưa anh đến Đại học Công nghệ để nghe bài phát biểu của Richard Stallman. Torvalds sau đó đã sử dụng GNU General Public License phiên bản 2 (GPLv2) của Stallman để phát triển **kernel** của mình dựa vào **GNU C Compiler** (GNU C Compiler vẫn là lựa chọn chính để biên dịch Linux ngày nay.)
+Torvalds lần đầu tiên biết đến dự án GNU vào năm 1991, sau khi được bạn mình là Lars Wirzenius, đưa anh đến Đại học Công nghệ để nghe bài phát biểu của Richard Stallman (vừa nói ở trên :v). Torvalds sau đó đã sử dụng GNU General Public License phiên bản 2 (GPLv2) của Stallman để phát triển **kernel** của mình dựa vào **GNU C Compiler** (GNU C Compiler vẫn là lựa chọn chính để biên dịch Linux ngày nay.)
 
 Vì sự kết hợp hoàn hảo này nên hãy thật công bằng khi gọi hệ điều hành của bạn là **GNU/Linux** nhé.
 
