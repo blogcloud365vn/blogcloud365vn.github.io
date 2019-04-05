@@ -79,9 +79,36 @@ Test xem script đã hoạt động hay chưa.
 
 ![](/images/img-zabbix-slack/Screenshot_1280.png)
 
+## 3. Cấu hình cảnh báo slacktrên Web Zabbix
 
+### 3.1. Truy cập zabbix server
 
+![](/images/img-zabbix-slack/Screenshot_1281.png)
 
+### 3.2. Tạo media type
+
+Click `Administrator -> Media types -> Create media type`
+
+![](/images/img-zabbix-slack/Screenshot_1282.png)
+
+Nhập các thông tin về `media type` mới
+
+```
+Name: Telegram (Tên có thể tùy đặt)
+Type: Script
+Script name: Tên của script có trong thư mục alert script của server zabbix
+Script parameter:
+{ALERT.SENDTO}
+{ALERT.SUBJECT}
+{ALERT.MESSAGE}
+```
+![](/images/img-zabbix-slack/Screenshot_1283.png)
+
+Tạo thành công `Media type` mới có tên là `slack`
+
+![](/images/img-zabbix-slack/Screenshot_1284.png)
+
+### 3.3. Set user nhận alert qua Tetegram
 
 
 
