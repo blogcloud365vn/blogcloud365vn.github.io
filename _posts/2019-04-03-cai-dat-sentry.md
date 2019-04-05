@@ -375,6 +375,7 @@ http://<your_vps_ip>:9000
 
 ## Tổng kết
 
+Như vậy, trong bài viết này mình đã giới thiệu về Sentry và cài đặt Sentry theo 2 cách trên CentOS 7. Trong bài viết tiếp theo mình sẽ hướng dẫn tích hợp Sentry với Framework mình đang sử dụng là **Django**. Cảm ơn các bạn đã theo dõi bài viết, chúc các bạn cài đặt thành công :D.
 
 >"if you have knowledge let others light their candles in it"
 
@@ -382,7 +383,7 @@ http://<your_vps_ip>:9000
 
 ### Tài liệu tham khảo
 
-
+[https://docs.sentry.io/server/installation/](https://docs.sentry.io/server/installation/){:target="_blank"}
 ---
 
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
