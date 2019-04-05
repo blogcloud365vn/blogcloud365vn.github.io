@@ -223,10 +223,9 @@ Click `Configuration -> Lựa chọn host -> Trigger`
 
 Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` biểu thị giá trị CPU load average trung bình trong 5 phút > 1 sẽ gửi cảnh báo.
 
-Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới telegram.
+Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới channel slack.
 
 ![](/images/img-zabbix-slack/Screenshot_1141.png)
-
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
