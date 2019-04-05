@@ -108,8 +108,124 @@ Tạo thành công `Media type` mới có tên là `slack`
 
 ![](/images/img-zabbix-slack/Screenshot_1284.png)
 
-### 3.3. Set user nhận alert qua Tetegram
+### 3.3. Set user nhận alert qua Slack
 
+Thiết lập user nhận alert qua slack
+
+Click `Administrator -> User -> Lựa chọn user nhận cảnh báo`
+
+![](/images/img-zabbix-slack/Screenshot_1285.png)
+
+Click tab `Media` -> `Add` 
+
+![](/images/img-zabbix-slack/Screenshot_1286.png)
+
+Thiết lập slack nhận cảnh báo
+
+```
+Type: Chính là type mà đã tạo ở trên
+Sento: channel sẽ nhận được alert
+Use of serverity: Các mức cảnh bảo
+Enable: Tích chọn
+```
+![](/images/img-zabbix-slack/Screenshot_1287.png)
+
+User `Admin` đã được thiết lập nhận cảnh báo qua telegram.
+
+Click `Update`
+
+![](/images/img-zabbix-slack/Screenshot_1288.png)
+
+### 3.4. Tạo action
+
+Tạo `action` để khi có sự bất thường đối với các thông số monitor sẽ có alert qua telegram.
+
+Click `Configuration -> Action -> Create action`
+
+![](/images/img-zabbix-slack/Screenshot_442.png)
+
+**Tại tab action**
+
+Nhập thông tin:
+
+```
+Name: Tên của action muốn tạo
+```
+
+**Tab operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi
+
+![](/images/img-zabbix-slack/Screenshot_443.png)
+
+Default subject (Tiêu đề của thông báo)
+
+```
+Disaster {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
+
+Default message (Nội dung của thông báo)
+
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status:{TRIGGER.STATUS}
+Severity:{TRIGGER.SEVERITY}
+Values:{ITEM.VALUE1}
+
+Item Graphic: [{ITEM.ID1}]
+```
+![](/images/img-zabbix-slack/Screenshot_1023.png)
+
+Set `group` hoặc chỉ định `user` nhận được cảnh báo.
+
+![](/images/img-zabbix-slack/Screenshot_1024.png)
+
+Set cho `action` gửi cảnh báo qua kênh nào. Có thể lựa chọn một hoặc nhiều kênh.
+
+![](/images/img-zabbix-slackScreenshot_1142.png)
+
+Click `Add`
+
+![](/images/img-zabbix-slack/Screenshot_1028.png)
+
+**Tab Recovery operation**: Thiết lập thông tin về bản tin cảnh báo gửi đi khi không vấn đề được giải quyết, dưới ngưỡng cảnh báo.
+
+Default subject (Tiêu đề của thông báo recovery)
+
+```
+OK Resolved: {HOSTNAME}:{TRIGGER.NAME}-status-{TRIGGER.STATUS}
+```
+
+Default message (Nội dung của thông báo)
+
+```
+{TRIGGER.NAME} on {HOSTNAME}
+Status: {TRIGGER.STATUS}
+Severity: {TRIGGER.SEVERITY}
+Values: {ITEM.VALUE1}
+
+Item Graphic: [{ITEM.ID1}]
+```
+
+Sau khi nhập đủ thông tin click `Add`
+
+![](/images/img-zabbix-slack/Screenshot_1029.png)
+
+Vậy đã tạo thành công action mới.
+
+![](/images/img-zabbix-slack/Screenshot_1030.png)
+
+### 3.5. Test cảnh báo qua telegram
+
+Sử dụng trigger (set up ngưỡng cảnh báo) sẵn có trong template để test gửi cảnh báo.
+
+Click `Configuration -> Lựa chọn host -> Trigger`
+
+![](/images/img-zabbix-slack/Screenshot_1033.png)
+
+Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` biểu thị giá trị CPU load average trung bình trong 5 phút > 1 sẽ gửi cảnh báo.
+
+Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới telegram.
+
+![](/images/img-zabbix-slack/Screenshot_1141.png)
 
 
 ---
