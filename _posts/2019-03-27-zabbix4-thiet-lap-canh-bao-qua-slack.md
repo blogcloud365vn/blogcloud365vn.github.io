@@ -225,7 +225,9 @@ Trigger: `{Host_Centos_10.10.10.119:system.cpu.load[percpu,avg1].avg(5m)}>1` bi�
 
 Khi thỏa mãn điều kiện của trigger cảnh báo sẽ được tới channel slack.
 
-![](/images/img-zabbix-slack/Screenshot_1141.png)
+![](/images/img-zabbix-slack/Screenshot_1289.png)
+
+Với những hướng dẫn cơ bản trên hy vọng giúp các bạn cài đặt thành công cảnh báo zabbix slack.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
