@@ -141,7 +141,7 @@ Các bước tiếp làm tương tự như trên CentOS 7.
 
 ## Tổng kết.
 
-Ở bài viết này mình đã hướng dẫn mọi người thêm agent cho CentOS và Ubuntu để giám sát cho client, ở bài viết sau mình sẽ giới thiệu về threshold trong checkmk, đây chính là một trong những phần quan trọng trước khi chúng ta cấu hình cảnh báo cho những sự kiện giám sát trên checkmk.
+Ở bài viết này mình đã hướng dẫn mọi người thêm agent cho CentOS và Ubuntu để giám sát cho client, ở bài viết sau mình sẽ giới thiệu về active check trong checkmk, là một cách khác để cấu hình giám sát dịch vụ.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
