@@ -211,14 +211,14 @@ Lưu ý, phải đặt khoảng trắng giữa lệnh `[]` và biểu thức ki�
 
 Điều kiện mà lệnh `test` cho phép kiểm tra có thể rơi vào 1 trong 3 kiểu sau :
 
-#### So sánh chuỗi 
+#### 3.2. So sánh chuỗi 
 
 - **string1 = string2** : `true` nếu 2 chuỗi bằng nhau
 - **string1 != string2** : `true` nếu 2 chuỗi không bằng nhau
 - **-n string1** : true nếu tring1 không rỗng
 - **-z string1** : true nếu tring1 rỗng
 
-#### So sánh toán học :
+#### 3.3. So sánh toán học :
 
 - **expression1 -eq expression2** : `true` nếu 2 biểu thức bằng nhau
 - **expression1 -ne expression2** : `true` nếu 2 biểu thức không bằng nhau
@@ -228,7 +228,7 @@ Lưu ý, phải đặt khoảng trắng giữa lệnh `[]` và biểu thức ki�
 - **expression1 -le expression2** : `true` nếu biểu thức expression1 nhỏ hơn hoặc bằng expression2
 - **!expression** : `true` nếu biểu thức expression là false (toán tử not)
 
-#### Kiểm tra điều kiện trên tập tin 
+#### 3.4. Kiểm tra điều kiện trên tập tin 
 
 - -d file : `true` nếu file là thư mục
 - -e file : `true` nếu file tồn tại trên đĩa
