@@ -67,7 +67,7 @@ Kết quả như sau :
 echo "Hello World\n"
 ```
 
-#### 1.3. **\** (Backslash)
+#### 1.3. ** \ ** (Backslash)
 
 Dấu **\** được dùng để giải trừ ý nghĩa đặc biệt của các dấu như **&**, **?** hoặc **$**
 
