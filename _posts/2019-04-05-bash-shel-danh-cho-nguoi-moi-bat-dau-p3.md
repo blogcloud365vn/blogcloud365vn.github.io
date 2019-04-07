@@ -67,14 +67,14 @@ Kết quả như sau :
 echo "Hello World\n"
 ```
 
-#### 1.3. ** \ ** (Backslash)
+#### 1.3. \  (Backslash)
 
-Dấu **\** được dùng để giải trừ ý nghĩa đặc biệt của các dấu như **&**, **?** hoặc **$**
+Dấu \ được dùng để giải trừ ý nghĩa đặc biệt của các dấu như **&**, **?** hoặc **$**
 
 Ví dụ : Ta có 1 file `file1&2`. Khi thực hiện đọc file này với cú pháp như sau : 
 
 ```sh
-[root@shell ~]# cat file 1&2
+[root@shell ~]# cat file1&2
 ```
 
 Việc đọc sẽ xảy ra lỗi ra tiêu đề của file chứa ký tự đặc biệt **&**. Để đọc được file như ý muốn, ta cần thực hiện như sau :
@@ -170,3 +170,74 @@ shell hello
 shell hello
 The script is now complete
 ```
+
+### 3. Điều kiện trong Shell
+
+Một nền tảng cơ bản trong tất cả các ngôn ngữ lập trình đó chính là khả năng kiểm tra điều kiện và đưa ra quyết định thích hợp tùy theo điều kiện đúng hay sai. Trước khi tìm hiểu cấu trúc điều khiển của ngôn ngữ scriptm ta hãy xem qua cách kiểm tra điều kiện.
+
+Một script của shell có thể kiểm tra mã lỗi trả về của bất kỳ lệnh nào có khả năng gọi từ dòng lệnh, bao gồm cả những tập tin lệnh của script khác. Đó là lý do vì sao chúng ta thường sử dụng lệnh `exit` ở cuối script mỗi khi kết thúc.
+
+#### 3.1. Lệnh `test` hoặc `[]`
+
+Thực tế, các script sử dụng lệnh `[]` hoặc `test` để kiểm tra điều kiện boolean một cách thường xuyên. Trong hầu hết các hệ thống UNIX và Linux thì `[]` và `test` đều có ý nghĩa tương đương nhau. 
+
+Ví dụ, dùng lệnh test để kiểm tra file `hello.c` có tồn tại trong hệ thống hay không. Cú pháp của lệnh test :
+
+```sh
+test -f <file_name>
+```
+
+Trong script, ta có thể dùng lệnh test theo cách sau :
+
+```sh
+if test -f hello.c
+then
+	...
+fi
+```
+
+Hoặc dùng `[]` để thay thế cho `test` :
+
+```sh
+if [ -f hello.c ]
+then
+	...
+fi
+```
+
+Mã lỗi và giá trị trả về của lệnh mà `test` kiểm tra sẽ quyết định điều kiện kiểm tra là đúng hay sai.
+
+Lưu ý, phải đặt khoảng trắng giữa lệnh `[]` và biểu thức kiểm tra. 
+
+Điều kiện mà lệnh `test` cho phép kiểm tra có thể rơi vào 1 trong 3 kiểu sau :
+
+#### So sánh chuỗi 
+
+- **string1 = string2** : `true` nếu 2 chuỗi bằng nhau
+- **string1 != string2** : `true` nếu 2 chuỗi không bằng nhau
+- **-n string1** : true nếu tring1 không rỗng
+- **-z string1** : true nếu tring1 rỗng
+
+#### So sánh toán học :
+
+- **expression1 -eq expression2** : `true` nếu 2 biểu thức bằng nhau
+- **expression1 -ne expression2** : `true` nếu 2 biểu thức không bằng nhau
+- **expression1 -gt expression2** : `true` nếu biểu thức expression1 lớn hơn expression2
+- **expression1 -ge expression2** : `true` nếu biểu thức expression1 lớn hơn hoặc bằng expression2
+- **expression1 -lt expression2** : `true` nếu biểu thức expression1 nhỏ hơn expression2
+- **expression1 -le expression2** : `true` nếu biểu thức expression1 nhỏ hơn hoặc bằng expression2
+- **!expression** : `true` nếu biểu thức expression là false (toán tử not)
+
+#### Kiểm tra điều kiện trên tập tin 
+
+- -d file : `true` nếu file là thư mục
+- -e file : `true` nếu file tồn tại trên đĩa
+- -f file : `true` nếu file là tập tin thông thường
+- -g file : `true` nếu set-group-id được thiết lập trên file 
+- -r file : `true` nếu file cho phép được
+- -s file : `true` nếu file có kích thước khác 0
+- -u file : `true` nếu set-ser-id được áp đặt trên file
+- -w file : `true` nếu file cho phép ghi
+- -x file : `true` nếu file được phép thực thi
+
+Tất cả các điều kiện kiểm tra tập tin đều yêu cầu file phải tồn tại trước đó (có nghĩa là lệnh test -f file_name phải được gọi trước đó)
