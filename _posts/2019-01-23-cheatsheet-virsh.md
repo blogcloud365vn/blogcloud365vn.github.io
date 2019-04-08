@@ -5,7 +5,7 @@ categories:
   - Linux
 description: Tài liệu hướng dẫn sử dụng tool virsh
 author: tuanda
-tags: [KVM, Linux, Centos7]
+tags: [KVM, Linux, virsh]
 type: Document
 ---
 
@@ -23,20 +23,24 @@ virsh [OPTION]... <command> <domain> [ARG]...
 ```
 
 - Hiển thị thông số cơ bản của node:
+
 ```
 virsh nodeinfo
 ```
+
 Kết quả hiển thị:![](/images/img-kvm/virsh_1.png)
 
 - Liệt kê ra tất cả máy ảo (bao gồm cả máy ảo đang stop):
+
 ```
 virsh list --all
 ```
+
 Hoặc các máy ảo đang hoạt động:
+
 ```
 virsh list
 ```
-
 ## Tạo máy ảo
 Tạo file XML định nghĩa thông tin máy ảo. Ví dụ:
 
@@ -87,6 +91,7 @@ Tạo file XML định nghĩa thông tin máy ảo. Ví dụ:
   </devices>
 </domain>
 ```
+
 - `name`: Tên của máy ảo.
 - `uuid`: uuid của máy ảo
 - `maxMemory` : Dung lượng RAM tối đa có thể sử dụng
@@ -106,7 +111,9 @@ virsh define /tmp/new-guest.xml <define nhưng không start>
 virsh create /tmp/new-guest.xml <define và start>
 virsh start new-guest
 ```
+
 - Thực hiện việc export thông tin máy ảo ra XML:
+
 ```
 virsh dumpxml GUEST > /tmp/guest.xml
 ```
@@ -135,7 +142,7 @@ virsh dumpxml GUEST > /tmp/guest.xml
 - Stop all máy ảo:
 
 ```
-$ for i in `sudo virsh list | grep running | awk '{print $2}'` do
+for i in $(`sudo virsh list | grep running | awk '{print $2}'`) do
     sudo virsh shutdown $i
 done
 ```
@@ -163,6 +170,7 @@ done
 ## Quản lý snapshot
 
 - Tạo snapshot:
+
 ```
 virsh snapshot-create-as --domain vm1 \
 --name "snapshot1" \
@@ -212,6 +220,7 @@ Domain snapshot snapshot1 deleted
 ```
 sudo virt-clone -o web_devel -n database_devel -f /path/to/database_devel.img
 ```
+
 - `-o` : Máy nguồn.
 - `-n` : Máy đích.
 - `-f` : Đường dẫn đến file / ổ đĩa máy ảo mới.
