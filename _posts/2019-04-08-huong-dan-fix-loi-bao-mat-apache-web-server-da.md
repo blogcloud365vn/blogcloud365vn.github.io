@@ -2,7 +2,7 @@
 date: 2019-04-08
 title: Hướng dẫn fix lỗi bảo mật Apache Web Server trong 
 categories:
-  - Monitor
+  - Linux
 description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting DirectAdmin.
 author: duydm
 tags: [Linux, Apache]
@@ -93,21 +93,16 @@ cd /usr/local/directadmin/custombuild
 
 ![](/images/img-apache-da/Screenshot_1292.png)
 
-
-
+![](/images/img-apache-da/Screenshot_1293.png)
 
 **Check lại version apache**
 
 ```
 httpd -v
 ```
+![](/images/img-apache-da/Screenshot_1294.png)
 
-
-
-
-
-
-
+Như vậy là bạn đã update phiên phiên bản apache lên version lastest 2.4.39 để fix lỗi bảo mật CVE-2019-0211.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
