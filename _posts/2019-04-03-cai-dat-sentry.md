@@ -1,9 +1,9 @@
 ---
-date: 2019-04-04
-title: Tích hợp Sentry với Django
+date: 2019-04-03
+title: Hướng dẫn cài đặt sentry trên centOS 7
 categories:
   - Other
-description: Tích hợp Sentry với Django
+description: Hướng dẫn cài đặt sentry trên centOS 7
 author: huytm
 tags: [Sentry, Linux]
 type: Document
