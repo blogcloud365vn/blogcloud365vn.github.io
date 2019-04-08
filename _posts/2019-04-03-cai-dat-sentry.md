@@ -12,7 +12,7 @@ type: Document
 ## Mở đầu
 
 <p align="center">
-<img src="/images/img-sentry/cai-dat/img-sentry0.png">
+<img src="/images/img-jekyll/image1.png">
 </p>
 
 Bạn đang là Developer và bạn cần tracking các exceptions trong ứng dụng của mình ? Bạn đã bắt log cho ứng dụng của mình nhưng vẫn bị sót các exception? Hoặc đơn giản bạn muốn đếm số lần xuất hiện một lỗi cụ thể ở ứng dụng của bạn.
