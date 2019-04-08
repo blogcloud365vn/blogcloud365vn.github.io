@@ -38,10 +38,10 @@ Ngay sau khi CVE-2019-0211 được công bố các nhà phát triển của Apa
 
 ### 3.1. DirectAdmin control panel CentOS, Ubuntu
 
-##### Môi trường
+**Môi trường**
 
 ```
-- Hệ điều hành: Ubuntu Server 16.04 - 64bit, CentOS 7.x Server - 64bit
+- Hệ điều hành: Ubuntu Server 14.04 - 64bit, Ubuntu Server 16.04 - 64bit, Ubuntu Server 16.08 - 64bit, CentOS 6.10 Server - 64bit, CentOS 7.6 Server - 64bit
 - Control Panel: DirectAdmin version 1.55
 ```
 
