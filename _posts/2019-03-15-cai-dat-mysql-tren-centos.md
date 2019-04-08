@@ -4,7 +4,7 @@ categories:
   - Linux
 description: Cài đặt MySQL trên CentOS7
 author: canhdx
-tags: [Beginer, Linux, MySQL, Other]
+tags: [Beginer, Linux, MySQL, CentOS, Other]
 type: Document
 ---
 

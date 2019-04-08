@@ -4,7 +4,7 @@ categories:
   - Linux
 description: Cài đặt OwnCloud CentOS 7 
 author: canhdx
-tags: [Beginer, Linux,  Other]
+tags: [Beginer, Linux, CentOS, Other]
 type: Document
 ---
 
