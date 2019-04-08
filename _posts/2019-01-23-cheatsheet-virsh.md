@@ -228,5 +228,6 @@ sudo virt-clone -o web_devel -n database_devel -f /path/to/database_devel.img
 - `-n` : Máy đích.
 - `-f` : Đường dẫn đến file / ổ đĩa máy ảo mới.
 
+
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
