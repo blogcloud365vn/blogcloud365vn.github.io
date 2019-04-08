@@ -49,7 +49,9 @@ cd /usr/local/directadmin/custombuild
 
 ![](/images/img-apache-da/Screenshot_1290.png)
 
-- ĐỐi với các server đang sử dụng `Custombuild 1.x` cần phải update lên `Custombuild 2.x`
+- Đối với server đang sử dụng `Custombuild 2.x` không phải thực hiện update `Custombuild`
+
+- Đối với các server đang sử dụng `Custombuild 1.x` cần phải update lên `Custombuild 2.x`
 
 ```
 cd /usr/local/directadmin
