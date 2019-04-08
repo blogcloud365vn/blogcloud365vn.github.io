@@ -36,8 +36,29 @@ Ngay sau khi CVE-2019-0211 được công bố các nhà phát triển của Apa
 
 ## 3. Fix lỗi CVE-2019-0211 control panel hosting DirectAdmin
 
+### 3.1. Update custombuild 
 
+**Check version custombuild**
 
+```
+cd /usr/local/directadmin/custombuild
+./build version
+```
+
+![](/images/img-apache-da/Screenshot_1290.png)
+
+**Với các server đang sử dụng Custombuild 1.x cần phải update lên 2.x**
+
+```
+cd /usr/local/directadmin
+mv custombuild custombuild_1.x
+wget -O custombuild.tar.gz http://files.directadmin.com/services/custombuild/2.0/custombuild.tar.gz
+tar xvzf custombuild.tar.gz
+cd custombuild
+./build
+```
+
+### 3.2. Update apache 2.4
 
 
 
