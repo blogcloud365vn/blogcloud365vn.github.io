@@ -1,6 +1,6 @@
 ---
 date: 2019-04-08
-title: "Hướng dẫn nâng cấp Apache từ 2.4.38 lên bản 2.4.39 trong các control panel"
+title: "Hướng dẫn nâng cấp Apache 2.4.17 đến 2.4.38 lên bản 2.4.39 trong các control panel"
 categories:
   - Other
 description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting.
@@ -37,6 +37,13 @@ Ngay sau khi CVE-2019-0211 được công bố các nhà phát triển của Apa
 ## 3. Fix lỗi Apache Web Server trong control panel hosting
 
 ### 3.1. DirectAdmin control panel CentOS, Ubuntu
+
+##### Môi trường
+
+```
+- Hệ điều hành: Ubuntu Server 16.04 - 64bit, CentOS 7.x Server - 64bit
+- Control Panel: DirectAdmin version 1.55
+```
 
 **Update custombuild**
 
