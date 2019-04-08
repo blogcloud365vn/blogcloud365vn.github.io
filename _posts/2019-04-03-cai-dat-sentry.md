@@ -2,7 +2,7 @@
 date: 2019-04-04
 title: Tích hợp Sentry với Django
 categories:
-  - Others
+  - Other
 description: Tích hợp Sentry với Django
 author: huytm
 tags: [Sentry, Linux]
