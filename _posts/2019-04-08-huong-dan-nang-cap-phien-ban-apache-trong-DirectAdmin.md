@@ -1,6 +1,6 @@
 ---
 date: 2019-04-08
-title: Hướng dẫn nâng cấp Apache lên bản 2.4.39 trong DirectAdmin
+title: "Hướng dẫn nâng cấp Apache lên bản 2.4.39 trong DirectAdmin"
 categories:
   - Other
 description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting DirectAdmin.
