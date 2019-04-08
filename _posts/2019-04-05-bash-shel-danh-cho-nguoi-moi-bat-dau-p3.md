@@ -1,5 +1,5 @@
 ---
-date: 2019-03-25
+date: 2019-04-05
 title: "Bash Shell dành cho người mới bắt đầu - Chương 3"
 categories:
   - Shell
