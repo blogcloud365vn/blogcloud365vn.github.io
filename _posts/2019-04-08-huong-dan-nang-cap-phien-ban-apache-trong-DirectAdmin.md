@@ -1,9 +1,9 @@
 ---
 date: 2019-04-08
-title: "Hướng dẫn nâng cấp Apache lên bản 2.4.39 trong DirectAdmin"
+title: "Hướng dẫn nâng cấp Apache từ 2.4.38 lên bản 2.4.39 trong các control panel"
 categories:
   - Other
-description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting DirectAdmin.
+description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting.
 author: duydm
 tags: [Apache]
 type: Document
@@ -34,11 +34,13 @@ Lỗ hổng ảnh hưởng đến Apache HTTP Server phiên bản `2.4.17` đế
 
 Ngay sau khi CVE-2019-0211 được công bố các nhà phát triển của Apache đã đưa ra phiên bản  `Apache httpd 2.4.39`, ở phiên bản này cập nhật thêm 2 lỗi bảo mật khác liên quan tới  **người dùng có thông tin xác thực hợp lệ để xác thực bằng tên người dùng khác, bỏ qua các hạn chế kiểm soát truy cập được định cấu hình** (CVE-2019-0217) và lỗ hổng mod_ssl kiểm soát bỏ qua truy cập (CVE-2019-0215), **một lỗi trong mod_ssl khi sử dụng xác minh chứng chỉ ứng dụng khách theo vị trí với TLSv1.3 cho phép khách hàng hỗ trợ Post-Handshake Authentication được cấu hình để bỏ qua các hạn chế kiểm soát truy cập được định cấu hình.**
 
-## 3. Fix lỗi CVE-2019-0211 control panel hosting DirectAdmin
+## 3. Fix lỗi Apache Web Server trong control panel hosting
 
-### 3.1. Update custombuild 
+### 3.1. DirectAdmin control panel 
 
-**Check version custombuild**
+**Update custombuild**
+
+- Check version custombuild
 
 ```
 cd /usr/local/directadmin/custombuild
@@ -47,7 +49,7 @@ cd /usr/local/directadmin/custombuild
 
 ![](/images/img-apache-da/Screenshot_1290.png)
 
-**Với các server đang sử dụng Custombuild 1.x cần phải update lên 2.x**
+- ĐỐi với các server đang sử dụng `Custombuild 1.x` cần phải update lên `Custombuild 2.x`
 
 ```
 cd /usr/local/directadmin
@@ -58,9 +60,9 @@ cd custombuild
 ./build
 ```
 
-### 3.2. Update apache version latest 2.4.39
+**Update apache version latest 2.4.39**
 
-**Check version apache hiện tại của web server**
+- Check version apache hiện tại của web server
 
 ```
 httpd -v
@@ -68,7 +70,7 @@ httpd -v
 
 ![](/images/img-apache-da/Screenshot_1291.png)
 
-**Thực hiện các câu lệnh sau để cập nhật apache version latest 2.4.39**
+- Thực hiện các câu lệnh sau để cập nhật apache version latest 2.4.39
 
 ```
 cd /usr/local/directadmin/custombuild
@@ -80,7 +82,7 @@ cd /usr/local/directadmin/custombuild
 
 ![](/images/img-apache-da/Screenshot_1293.png)
 
-**Check lại version apache**
+- Check lại version apache
 
 ```
 httpd -v
