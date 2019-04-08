@@ -102,7 +102,7 @@ httpd -v
 ```
 ![](/images/img-apache-da/Screenshot_1294.png)
 
-Như vậy là bạn đã update phiên phiên bản apache lên version lastest 2.4.39 để fix lỗi bảo mật CVE-2019-0211.
+Như vậy  với hướng dẫn cơ bản trên bạn đã update phiên phiên bản apache lên version lastest 2.4.39 để fix lỗi bảo mật CVE-2019-0211.
 
 **Tham khảo**
 
