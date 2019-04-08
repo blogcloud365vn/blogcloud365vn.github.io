@@ -28,7 +28,9 @@ virsh [OPTION]... <command> <domain> [ARG]...
 virsh nodeinfo
 ```
 
-Kết quả hiển thị:![](/images/img-kvm/virsh_1.png)
+Kết quả hiển thị:
+
+![](/images/img-kvm/virsh_1.png)
 
 - Liệt kê ra tất cả máy ảo (bao gồm cả máy ảo đang stop):
 
@@ -42,6 +44,7 @@ Hoặc các máy ảo đang hoạt động:
 virsh list
 ```
 ## Tạo máy ảo
+
 Tạo file XML định nghĩa thông tin máy ảo. Ví dụ:
 
 ``` sh
