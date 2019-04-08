@@ -36,7 +36,7 @@ Ngay sau khi CVE-2019-0211 được công bố các nhà phát triển của Apa
 
 ## 3. Fix lỗi Apache Web Server trong control panel hosting
 
-### 3.1. DirectAdmin control panel 
+### 3.1. DirectAdmin control panel CentOS, Ubuntu
 
 **Update custombuild**
 
