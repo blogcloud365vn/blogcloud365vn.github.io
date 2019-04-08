@@ -11,7 +11,7 @@ type: Document
 
 ## 1. Apache Web Server là gì?
 
-Apache hay là chương trình máy chủ HTTP là một chương trình dành cho máy chủ đối thoại qua giao thức HTTP. Apache chạy trên các hệ điều hành tương tự như Unix, Microsoft Windows, Novell Netware và các hệ điều hành khác. `Apache` đóng một vai trò quan trọng trong quá trình phát triển của mạng web thế giới (World Wide Web). Phiên bản phát hành đầu tiên vào tháng 4 năm 1995 bởi Apache Software Foundation. <a href="https://vi.wikipedia.org/wiki/Apache_(HTTP)" target="_blank">(Wikipedia - Apache)n</a>. Phần lớn các máy chủ web đang hoạt động hiện nay đang sử dụng `Apache`.
+Apache hay là chương trình máy chủ HTTP là một chương trình dành cho máy chủ đối thoại qua giao thức HTTP. Apache chạy trên các hệ điều hành tương tự như Unix, Microsoft Windows, Novell Netware và các hệ điều hành khác. `Apache` đóng một vai trò quan trọng trong quá trình phát triển của mạng web thế giới (World Wide Web). Phiên bản phát hành đầu tiên vào tháng 4 năm 1995 bởi Apache Software Foundation. <a href="https://vi.wikipedia.org/wiki/Apache_(HTTP)" target="_blank">(Wikipedia - Apache)</a>. Phần lớn các máy chủ web đang hoạt động hiện nay đang sử dụng `Apache`.
 
 ![](/images/img-apache-da/apache-server.png)
 
@@ -103,6 +103,12 @@ httpd -v
 ![](/images/img-apache-da/Screenshot_1294.png)
 
 Như vậy là bạn đã update phiên phiên bản apache lên version lastest 2.4.39 để fix lỗi bảo mật CVE-2019-0211.
+
+**Tham khảo**
+
+https://www.helpnetsecurity.com/2019/04/03/apache-web-server-cve-2019-0211/
+
+https://thehackernews.com/2019/04/apache-web-server-security.html
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
