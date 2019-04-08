@@ -269,9 +269,4 @@ Chúc các bạn thành công
 
 ---
 
-### Tài liệu tham khảo
-
-[https://docs.sentry.io/server/installation/](https://docs.sentry.io/server/installation/){:target="_blank"}
----
-
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
