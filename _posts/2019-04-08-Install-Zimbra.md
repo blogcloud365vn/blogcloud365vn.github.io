@@ -214,7 +214,7 @@ DKIM Public signature:
 
 <img src="https://i.imgur.com/dcNx18m.png">
 
-## Bước 4: Truy cập vào side admin
+## Bước 5: Truy cập vào side admin
 
 - Truy cập vào địa chỉ 
 
@@ -226,7 +226,7 @@ https://mail.supportdao.com:7071
 
 Chúc các bạn thành công 
 
-## Bước 5: Thiết lập SSL
+## Bước 6: Thiết lập SSL
 
 - Bạn có thể tham khảo từ bài viết trước trong blog của chúng tôi tại <a href="https://blog.cloud365.vn/other/cai-dat-Let-Encrypt-trong-zimbra/">đây</a>
 
