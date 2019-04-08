@@ -60,8 +60,47 @@ cd custombuild
 
 ### 3.2. Update apache 2.4
 
+**Check version apache**
+
+```
+httpd -v
+```
+
+![](/images/img-apache-da/Screenshot_1291.png)
+
+**Với các server cần update từ apache 2.2 lên apache 2.4**
+
+```
+cd /usr/local/directadmin/custombuild
+./build set apache_ver 2.4
+./build update
+./build clean
+./build apache n
+./build php n
+./build rewrite_confs
+service httpd restart
+```
+
+### 3.3. Update apache version latest 2.4.39
+
+**Thực hiện các câu lệnh sau để cập nhật apache version latest 2.4.39**
+
+```
+cd /usr/local/directadmin/custombuild
+./build update
+./build apache
+```
+
+![](/images/img-apache-da/Screenshot_1292.png)
 
 
+
+
+**Check lại version apache**
+
+```
+httpd -v
+```
 
 
 
