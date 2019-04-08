@@ -4,7 +4,7 @@ categories:
   - Linux
 description: Cài đặt OwnCloud trên Ubuntu18
 author: canhdx
-tags: [Beginer, Linux,  Other]
+tags: [Beginer, Linux, Ubuntu, Other]
 type: Document
 ---
 
@@ -51,7 +51,11 @@ Kiểm tra `ufw`
 sudo ufw app list
 ```
 
+<<<<<<< HEAD
+- Kết qủa 
+=======
 Kết qủa 
+>>>>>>> 5adc70345c01a4619450a81a906051a56e2f7ea8
 ```sh 
 root@ubuntu:~# sudo ufw app list
 Available applications:
@@ -67,7 +71,11 @@ Cho phép traffic trên port 80 và 443 cho httpd
 sudo ufw app info "Apache Full"
 ```
 
+<<<<<<< HEAD
+- Kết quả 
+=======
 Kết quả 
+>>>>>>> 5adc70345c01a4619450a81a906051a56e2f7ea8
 ```sh 
 root@ubuntu:~# sudo ufw app info "Apache Full"
 Profile: Apache Full
@@ -83,6 +91,11 @@ Truy cập trình duyệt
 ```sh 
 http://your_server_ip
 ```
+<<<<<<< HEAD
+
+- Kết quả 
+=======
+>>>>>>> 5adc70345c01a4619450a81a906051a56e2f7ea8
 
 Kết quả 
 <p align="center">
@@ -158,7 +171,11 @@ Kiểm tra file vhost mặc định của apache
 sudo apache2ctl -t -D DUMP_VHOSTS | grep $IP
 ```
 
+<<<<<<< HEAD
+- Kết quả 
+=======
 Kết quả 
+>>>>>>> 5adc70345c01a4619450a81a906051a56e2f7ea8
 ```sh 
 root@ubuntu:/var/www# sudo apache2ctl -t -D DUMP_VHOSTS | grep 192.168.70.183
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.70.183. Set the 'ServerName' directive globally to suppress this message
@@ -175,7 +192,11 @@ Kiểm tra config
 sudo apache2ctl configtest
 ```
 
+<<<<<<< HEAD
+Kết quả
+=======
 Kết quả OK 
+>>>>>>> 5adc70345c01a4619450a81a906051a56e2f7ea8
 ```sh 
 ...
 Syntax OK
