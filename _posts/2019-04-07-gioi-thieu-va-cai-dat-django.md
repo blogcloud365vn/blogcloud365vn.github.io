@@ -35,7 +35,7 @@ Khi cài Ubuntu, mặc định đã có 2 version Python ở trên. Vì mình s�
 python3 --version
 ```
 
-### <p><span style="color:#007bff">TRƯỜNG HỢP 1: Python < 3.6</span></p>
+### <span style="color:#007bff">TRƯỜNG HỢP 1: Python < 3.6</span>
 
 #### 1. Cài đặt Python và virtualenv
 
@@ -71,7 +71,7 @@ cd my_django
 virtualenv env -p python3.6
 ```
 
-### <p><span style="color:#007bff">TRƯỜNG HỢP 2: Python 3.6</span></p>
+### <span style="color:#007bff">TRƯỜNG HỢP 2: Python 3.6</span>
 
 #### 1. Cài đặt pip và virtualenv
 
