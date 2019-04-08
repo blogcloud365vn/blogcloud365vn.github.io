@@ -2,7 +2,7 @@
 date: 2019-04-08
 title: Hướng dẫn fix lỗi bảo mật Apache Web Server trong DirectAdmin
 categories:
-  - Linux
+  - Other
 description: Hướng dẫn kiểm tra và fix lỗi bảo mật nghiêm trọng từ Apache Web Server ảnh hưởng tới control panel hosting DirectAdmin.
 author: duydm
 tags: [Apache]
