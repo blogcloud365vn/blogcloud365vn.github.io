@@ -95,7 +95,7 @@ Kết quả như sau:
 Khởi động site:
 
 ```sh
-omd create cloud365
+omd start cloud365
 ```
 
 Truy cập địa chỉ `ip-server/cloud365` để kiểm xem đã cài đặt và khởi động thành công hay chưa, nếu thành công kết quả nhận được sẽ như sau:
