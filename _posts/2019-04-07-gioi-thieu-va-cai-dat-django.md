@@ -2,7 +2,7 @@
 date: 2019-04-08
 title: Giới thiệu và cài đặt Django
 categories:
-  - Others
+  - Other
 description: Giới thiệu và cài đặt Django
 author: huytm
 tags: [Django]
