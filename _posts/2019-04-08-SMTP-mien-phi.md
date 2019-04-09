@@ -90,12 +90,29 @@ Kiểm tra thông tin SMTP vừa tạo <a href="https://www.smtper.net/" target=
 <img src="/images/img-smtp/smtp2go-06.png">
 </p>
 
+
 Kiểm tra hộp thư đến 
 <p align="center">
 <img src="/images/img-smtp/smtp2go-07.png">
 </p>
 
-## Custom Domain cho SMTP
+Hoặc có thể sử dụng Script sau trên Linux(CentOS or Ubuntu) để kiểm tra 
+```sh 
+wget -O https://raw.githubusercontent.com/nhanhoadocs/scripts/master/Utilities/smtp_test.py smtp_test.py
+```
+
+Test SMTP vừa tạo 
+```sh 
+python smtptest.py --debuglevel 1 --usetls --port=2525 -u demo1  -p bjY0MHQ0NW**** "CanhDX <canhdx@cloudchuanchi.com>" canhdx@nhanhoa.com.vn mail.smtp2go.com
+```
+
+Kết quả
+<p align="center">
+<img src="/images/img-smtp/smtp2go-07'.png">
+</p>
+
+
+## Custom Domain cho SMTP trên SMTP2GO
 
 Như email nhận được từ SMTP thì email bạn gửi đi sẽ gửi dưới tên là email bạn đăng ký SMTP
 
