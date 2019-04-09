@@ -7,6 +7,8 @@ description: Performance Testing - Phần 3 - Hướng dẫn sử dụng Gatling
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
+set: performance-testing
+set_order: 13
 ---
 
 ## Tổng quan

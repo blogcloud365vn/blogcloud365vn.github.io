@@ -7,6 +7,8 @@ description: Hướng dẫn ước lượng tải của Web bằng Gatling
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
+set: performance-testing
+set_order: 11
 ---
 
 ## Tổng quan
