@@ -7,6 +7,8 @@ description: Performance Testing - Phần 1 - Hướng dẫn cài đặt Gatling
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
+set: performance-testing
+set_order: 15
 ---
 
 ## Cài đặt Gatling.io
