@@ -45,6 +45,7 @@ kernel kernel: Out of Memory: Kills process 2592 (mysql)
 
 Trong trường hợp này, tiến trình đã bị kill là mysql có PID là 2592.
 
+Đối với mỗi OS, thông tin về việc tiến trình bị kill bởi OOM sẽ xuất hiện tại các file khác 
 ## 4. Bài Lab OOM Killer với KVM
 
 Chúng ta sẽ tìm hiểu OOM Killer sẽ xử lý các process chạy máy ảo sử dụng RAM quá tải như thế nào trong KVM.
@@ -74,7 +75,7 @@ stress --vm 2 --vm-bytes 1G --timeout 300s
 
 - Bước 4 : Sau 1 thời gian, OOM sẽ thực hiện việc kill tiến trình của máy ảo. Kiểm tra log như sau : 
 ```sh
-cat  /var/log/messages | grep "Killed process"
+cat /var/log/messages | grep "Killed process"
 ```
 
 Kết quả như sau : 
@@ -83,6 +84,33 @@ Kết quả như sau :
 
 Đối chiếu lại tiến trình máy ảo đã chụp ở trên, chứng tỏ OOM Killer đã thực hiện việc kill 2 tiến trình máy ảo chạy nhiều RAM nhất.
 
-Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
+## 5. Kiểm tra các VM bị kill do thiếu RAM trên OpenStack
+
+Các hệ thống Cloud OpenStack có hypervisor là KVM, và các máy ảo chạy trên hypervisor đều được coi như là một tiến trình trong hệ thống. 
+
+Khi máy ảo trên OpenStack bị Shutdown đột ngột chưa rõ nguyên nhân. Để kiểm tra xem máy ảo có phải bị kill bởi OOM do thiếu RAM hay không, ta cần thực hiện 3 bước sau : 
+
+- Bước 1 : Giám sát các tiến trình máy ảo đang chạy trong hệ thống. Sử dụng câu lệnh `top -c`. 
+
+![oom](/images/img-oom/oom-04.png)
+
+- Bước 2 : Kiểm tra thông tin Log về việc OOM kill tiến trình. Kiểm tra ID của tiến trình bị kill có mapping với ID các tiến trình được giám sát ở trên hay không? Nếu có trùng, ta bước đầu xác minh tiến trình bị kill chính là tiến trình của máy ảo. 
+
+Tiếp tục kiểm tra lưu lượng sử dụng RAM của hypervisor trong khoảng thời gian tiến trình bị kill.
+ 
+![oom](/images/img-oom/oom-05.png)
+
+Có thể thấy Log về tiến trình qemu-kvm bị kill vào lúc 21 giờ 36 phút.
+
+- Bước 3 : Thực hiện kiểm tra RAM máy hypervisor tại thời điểm từ 21h - 22h :
+ 
+![oom](/images/img-oom/oom-06.png)
+
+Có thể thấy trong khoảng thời gian 21 giờ 36 phút, RAM tại hypervisor đã bị hết. Sau thời điểm tiến trình qemu-kvm chạy máy ảo bị OOM kill thì RAM available tại hypervisor đã trở lại ngưỡng ổn định. 
+
+Từ những dữ liệu trên, có thể kết luận máy ảo sử dụng RAM nhiều nhất sẽ bị kill bởi OOM Killer nếu hypervisor bị quá tải về RAM.
+
+### Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
+
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
