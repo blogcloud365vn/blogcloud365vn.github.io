@@ -5,8 +5,10 @@ categories:
   - Linux
 description: Hướng dẫn sử dụng Gatling.IO Tool trên Ubuntu 18.04
 author: thanhnb
-tags: [Load balancer, Linux, CentOS7]
+tags: [Gatling, Load balancer, Linux, CentOS7]
 type: Document
+set: performance-testing
+set_order: 17
 ---
 
 ## Giới thiệu
@@ -168,7 +170,7 @@ Kết quả
 Trong bài, tôi sẽ sử dụng Google Chrome
 
 - Bước 3.1: Truy cập `chrome://settings/`
-- Bước 3.2: Vào mục `System` lựa chọn `Openstack proxy settings`
+- Bước 3.2: Vào mục `System` lựa chọn `Open proxy settings`
 - Bước 3.3: Mở popup tùy chỉnh
   ![](/images/img-cong-cu-gatling-io/galing-3.png)
 

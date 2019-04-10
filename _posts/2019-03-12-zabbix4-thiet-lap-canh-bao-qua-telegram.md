@@ -13,12 +13,11 @@ Zabbix hỗ trợ cảnh báo qua nhiều kênh khác nhau để người quản
 
 ### Mục lục
 
-[1. Tạo bot telegram](#script)<br>
+[1. Tạo bot telegram](#bot)<br>
 [2. Cấu hình alert scripts telegram](#script)<br>
 [3. Cấu hình cảnh báo telegram trên Web Zabbix](#telegram)<br>
 
-<a name="bot"></a>
-## 1. Tạo bot telegram
+
 
 Tạo `bot` hiểu cơ bản là tạo một room được bot API Telegram hỗ trợ lắng nghe và gửi các bản tin cảnh báo. Yêu cầu bạn phải cài đặt ứng dụng telegram và tạo tài khoản để sử dụng.
 

@@ -4,7 +4,7 @@ categories:
   - Linux
 description: Hướng dẫn sử dụng Fail2ban trên CentOS
 author: canhdx
-tags: [Beginer, Linux, Other]
+tags: [Beginer, Linux, CentOS, Other]
 type: Document
 ---
 
