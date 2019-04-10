@@ -75,6 +75,8 @@ stress --vm 2 --vm-bytes 1G --timeout 300s
 
 - Bước 4 : Sau 1 thời gian, OOM sẽ thực hiện việc kill tiến trình của máy ảo. Kiểm tra log như sau : 
 ```sh
+cat /var/log/messages | grep "Killed process"
+```
 
 Kết quả như sau : 
 
