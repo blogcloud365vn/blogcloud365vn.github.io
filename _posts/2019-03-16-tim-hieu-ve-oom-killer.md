@@ -88,19 +88,19 @@ Các hệ thống Cloud OpenStack có hypervisor là KVM, và các máy ảo ch�
 
 Khi máy ảo trên OpenStack bị Shutdown đột ngột chưa rõ nguyên nhân. Để kiểm tra xem máy ảo có phải bị kill bởi OOM do thiếu RAM hay không, ta cần thực hiện 3 bước sau : 
 
- - Bước 1 : Giám sát các tiến trình máy ảo đang chạy trong hệ thống. Sử dụng câu lệnh `top -c`. 
+- Bước 1 : Giám sát các tiến trình máy ảo đang chạy trong hệ thống. Sử dụng câu lệnh `top -c`. 
 
 ![oom](/images/img-oom/oom-04.png)
 
- - Bước 2 : Kiểm tra thông tin Log về việc OOM kill tiến trình. Kiểm tra ID của tiến trình bị kill có mapping với ID các tiến trình được giám sát ở trên hay không? Nếu có trùng, ta bước đầu xác minh tiến trình bị kill chính là tiến trình của máy ảo. 
+- Bước 2 : Kiểm tra thông tin Log về việc OOM kill tiến trình. Kiểm tra ID của tiến trình bị kill có mapping với ID các tiến trình được giám sát ở trên hay không? Nếu có trùng, ta bước đầu xác minh tiến trình bị kill chính là tiến trình của máy ảo. 
 
- Tiếp tục kiểm tra lưu lượng sử dụng RAM của hypervisor trong khoảng thời gian tiến trình bị kill.
+Tiếp tục kiểm tra lưu lượng sử dụng RAM của hypervisor trong khoảng thời gian tiến trình bị kill.
  
 ![oom](/images/img-oom/oom-05.png)
 
 Có thể thấy Log về tiến trình qemu-kvm bị kill vào lúc 21 giờ 36 phút.
 
- - Bước 3 : Thực hiện kiểm tra RAM máy hypervisor tại thời điểm từ 21h - 22h :
+- Bước 3 : Thực hiện kiểm tra RAM máy hypervisor tại thời điểm từ 21h - 22h :
  
 ![oom](/images/img-oom/oom-06.png)
 
@@ -108,7 +108,7 @@ Có thể thấy trong khoảng thời gian 21 giờ 36 phút, RAM tại hypervi
 
 Từ những dữ liệu trên, có thể kết luận máy ảo sử dụng RAM nhiều nhất sẽ bị kill bởi OOM Killer nếu hypervisor bị quá tải về RAM.
 
- Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
+Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
