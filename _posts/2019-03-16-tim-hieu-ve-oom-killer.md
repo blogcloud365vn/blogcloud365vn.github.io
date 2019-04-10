@@ -110,7 +110,7 @@ Có thể thấy trong khoảng thời gian 21 giờ 36 phút, RAM tại hypervi
 
 Từ những dữ liệu trên, có thể kết luận máy ảo sử dụng RAM nhiều nhất sẽ bị kill bởi OOM Killer nếu hypervisor bị quá tải về RAM.
 
-Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
+### Xin cảm ơn đã theo dõi bài viết. Hẹn gặp lại vào chuỗi bài tiếp theo !
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
