@@ -85,7 +85,7 @@ print(date_time_utc_now.tzname())
 Lưu ý: không sử dụng hàm replace, hàm replace sẽ chỉ thay đổi tzinfo không qui đổi thời gian từ múi giờ này sang múi giờ khác
 
 ## Tips 5: Convert UTC sang timezone khác
-Nếu bạn ở múi giờ Việt Nam (GMT + 7), tức nếu hiện tại là 8 giờ sáng (giờ Việt Nam) thì quy ra giờ UTC tức 1 giờ sáng (giờ UTC). Vậy nếu datetime đang ở múi giờ UTC, ta phải convert nó sáng giờ Việt Nam
+Nếu bạn ở múi giờ Việt Nam (GMT + 7), tức nếu hiện tại là 8 giờ sáng (giờ Việt Nam) thì quy ra giờ UTC tức 1 giờ sáng (giờ UTC). Vậy nếu Datetime đang ở múi giờ UTC, ta phải convert nó sáng giờ Việt Nam
 
 ```
 import datetime

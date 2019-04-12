@@ -4,7 +4,7 @@ categories:
   - Other
 description: Hướng dẫn cài đặt Gitlab trên CentOS7
 author: canhdx
-tags: [Beginer, Linux, Git, Gitlab, Other]
+tags: [Beginer, Linux, Git, Gitlab, CentOS, Other]
 type: Document
 ---
 
