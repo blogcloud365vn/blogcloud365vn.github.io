@@ -17,6 +17,8 @@ type: Document
  
 ## 2. Sử dụng Iperf và Nload để kiểm tra băng thông mạng
  
+Tại bài Lab này chúng ta sẽ sử dụng công cụ Iperf và Nload để thực hiện kiểm tra băng thông tối đa của mạng. Bài test này thường áp dụng để kiểm tra tốc độ tối đa của đường truyền mạng và card mạng. 
+
 # Mô hình 
 ![1](https://i.imgur.com/SZETxcQ.png) 
 
