@@ -104,10 +104,6 @@ phần trên tôi đã nói về cách để bắt một gói tin để có th�
 ## Kịch bản sử dụng tcpdump 
 Tôi sẽ xin ngừng cấp địa chỉ IP tại máy tính của mình sau đó xin cấp lại địa chỉ IP và bắt gói tin trong quá trình máy tính của tôi xin cấp địa chỉ IP để các bạn có thể thấy phương pháp hoạt động mà chúng ta sử dụng. Ta sẽ sử dụng 2 terminal để có thể vừa bắt gói tin bằng `tcpdump` và vừa xin cấp ip bằng `dhclient`
 ## Thực hiện 
-Đầu tiên chúng ta ngừng việc sử dụng ip của máy tính 
-```
-anhduc@anhduc:~$ sudo dhclient -r 
-```
 Trước khi xin cấp lại địa chỉ Ip thì ta sử dụng lệnh tcpdump để có thể bắt gói tin với giao thức DHCP. Gói tin của giao thức DHCP sử dụng port của UDP để giao tiếp chính vì thế mà ta phải sử dụng lệnh tcpdump như sau 
 ```
 anhduc@anhduc:~$ sudo tcpdump udp -i enp37s0 -w dhcp.pcap 
@@ -125,9 +121,49 @@ tcpdump: listening on enp37s0, link-type EN10MB (Ethernet), capture size 262144 
 8 packets received by filter
 0 packets dropped by kernel
 ```
+## Phân tích gói 4 bản tin
+1. DHCP DISCOVERY
 
+![](/images/img-dhcp/screenshot_17.png)
+
+Trong đó 
+- 1: là địa chỉ đầu và địa chỉ cuối của gói tin ghi bằng MAC
+- 2: là địa chỉ đầu và cuối nhưng được ghi bằng IPv4
+- 3: là port mà gói tin đó sử dụng
+- 4: địa chỉ IP của client
+- 5: MAC của client
+- 6: IP client yêu cầu được cấp phát
+
+2.  DHCP OFFER
+
+![](/images/img-dhcp/screenshot_18.png)
+
+Trong đó 
+- Option 54: chỉ đính danh DHCP server
+- Option 51: thời gian cho thuê địa chỉ IP
+- Option 1: địa chỉ subnet Mask
+- Option 28 : địa chỉ broadcast
+- Option 3 : địa chỉ default gateway
+- Option 6 : địa chỉ DNS
+
+3. DHCP Request
+
+![](/images/img-dhcp/screenshot_19.png)
+
+- Option 53: Kiểu tin nhắn
+- Option 55: Danh sách tham số yêu cầu
+- Option 50: Địa chỉ IP yêu cầu
+
+4.  DHCP ACK
+
+![](/images/img-dhcp/screenshot_20.png)
+
+- Nhiệm vụ của gói tin này là để xác nhận lại thông tin đã cấp cho client
 ## Tổng kết
 Như chúng ta đã thấy được cách sử dụng của lệnh tcpdump và cách thức hoạt động của giao thức DHCP. Các gói tin trong DHCP ghi những gì và nội dung của nó bao gồi những gì? Nếu bạn muốn biết điều đó thì chúng ta hãy cùng phân tích gói tin đó và cùng tìm hiểu DHCP ở trong KVM ở bài tiếp theo nha. 
+
 Chúc các bạn thanh công!
+
 Thực hiện bởi [cloud365](https://cloud365.vn/)
+
 Written by [Nguyễn Anh ĐỨc](https://nhanhoa.com/)
