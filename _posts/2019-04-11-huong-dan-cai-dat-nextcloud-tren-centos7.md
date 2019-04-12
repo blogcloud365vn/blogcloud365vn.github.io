@@ -154,7 +154,7 @@ user
 
 ## Truy cập và Cấu hình NextCloud 
 ```sh 
-https://server_domain_or_IP/owncloud
+https://server_domain_or_IP/nextcloud
 ```
 
 Kết nối tài khoản MySQL đã tạo phía trên 

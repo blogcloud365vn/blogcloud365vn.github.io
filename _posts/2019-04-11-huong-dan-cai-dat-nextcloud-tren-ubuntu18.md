@@ -1,8 +1,8 @@
 ---
-title: Cài đặt OwnCloud trên Ubuntu18
+title: Cài đặt NextCloud trên Ubuntu18
 categories:
   - Linux
-description: Cài đặt OwnCloud trên Ubuntu18
+description: Cài đặt NextCloud trên Ubuntu18
 author: canhdx
 tags: [Beginer, Linux, Ubuntu, Other]
 type: Document
@@ -105,7 +105,7 @@ sudo mysql_secure_installation
 
 > Mặc đinh mật khẩu root của mysql sẽ để trống. Bước này có thể có hoặc không có tùy nhu cầu của Administrators
 
-Cấu hình DB, user cho `OwnCloud`
+Cấu hình DB, user cho `NextCloud`
 
 - Truy cập mysql 
 ```sh 
@@ -158,7 +158,7 @@ sudo systemctl reload apache2
 
 ## Truy cập và Cấu hình NextCloud 
 ```sh 
-https://server_domain_or_IP/owncloud
+https://server_domain_or_IP/nextcloud
 ```
 
 Kết nối tài khoản MySQL đã tạo phía trên 
