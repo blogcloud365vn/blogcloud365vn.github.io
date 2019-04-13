@@ -160,7 +160,7 @@ Trong đó
 
 - Nhiệm vụ của gói tin này là để xác nhận lại thông tin đã cấp cho client
 ## Tổng kết
-Như chúng ta đã thấy được cách sử dụng của lệnh tcpdump và cách thức hoạt động của giao thức DHCP. Các gói tin trong DHCP ghi những gì và nội dung của nó bao gồi những gì? Nếu bạn muốn biết điều đó thì chúng ta hãy cùng phân tích gói tin đó và cùng tìm hiểu DHCP ở trong KVM ở bài tiếp theo nha. 
+Như chúng ta đã thấy được cách sử dụng của lệnh tcpdump và cách thức hoạt động của giao thức DHCP. Nó đã sử dụng 4 gói tin để có thể cấp phát địa chỉ IP cho client vậy thì trong KVM DHCP sẽ hoạt động ra sao chúng ta sẽ cùng nhau phân tích việc đó ở bài DHCP trong KVM.
 
 Chúc các bạn thanh công!
 
