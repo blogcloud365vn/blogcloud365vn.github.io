@@ -4,7 +4,7 @@ categories:
   - Container
 description: Tìm hiểu về Docker - Phần 5 - Các câu lệnh với container
 author: huytm
-tags: [Docker, Centos]
+tags: [Docker, CentOS]
 type: Document
 ---
 

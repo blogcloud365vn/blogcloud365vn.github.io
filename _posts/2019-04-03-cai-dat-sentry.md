@@ -1,18 +1,18 @@
 ---
-date: 2019-04-04
+date: 2019-04-03
 title: Hướng dẫn cài đặt sentry trên centOS 7
 categories:
-  - Linux
+  - Other
 description: Hướng dẫn cài đặt sentry trên centOS 7
 author: huytm
-tags: [Python, Linux]
+tags: [Sentry, Linux]
 type: Document
 ---
 
 ## Mở đầu
 
 <p align="center">
-<img src="/images/img-sentry/img-sentry0.png">
+<img src="/images/img-jekyll/image1.png">
 </p>
 
 Bạn đang là Developer và bạn cần tracking các exceptions trong ứng dụng của mình ? Bạn đã bắt log cho ứng dụng của mình nhưng vẫn bị sót các exception? Hoặc đơn giản bạn muốn đếm số lần xuất hiện một lỗi cụ thể ở ứng dụng của bạn.
@@ -25,7 +25,7 @@ Và ở bài viết này mình sẽ hướng dẫn các bạn cài đặt và s�
 Đặc biệt Sentry hỗ trợ khá nhiều ngôn ngữ và framework trong đó có Ruby, Js, Java, Django, iOS, .NET ...
 
 <p align="center">
-<img src="/images/img-sentry/img-sentry1.png">
+<img src="/images/img-sentry/cai-dat/img-sentry1.png">
 </p>
 
 ## Tại sao mình lại lựa chọn sử dụng Sentry
@@ -43,7 +43,7 @@ Và ở bài viết này mình sẽ hướng dẫn các bạn cài đặt và s�
 Chuẩn bị một [SSD Cloud VPS](https://cloud365.vn){:target="_blank"} CentOS7 có cấu hình tối thiểu như sau: 
 
 <p align="center">
-<img src="/images/img-jekyll/image1.png">
+<img src="/images/img-jekyll/cai-dat/image1.png">
 </p>
 
 ### CÁCH 1: CÀI MANUAL TRÊN CENTOS 7
@@ -296,7 +296,7 @@ http://<your_vps_ip>:9000
 ```
 
 <p align="center">
-<img src="/images/img-sentry/img-sentry3.png">
+<img src="/images/img-sentry/cai-dat/img-sentry3.png">
 </p>
 
 ---
@@ -369,7 +369,7 @@ http://<your_vps_ip>:9000
 ```
 
 <p align="center">
-<img src="/images/img-sentry/img-sentry4.png">
+<img src="/images/img-sentry/cai-dat/img-sentry4.png">
 </p>
 
 
@@ -384,6 +384,7 @@ Như vậy, trong bài viết này mình đã giới thiệu về Sentry và cà
 ### Tài liệu tham khảo
 
 [https://docs.sentry.io/server/installation/](https://docs.sentry.io/server/installation/){:target="_blank"}
+
 ---
 
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

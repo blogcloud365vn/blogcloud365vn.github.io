@@ -4,7 +4,7 @@ categories:
   - Other
 description: Tài liệu hướng dẫn sử dụng Jekyll, Phần 1 - Cài đặt Jekyll trên CentOS 7
 author: huytm
-tags: [Jekyll, Centos]
+tags: [Jekyll, CentOS]
 type: Document
 ---
 
