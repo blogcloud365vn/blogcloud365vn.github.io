@@ -25,6 +25,7 @@ type: Document
 - Disk: >= 10 GB
 - CPU: >= 1 Core
 - Yêu cầu có kết nối internet để cài đặt 
+- Login và thao tác với user `root`
 - Update và cài đặt openssh-server
 ```sh 
 sudo apt-get update -y 
@@ -75,7 +76,6 @@ Profile: Apache Full
 Title: Web Server (HTTP,HTTPS)
 Description: Apache v2 is the next generation of the omnipresent Apache web
 server.
-
 Ports:
   80,443/tcp
 ```
@@ -125,7 +125,7 @@ exit
 
 Cài đặt 
 ```sh 
-sudo apt install -y php libapache2-mod-php php-mysql php-cli php-bz2 php-curl php-gd php-imagick php-intl php-mbstring php-xml php-zip
+sudo apt install -y php libapache2-mod-php php-ldap php-mysql php-cli php-bz2 php-curl php-gd php-imagick php-intl php-mbstring php-xml php-zip
 ```
 
 > Mặc định repo PHP trên Ubuntu18 sẽ sử dụng php7.2
@@ -141,24 +141,70 @@ wget https://download.nextcloud.com/server/releases/nextcloud-15.0.7.zip -O /opt
 Giải nén 
 ```sh 
 apt-get install unzip -y 
-unzip /opt/nextcloud.zip -d /var/www/html/
+unzip /opt/nextcloud.zip -d /var/www/
 rm -f /opt/nextcloud.zip
+```
+
+Cấu hình Virtual host 
+```sh 
+cat << EOF >> /etc/apache2/sites-available/nextcloud.conf
+
+<VirtualHost *:80>
+    ServerAdmin admin@localhost.local
+    DocumentRoot /var/www/nextcloud/
+    #ServerName example.com
+    #ServerAlias www.example.com
+  
+
+    Alias /nextcloud "/var/www/nextcloud/"
+
+    <Directory /var/www/nextcloud/>
+       Options +FollowSymlinks
+       AllowOverride All
+       Require all granted
+        <IfModule mod_dav.c>
+        	Dav off
+        </IfModule>
+       SetEnv HOME /var/www/nextcloud
+       SetEnv HTTP_HOME /var/www/nextcloud
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+EOF
 ```
 
 Phân quyền 
 ```sh 
-chmod 755 -R /var/www/html/
-chown www-data. -R /var/www/html/
+chmod 755 -R /var/www/nextcloud/
+chown www-data. -R /var/www/nextcloud/
 ```
 
-Reload lại apache
+Backup lại default config page 
 ```sh 
+mv /etc/apache2/sites-available/000-default.{conf,conf.bk}
+```
+
+Enable các mode hỗ trợ 
+```sh 
+sudo a2enmod rewrite
+sudo a2enmod headers
+sudo a2enmod env
+sudo a2enmod dir
+sudo a2enmod mime
+```
+
+Enable config NextCloud và Reload lại apache 
+```sh 
+sudo a2ensite nextcloud.conf
 sudo systemctl reload apache2
 ```
 
 ## Truy cập và Cấu hình NextCloud 
 ```sh 
-https://server_domain_or_IP/nextcloud
+https://server_domain_or_IP
 ```
 
 Kết nối tài khoản MySQL đã tạo phía trên 
