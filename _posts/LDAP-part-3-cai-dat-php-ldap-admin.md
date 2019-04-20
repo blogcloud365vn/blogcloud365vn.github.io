@@ -121,7 +121,7 @@ Kết quả như sau:
 
 ![ldap-10](/images/img-ldap-datpt/ldap-10.png)
 
-Đăng nhập với dn và password như sau:
+Đăng nhập với `dn` và `password` như sau:
 
 ![ldap-11](/images/img-ldap-datpt/ldap-11.png)
 
