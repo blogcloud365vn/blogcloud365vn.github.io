@@ -56,15 +56,65 @@ Tạo zone forward:
 
 ```sh
 cat /var/named/tuanda.fwd.zone 
+$TTL 86400
+@       IN SOA  masterdns.tuanda.com.     root.tuanda.com. (
+                                  2014090401    ; serial
+                                        3600    ; refresh
+                                        1800    ; retry
+                                      604800    ; expire
+                                       86400 )  ; minimum
+
+; Name server's
+
+@           IN      NS      masterdns.tuanda.com.
+
+; Name server hostname to IP resolve.
+
+@           IN      A       172.16.4.243
+
+; Hosts in this Domain
+
+@           IN      A       172.16.4.243
+masterdns   IN      A       172.16.4.243
+a           IN      A       172.16.4.242
+mail        IN      A       172.16.4.242
+b           IN      A       172.16.4.241
+; mail server
+@           IN      MX 10   mail
+
+;CNAME
+www         IN      CNAME   a
+
+;TXT
+@           IN      TXT     "Day la ban ghi TXT"
 ```
-<span style="display:block;text-align:center">![](/images/img-bind/bind_3.png)</span>
 
 Tạo zone reverse (bản ghi PTR):
 
 ```sh
-cat /var/named/tuanda.rev.zone
+[root@dns-test ~]# cat /var/named/tuanda.rev.zone 
+$TTL 86400
+@       IN SOA  masterdns.tuanda.com. root.tuanda.com. (
+                                2014090402      ; serial
+                                      3600      ; refresh
+                                      1800      ; retry
+                                    604800      ; expire
+                                     86400 )    ; minimum
+
+; Name server's
+
+@               IN      NS      masterdns.tuanda.com.
+
+; Name server hostname to IP resolve.
+
+masterdns       IN      A       172.16.4.243
+
+;Hosts in Domain 
+
+243             IN      PTR   masterdns.tuanda.com.
+242             IN      PTR   a.tuanda.com.
+241             IN      PTR   b.tuanda.com.
 ```
-<span style="display:block;text-align:center">![](/images/img-bind/bind_4.png)</span>
 
 Thêm quyền cho file zone:
 
@@ -75,12 +125,67 @@ sudo chgrp named /var/named/tuanda.rev.zone
 
 Chỉnh sửa cấu hình của service cho phù hợp `/etc/named.conf` :
 
-<span style="display:block;text-align:center">![](/images/img-bind/bind_5.png)</span>
-
-
-Thêm bên dưới phần cấu hình Zone forward và Zone reverse, giả định là domain "tuanda.com":
-
 ```sh
+options {
+        listen-on port 53 { any; };
+        listen-on-v6 port 53 { ::1; };
+
+        # Thư mục service làm việc
+        directory       "/var/named";
+        # Thư mục cache
+        dump-file       "/var/named/data/cache_dump.db";
+        statistics-file "/var/named/data/named_stats.txt";
+        memstatistics-file "/var/named/data/named_mem_stats.txt";
+        recursing-file  "/var/named/data/named.recursing";
+        secroots-file   "/var/named/data/named.secroots";
+        # Cho phép query DNS từ dải IP nào hoặc tất cả các dải
+        allow-query     { localhost; 103.28.36.0/20;};
+        # transfer range ( điều chỉnh nếu có Secondary DNS)
+        # allow-transfer      { localhost; 10.0.0.0/24; };
+
+        /*
+         - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
+         - If you are building a RECURSIVE (caching) DNS server, you need to enable
+           recursion.
+         - If your recursive DNS server has a public IP address, you MUST enable access
+           control to limit queries to your legitimate users. Failing to do so will
+           cause your server to become part of large scale DNS amplification
+           attacks. Implementing BCP38 within your network would greatly
+           reduce such attack surface
+        */
+        recursion yes;
+
+#       dnssec-enable yes;
+#       dnssec-validation yes;
+        dnssec-enable no;
+        dnssec-validation no;
+
+        /* Path to ISC DLV key */
+        bindkeys-file "/etc/named.iscdlv.key";
+
+        managed-keys-directory "/var/named/dynamic";
+
+        pid-file "/run/named/named.pid";
+        session-keyfile "/run/named/session.key";
+};
+
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+
+zone "." IN {
+        type hint;
+        file "named.ca";
+};
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+
+#Thêm bên dưới phần cấu hình Zone forward và Zone reverse, giả định là domain "tuanda.com":
+
 zone "tuanda.com" IN {
 type master;
 file "tuanda.fwd.zone";
@@ -88,7 +193,7 @@ file "tuanda.fwd.zone";
 allow-update { none; };
 };
 
-zone "x.101.103.in-addr.arpa" IN {
+zone "4.16.172.in-addr.arpa" IN {
 type master;
 file "tuanda.rev.zone";
 allow-update { none; };
