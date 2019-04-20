@@ -24,32 +24,32 @@ Trong bài viết này mình sẽ hướng dẫn cách tích hợp Sentry với 
 - Đăng nhập vào Sentry với địa chỉ *http://your_sentry_server:9000*. Ở đây địa chỉ mình sentry server của mình là **10.10.12.193**
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-1.png">
+<img src="/images/img-sentry/sentry-django/img-1.png">
 </p>
 
 - Nhập thông tin và chọn **Continue**
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-2.png">
+<img src="/images/img-sentry/sentry-django/img-2.png">
 </p>
 
 - Tạo mới một Project
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-3.png">
+<img src="/images/img-sentry/sentry-django/img-3.png">
 </p>
 
 - Chọn **Django**, nhập tên Project sau đó chọn **Create Project**
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-4.png">
+<img src="/images/img-sentry/sentry-django/img-4.png">
 </p>
 
 
 - Tại màn hình tiếp theo, lưu ý copy lại thông tin dsn (Phần bôi đỏ) sau đó chọn **Got it! Take me to the Issue Stream**
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-5.png">
+<img src="/images/img-sentry/sentry-django/img-5.png">
 </p>
 
 OK đến đây đã xong phase với Sentry
@@ -109,13 +109,13 @@ python manage.py runserver
 Thử truy cập vào 1 đường dẫn không tồn tại trên Django 
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-6.png">
+<img src="/images/img-sentry/sentry-django/img-6.png">
 </p>
 
 Truy cập Sentry và thấy đã có log lỗi
 
 <p align="center">
-<img src="../images/img-sentry/sentry-django/img-7.png">
+<img src="/images/img-sentry/sentry-django/img-7.png">
 </p>
 
 ## Tổng kết
