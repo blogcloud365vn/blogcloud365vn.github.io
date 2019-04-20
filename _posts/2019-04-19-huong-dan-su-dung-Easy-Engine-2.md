@@ -7,6 +7,8 @@ description: Hướng dẫn cơ bản sử dụng công cụ Easy Engine (Phần
 author: tuanda
 tags: [Linux]
 type: Document
+set: Gioi-thieu-EE
+set_order: 19
 ---
 
 ## Các câu lệnh quản lý website cơ bản

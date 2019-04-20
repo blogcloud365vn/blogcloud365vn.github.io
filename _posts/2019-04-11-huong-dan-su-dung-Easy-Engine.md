@@ -7,6 +7,8 @@ description: Hướng dẫn cơ bản sử dụng công cụ Easy Engine
 author: tuanda
 tags: [Linux]
 type: Document
+set: Gioi-thieu-EE
+set_order: 20
 ---
 
 ## EasyEngine là gì?
