@@ -115,7 +115,27 @@ Khi thực hiện mv có thể xuất hiện lỗi device đang busy thì cần 
 Copy dữ liệu trong /var/tmp vào /tmp
 
 ```sh
-cp -pR /var/tmpbak/* /tmp
+cp -pR /var/tmpbak/* /tmp/
+```
+
+## Script secure tmp
+
+```sh
+dd if=/dev/zero of=/dev/tmpDIR bs=1024 count=1000000
+/sbin/mkfs.ext3 -F /dev/tmpDIR
+cp -Rpf /tmp /tmpbak
+mount -o loop,noexec,nosuid,rw /dev/tmpDIR /tmp
+chmod 1777 /tmp
+cd /tmpbak
+cp -Rpf * /tmp/
+
+echo "/dev/tmpDIR /tmp ext3 loop,nosuid,noexec,rw 0 0" >> /etc/fstab
+
+mv /var/tmp /var/tmpbak
+
+ln -s /tmp /var/tmp
+cp -pR /var/tmpbak/* /tmp/
+
 ```
 
 

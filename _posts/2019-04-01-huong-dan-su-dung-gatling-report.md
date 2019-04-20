@@ -7,6 +7,8 @@ description: Hướng dẫn sử dụng Gatling Report
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
+set: performance-testing
+set_order: 12
 ---
 
 ## Tổng quan

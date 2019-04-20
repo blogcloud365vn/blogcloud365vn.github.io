@@ -4,7 +4,7 @@ categories:
   - Container
 description: Tìm hiểu về Docker - Phần 6 - Các câu lệnh với image
 author: huytm
-tags: [Docker, Centos]
+tags: [Docker, CentOS]
 type: Document
 ---
 

@@ -4,7 +4,7 @@ categories:
   - Container
 description: Tìm hiểu về Docker - Phần 4 - Tạo image từ Dockerfile
 author: huytm
-tags: [Docker, Centos]
+tags: [Docker, CentOS]
 type: Document
 ---
 

@@ -7,6 +7,8 @@ description: Tổng quan về khái niệm Performance Testing
 author: thanhnb
 tags: [Gatling, Linux, CentOS]
 type: Document
+set: performance-testing
+set_order: 16
 ---
 
 ## Tổng quan
