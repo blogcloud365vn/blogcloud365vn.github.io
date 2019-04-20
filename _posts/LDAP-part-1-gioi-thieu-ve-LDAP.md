@@ -39,7 +39,7 @@ LDAP hoạt động theo mô hình client-server, client gửi yêu cầu đến
 
 Trình tự khi có kết nối LDAP :
 
-![ldap-1](/images/img-ldap-datpt/ldap-1.png)
+![ldap-1](/images/img-ldap-datpt/ldap-1-1.png)
 
 Trình tự kết nối như sau :
 
@@ -61,11 +61,11 @@ Do client và server giao tiếp thông qua các thông điệp. Client tạo m�
 
 Nếu client tìm kiếm thư mục và nhiều kết quả được tìm thấy thì các kết quả này được gửi đến client bằng nhiều thông điệp. Chi tiết như hình bên dưới :
 
-![ldap-2](/images/img-ldap-datpt/ldap-2.png)
+![ldap-2](/images/img-ldap-datpt/ldap-2-2.png)
 
 Do LDAP là giao thức hướng thông điệp cho nên client được phép phát ra nhiều thông điệp yêu cầu cùng một lúc. Trong LDAP message ID dùng để phân biệt các yêu cầu của client và kết quả trả về của server.
 
-![ldap-3](/images/img-ldap-datpt/ldap-3.png)
+![ldap-3](/images/img-ldap-datpt/ldap-3-3.png)
 
 Việc cho phép nhiều thông điệp cùng xử lý đồng thời làm cho LDAP linh động hơn các giao thức khác.
 
@@ -117,7 +117,7 @@ Mô hình LDAP Naming định nghĩa ra cách để chúng ta có thể sắp x�
 
 Mô hình LDAP Naming cho phép chúng ta có thể đặt dữ liệu vào thư mục theo cách mà chúng ta có thể dễ dàng quản lý nhất.
 
-![ldap-6](/images/img-ldap-datpt/ldap-6.png)
+![ldap-6](/images/img-ldap-datpt/ldap-6-6.png)
 
 Giống như đường dẫn của hệ thống tập tin, tên của một entry LDAP được hình thành bằng cách nối tất cả các tên của từng entry cấp trên(cha) cho đến cấp cao nhất root.
 
@@ -145,15 +145,15 @@ Thao tác tìm kiếm (LDAP search operation) yêu cầu 8 tham số:
 
     - Thao tác tìm kiếm với phạm vi base :
 
-    ![ldap-7](/images/img-ldap-datpt/ldap-7.png)
+    ![ldap-7](/images/img-ldap-datpt/ldap-7-7.png)
 
     - Thao tác tìm kiếm với phạm vi onelevel:
 
-    ![ldap-8](/images/img-ldap-datpt/ldap-8.png)
+    ![ldap-8](/images/img-ldap-datpt/ldap-8-8.png)
 
     - Thao tác tìm kiếm với phạm vi subtree:
 
-    ![ldap-9](/images/img-ldap-datpt/ldap-9.png)
+    ![ldap-9](/images/img-ldap-datpt/ldap-9-9.png)
 
 - Tham số thứ ba derefAliases , cho server biết rằng liệu bí danh aliases có bị bỏ qua hay không khi thực hiện tìm kiếm, có 4 giá trị mà derefAliases có thể nhận được: nerverDerefAliases, derefInsearching, derefFindingBaseObject, derfAlways.
 
