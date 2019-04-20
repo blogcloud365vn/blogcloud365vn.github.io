@@ -64,27 +64,19 @@ Applications: Filesystems
 
 Click `Add`
 
-![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1307png)
+![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1307.png)
 
+Items mới **Used disk space on / (percentage)** được tạo.
 
+![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1308.png)
 
+## 3. Hiển thị giá trị Used disk space on / (percentage)
 
+Click `Monitoring -> Lastest data -> Lựa chọn Host`
 
+![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1309.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Với hướng dẫn cơ bản trên giúp bạn giám sát thêm được thông tin về disk trông server linux.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
