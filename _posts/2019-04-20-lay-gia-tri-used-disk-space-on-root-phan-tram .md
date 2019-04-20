@@ -9,7 +9,7 @@ tags: [Zabbix]
 type: Document
 ---
 
-Khi bạn cài đặt `zabbix server` để giám giát các server chạy hệ điều hành nhân linux, mặc định <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix </a>hỗ trợ template **"Template OS Linux"** cho phép thu thập, giám sát, hiển thị các thông tin cơ bản về Memory , Filesystems, OS, Performance, Network interfaces, Processes, Security, CPU. Nhưng khi sử dụng template sẵn có cũng đáp ứng được hết các nhu cầu giám giát của người quản trị. Để có thể giám sát được các thông số theo yêu cầu bạn phải tùy biến lại một số phần về `item` trong những template sẵn có của zabbix.
+Khi bạn cài đặt `zabbix server` để giám giát các server chạy hệ điều hành nhân linux, mặc định <a href="https://blog.cloud365.vn/monitor/cai-dat-zabbix-4-lts-tren-centos7/" target="_blank">zabbix </a>hỗ trợ template **"Template OS Linux"** cho phép thu thập, giám sát, hiển thị các thông tin cơ bản về Memory , Filesystems, OS, Performance, Network interfaces, Processes, Security, CPU. Nhưng khi sử dụng template sẵn có cũng đáp ứng được hết các nhu cầu giám giát của người quản trị. Để có thể giám sát được các thông số theo yêu cầu bạn phải tùy biến lại một số phần về `items` trong những template sẵn có của zabbix.
 
 Mặc định `Template OS Linux` hiển thị `Used disk space on /` (Dung lượng sử dụng thư mục root trong server linux) đơn vị dạng `GB`. Thư mục / (root) là phần chiếm dung lượng lớn của disk, để biết dung lượng disk trình trạng sử dụng thế nào bạn phải theo dõi tham số này. Khi hiển thị đơn vị dạng `GB` không cho người quản trị thấy được server của bạn disk sử dụng sắp hết hay như thế nào, chỉ khi biểu thị dưới dạng `%` thì bạn có thể hiểu rõ dung lượng disk sắp hết hay vẫn còn có thể sử dụng.
 
@@ -24,7 +24,7 @@ Truy cập địa chỉ `http://ip-zabbix-server/zabbix/` để login vào zabbi
 ![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1303.png)
 
 
-## 2. Tạo item 	Used disk space on / (percentage)
+## 2. Tạo items 	Used disk space on / (percentage)
 
 Lựa chọn template `Template OS Linux`.
 
