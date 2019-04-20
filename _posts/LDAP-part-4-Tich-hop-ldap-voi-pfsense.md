@@ -22,11 +22,15 @@ Pfsense
 
 - PHP ldapadmin
 
+## Mô hình.
+
+![ldap-18](/images/img-ldap-datpt/ldap-18.png)
+
 
 ## Các bước chuẩn bị trên LDAP.
 
 
-Tạo một cấu trúc như sau:
+#### Tạo một cấu trúc như sau:
 
 ![alt text](/images/img-ldap-datpt/anh1.png)
 
@@ -96,7 +100,7 @@ Tạo group, tùy vào mục đích sử dụng sẽ tạo các group khác nhau
 Thực hiện tạo các user và group khác tùy mục đích sử dụng của bạn
 
 
-## Pfsense
+## Các bước thực hiện trên pfsense
 
 Đăng nhập vào tài khoản admin 
 
