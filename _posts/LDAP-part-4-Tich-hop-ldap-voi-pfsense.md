@@ -12,7 +12,7 @@ set_order: 27
 
 ## Lời mở đầu.
 
-Ở bài trước mình đã giới thiệu với mọi người về xác thực tập chung và LDAP, ở bài này mình sẽ hướng dẫn mọi người cài đặt LDAP trên CentOS 7.
+Pfsense
 
 ## Chuẩn bị.
 

@@ -12,7 +12,7 @@ set_order: 28
 
 ## Lời mở đầu.
 
-Ở bài trước mình đã giới thiệu với mọi người về xác thực tập chung và LDAP, ở bài này mình sẽ hướng dẫn mọi người cài đặt LDAP trên CentOS 7.
+Đối với hệ thống OpenLDAP thì việc quản lý, update tài khoản người dùng phải dùng bằng lệnh cho nên khá khó khăn do đó hôm này mình sẽ giới thiệu đến mọi người một công cụ giúp chúng ta có thể dễ dàng quản lý OpenLDAP đó là phpldapadmin. Được code bằng ngôn ngữ PHP và chạy trên nền web cho nên ứng dụng này đáng được lựa chọn nếu như chúng ta đang cần một công cụ hỗ trợ việc quản trị OpenLDAP.
 
 ## Chuẩn bị.
 
