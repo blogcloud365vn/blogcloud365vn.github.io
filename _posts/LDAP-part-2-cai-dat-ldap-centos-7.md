@@ -61,6 +61,8 @@ yum install epel-release -y
 yum update -y
 ```
 
+## Cài đặt OpenLDAP
+
 Cài đặt `openldap-servers` và `openldap-clients`:
 
 ```sh
