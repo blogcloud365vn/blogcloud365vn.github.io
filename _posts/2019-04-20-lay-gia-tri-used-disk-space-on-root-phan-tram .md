@@ -70,7 +70,7 @@ Items mới **Used disk space on / (percentage)** được tạo.
 
 ![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1308.png)
 
-## 3. Hiển thị giá trị Used disk space on / (percentage)
+## 3. Kiểm tra giá trị Used disk space on / (percentage)
 
 Click `Monitoring -> Lastest data -> Lựa chọn Host`
 
