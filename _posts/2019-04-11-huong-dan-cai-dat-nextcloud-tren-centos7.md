@@ -31,6 +31,7 @@ NextCloud cũng giống như OwnCloud hỗ trợ trên hầu như tất cả cá
 - Disk: >= 10 GB
 - CPU: >= 1 Core
 - Yêu cầu có kết nối internet để cài đặt
+- Login và thao tác với user `root`
 - Update và cài đặt openssh-server
 ```sh 
 yum install -y epel-release
@@ -122,7 +123,7 @@ exit
 yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum install -y yum-utils
 yum-config-manager --enable remi-php72
-yum install php php-mysql php-dom php-mbstring php-gd php-pdo php-json php-xml php-zip php-curl php-mcrypt php-pear php-intl setroubleshoot-server -y 
+yum install php php-mysql php-dom php-mbstring php-gd php-ldap php-pdo php-json php-xml php-zip php-curl php-mcrypt php-pear php-intl setroubleshoot-server -y 
 ```
 
 ## Cài đặt NextCloud 
@@ -137,24 +138,54 @@ wget https://download.nextcloud.com/server/releases/nextcloud-15.0.7.zip -O /opt
 Giải nén 
 ```sh 
 yum install unzip -y 
-unzip /opt/nextcloud.zip -d /var/www/html/
+unzip /opt/nextcloud.zip -d /var/www/
 rm -f /opt/nextcloud.zip
 ```
 
 Phân quyền 
 ```sh 
-chmod 755 -R /var/www/html/
-chown apache. -R /var/www/html/
+sudo chmod 755 -R /var/www/nextcloud/
+sudo chown apache. -R /var/www/nextcloud/
+```
+
+Bổ sung config cho httpd 
+```sh 
+cat << EOF >> /etc/httpd/conf.d/nextcloud.conf
+
+<VirtualHost *:80>
+
+ServerAdmin admin@yourdomain.com
+DocumentRoot /var/www/nextcloud
+#ServerName yourdomain.com 
+#ServerAlias www.yourdomain.com
+
+<Directory /var/www/html/nextcloud>
+Options +FollowSymlinks
+AllowOverride All
+
+<IfModule mod_dav.c>
+Dav off
+</IfModule>
+
+SetEnv HOME /var/www/nextcloud
+SetEnv HTTP_HOME /var/www/nextcloud
+</Directory>
+
+ErrorLog /var/log/httpd/nextcloud-error_log
+CustomLog /var/log/httpd/nextcloud-access_log common
+
+</VirtualHost>
+EOF
 ```
 
 Reload lại httpd
 ```sh 
-user
+sudo systemctl restart httpd 
 ```
 
 ## Truy cập và Cấu hình NextCloud 
 ```sh 
-https://server_domain_or_IP/nextcloud
+https://server_domain_or_IP/
 ```
 
 Kết nối tài khoản MySQL đã tạo phía trên 
