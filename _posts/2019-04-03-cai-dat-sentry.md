@@ -12,7 +12,7 @@ type: Document
 ## Mở đầu
 
 <p align="center">
-<img src="/images/img-jekyll/image1.png">
+<img src="/images/img-sentry/cai-dat/img-sentry0.png">
 </p>
 
 Bạn đang là Developer và bạn cần tracking các exceptions trong ứng dụng của mình ? Bạn đã bắt log cho ứng dụng của mình nhưng vẫn bị sót các exception? Hoặc đơn giản bạn muốn đếm số lần xuất hiện một lỗi cụ thể ở ứng dụng của bạn.
@@ -43,7 +43,7 @@ Và ở bài viết này mình sẽ hướng dẫn các bạn cài đặt và s�
 Chuẩn bị một [SSD Cloud VPS](https://cloud365.vn){:target="_blank"} CentOS7 có cấu hình tối thiểu như sau: 
 
 <p align="center">
-<img src="/images/img-jekyll/cai-dat/image1.png">
+<img src="/images/img-jekyll/image1.png">
 </p>
 
 ### CÁCH 1: CÀI MANUAL TRÊN CENTOS 7
@@ -176,7 +176,7 @@ virtualenv /home/sentry/sentry_app
 
 ```
 source /home/sentry/sentry_app/bin/activate
-pip install -U sentry
+pip install sentry==9.0.0
 ```
 
 - Khởi tạo sentry
@@ -193,7 +193,7 @@ DATABASES = {
         'ENGINE': 'sentry.db.postgres',
         'NAME': 'sentrydb',
         'USER': 'sentry',
-        'PASSWORD': 'thanh123',
+        'PASSWORD': 'cloud365',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -234,7 +234,7 @@ systemctl start supervisord.service
 systemctl enable supervisord.service
 ```
 
-- Sửa cấu hình ở file `/etc/supervisord.conf`. Và thêm dòng sau vào cuối file
+- Yhêm dòng sau vào cuối file
 
 ```
 echo "files = supervisord.d/*.conf" >> /etc/supervisord.conf
@@ -316,7 +316,24 @@ yum install git -y
 
 #### Bước 2. Cài đặt Docker
 
-- Cài đặt Docker trên centOS 7 theo bài viết [này](https://blog.cloud365.vn/container/tim-hieu-docker-phan-2/){:target="_blank"} 
+```
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+```
+
+```
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
+
+```
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+```
+
+```
+sudo systemctl start docker
+docker -v
+```
+
+- Tham khảo thêm tại bài viết này [này](https://blog.cloud365.vn/container/tim-hieu-docker-phan-2/){:target="_blank"} 
 
 #### Bước 3. Cài đặt Docker Compose
 
@@ -328,13 +345,30 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-#### Bước 4. Build senty container
+#### Bước 4. Build sentry container
 
-- Build Sentry với Docker compose
+- Clone **onpremise** repo
 
 ```
 git clone https://github.com/getsentry/onpremise.git docker-sentry
 cd docker-sentry
+```
+- Chọn image docker là **sentry:9.0.0**
+
+```
+> Dockerfile
+echo "FROM sentry:9.0.0-onbuild" > Dockerfile
+```
+
+```
+cat Dockerfile
+```
+
+> FROM sentry:9.0.0-onbuild
+
+- Build Sentry với Docker compose
+
+```
 docker volume create --name=sentry-data && docker volume create --name=sentry-postgres
 cp -n .env.example .env
 docker-compose build
@@ -346,7 +380,7 @@ docker-compose build
 docker-compose run --rm web config generate-secret-key
 ```
 
-- Add SECRET_KEY vào file .evn
+- Add SECRET_KEY vào file **.evn**
 
 ```
 # Run `docker-compose run web config generate-secret-key`
@@ -361,6 +395,17 @@ docker-compose run --rm web upgrade
 docker-compose up -d
 ```
 
+- Tạo user admin tại bước này
+
+```
+Would you like to create a user account now? [Y/n]: y
+Email: huytm@nhanhoa.com.vn
+Password: 
+Repeat for confirmation: 
+Should this user be a superuser? [y/N]: y
+User created: huytm@nhanhoa.com.vn
+Added to organization: sentry
+```
 
 #### Bước 6. Truy cập vào webapp của sentry tại địa chỉ
 
