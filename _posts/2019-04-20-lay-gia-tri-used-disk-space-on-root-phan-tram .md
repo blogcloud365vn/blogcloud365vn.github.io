@@ -51,14 +51,14 @@ Unit: %
 Update interval: 5m
 Applications: Filesystems
 ```
-Name: Tên gợi nhớ cho item.<br>
-Type: Lựa chọn kiểu tùy biến item.<br>
-Key: Tùy đặt 1 item chỉ có 1 key duy nhất.<br>
-Formula: Các biểu thức tính toán để lấy giá trị tương ứng với type `Caculated`.<br>
-Type of information: Kiểu đơn vị hiển thị.<br>
-Unit: Đơn vị hiển thị.
-Update interval: Khoảng thời gian zabbix-server cập nhật lại metric.<br>
-Applications: Lựa chọn phân loại thư mục cho item mới.
+**Name**: Tên gợi nhớ cho item.<br>
+**Type**: Lựa chọn kiểu tùy biến item.<br>
+**Key**: Tùy đặt 1 item chỉ có 1 key duy nhất.<br>
+**Formula**: Các biểu thức tính toán để lấy giá trị tương ứng với type `Caculated`.<br>
+**Type of information**: Kiểu đơn vị hiển thị.<br>
+**Unit**: Đơn vị hiển thị.
+**Update interval**: Khoảng thời gian zabbix-server cập nhật lại metric.<br>
+**Applications**: Lựa chọn phân loại thư mục cho item mới.
 
 ![](/images/img-zabbix-used-disk-phan-tram/Screenshot_1306.png)
 
