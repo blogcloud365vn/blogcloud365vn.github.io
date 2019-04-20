@@ -58,5 +58,7 @@ Sau đó chọn active để lưu lại những thay đổi trên, vào trong Ho
 ## Tổng kết.
 
 Ở bài viết này mình đã giới thiệu cho mọi người về active check, ở bài viết sau mình sẽ giới thiệu về threshold trong checkmk, đây chính là một trong những phần quan trọng trước khi chúng ta cấu hình cảnh báo cho những sự kiện giám sát trên checkmk.
+
 ---
+
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

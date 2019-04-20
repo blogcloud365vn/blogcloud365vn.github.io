@@ -4,7 +4,7 @@ categories:
   - Container
 description: Tìm hiểu về Docker - Phần 7 - Storage trong Docker
 author: huytm
-tags: [Docker, Centos]
+tags: [Docker, CentOS]
 type: Document
 ---
 
