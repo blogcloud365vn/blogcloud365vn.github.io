@@ -380,7 +380,7 @@ docker-compose build
 docker-compose run --rm web config generate-secret-key
 ```
 
-- Add SECRET_KEY vào file .evn
+- Add SECRET_KEY vào file **.evn**
 
 ```
 # Run `docker-compose run web config generate-secret-key`
@@ -395,6 +395,17 @@ docker-compose run --rm web upgrade
 docker-compose up -d
 ```
 
+- Tạo user admin tại bước này
+
+```
+Would you like to create a user account now? [Y/n]: y
+Email: huytm@nhanhoa.com.vn
+Password: 
+Repeat for confirmation: 
+Should this user be a superuser? [y/N]: y
+User created: huytm@nhanhoa.com.vn
+Added to organization: sentry
+```
 
 #### Bước 6. Truy cập vào webapp của sentry tại địa chỉ
 
