@@ -57,6 +57,7 @@ Sử dung SMTP để cấu hình cho các application có tính năng gửi emai
 <p align="center">
 <img src="/images/img-smtp/smtp2go-01.png">
 </p>
+> Lưu ý nên sử dụng email dạng email doanh nghiệp để có thể gửi mail ổn định canhdx@company.vn
 
 Login vào tài khoản 
 <p align="center">
