@@ -7,6 +7,8 @@ description: Tổng quan về Cluster
 author: thanhnb
 tags: [Cluster, Load balancer, High Availability, Linux, CentOS7]
 type: Document
+set: high-availability
+set_order: 15
 ---
 
 ## Lời mở đầu
@@ -72,4 +74,5 @@ http://people.redhat.com/tcameron/Summit2017/HAClustering/HA_Clustering_with_RHE
 
 http://clusterlabs.org/pacemaker/doc/en-US/Pacemaker/1.1/pdf/Clusters_from_Scratch/Pacemaker-1.1-Clusters_from_Scratch-en-US.pdf
 
-Thực hiện bởi [cloud365.vn](https://cloud365.vn/)
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
