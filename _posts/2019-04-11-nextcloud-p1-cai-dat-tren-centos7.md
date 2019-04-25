@@ -1,5 +1,5 @@
 ---
-title: "NextCloud [Part 1] - Cài đặt Nextcloud trên CentOS 7" 
+title: "Nextcloud [Part 1] - Cài đặt Nextcloud trên CentOS 7" 
 categories:
   - Nextcloud
 description: Cài đặt Nextcloud trên CentOS 7

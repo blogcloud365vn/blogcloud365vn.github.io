@@ -10,9 +10,11 @@ set: Nextcloud
 set_order: 4
 ---
 
-## Login với tài khoản Admin
+## Mở đầu
 
-Sau khi đăng ký sử dụng NextCloud với [cloud365](https://cloud365.vn/){:target="_blank"} bạn sẽ nhận được địa chỉ, và tài khoản admin để đăng nhập vào NextCloud.
+Nextcloud ngoài việc cung cấp về khả năng lưu trữ và chia sẻ file, còn có các tính năng liên quan đến quản lý User và Group. Trong phạm vi bài viết này, mình sẽ hướng dẫn thao tác tạo mới một User trong Nextcloud.
+
+## Tạo User
 
 Sử dụng trình duyệt web của bạn và truy cập vào địa chỉ Nextcloud mà cloud365 cung cấp cho bạn. Màn hình **Login** sẽ hiện ra.
 
@@ -20,22 +22,11 @@ Sử dụng trình duyệt web của bạn và truy cập vào địa chỉ Next
 <img src="/images/img-nextcloud/part1/nextcloud1-1.png">
 </p>
 
-Tại màn hình này, bạn nhập **User và password** admin được cung cấp sau đó chọn Login
+Tại màn hình này, bạn nhập **User và password** admin sau đó chọn Login
 
 <p align="center">
 <img src="/images/img-nextcloud/part1/nextcloud1-2.png">
 </p>
-
-Sau khi đăng nhập thành công bạn sẽ được chuyển hướng đến màn hình quản lý các file và tài liệu của bạn
-
-<p align="center">
-<img src="/images/img-nextcloud/part1/nextcloud1-3.png">
-</p>
-
-Như vậy bạn đã đăng nhập thành công với tài khoản Admin của Nextcloud
-
-
-## Tạo User
 
 Sau khi đăng nhập thành công vào NextCloud bằng tài khoản Admin. Tại đây bạn có thể tạo thêm các User khác cho doanh nghiệp của mình.
 

@@ -12,13 +12,9 @@ set_order: 3
 
 ## Mở đầu
 
-NextCloud là một dịch vụ lưu trữ đám mây an toàn và bảo mật, giúp cho doanh nghiệp tiết kiệm tối đa chi phí.
-
-Trong bài viết này mình sẽ hướng dẫn việc Login và tạo User trong NextCloud.
+Sau khi cài đặt NextCloud xong, hoặc đăng ký sử dụng Nextcloud với [cloud365](https://cloud365.vn/){:target="_blank"} bạn sẽ nhận được địa chỉ, và tài khoản admin để đăng nhập vào NextCloud. Để thực hiện đăng nhập vào Nextcloud các bạn thực hiện theo thao tác sau: 
 
 ## Login
-
-Sau khi đăng ký sử dụng NextCloud với [cloud365](https://cloud365.vn/){:target="_blank"} bạn sẽ nhận được địa chỉ, và tài khoản admin để đăng nhập vào NextCloud.
 
 Sử dụng trình duyệt web của bạn và truy cập vào địa chỉ Nextcloud mà cloud365 cung cấp cho bạn. Màn hình **Login** sẽ hiện ra.
 

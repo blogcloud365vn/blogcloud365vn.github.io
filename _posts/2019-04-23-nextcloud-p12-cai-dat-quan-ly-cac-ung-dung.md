@@ -71,7 +71,7 @@ Quay lại trang chủ chúng ta thấy `Diagram` được kích hoạt ngay l�
 <img src="/images/img-nextcloud/nextcloud-069.png">
 </p>
 
-## Các applicaion thường sử dụng 
+## Các application thường sử dụng 
 
 - `Calendar`: Quản lý lịch
 - `Tasks`: Quản lý task công việc 
