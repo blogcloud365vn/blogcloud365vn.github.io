@@ -6,7 +6,7 @@ description: Nextcloud - Chỉnh sửa Quotas lưu trữ của User
 author: canhdx
 tags: [Nextcloud]
 type: Document
-set: NextCloud
+set: Nextcloud
 set_order: 18
 ---
 

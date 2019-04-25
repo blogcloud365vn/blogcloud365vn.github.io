@@ -6,7 +6,7 @@ description: Nextcloud - Cài đặt đồng bộ trên Windows, Linux
 author: canhdx
 tags: [Nextcloud]
 type: Document
-set: NextCloud
+set: Nextcloud
 set_order: 20
 ---
 

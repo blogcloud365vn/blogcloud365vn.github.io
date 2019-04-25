@@ -6,7 +6,7 @@ description: Cài đặt Nextcloud trên Ubuntu18
 author: canhdx
 tags: [Nextcloud]
 type: Document
-set: NextCloud
+set: Nextcloud
 set_order: 27
 ---
 
