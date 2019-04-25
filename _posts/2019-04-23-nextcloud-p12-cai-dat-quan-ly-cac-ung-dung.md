@@ -1,5 +1,5 @@
 ---
-title: "Nextcloud [Part 11] - Cài đặt quản lý các ứng dụng"
+title: "Nextcloud [Part 12] - Cài đặt quản lý các ứng dụng"
 categories:
   - Nextcloud
 description: Nextcloud - Cài đặt quản lý các ứng dụng
