@@ -1,15 +1,14 @@
 ---
-title: NextCloud Cài đặt trên Ubuntu18
+title: "Nextcloud [Part 2] - Cài đặt Nextcloud trên Ubuntu18"
 categories:
-  - NextCloud
-description: Cài đặt NextCloud trên Ubuntu18
+  - Nextcloud
+description: Cài đặt Nextcloud trên Ubuntu18
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
 set_order: 27
 ---
-
 
 ## NextCloud 
 

@@ -1,13 +1,13 @@
 ---
-title: NextCloud - Chỉnh sửa Quotas lưu trữ của User
+title: "Nextcloud [Part 11] - Chỉnh sửa Quotas lưu trữ của User"
 categories:
-  - NextCloud
-description: NextCloud - Chỉnh sửa Quotas lưu trữ của User
+  - Nextcloud
+description: Nextcloud - Chỉnh sửa Quotas lưu trữ của User
 author: canhdx
 tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 19
+set_order: 18
 ---
 
 ## NextCloud Quotas

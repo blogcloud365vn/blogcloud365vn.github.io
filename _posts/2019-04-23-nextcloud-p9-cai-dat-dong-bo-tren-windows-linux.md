@@ -1,15 +1,14 @@
 ---
-title: NextCloud - Cài đặt đồng bộ trên Windows, Linux
+title: "Nextcloud [Part 9] - Cài đặt đồng bộ trên Windows, Linux"
 categories:
-  - NextCloud
-description: NextCloud - Cài đặt đồng bộ trên Windows, Linux
+  - Nextcloud
+description: Nextcloud - Cài đặt đồng bộ trên Windows, Linux
 author: canhdx
 tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 18
+set_order: 20
 ---
-
 
 ## NextCloud Desktop Client
 

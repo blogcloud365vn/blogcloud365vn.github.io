@@ -1,13 +1,13 @@
 ---
-title: Nextcloud - Login
+title: "Nextcloud [Part 3] - Login" 
 categories:
-  - NextCloud
-description: Nextcloud - Login
+  - Nextcloud
+description: Login với Nextcloud
 author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 25
+set_order: 26
 ---
 
 ## Mở đầu

@@ -1,13 +1,13 @@
 ---
-title: Nextcloud - Tạo, upload file và thư mục
+title: "Nextcloud [Part 6] - Tạo, upload file và thư mục"
 categories:
-  - NextCloud
+  - Nextcloud
 description: Nextcloud - Tạo, upload file và thư mục
 author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 22
+set_order: 23
 ---
 
 Việc tạo mới File và Folder trong Nextcloud vô cùng đơn giản. Ngoài việc tạo mới từ các client và sync lên Nextcloud, thì ở giao diện web Next cloud cũng cung cấp tính năng có thể tạo mới File và Folder trực tiếp trên giao diện.

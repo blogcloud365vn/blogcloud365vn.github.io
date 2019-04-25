@@ -1,13 +1,13 @@
 ---
-title: Nextcloud - Tạo Group và quản lý User theo Group
+title: "Nextcloud [Part 5] - Tạo Group và quản lý User theo Group"
 categories:
-  - NextCloud
+  - Nextcloud
 description: Nextcloud - Tạo Group và quản lý User theo Group
 author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 23
+set_order: 24
 ---
 
 ## Mở đầu

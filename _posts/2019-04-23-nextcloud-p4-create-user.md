@@ -1,13 +1,13 @@
 ---
-title: Nextcloud - Tạo User
+title: "Nextcloud [Part 4] - Tạo User"
 categories:
-  - NextCloud
-description: Nextcloud - Tạo User.
+  - Nextcloud
+description: Tạo User với Nextcloud
 author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 24
+set_order: 25
 ---
 
 ## Login với tài khoản Admin
