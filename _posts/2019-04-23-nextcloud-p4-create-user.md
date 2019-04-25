@@ -7,7 +7,7 @@ author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 25
+set_order: 4
 ---
 
 ## Login với tài khoản Admin

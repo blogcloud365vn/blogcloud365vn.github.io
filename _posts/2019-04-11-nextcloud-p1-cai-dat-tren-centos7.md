@@ -7,7 +7,7 @@ author: canhdx
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 01
+set_order: 1
 ---
 
 ## NextCloud 

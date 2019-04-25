@@ -7,7 +7,7 @@ author: canhdx
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 18
+set_order: 11
 ---
 
 ## NextCloud Quotas

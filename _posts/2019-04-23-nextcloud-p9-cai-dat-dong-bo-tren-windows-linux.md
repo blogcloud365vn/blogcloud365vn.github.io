@@ -7,7 +7,7 @@ author: canhdx
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 20
+set_order: 9
 ---
 
 ## NextCloud Desktop Client

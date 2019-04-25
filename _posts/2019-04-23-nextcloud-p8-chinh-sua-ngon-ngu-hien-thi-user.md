@@ -7,7 +7,7 @@ author: canhdx
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 21
+set_order: 8
 ---
 
 ## Chuyển đổi ngôn ngữ hiển thị

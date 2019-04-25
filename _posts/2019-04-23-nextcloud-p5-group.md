@@ -7,7 +7,7 @@ author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 24
+set_order: 5
 ---
 
 ## Mở đầu
