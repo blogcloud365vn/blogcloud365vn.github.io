@@ -7,7 +7,7 @@ author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 25
+set_order: 21
 ---
 
 ## Mở đầu
@@ -19,25 +19,25 @@ Trong bài viết trước mình đã hướng dẫn các bạn cách tạo mớ
 Đăng nhập vào Nextcloud
 
 <p align="center">
-<img src="../images/img-nextcloud/part1/nextcloud1-8.png">
+<img src="/images/img-nextcloud/part1/nextcloud1-8.png">
 </p>
 
 Chọn file hoặc folder muốn chia sẻ sau đó chọn **Biểu tượng chia sẻ**
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-1.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-1.png">
 </p>
 
 Một màn hình mới phía bên phải hiển thị ra, tại đây bạn sẽ nhập **User** hoặc **Group** trong cùng tổ chức của bạn và nhấn chia sẻ 
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-2.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-2.png">
 </p>
 
 Chia sẻ thành công
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-3.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-3.png">
 </p>
 
 #### Các tính năng mở rộng
@@ -45,31 +45,31 @@ Chia sẻ thành công
 - Mặc định khi thực hiện share thì user được share sẽ có quyền Edit file. Tùy vào nhu cầu bạn có thể chọn **Can edit** hoặc **không**
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-4.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-4.png">
 </p>
 
 - Mặc định khi thực hiện share user được quyền tiếp tục share cho người khác (**Can reshare**). Bạn có thể cho phép tính năng này hoặc không.
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-5.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-5.png">
 </p>
 
 - Bạn cũng có thể chọn **Set expriration date** để đặt hạn mức thời gian chia sẻ file. Hết hạn mức này. File sẽ không được share cho user đó nữa.
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-6.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-6.png">
 </p>
 
 - Bổ sung một thông điệp khi chia sẻ bằng tính năng **Note to recipient**
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-7.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-7.png">
 </p>
 
 - Dừng việc chia sẻ file (**Unshare**)
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-8.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-8.png">
 </p>
 
 ## Public share
@@ -79,13 +79,13 @@ Trong trường hợp bạn muốn chia sẻ một file ra ngoài tổ chức, b
 Thực hiện share file như phía trên, sau đó chọn dấu **+** ở phần **Share link**.
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-9.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-9.png">
 </p>
 
 Sau đó chọn Copy link và gửi link này đến một người bạn cần chia sẻ file
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-11.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-11.png">
 </p>
 
 
@@ -100,7 +100,7 @@ Sau đó chọn Copy link và gửi link này đến một người bạn cần 
 - **Add another link**: Tạo một link chia sẻ mới. Sử dụng trong trường hợp bạn cần chia sẻ public đến nhiều người. Tuy nhiên có người chỉ được phép *Edit*, có người chỉ được phép *Download* chẳng hạn. Khi đó mỗi link sẽ có các tính năng nâng cao khác nhau và bạn chỉ việc copy link và gửi cho từng người thích hợp
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-10.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-10.png">
 </p>
 
 ## Chia sẻ qua email
@@ -108,7 +108,7 @@ Sau đó chọn Copy link và gửi link này đến một người bạn cần 
 Nhập email cần chia sẻ sau đó chọn biểu tượng **Email** để chia sẻ file 
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-12.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-12.png">
 </p>
 
 #### Các tính năng mở rộng
@@ -119,7 +119,7 @@ Nhập email cần chia sẻ sau đó chọn biểu tượng **Email** để chi
 - **Unshare**: Dừng việc chia sẻ file. 
 
 <p align="center">
-<img src="../images/img-nextcloud/part4/nextcloud4-13.png">
+<img src="/images/img-nextcloud/part4/nextcloud4-13.png">
 </p>
 
 ## Tổng kết

@@ -1,13 +1,13 @@
 ---
-title: NextCloud Cài đặt quản lý các ứng dụng
+title: NextCloud - Cài đặt quản lý các ứng dụng
 categories:
   - NextCloud
-description: NextCloud Cài đặt quản lý các ứng dụng
+description: NextCloud - Cài đặt quản lý các ứng dụng
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 20
+set_order: 16
 ---
 
 ## NextCloud Application

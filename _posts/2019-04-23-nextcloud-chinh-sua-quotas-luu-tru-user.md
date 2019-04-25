@@ -1,13 +1,13 @@
 ---
-title: NextCloud Chỉnh sửa Quotas lưu trữ của User
+title: NextCloud - Chỉnh sửa Quotas lưu trữ của User
 categories:
   - NextCloud
-description: NextCloud Chỉnh sửa Quotas lưu trữ của User
+description: NextCloud - Chỉnh sửa Quotas lưu trữ của User
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 22
+set_order: 19
 ---
 
 ## NextCloud Quotas

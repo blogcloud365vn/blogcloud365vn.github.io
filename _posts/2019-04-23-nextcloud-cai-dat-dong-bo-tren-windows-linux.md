@@ -1,13 +1,13 @@
 ---
-title: NextCloud Cài đặt đồng bộ trên Windows, Linux
+title: NextCloud - Cài đặt đồng bộ trên Windows, Linux
 categories:
   - NextCloud
-description: NextCloud Cài đặt đồng bộ trên Windows, Linux
+description: NextCloud - Cài đặt đồng bộ trên Windows, Linux
 author: canhdx
-tags: [Beginer, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 20
+set_order: 18
 ---
 
 

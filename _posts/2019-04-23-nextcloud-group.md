@@ -1,13 +1,13 @@
 ---
-title: Nextcloud - Quản lý User theo Group
+title: Nextcloud - Tạo Group và quản lý User theo Group
 categories:
   - NextCloud
-description: Nextcloud - Quản lý User theo Group
+description: Nextcloud - Tạo Group và quản lý User theo Group
 author: huytm
 tags: [Nextcloud]
 type: Document
 set: Nextcloud
-set_order: 25
+set_order: 23
 ---
 
 ## Mở đầu
@@ -23,31 +23,31 @@ Bạn có thể tạo ra các nhóm người dùng khác nhau cho các phòng ba
 Đăng nhập vào tài khoản **Admin** của NextCloud
 
 <p align="center">
-<img src="../images/img-nextcloud/part1/nextcloud1-2.png">
+<img src="/images/img-nextcloud/part1/nextcloud1-2.png">
 </p>
 
 Truy cập đến màn quản trị Users tại góc trên bên phải
 
 <p align="center">
-<img src="../images/img-nextcloud/part1/nextcloud1-4.png">
+<img src="/images/img-nextcloud/part1/nextcloud1-4.png">
 </p>
 
 Sau đó chọn **Add group** để tạo mới group
 
 <p align="center">
-<img src="../images/img-nextcloud/part3/nextcloud3-1.png">
+<img src="/images/img-nextcloud/part3/nextcloud3-1.png">
 </p>
 
 Nhập tên Group sau đó chọn **➡** 
 
 <p align="center">
-<img src="../images/img-nextcloud/part3/nextcloud3-2.png">
+<img src="/images/img-nextcloud/part3/nextcloud3-2.png">
 </p>
 
 Tạo mới thành công
 
 <p align="center">
-<img src="../images/img-nextcloud/part3/nextcloud3-3.png">
+<img src="/images/img-nextcloud/part3/nextcloud3-3.png">
 </p>
 
 ## Thêm User vào Group
@@ -55,7 +55,7 @@ Tạo mới thành công
 Để thêm User vào group, cũng tại màn quản trị Users, chọn User cần thêm sau đó chọn Group.
 
 <p align="center">
-<img src="../images/img-nextcloud/part3/nextcloud3-4.png">
+<img src="/images/img-nextcloud/part3/nextcloud3-4.png">
 </p>
 
 > Một user có thể thuộc nhiều Group
@@ -63,7 +63,7 @@ Tạo mới thành công
 Thêm thành công
 
 <p align="center">
-<img src="../images/img-nextcloud/part3/nextcloud3-5.png">
+<img src="/images/img-nextcloud/part3/nextcloud3-5.png">
 </p>
 
 ## Tổng kết

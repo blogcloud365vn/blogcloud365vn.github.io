@@ -1,13 +1,13 @@
 ---
-title: NextCloud Chỉnh sửa ngôn ngữ hiển thị của User
+title: NextCloud - Chỉnh sửa ngôn ngữ hiển thị của User
 categories:
   - NextCloud
-description: NextCloud Chỉnh sửa ngôn ngữ hiển thị của User
+description: NextCloud - Chỉnh sửa ngôn ngữ hiển thị của User
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 21
+set_order: 20
 ---
 
 ## Chuyển đổi ngôn ngữ hiển thị

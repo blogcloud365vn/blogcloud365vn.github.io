@@ -1,13 +1,13 @@
 ---
-title: NextCloud Cài đặt đồng bộ trên Android, IOS
+title: NextCloud - Cài đặt đồng bộ trên Android, IOS
 categories:
   - NextCloud
-description: NextCloud Cài đặt đồng bộ trên Android, IOS
+description: NextCloud - Cài đặt đồng bộ trên Android, IOS
 author: canhdx
-tags: [Beginer, Other]
+tags: [Nextcloud]
 type: Document
 set: NextCloud
-set_order: 19
+set_order: 17
 ---
 
 
