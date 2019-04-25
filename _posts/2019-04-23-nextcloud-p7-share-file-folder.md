@@ -2,7 +2,7 @@
 title: "Nextcloud [Part 7] - Share file và folder"
 categories:
   - Nextcloud
-description: Nextcloud - Share file và folder.
+description: Nextcloud - Share file và folder
 author: huytm
 tags: [Nextcloud]
 type: Document
