@@ -1,13 +1,13 @@
 ---
-title: NextCloud Cài đặt trên CentOS 7 
+title: "Nextcloud [Part 1] - Cài đặt Nextcloud trên CentOS 7" 
 categories:
-  - NextCloud
-description: NextCloud Cài đặt trên CentOS 7 
+  - Nextcloud
+description: Cài đặt Nextcloud trên CentOS 7
 author: canhdx
-tags: [Beginer, Linux, CentOS, Other]
+tags: [Nextcloud]
 type: Document
-set: NextCloud
-set_order: 28
+set: Nextcloud
+set_order: 1
 ---
 
 ## NextCloud 

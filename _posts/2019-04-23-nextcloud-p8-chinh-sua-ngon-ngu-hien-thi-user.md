@@ -1,19 +1,21 @@
 ---
-title: NextCloud Chỉnh sửa ngôn ngữ hiển thị của User
+title: "Nextcloud [Part 8] - Chỉnh sửa ngôn ngữ hiển thị của User"
 categories:
-  - NextCloud
-description: NextCloud Chỉnh sửa ngôn ngữ hiển thị của User
+  - Nextcloud
+description: Nextcloud - Chỉnh sửa ngôn ngữ hiển thị của User
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
-set: NextCloud
-set_order: 21
+set: Nextcloud
+set_order: 8
 ---
 
 ## Chuyển đổi ngôn ngữ hiển thị
+
 NextCloud hỗ trợ rất nhiều ngôn ngữ. Các user được khởi tạo mặc định sử dụng Tiếng Anh. Bài viết sẽ hướng dẫn các bạn cài đặt chuyển đổi ngôn ngữ trên giao diện của NextCloud qua Tiếng Việt 
 
 ## Chuyển đổi ngôn ngữ hiển thị trên tài khoản Admin
+
 Tài khoản admin có thể chỉnh sửa ngôn ngữ hiển thị của các user 
 
 Trong giao diện `Users` truy cập `Settings`

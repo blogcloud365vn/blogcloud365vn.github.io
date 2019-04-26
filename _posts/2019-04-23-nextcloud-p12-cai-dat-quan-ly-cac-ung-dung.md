@@ -1,13 +1,13 @@
 ---
-title: NextCloud Cài đặt quản lý các ứng dụng
+title: "Nextcloud [Part 12] - Cài đặt quản lý các ứng dụng"
 categories:
-  - NextCloud
-description: NextCloud Cài đặt quản lý các ứng dụng
+  - Nextcloud
+description: Nextcloud - Cài đặt quản lý các ứng dụng
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
-set: NextCloud
-set_order: 20
+set: Nextcloud
+set_order: 12
 ---
 
 ## NextCloud Application
@@ -71,7 +71,7 @@ Quay lại trang chủ chúng ta thấy `Diagram` được kích hoạt ngay l�
 <img src="/images/img-nextcloud/nextcloud-069.png">
 </p>
 
-## Các applicaion thường sử dụng 
+## Các application thường sử dụng 
 
 - `Calendar`: Quản lý lịch
 - `Tasks`: Quản lý task công việc 
