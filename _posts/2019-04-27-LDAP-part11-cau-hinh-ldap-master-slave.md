@@ -28,7 +28,7 @@ Bên cạnh master node là 1 hoặc nhiều shadow server (có thể gọi là 
 
 ## Chuẩn bị
 
-- Cài đặt 2 node LDAP với IP như sau. Các bạn tham khảo link sau: [Hướng dẫn cài đặt LDAP Trên CentOS 7](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- Cài đặt 2 node LDAP với IP như sau. Các bạn tham khảo link sau: [Hướng dẫn cài đặt LDAP Trên CentOS 7](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 ```
 HOSTNAME    ldap_94 (Master)

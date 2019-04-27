@@ -18,9 +18,9 @@ Trong các bài viết trước, mình đã hướng dẫn cách cài đặt Ope
 
 - Pfsense version pfSense-CE-2.4.4
 
-- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
+- [Cài đặt phpLDAPadmin](https://blog.cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Mô hình.
 
@@ -240,7 +240,7 @@ Cảm ơn đã truy cập vào Cloud365 !
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn mọi người cách tích hợp LDAP với Pfsense. Vậy nếu chúng ta sử dụng OpenVPN với Pfsene thì các tài khoản này có thực hiện VPN được không? Câu trả lời là có, trong [bài viết tiếp theo](https://cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"} mình sẽ hướng dẫn các bạn cách cấu hình Pfsense để có thể VPN với user LDAP.
+Ở bài này mình đã hướng dẫn mọi người cách tích hợp LDAP với Pfsense. Vậy nếu chúng ta sử dụng OpenVPN với Pfsene thì các tài khoản này có thực hiện VPN được không? Câu trả lời là có, trong [bài viết tiếp theo](https://blog.cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"} mình sẽ hướng dẫn các bạn cách cấu hình Pfsense để có thể VPN với user LDAP.
 
 ---
 

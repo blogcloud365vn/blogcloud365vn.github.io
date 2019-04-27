@@ -16,7 +16,7 @@ set_order: 3
 
 ## Chuẩn bị.
 
-- [Cài đặt OpenLDAP trên CentOS 7](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP trên CentOS 7](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 ## TRƯỜNG HỢP 1: Cài đặt trực tiếp trên node cài OpenLDAP
 
@@ -198,7 +198,7 @@ Bài blog đến đây là hết, chúc mọi người thành công !!!
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn cách để  cài đặt phpLDAPadmin cho mọi người có thể dụng để quản trị các thông tin trong slapd, ở bài viết [tiếp theo](https://cloud365.vn/ldap/LDAP-part-4-Ldap-xac-thuc-ssh/){:target="_blank"} mình sẽ giới thiệu cho mọi người cách SSH với LDAP.
+Ở bài này mình đã hướng dẫn cách để  cài đặt phpLDAPadmin cho mọi người có thể dụng để quản trị các thông tin trong slapd, ở bài viết [tiếp theo](https://blog.cloud365.vn/ldap/LDAP-part-4-Ldap-xac-thuc-ssh/){:target="_blank"} mình sẽ giới thiệu cho mọi người cách SSH với LDAP.
 
 ---
 

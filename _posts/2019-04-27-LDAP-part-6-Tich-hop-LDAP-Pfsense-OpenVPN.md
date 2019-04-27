@@ -16,11 +16,11 @@ Một vấn đề chúng ta gặp phải khi tích hợp LDAP với hệ thống
 
 ## Chuẩn bị.
 
-- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 - Một Pfsense server
 
-- Đã [tích hợp LDAP xác thực qua Pfsense](https://cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"}
+- Đã [tích hợp LDAP xác thực qua Pfsense](https://blog.cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"}
 
 - Đã cấu hình rules cho OpenVPN và cài client export của OpenVPN.
 

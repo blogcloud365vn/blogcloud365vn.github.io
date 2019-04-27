@@ -18,9 +18,9 @@ set_order: 7
 
 - Một máy CentOS 7 đã được cài đặt PHPIPAM
 
-- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
+- [Cài đặt phpLDAPadmin](https://blog.cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Trên máy chủ LDAP.
 

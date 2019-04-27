@@ -231,7 +231,7 @@ ldapadd -x -D cn=Manager,dc=nhanhoa,dc=local -W -f adduser_1.ldif
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn mọi người cách để cài đặt OpenLDAP trên CentOS, ở bài viết [tiếp theo](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"} mình sẽ hướng dẫn mọi người cài `phpLDAPadmin`, một công cụ giúp chúng ta có thể thao tác dễ dàng trên slapd hơn. Cảm ơn đã ghé thăm Cloud365 !
+Ở bài này mình đã hướng dẫn mọi người cách để cài đặt OpenLDAP trên CentOS, ở bài viết [tiếp theo](https://blog.cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"} mình sẽ hướng dẫn mọi người cài `phpLDAPadmin`, một công cụ giúp chúng ta có thể thao tác dễ dàng trên slapd hơn. Cảm ơn đã ghé thăm Cloud365 !
 
 ---
 
