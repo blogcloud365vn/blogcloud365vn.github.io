@@ -115,12 +115,15 @@ Việc đồng bộ dữ liệu VLANs được cấu hình giữa các thiết b
 Đối với interface kết nối đến port trên Switch là `mode trunk` thì chúng ta phải thực hiện cấu hình như sau
 
 Mở `Run` gõ `devmgmt.msc` để mở Device Manager
+
 ![](/images/image-vlan-trunk/blog-vlan-06.png)
 
 Trong `Device Manager` click chuột phải vào NIC kết nối đến Switch chọn `Properties`
+
 ![](/images/image-vlan-trunk/blog-vlan-07.png)
 
 Click vào `Advanced` tab kéo xuống chọn `VLAN ID` set giá trị ID VLAN 
+
 ![](/images/image-vlan-trunk/blog-vlan-08.png)
 
 Hoàn tất cấu hình
@@ -205,18 +208,23 @@ eth0.10@eth0:
 Nói chung là các port kết nối đến port trên Switch là `access vlan X` chỉ cần set ip cho interface, còn port đó là `mode trunk` thì mới phải thao tác cấu hình
 
 Truy cập tab `Configuration` --> `Networking` --> `Add Networking`
+
 ![](/images/image-vlan-trunk/blog-vlan-01.png)
 
 Chọn `Virtual Machine` để add thêm 1 label network cho VLAN mới 
+
 ![](/images/image-vlan-trunk/blog-vlan-02.png)
 
 Chọn Interface mà chúng ta gắn vào Switch VLAN 
+
 ![](/images/image-vlan-trunk/blog-vlan-03.png)
 
 Khai báo VLAN_name và VLAN_id 
+
 ![](/images/image-vlan-trunk/blog-vlan-04.png)
 
 Hoàn tất create 1 virtual interface kết nối vào VLAN
+
 ![](/images/image-vlan-trunk/blog-vlan-05.png)
 
 

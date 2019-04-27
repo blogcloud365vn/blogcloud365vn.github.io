@@ -1,4 +1,5 @@
 ---
+date: 2019-01-23
 title: Hướng dẫn cấu hình và sử dụng iDRAC server Dell
 categories:
   - Other
