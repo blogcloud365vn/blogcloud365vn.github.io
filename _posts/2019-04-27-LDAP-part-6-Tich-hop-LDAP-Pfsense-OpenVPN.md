@@ -20,7 +20,7 @@ Một vấn đề chúng ta gặp phải khi tích hợp LDAP với hệ thống
 
 - Một Pfsense server
 
-- Đã [tích hợp LDAP xác thực qua Pfsense](https://blog.cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"}
+- Đã [tích hợp LDAP xác thực qua Pfsense](https://blog.cloud365.vn/ldap/LDAP-part-5-Tich-hop-ldap-voi-pfsense/){:target="_blank"}
 
 - Đã cấu hình rules cho OpenVPN và cài client export của OpenVPN.
 
