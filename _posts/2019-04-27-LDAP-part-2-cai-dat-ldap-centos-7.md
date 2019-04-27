@@ -12,7 +12,7 @@ set_order: 2
 
 ## Lời mở đầu.
 
-Ở bài trước mình đã giới thiệu với mọi người về xác thực tập chung và LDAP, ở bài này mình sẽ hướng dẫn mọi người cài đặt LDAP trên CentOS 7.
+Ở [bài trước](https://blog.cloud365.vn/ldap/LDAP-part-1-gioi-thieu-ve-LDAP/){:target="_blank"} mình đã giới thiệu với mọi người về xác thực tập trung và LDAP. Để tiếp tục serie về LDAP, ở bài này mình sẽ hướng dẫn các bạn cài đặt LDAP trên CentOS 7.
 
 ## Chuẩn bị.
 
@@ -231,7 +231,7 @@ ldapadd -x -D cn=Manager,dc=nhanhoa,dc=local -W -f adduser_1.ldif
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn mọi người cách để cài đặt OpenLDAP trên CentOS, ở bài sau mình sẽ hướng dẫn mọi người cài `PHPLDAPADMIN`, một công cụ giúp chúng ta có thể thao tác dễ dàng trên slapd hơn. Cảm ơn đã ghé thăm Cloud365 !
+Ở bài này mình đã hướng dẫn mọi người cách để cài đặt OpenLDAP trên CentOS, ở bài viết [tiếp theo](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"} mình sẽ hướng dẫn mọi người cài `phpLDAPadmin`, một công cụ giúp chúng ta có thể thao tác dễ dàng trên slapd hơn. Cảm ơn đã ghé thăm Cloud365 !
 
 ---
 

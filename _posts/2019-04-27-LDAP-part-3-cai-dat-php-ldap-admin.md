@@ -1,5 +1,7 @@
 ---
-title: LDAP [Part 3] - Hướng dẫn cài đặt phpldapadmin trên CentOS 7
+title: LDAP [Part 3] - Hướng dẫn cài đặt phpLDAP- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+
+- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}admin trên CentOS 7
 categories:
   - LDAP
 description: Hướng dẫn cài đặt phpldapadmin trên CentOS 7
@@ -12,15 +14,15 @@ set_order: 3
 
 ## Lời mở đầu.
 
-Đối với hệ thống OpenLDAP thì việc quản lý, update tài khoản người dùng phải dùng bằng lệnh cho nên khá khó khăn do đó hôm này mình sẽ giới thiệu đến mọi người một công cụ giúp chúng ta có thể dễ dàng quản lý OpenLDAP đó là phpldapadmin. Được code bằng ngôn ngữ PHP và chạy trên nền web cho nên ứng dụng này đáng được lựa chọn nếu như chúng ta đang cần một công cụ hỗ trợ việc quản trị OpenLDAP.
+Đối với hệ thống OpenLDAP thì việc quản lý, update tài khoản người dùng phải dùng bằng lệnh cho nên khá khó khăn do đó hôm này mình sẽ giới thiệu đến mọi người một công cụ giúp chúng ta có thể dễ dàng quản lý OpenLDAP đó là phpLDAPadmin.Một công cụ được code bằng ngôn ngữ PHP và chạy trên nền web cho nên ứng dụng này đáng được lựa chọn nếu như chúng ta đang cần một công cụ hỗ trợ việc quản trị OpenLDAP.
 
 ## Chuẩn bị.
 
-- Đã [cài đặt OpenLDAP]()
+- [Cài đặt OpenLDAP trên CentOS 7](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-## 1. Cài đặt trực tiếp trên node cài OpenLDAP
+## TRƯỜNG HỢP 1: Cài đặt trực tiếp trên node cài OpenLDAP
 
-Cài đặt httpd:
+**1. Cài đặt httpd**
 
 ```sh
 yum -y install httpd
@@ -47,7 +49,7 @@ systemctl start httpd
 systemctl enable httpd
 ```
 
-Cài đặt php:
+**2. Cài đặt PHP**
 
 ```sh
 yum -y install php php-mbstring php-pear
@@ -68,7 +70,7 @@ wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -ivh epel-release-latest-7.noarch.rpm
 ```
 
-Cài đặt PHP LDAP admin :
+**Cài đặt phpLDAPadmin**
 
 ```sh
 yum --enablerepo=epel -y install phpldapadmin
@@ -82,7 +84,7 @@ $servers->setValue('login','attr','dn');
 // $servers->setValue('login','attr','uid');
 ```
 
-Cho phép truy cập vào phpldapadmin:
+Cho phép truy cập vào phpLDAPadmin:
 
 ```sh
 cat > /etc/httpd/conf.d/phpldapadmin.conf << EOF
@@ -129,7 +131,7 @@ Giao diện sau khi đăng nhập :
 
 ![ldap-12](/images/img-ldap-datpt/ldap-12.png)
 
-## 2. PHP ldap admin nằm trên node không cài OpenLDAP.
+## TRƯỜNG HỢP 2: phpLDAPadmin nằm trên node không cài OpenLDAP.
 
 Mô hình như sau:
 
@@ -147,13 +149,13 @@ Sau đó tại dòng `584` thêm đoạn `$servers->setValue('server','host','10
 
 Sau đó truy cập vào web như bình thường.
 
-## 3. Dùng một máy chủ PHP ldap admin quản lý nhiều máy chủ OpenLDAP
+## TRƯỜNG HỢP 3: Dùng một máy chủ phpLDAPadmin quản lý nhiều backend OpenLDAP
 
-Giả định rằng chúng ta có khoảng 3 máy chủ chạy OpenLDAP để chạy xác thực cho các hệ thống khác nhau và 3 máy chủ này không hề có liên quan gì đến nhau, trên lý thuyết chúng ta phải cài 3 máy chủ chạy OpenLDAP để quản lý 3 máy OpenLDAP kia, tuy nhiên chúng ta vẫn có thể cấu hình PHP LDAP ADMIN bind đến nhiều máy chủ chỉ định khác nhau. Ở đâu mình có mô hình như sau :
+Giả định rằng chúng ta có khoảng 3 máy chủ chạy OpenLDAP để chạy xác thực cho các hệ thống khác nhau và 3 máy chủ này không hề có liên quan gì đến nhau, trên lý thuyết chúng ta phải cài 3 máy chủ chạy OpenLDAP để quản lý 3 máy OpenLDAP kia, tuy nhiên chúng ta vẫn có thể cấu hình phpLDAPadmin bind đến nhiều máy chủ chỉ định khác nhau. Ở đâu mình có mô hình như sau :
 
 ![ldap-15](/images/img-ldap-datpt/ldap-15.png)
 
-Chúng ta vẫn cài PHP ldap admin như ở phần 1, sau đó chúng ta mở file `/usr/share/phpldapadmin/config/config.php` và thêm những cấu hình như sau:
+Chúng ta vẫn cài phpLDAPadmin như ở trường hợp 1, sau đó chúng ta mở file `/usr/share/phpldapadmin/config/config.php` và thêm những cấu hình như sau:
 
 ```sh
 # OpenLDAP1
@@ -198,7 +200,7 @@ Bài blog đến đây là hết, chúc mọi người thành công !!!
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn cách để  cài đặt phpldapadmin cho mọi người có thể dụng để quản trị các thông tin trong slapd, ở bài viết sau mình sẽ giới thiệu cho mọi người cách có thể tích hợp được LDAP với pfsense, một trong những firewall mềm đang được rất nhiều đơn vị sử dụng hiện nay.
+Ở bài này mình đã hướng dẫn cách để  cài đặt phpLDAPadmin cho mọi người có thể dụng để quản trị các thông tin trong slapd, ở bài viết [tiếp theo](https://cloud365.vn/ldap/LDAP-part-4-Ldap-xac-thuc-ssh/){:target="_blank"} mình sẽ giới thiệu cho mọi người cách SSH với LDAP.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "LDAP [Part 12] - Hướng dẫn cấu hình Keepalive cho mô hình LDAP Master Master"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn cấu hình Keepalive cho mô hình LDAP Master Master
 author: thanhnb
 tags: [LDAP]
@@ -72,7 +72,7 @@ systemctl restart keepalived
 ```
 
 Lưu ý:
-- Để hiểu thêm về các tham số cấu hình Keepalive, các bạn tham khảo [link sau](https://blog.cloud365.vn/linux/haproxy-keepalived-apache/)
+- Để hiểu thêm về các tham số cấu hình Keepalive, các bạn tham khảo [link sau](https://blog.cloud365.vn/linux/haproxy-keepalived-apache/){:target="_blank"}
 
 ### Tại node Master LDAP 96
 
@@ -110,7 +110,7 @@ systemctl restart keepalived
 ```
 
 Lưu ý:
-- Để hiểu thêm về các tham số cấu hình Keepalive, các bạn tham khảo [link sau](https://blog.cloud365.vn/linux/haproxy-keepalived-apache/)
+- Để hiểu thêm về các tham số cấu hình Keepalive, các bạn tham khảo [link sau](https://blog.cloud365.vn/linux/haproxy-keepalived-apache/){:target="_blank"}
 
 ## Kiểm tra
 
@@ -215,7 +215,7 @@ result: 0 Success
 
 ## Nguồn
 
-https://blog.cloud365.vn/linux/haproxy-keepalived-apache/
+[https://blog.cloud365.vn/linux/haproxy-keepalived-apache/](https://blog.cloud365.vn/linux/haproxy-keepalived-apache/){:target="_blank"}
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

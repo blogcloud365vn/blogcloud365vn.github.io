@@ -1,7 +1,7 @@
 ---
 title: "LDAP [Part 13] - Hướng dẫn triển khai LDAP Multi Master Haproxy Pacemaker trên CentOS 7"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn triển khai LDAP Multi-Master Haproxy Pacemaker trên CentOS 7
 author: thanhnb
 tags: [LDAP, Cluster, Load balancer, High Availability, HAproxy, Database, Linux, CentOS7]
@@ -15,9 +15,9 @@ set_order: 13
 Trong bài blog này, mình sẽ hướng dẫn các bạn cách cấu hình LDAP ở chế độ Multi-Master Master. Mô hình Multi-Master được sử dụng nhằm tăng khả năng mở rộng, tăng hiệu suất đọc ghi dữ liệu vào dịch vụ ldap. Bên cạnh đó, mình sẽ áp dụng Pacemaker và HAProxy để điều phối cân bằng tải dịch vụ giữa các node Master, tăng sự sẵn sàng của dịch vụ, cải thiện khả năng chịu lỗi và vượt qua lỗi trên dịch vụ LDAP.
 
 Mô hình bên dưới rất phức tạp, các bạn tham khảo thêm tại:
-- [Chuỗi bài viết về HAProxy](https://blog.cloud365.vn/search/?q=haproxy)
-- [Chuỗi bài viết về High Availability](https://blog.cloud365.vn/search/?q=High+Availability)
-- [Chuỗi bài viết về LDAP]()
+- [Chuỗi bài viết về HAProxy](https://blog.cloud365.vn/search/?q=haproxy){:target="_blank"}
+- [Chuỗi bài viết về High Availability](https://blog.cloud365.vn/search/?q=High+Availability){:target="_blank"}
+- [Chuỗi bài viết về LDAP](https://blog.cloud365.vn/search/?q=ldap){:target="_blank"}
 
 ## Mô hình
 
@@ -935,7 +935,7 @@ result: 0 Success
 
 Dữ liệu đọc ghi bình thường, cụm LDAP không xảy ra vấn đề gì khi 1 node gặp sự cố
 
-## Nguồn
+## Tài liệu tham khảo
 
 https://blog.cloud365.vn/search/?q=haproxy
 

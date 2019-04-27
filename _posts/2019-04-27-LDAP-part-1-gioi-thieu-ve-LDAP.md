@@ -24,13 +24,13 @@ Vậy chúng ta sẽ dùng cái gì để tích hợp với tất cả các hệ
 
 ## LDAP là gì?
 
-LDAP - Lightweight Directory Access Protocol: là một giao thức phát triển trên chuẩn X500
+- LDAP - Lightweight Directory Access Protocol: là một giao thức phát triển trên chuẩn X500
 
-Là một giao thức dạng client-server sử dụng để truy cập một dịch vụ thư mục
+- Là một giao thức dạng client-server sử dụng để truy cập một dịch vụ thư mục
 
-Là một giao thức cho phép người dùng xác định cấu trúc và đặc điểm của thông tin trong thư mục.
+- Là một giao thức cho phép người dùng xác định cấu trúc và đặc điểm của thông tin trong thư mục.
 
-Các ứng dụng để triển khai LDAP : OpenLDAP, OPENDS. Active Directory,....
+- Các ứng dụng để triển khai LDAP : OpenLDAP, OPENDS. Active Directory,....
 
 ## Phương thức hoạt động của LDAP.
 
@@ -43,21 +43,21 @@ Trình tự khi có kết nối LDAP :
 
 Trình tự kết nối như sau :
 
-- Client mở một kết nối TCP đến LDAP server và thực hiện một thao tác bind. Thao tác này gồm tên của directory entry và thông tin xác thực sẽ được sử dụng trong quá trình xác thực, thông tin xác thực thông thường sẽ là Password tuy nhiên cũng có thể là ID của người dùng.
+  1. Client mở một kết nối TCP đến LDAP server và thực hiện một thao tác bind. Thao tác này gồm tên của directory entry và thông tin xác thực sẽ được sử dụng trong quá trình xác thực, thông tin xác thực thông thường sẽ là Password tuy nhiên cũng có thể là ID của người dùng.
 
-- Sau đó Ldap server sẽ nhận thao tác bind này của client để xử lý và trả lại kết quả của thao tác bind.
+  2. Sau đó Ldap server sẽ nhận thao tác bind này của client để xử lý và trả lại kết quả của thao tác bind.
 
-- Nếu thao tác bind thành công client gửi một yêu cầu tìm kiếm đến Ldap server.
+  3. Nếu thao tác bind thành công client gửi một yêu cầu tìm kiếm đến Ldap server.
 
-- Server thực hiện xử lý và trả về kết quả cho client.
+  4. Server thực hiện xử lý và trả về kết quả cho client.
 
-- Client gửi yêu cầu unbind.
+  5. Client gửi yêu cầu unbind.
 
-- Server đóng kết nối.
+  6. Server đóng kết nối.
 
 ## LDAP là giao thức hướng thông điệp.
 
-Do client và server giao tiếp thông qua các thông điệp. Client tạo một thông điệp (LDAP message) chứa yêu cầu và gởi nó đến cho server. Server nhận được thông điệp và xử lý yêu cầu của client sau đó gởi trả cho client cũng bằng một thông điệp LDAP.
+Do client và server giao tiếp thông qua các thông điệp. Client tạo một thông điệp (LDAP message) chứa yêu cầu và gửi nó đến cho server. Server nhận được thông điệp và xử lý yêu cầu của client sau đó gửi trả cho client cũng bằng một thông điệp LDAP.
 
 Nếu client tìm kiếm thư mục và nhiều kết quả được tìm thấy thì các kết quả này được gửi đến client bằng nhiều thông điệp. Chi tiết như hình bên dưới :
 
@@ -89,7 +89,7 @@ Ví dụ :
 
 ![ldap-4](/images/img-ldap-datpt/ldap-4.png)
 
-Những yêu cầu khi khai báo nội dung file LDIF:
+Những quy định khi báo nội dung file LDIF:
 
 - Dấu comment trong file LDIF là "#".
 
@@ -97,7 +97,7 @@ Những yêu cầu khi khai báo nội dung file LDIF:
 
 - Thuộc tính `dn` định nghĩa duy nhất một DN xác định trong DN đó.
 
-- Những trên trường mà đằng sau có dấu "::" thì giá trị của nó được mã hóa theo chuẩn BASE64.
+- Những tên trường mà đằng sau có dấu "::" thì giá trị của nó được mã hóa theo chuẩn BASE64.
 
 Một entry là tập hợp của các thuộc tính, từng thuộc tính sẽ mô tả một nét đặc trưng tiêu biểu của đối tượng. Một entry bao gồm nhiều thuộc tính, ví dụ về một entry như sau :
 
@@ -161,7 +161,7 @@ Thao tác tìm kiếm (LDAP search operation) yêu cầu 8 tham số:
 
 - Tham số thứ năm qui định thời gian tối đa cho việc thực hiện tìm kiếm.
 
-- Tham số thứ sáu: attrOnly – là tham số kiểu bool, nếu được thiết lập là true, thì server chỉ gởi các kiểu thuộc tính của entry cho client, nhưng sever không gửi giá trị của các thuộc tính đi, điều này là cần thiết nếu như client chỉ quan tâm đến các kiểu thuộc tính chứa bên trong.
+- Tham số thứ sáu: attrOnly – là tham số kiểu bool, nếu được thiết lập là true, thì server chỉ gửi các kiểu thuộc tính của entry cho client, nhưng sever không gửi giá trị của các thuộc tính đi, điều này là cần thiết nếu như client chỉ quan tâm đến các kiểu thuộc tính chứa bên trong.
 
 - Tham số thứ bảy là bộ lọc tìm kiếm(search filter) đây là một biểu thức mô tả các loại entry sẽ được giữ lại. 
 
@@ -221,7 +221,9 @@ Xác thực đơn giản thông qua SSL/TLS:
 
 ## Tổng kết.
 
-Trên đây là những khái niệm, những kiến thức mà mình cóp nhặt được cũng như ghi chép lại trong quá trình tìm hiểu về LDAP, trong bài sau mình sẽ hướng dẫn mọi người cách cài đặt OpenLDAP trên CentOS 7. Cảm ơn đã ghé thăm Cloud365 !
+Trên đây là những khái niệm, những kiến thức mà mình cóp nhặt được cũng như ghi chép lại trong quá trình tìm hiểu về LDAP, trong bài sau mình sẽ hướng dẫn mọi người cách cài đặt OpenLDAP trên CentOS 7. 
+
+Cảm ơn các bạn đã ghé thăm Cloud365 !
 
 ---
 

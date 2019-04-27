@@ -1,7 +1,7 @@
 ---
 title: "LDAP [Part 14] - Hướng dẫn backup và restore trên CentOS 7"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn backup và restore trên CentOS 7
 author: thanhnb
 tags: [LDAP, Linux, CentOS7]
@@ -10,8 +10,6 @@ set: tim-hieu-LDAP
 set_order: 14
 ---
 
-# Hướng dẫn cấu hình LDAP Backup Restore trên CentOS 7
----
 
 ## Chuẩn bị
 
