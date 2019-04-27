@@ -20,7 +20,7 @@ Sau khi cài đặt OpenLDAP và phpLDAPadmin, thì bây giờ là thời điể
 
 - Máy ảo đã được cài đặt CentOS hoặc Ubuntu.
 
-- Một máy CentOS 7 đã được [cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- Một máy CentOS 7 đã được [cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 
@@ -113,7 +113,7 @@ Chúc các bạn thành công !
 
 ## Tổng kết.
 
-Như vậy trong bài viết này mình đã hướng dẫn các bạn cách SSH đến server CentOS và Ubuntu với tài khoản từ LDAP, trong bài viết tiếp theo mình sẽ hướng dẫn [tích hợp LDAP với Pfsense](https://cloud365.vn/ldap/LDAP-part-5-Tich-hop-ldap-voi-pfsense/){:target="_blank"}, một firewall mềm được rất nhiều đơn vị triển khai.
+Như vậy trong bài viết này mình đã hướng dẫn các bạn cách SSH đến server CentOS và Ubuntu với tài khoản từ LDAP, trong bài viết tiếp theo mình sẽ hướng dẫn [tích hợp LDAP với Pfsense](https://blog.cloud365.vn/ldap/LDAP-part-5-Tich-hop-ldap-voi-pfsense/){:target="_blank"}, một firewall mềm được rất nhiều đơn vị triển khai.
 
 ---
 

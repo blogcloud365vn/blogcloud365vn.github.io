@@ -18,9 +18,9 @@ Tiếp tục serie về LDAP và tích hợp LDAP. Trong bài viết này mình 
 
 - Một máy CentOS đã được [cài đặt Check_MK](https://blog.cloud365.vn/monitor/check_mk-part1-Tong-quan-ve-checkmk-va-vai-dat/#3-cai-%C4%91at-check_mk-tren-centos-7)
 
-- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
+- [Cài đặt phpLDAPadmin](https://blog.cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 

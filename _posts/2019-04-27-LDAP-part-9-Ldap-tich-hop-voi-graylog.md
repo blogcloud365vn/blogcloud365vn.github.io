@@ -12,15 +12,15 @@ set_order: 9
 
 ## Lời mở đầu.
 
-Ở [bài viết trước](https://cloud365.vn/ldap/LDAP-part-8-Ldap-tich-hop-voi-checkmk/){:target="_blank"} mình đã hướng dẫn cách tích hợp Check_MK với LDAP. Ở trong bài viết này mình sẽ tiếp tục hướng dẫn cách tích hợp LDAP với Graylog
+Ở [bài viết trước](https://blog.cloud365.vn/ldap/LDAP-part-8-Ldap-tich-hop-voi-checkmk/){:target="_blank"} mình đã hướng dẫn cách tích hợp Check_MK với LDAP. Ở trong bài viết này mình sẽ tiếp tục hướng dẫn cách tích hợp LDAP với Graylog
 
 ## Chuẩn bị.
 
 - Một máy CentOS 7 đã được cài đặt Graylog
 
-- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+- [Cài đặt OpenLDAP](https://blog.cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
+- [Cài đặt phpLDAPadmin](https://blog.cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 

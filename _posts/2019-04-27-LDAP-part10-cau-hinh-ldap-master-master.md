@@ -391,7 +391,7 @@ result: 0 Success
 
 ## Tổng kết
 
-Như vậy trong bài viết này mình đã triển khai mô hình LDAP master-master. Tuy nhiên còn một mô hình triển khai LDAP phổ biến khác đó là mô hình LDAP maste-slave. Vậy sự khác nhau giữa hai mô hình này là thế nào? Cách triển khai ra sao? Lợi ích của mô hình master-slave đem lại là gì? Mời các bạn theo dõi [bài viết tiếp](https://cloud365.vn/ldap/LDAP-part11-cau-hinh-ldap-master-slave/){:target="_blank"} theo của mình.
+Như vậy trong bài viết này mình đã triển khai mô hình LDAP master-master. Tuy nhiên còn một mô hình triển khai LDAP phổ biến khác đó là mô hình LDAP maste-slave. Vậy sự khác nhau giữa hai mô hình này là thế nào? Cách triển khai ra sao? Lợi ích của mô hình master-slave đem lại là gì? Mời các bạn theo dõi [bài viết tiếp](https://blog.cloud365.vn/ldap/LDAP-part11-cau-hinh-ldap-master-slave/){:target="_blank"} theo của mình.
 
 Cảm ơn các bạn đã theo dõi.
 
