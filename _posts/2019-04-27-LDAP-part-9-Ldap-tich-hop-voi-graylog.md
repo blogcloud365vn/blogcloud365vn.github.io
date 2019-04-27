@@ -1,24 +1,26 @@
 ---
-title: LDAP part 8 - Tích hợp LDAP với Graylog
+title: LDAP [Part 9] - Tích hợp LDAP với Graylog
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Graylog
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 22
+set_order: 9
 ---
 
 ## Lời mở đầu.
 
-Hôm nay mình sẽ hướng dẫn mọi người cách để tích hợp LDAP với graylog, một hệ thống thu thập log tập trung.
+Ở [bài viết trước](https://cloud365.vn/ldap/LDAP-part-8-Ldap-tich-hop-voi-checkmk/){:target="_blank"} mình đã hướng dẫn cách tích hợp Check_MK với LDAP. Ở trong bài viết này mình sẽ tiếp tục hướng dẫn cách tích hợp LDAP với Graylog
 
 ## Chuẩn bị.
 
 - Một máy CentOS 7 đã được cài đặt Graylog
 
-- Một máy CentOS đã được [cài đặt OpenLDAP]()
+- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+
+- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 
@@ -74,13 +76,14 @@ Login vào Graylog với tài khoản admin và thực hiện các bước sau :
 
 ![ldap-59](/images/img-ldap-datpt/ldap-59.png)
 
-Chúc mọi người thành công !
-
-
 
 ## Tổng kết.
 
-Cảm ơn mọi người đã đến với Cloud365, để chất lượng những bài viết được tốt hơn rất mong có những đóng góp từ mọi người.
+Như vậy trong bài viết mình đã hướng dẫn các bạn cách tích hợp LDAP với Graylog. **Tạm thời** đây cũng sẽ là bài viết tích hợp LDAP với các phần mềm nguồn mở cuối cùng trong serie này của mình. Các phần mềm khác mình sẽ tiếp tục viết hướng dẫn tích hợp sau.
+
+Trong các bài kế tiếp của serie, mình sẽ đề cập đến vấn đề **Failover** với OpenLDAP. Các mô hình LDAP triển khai với những hệ thống lớn.
+
+Cảm ơn các bạn đã theo dõi.
 
 ---
 

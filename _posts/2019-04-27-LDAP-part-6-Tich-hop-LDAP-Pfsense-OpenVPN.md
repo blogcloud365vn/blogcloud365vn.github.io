@@ -1,13 +1,13 @@
 ---
-title: LDAP part 5 - Hướng dẫn sử dụng VPN Pfsense đối với user được tích hợp từ LDAP
+title: LDAP [Part 6] - OpenVPN Pfsense đối với user được tích hợp từ LDAP
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: OpenVPN Pfsense đối với user được tích hợp từ LDAP
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 26
+set_order: 6
 ---
 
 ## Lời mở đầu.
@@ -16,15 +16,15 @@ Một vấn đề chúng ta gặp phải khi tích hợp LDAP với hệ thống
 
 ## Chuẩn bị.
 
-- Đã có máy chủ [cài đặt OpenLDAP]()
+- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- Đã cài đặt pfsense
+- Một Pfsense server
 
-- Đã tích hợp LDAP xác thực qua pfsense.
+- Đã [tích hợp LDAP xác thực qua Pfsense](https://cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"}
 
 - Đã cấu hình rules cho OpenVPN và cài client export của OpenVPN.
 
-## Mô hình.
+## Mô hình
 
 ![ldap-19](/images/img-ldap-datpt/ldap-19.png)
 
@@ -76,11 +76,9 @@ Vào tab `VPN/OPENVPN/Client Export` và tải về để kiểm tra
 
 ![ldap-31](/images/img-ldap-datpt/ldap-31.png)
 
-Chúc mọi người thành công.
-
 ## Tổng kết.
 
-Cảm ơn mọi người đã đến với Cloud365, để chất lượng những bài viết được tốt hơn rất mong có những đóng góp từ mọi người.
+Như vậy trong bài viết này mình đã hướng dẫn cách xác thực OpenVPN của Pfsense với tài khoản xác thực từ LDAP. Chúc các bạn thực hiện thành công.
 
 ---
 

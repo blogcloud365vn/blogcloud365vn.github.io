@@ -1,24 +1,26 @@
 ---
-title: LDAP part 7 - Tích hợp LDAP với checkmk
+title: LDAP [Part 8] - Tích hợp LDAP với Check_MK
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Check_MK
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 23
+set_order: 8
 ---
 
 ## Lời mở đầu.
 
-Hôm nay mình sẽ hướng dẫn mọi người cách để tích hợp LDAP với checkmk, một trong những hệ thống monitor mã nguồn mở hỗ trợ xác thực bằng LDAP.
+Tiếp tục serie về LDAP và tích hợp LDAP. Trong bài viết này mình sẽ tiếp tục hướng dẫn cấu hình Check_MK - một công cụ để monitor mã nguồn mở xác thực với LDAP.
 
 ## Chuẩn bị.
 
-- Một máy CentOS đã được [cài đặt checkmk](https://blog.cloud365.vn/monitor/check_mk-part1-Tong-quan-ve-checkmk-va-vai-dat/#3-cai-%C4%91at-check_mk-tren-centos-7)
+- Một máy CentOS đã được [cài đặt Check_MK](https://blog.cloud365.vn/monitor/check_mk-part1-Tong-quan-ve-checkmk-va-vai-dat/#3-cai-%C4%91at-check_mk-tren-centos-7)
 
-- Một máy CentOS đã được [cài đặt OpenLDAP]()
+- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+
+- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 
@@ -26,7 +28,7 @@ Tạo cây thư mục như sau:
 
 ![ldap-32](/images/img-ldap-datpt/ldap-32.png)
 
-## Thao tác trên checkmk.
+## Thao tác trên Check_MK.
 
 Login vào checkmk với tài khoản `cmkadmin` và thực hiện cấu hình.
 
@@ -58,7 +60,7 @@ Kết quả như sau :
 
 ## Tổng kết.
 
-Cảm ơn mọi người đã đến với Cloud365, để chất lượng những bài viết được tốt hơn rất mong có những đóng góp từ mọi người.
+Như vậy trong bài viết này mình đã hướng dẫn cách tích hợp Check_MK để xác thực với LDAP. Chúc các bạn thực hiện thành công
 
 ---
 

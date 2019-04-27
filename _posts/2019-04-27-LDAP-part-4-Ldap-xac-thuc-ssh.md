@@ -1,24 +1,26 @@
 ---
-title: LDAP part 8 - Tích hợp LDAP với Graylog
+title: LDAP [Part 4] - Xác thực SSH với LDAP
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Xác thực SSH với LDAP
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 22
+set_order: 4
 ---
 
 ## Lời mở đầu.
 
-Hôm nay mình sẽ hướng dẫn mọi người cách để tích hợp LDAP với các máy chủ CentOS 7 và Ubuntu.
+Sau khi cài đặt OpenLDAP và phpLDAPadmin, thì bây giờ là thời điểm mình đã có thể kiểm tra lại hoạt động của LDAP.
+
+Để thực hiện kiểm tra, ứng dụng đầu tiên và đơn giản nhất mình sử dụng đó là SSH.
 
 ## Chuẩn bị.
 
 - Máy ảo đã được cài đặt CentOS hoặc Ubuntu.
 
-- Một máy CentOS 7 đã được [cài đặt OpenLDAP]()
+- Một máy CentOS 7 đã được [cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 ## Thao tác trên OpenLDAP.
 
@@ -101,7 +103,7 @@ systemctl start nscd
 systemctl enable nscd
 ```
 
-## Tiến hành ssh bằng user trên LDAP.
+## Tiến hành SSH bằng user trên LDAP.
 
 Kết quả như sau:
 
@@ -111,7 +113,7 @@ Chúc các bạn thành công !
 
 ## Tổng kết.
 
-Cảm ơn mọi người đã đến với Cloud365, để chất lượng những bài viết được tốt hơn rất mong có những đóng góp từ mọi người.
+Như vậy trong bài viết này mình đã hướng dẫn các bạn cách SSH đến server CentOS và Ubuntu với tài khoản từ LDAP, trong bài viết tiếp theo mình sẽ hướng dẫn [tích hợp LDAP với Pfsense](https://cloud365.vn/ldap/LDAP-part-5-Tich-hop-ldap-voi-pfsense/){:target="_blank"}, một firewall mềm được rất nhiều đơn vị triển khai.
 
 ---
 

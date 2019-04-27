@@ -1,12 +1,13 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7"
+title: "LDAP [Part 11] - Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7
 author: thanhnb
-tags: [LDAP, Linux, CentOS7]
+tags: [LDAP]
 type: Document
+set: tim-hieu-LDAP
+set_order: 11
 ---
 
 ## Tổng quan
@@ -26,7 +27,8 @@ Bên cạnh master node là 1 hoặc nhiều shadow server (có thể gọi là 
 ![](/images/img-ldap-master-slave/pic1.png)
 
 ## Chuẩn bị
-- Cằi đặt 2 node LDAP với IP như sau. Các bạn tham khảo link sau: [Hướng dẫn cài đặt LDAP Trên CentOS 7]()
+
+- Cài đặt 2 node LDAP với IP như sau. Các bạn tham khảo link sau: [Hướng dẫn cài đặt LDAP Trên CentOS 7](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
 ```
 HOSTNAME    ldap_94 (Master)
@@ -45,6 +47,7 @@ Network     eth0: 1 Network access (10.10.10.96)
 - Lưu ý: Tắt Firewalld + SELinux
 
 ## Cài đặt
+
 ### Tại LDAP Master
 
 Kích hoạt module syncprov
@@ -238,9 +241,15 @@ result: 0 Success
 
 Lưu ý: Với mô hình LDAP Master Slave chỉ có thể ghi duy nhất tại Master, nếu node Master dữ liệu chỉ có thể đọc và không thể ghi
 
-## Nguồn
+## Tổng kết
 
-https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=5
+Như vậy ngoài mô hình LDAP master-master thì trong bài viết này mình đã triển khai mô hình LDAP master-slave. Ở [bài viết tiếp](https://cloud365.vn/ldap/LDAP-part12-cau-hinh-ldap-keepalive/){:target="_blank"} theo mình sẽ hướng dẫn cách cấu hình LDAP với keepalive để tăng khả năng chịu lỗi của hệ thống.
+
+Cảm ơn các bạn đã theo dõi serie tìm hiểu LDAP của mình.
+
+## Tài liệu tham khảo
+
+[https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=5](https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=5){:target="_blank"}
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

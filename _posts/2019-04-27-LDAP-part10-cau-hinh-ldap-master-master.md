@@ -1,13 +1,15 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn triển khai LDAP Master - Master trên CentOS 7"
+title: "LDAP [Part 10] - Hướng dẫn triển khai LDAP Master - Master trên CentOS 7"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn triển khai LDAP Master - Master trên CentOS 7
 author: thanhnb
-tags: [LDAP, Linux, CentOS7]
+tags: [LDAP]
 type: Document
+set: tim-hieu-LDAP
+set_order: 10
 ---
+
 
 ## Tổng quan
 
@@ -18,7 +20,7 @@ Trong bài blog này, mình sẽ hướng dẫn các bạn cách cấu hình LDA
 ![](/images/img-ldap-master-master/pic1.png)
 
 ## Chuẩn bị
-- Cằi đặt 2 node LDAP với IP như sau
+- Cài đặt 2 node LDAP với IP như sau
 
 ```
 HOSTNAME    ldap_94 (Master)
@@ -387,9 +389,15 @@ result: 0 Success
 # numEntries: 1
 ```
 
-## Nguồn
+## Tổng kết
 
-https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=6
+Như vậy trong bài viết này mình đã triển khai mô hình LDAP master-master. Tuy nhiên còn một mô hình triển khai LDAP phổ biến khác đó là mô hình LDAP maste-slave. Vậy sự khác nhau giữa hai mô hình này là thế nào? Cách triển khai ra sao? Lợi ích của mô hình master-slave đem lại là gì? Mời các bạn theo dõi [bài viết tiếp](https://cloud365.vn/ldap/LDAP-part11-cau-hinh-ldap-master-slave/){:target="_blank"} theo của mình.
+
+Cảm ơn các bạn đã theo dõi.
+
+## Tài liệu tham khảo
+
+[https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=6](https://www.server-world.info/en/note?os=CentOS_7&p=openldap&f=6){:target="_blank"}
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

@@ -1,24 +1,26 @@
 ---
-title: LDAP part 6 - Tích hợp LDAP với PHPIPAM
+title: LDAP [Part 7] - Tích hợp LDAP với phpIPAM
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với phpIPAM
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 24
+set_order: 7
 ---
 
 ## Lời mở đầu.
 
-Hôm nay mình sẽ hướng dẫn mọi người cách để tích hợp LDAP với PHPIPAM, một phần mềm mã nguồn quản dùng để quản lý địa chỉ IP.
+Để tiếp tục serie LDAP, tại bài viết này mình sẽ hướng dẫn các bạn cách tích hợp LDAP với phpIPAM - một công cụ quản lý IP.
 
 ## Chuẩn bị.
 
 - Một máy CentOS 7 đã được cài đặt PHPIPAM
 
-- Một mát CentOS 7 đã được [cài đặt LDAP]()
+- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
+
+- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Trên máy chủ LDAP.
 
@@ -69,11 +71,9 @@ Hôm nay mình sẽ hướng dẫn mọi người cách để tích hợp LDAP v
 ![ldap-50](/images/img-ldap-datpt/ldap-50.png)
 
 
-Chúc mọi người thành công !
-
 ## Tổng kết.
 
-Cảm ơn mọi người đã đến với Cloud365, để chất lượng những bài viết được tốt hơn rất mong có những đóng góp từ mọi người.
+Như vậy trong bài viết này mình đã hướng dẫn cách cấu hình phpIPAM xác thực với LDAP. Chúc các bạn thực hiện thành công.
 
 ---
 

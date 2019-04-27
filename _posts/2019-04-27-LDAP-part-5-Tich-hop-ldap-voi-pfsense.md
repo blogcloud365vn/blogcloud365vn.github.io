@@ -1,26 +1,26 @@
 ---
-title: LDAP part 4 - Tích hợp LDAP với Pfsense
+title: LDAP [Part 5] - Tích hợp LDAP với Pfsense
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Pfsense
 author: huytm
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 27
+set_order: 5
 ---
 
 ## Lời mở đầu.
 
-Pfsense
+Trong các bài viết trước, mình đã hướng dẫn cách cài đặt OpenLDAP, phpLDAPadmin, cũng như thực hiện việc SSH sử dụng xác thực với tài khoản của LDAP. Để tiếp tục serie về LDAP, trong bài viết này mình sẽ tiếp tục hướng dẫn cách tích hợp LDAP với Pfsense - một firewall khá nổi tiếng
 
 ## Chuẩn bị.
 
 - Pfsense version pfSense-CE-2.4.4
 
-- OpenLDAP
+- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
 
-- PHP ldapadmin
+- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}
 
 ## Mô hình.
 
@@ -30,7 +30,7 @@ Pfsense
 ## Các bước chuẩn bị trên LDAP.
 
 
-#### Tạo một cấu trúc như sau:
+**1. Tạo một cấu trúc như sau:**
 
 ![alt text](/images/img-ldap-datpt/anh1.png)
 
@@ -48,7 +48,7 @@ Tạo group, tùy vào mục đích sử dụng sẽ tạo các group khác nhau
 
 ![alt text](/images/img-ldap-datpt/anh4.png)
 
-#### Tạo user
+**2. Tạo user**
 
 - Chọn `ou=people` -> `Create a child entry` -> `Generic: User Account`
 
@@ -74,7 +74,7 @@ Tạo group, tùy vào mục đích sử dụng sẽ tạo các group khác nhau
 
 ![alt text](/images/img-ldap-datpt/anh7.png)
 
-#### Mapping user với group 
+**3. Mapping user với group**
 
 > Vì mình sử dụng php ldapadmin nên một số group defaul sẽ cần phải bổ sung thêm attribute.
 
@@ -104,7 +104,7 @@ Thực hiện tạo các user và group khác tùy mục đích sử dụng củ
 
 Đăng nhập vào tài khoản admin 
 
-#### Tạo mới một kiểu xác thực sử dụng LDAP 
+**1. Tạo mới một kiểu xác thực sử dụng LDAP**
 
 - Chọn `System` -> `User Manager`
 
@@ -170,7 +170,7 @@ Thực hiện tạo các user và group khác tùy mục đích sử dụng củ
   
   ![alt text](/images/img-ldap-datpt/anh15.png)
   
-#### Thiết lập xác thực bằng LDAP
+**2. Thiết lập xác thực bằng LDAP**
 
 - Chọn Settings -> Chọn Save & Test
 
@@ -180,7 +180,7 @@ Thực hiện tạo các user và group khác tùy mục đích sử dụng củ
 
 ![alt text](/images/img-ldap-datpt/anh19.png)
   
-#### Tạo group và phân quyền
+**3. Tạo group và phân quyền**
 
 Chú ý, Group mapping trong Pfsense phải trùng tên với group trong LDAP
 
@@ -212,7 +212,7 @@ Chú ý, Group mapping trong Pfsense phải trùng tên với group trong LDAP
 
 ![alt text](/images/img-ldap-datpt/anh24.png)
 
-#### Kiểm tra lại cấu hình 
+**4. Kiểm tra lại cấu hình**
 
 - Chọn `Diagnostics` -> `Authentication`
 
@@ -240,7 +240,7 @@ Cảm ơn đã truy cập vào Cloud365 !
 
 ## Tổng kết.
 
-Ở bài này mình đã hướng dẫn mọi người cách tích hợp LDAP với PFsense, ở các bài viết sau mình sẽ hướng dẫn tích hợp với một số hệ thống khác trên CentOS 7.
+Ở bài này mình đã hướng dẫn mọi người cách tích hợp LDAP với Pfsense. Vậy nếu chúng ta sử dụng OpenVPN với Pfsene thì các tài khoản này có thực hiện VPN được không? Câu trả lời là có, trong [bài viết tiếp theo](https://cloud365.vn/ldap/LDAP-part-6-Tich-hop-LDAP-Pfsense-OpenVPN/){:target="_blank"} mình sẽ hướng dẫn các bạn cách cấu hình Pfsense để có thể VPN với user LDAP.
 
 ---
 
