@@ -1,7 +1,5 @@
 ---
 title: LDAP [Part 3] - Hướng dẫn cài đặt phpLDAP- [Cài đặt OpenLDAP](https://cloud365.vn/ldap/LDAP-part-2-cai-dat-ldap-centos-7/){:target="_blank"}
-
-- [Cài đặt phpLDAPadmin](https://cloud365.vn/ldap/LDAP-part-3-cai-dat-php-ldap-admin/){:target="_blank"}admin trên CentOS 7
 categories:
   - LDAP
 description: Hướng dẫn cài đặt phpldapadmin trên CentOS 7
