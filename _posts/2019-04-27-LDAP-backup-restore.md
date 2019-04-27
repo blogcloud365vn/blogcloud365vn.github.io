@@ -34,7 +34,7 @@ Network     eth0: Cloud365a@123 (10.10.10.96)
 
 Thực hiện dump data hay backup dữ liệu LDAP
 ```
-ldapsearch -x -h 10.10.10.94 -b "dc=nhanhoa,dc=local" -D "cn=Manager,dc=nhanhoa,dc=local" -w 0435626533a@ -s sub "(objectclass=*)" > backup_file.ldif
+ldapsearch -x -h 10.10.10.94 -b "dc=nhanhoa,dc=local" -D "cn=Manager,dc=nhanhoa,dc=local" -w Cloud365a@123 -s sub "(objectclass=*)" > backup_file.ldif
 ```
 
 Lưu ý:
@@ -64,7 +64,7 @@ Lưu ý:
 Thực hiện Restore dữ liệu 
 
 ```
-ldapmodify -a -c -x -h 10.10.10.96 -D "cn=Manager,dc=nhanhoa,dc=local" -w 0435626533a@ -f backup_file.ldif
+ldapmodify -a -c -x -h 10.10.10.96 -D "cn=Manager,dc=nhanhoa,dc=local" -w Cloud365a@123 -f backup_file.ldif
 ```
 
 Lưu ý:
