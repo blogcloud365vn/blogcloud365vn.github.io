@@ -7,7 +7,7 @@ author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 24
+set_order: 23
 ---
 
 ## Lời mở đầu.
