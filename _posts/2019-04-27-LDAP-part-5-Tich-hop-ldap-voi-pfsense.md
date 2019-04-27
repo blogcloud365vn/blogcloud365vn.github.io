@@ -1,13 +1,13 @@
 ---
-title: LDAP part 4 - Tích hợp LDAP với Pfsense
+title: LDAP [Part 5] - Tích hợp LDAP với Pfsense
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Pfsense
 author: huytm
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 27
+set_order: 5
 ---
 
 ## Lời mở đầu.

@@ -1,12 +1,13 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn triển khai LDAP Multi Master Haproxy Pacemaker trên CentOS 7"
+title: "LDAP [Part 13] - Hướng dẫn triển khai LDAP Multi Master Haproxy Pacemaker trên CentOS 7"
 categories:
   - Linux
 description: Hướng dẫn triển khai LDAP Multi-Master Haproxy Pacemaker trên CentOS 7
 author: thanhnb
 tags: [LDAP, Cluster, Load balancer, High Availability, HAproxy, Database, Linux, CentOS7]
 type: Document
+set: tim-hieu-LDAP
+set_order: 13
 ---
 
 ## Tổng quan

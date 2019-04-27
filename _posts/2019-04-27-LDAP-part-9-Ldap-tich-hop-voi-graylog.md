@@ -1,13 +1,13 @@
 ---
-title: LDAP part 8 - Tích hợp LDAP với Graylog
+title: LDAP [Part 9] - Tích hợp LDAP với Graylog
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Graylog
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 22
+set_order: 9
 ---
 
 ## Lời mở đầu.

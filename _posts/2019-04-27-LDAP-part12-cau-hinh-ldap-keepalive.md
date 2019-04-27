@@ -1,12 +1,13 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn cấu hình Keepalive cho mô hình LDAP Master Master"
+title: "LDAP [Part 12] - Hướng dẫn cấu hình Keepalive cho mô hình LDAP Master Master"
 categories:
   - Linux
 description: Hướng dẫn cấu hình Keepalive cho mô hình LDAP Master Master
 author: thanhnb
-tags: [LDAP, Linux, CentOS7]
+tags: [LDAP]
 type: Document
+set: tim-hieu-LDAP
+set_order: 12
 ---
 
 ## Mô hình

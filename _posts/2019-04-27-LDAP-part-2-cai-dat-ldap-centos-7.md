@@ -1,13 +1,13 @@
 ---
-title: LDAP part 2 - Cài đặt OpenLDAP trên CentOS 7
+title: LDAP [Part 2] - Cài đặt OpenLDAP trên CentOS 7
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Cài đặt OpenLDAP trên CentOS 7
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 29
+set_order: 2
 ---
 
 ## Lời mở đầu.

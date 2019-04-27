@@ -1,13 +1,13 @@
 ---
-title: LDAP part 8 - Tích hợp LDAP với Graylog
+title: LDAP [Part 4] - Xác thực SSH với LDAP
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Xác thực SSH với LDAP
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 22
+set_order: 4
 ---
 
 ## Lời mở đầu.

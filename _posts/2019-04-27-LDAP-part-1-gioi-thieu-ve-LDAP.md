@@ -1,13 +1,13 @@
 ---
-title: LDAP part 1 - Giới thiệu về LDAP
+title: LDAP [Part 1] - Giới thiệu về LDAP
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Giới thiệu và tìm hiểu về LDAP.
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 30
+set_order: 1
 ---
 
 ## Lời mở đầu.

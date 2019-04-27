@@ -1,12 +1,13 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7"
+title: "LDAP [Part 11] - Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7"
 categories:
   - Linux
 description: Hướng dẫn triển khai LDAP Master - Slave trên CentOS 7
 author: thanhnb
-tags: [LDAP, Linux, CentOS7]
+tags: [LDAP]
 type: Document
+set: tim-hieu-LDAP
+set_order: 11
 ---
 
 ## Tổng quan

@@ -1,13 +1,13 @@
 ---
-title: LDAP part 6 - Tích hợp LDAP với PHPIPAM
+title: LDAP [Part 7] - Tích hợp LDAP với phpIPAM
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với phpIPAM
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 24
+set_order: 7
 ---
 
 ## Lời mở đầu.

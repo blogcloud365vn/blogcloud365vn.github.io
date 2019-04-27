@@ -1,13 +1,15 @@
 ---
-date: 2019-04-27
-title: "Hướng dẫn triển khai LDAP Master - Master trên CentOS 7"
+title: "LDAP [Part 10] - Hướng dẫn triển khai LDAP Master - Master trên CentOS 7"
 categories:
-  - Linux
+  - LDAP
 description: Hướng dẫn triển khai LDAP Master - Master trên CentOS 7
 author: thanhnb
-tags: [LDAP, Linux, CentOS7]
+tags: [LDAP]
 type: Document
+set: tim-hieu-LDAP
+set_order: 10
 ---
+
 
 ## Tổng quan
 

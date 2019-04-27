@@ -1,13 +1,13 @@
 ---
-title: LDAP part 3 - Hướng dẫn cài đặt phpldapadmin trên CentOS 7
+title: LDAP [Part 3] - Hướng dẫn cài đặt phpldapadmin trên CentOS 7
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Hướng dẫn cài đặt phpldapadmin trên CentOS 7
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 28
+set_order: 3
 ---
 
 ## Lời mở đầu.

@@ -1,13 +1,13 @@
 ---
-title: LDAP part 7 - Tích hợp LDAP với checkmk
+title: LDAP [Part 8] - Tích hợp LDAP với Check_MK
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: Tích hợp LDAP với Check_MK
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 23
+set_order: 8
 ---
 
 ## Lời mở đầu.

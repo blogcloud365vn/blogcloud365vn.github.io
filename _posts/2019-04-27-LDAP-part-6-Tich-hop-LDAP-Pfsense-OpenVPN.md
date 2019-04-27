@@ -1,13 +1,13 @@
 ---
-title: LDAP part 5 - Hướng dẫn sử dụng VPN Pfsense đối với user được tích hợp từ LDAP
+title: LDAP [Part 6] - OpenVPN Pfsense đối với user được tích hợp từ LDAP
 categories:
   - LDAP
-description: Tìm hiểu về LDAP.
+description: OpenVPN Pfsense đối với user được tích hợp từ LDAP
 author: datpt
 tags: [LDAP]
 type: Document
 set: tim-hieu-LDAP
-set_order: 26
+set_order: 6
 ---
 
 ## Lời mở đầu.
