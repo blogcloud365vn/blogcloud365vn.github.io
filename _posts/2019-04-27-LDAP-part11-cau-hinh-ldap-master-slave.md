@@ -243,7 +243,7 @@ Lưu ý: Với mô hình LDAP Master Slave chỉ có thể ghi duy nhất tại 
 
 ## Tổng kết
 
-Như vậy ngoài mô hình LDAP master-master thì trong bài viết này mình đã triển khai mô hình LDAP master-slave. Ở [bài viết tiếp](https://cloud365.vn/ldap/LDAP-part12-cau-hinh-ldap-keepalive/){:target="_blank"} theo mình sẽ hướng dẫn cách cấu hình LDAP với keepalive để tăng khả năng chịu lỗi của hệ thống.
+Như vậy ngoài mô hình LDAP master-master thì trong bài viết này mình đã triển khai mô hình LDAP master-slave. Ở [bài viết tiếp](https://blog.cloud365.vn/ldap/LDAP-part12-cau-hinh-ldap-keepalive/){:target="_blank"} theo mình sẽ hướng dẫn cách cấu hình LDAP với keepalive để tăng khả năng chịu lỗi của hệ thống.
 
 Cảm ơn các bạn đã theo dõi serie tìm hiểu LDAP của mình.
 
