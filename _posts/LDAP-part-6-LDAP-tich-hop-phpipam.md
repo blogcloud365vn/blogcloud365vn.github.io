@@ -1,5 +1,5 @@
 ---
-title: LDAP part 7 - Tích hợp LDAP với PHPIPAM
+title: LDAP part 6 - Tích hợp LDAP với PHPIPAM
 categories:
   - LDAP
 description: Tìm hiểu về LDAP.
