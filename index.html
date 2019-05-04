@@ -30,7 +30,7 @@
       <i class="fa fa-tag" aria-hidden="true"></i> Tags:
       {% if site.link-tags %}
       {% for tag in post.tags %}
-      <a href="{{ site.url }}/tags#{{- tag -}}"><span class="badge badge-primary">{{- tag -}}</span></a>
+      <a href="{{ site.baseurl }}/tags#{{- tag -}}"><span class="badge badge-primary">{{- tag -}}</span></a>
       {% endfor %}
       {% else %}
         {{ post.tags | join: ", " }}
@@ -47,12 +47,12 @@
 <div class="pager main-pager">
   {% if paginator.previous_page %}
   <div class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}">&larr; Newer Posts</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
   </div>
   {% endif %}
   {% if paginator.next_page %}
   <div class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.url | replace: '//', '/' }}">Older Posts &rarr;</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
   </div>
   {% endif %}
 </div>
