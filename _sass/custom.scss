@@ -108,6 +108,15 @@ code {
 .top-bar > nav {
   text-align: right;
 }
+
+div.tutorial-share {
+  padding-top: 1rem;
+}
+
+div.tutorial-share > a > svg {
+  top: 0px
+}
+
 // .next, .previous {
 // 	margin-top: 3rem;
 // 	text-align: center;
@@ -167,3 +176,4 @@ and (max-device-width : 1024px)  {
     font-size: 14px;
   }
 }
+
