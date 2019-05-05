@@ -93,10 +93,34 @@ code {
 	color: #0c92f1;
 }
 
-.next, .previous {
-	margin-top: 5rem;
-	text-align: center;
+.main-pager {
+  margin-top: 2rem;
 }
+
+.main-pager > .next {
+  float: right;
+}
+
+.main-pager > .previous {
+  float: left;
+}
+
+.top-bar > nav {
+  text-align: right;
+}
+
+div.tutorial-share {
+  padding-top: 1rem;
+}
+
+div.tutorial-share > a > svg {
+  top: 0px
+}
+
+// .next, .previous {
+// 	margin-top: 3rem;
+// 	text-align: center;
+// }
 
 /* Tags page */
 
@@ -141,3 +165,15 @@ code {
   background-color: #404145;
   color: #fff;
 }
+
+
+// Reponsive Nav for Ipad, Ipad mini
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+  .top-bar > nav {
+    font-size: 14px;
+  }
+}
+

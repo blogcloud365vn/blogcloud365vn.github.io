@@ -4,7 +4,7 @@ categories:
   - Other
 description: Tài liệu hướng dẫn sử dụng Jekyll, Phần 1 - Cài đặt Jekyll trên CentOS 7
 author: huytm
-tags: [Jekyll, Centos]
+tags: [Jekyll, CentOS]
 type: Document
 ---
 
@@ -55,7 +55,7 @@ __b. Cài đặt ruby__
 
 ```
 source /etc/profile.d/rvm.sh
-rvm install ruby
+rvm install ruby-2.5
 ruby -v
 gem -v
 ```
@@ -69,7 +69,8 @@ Vì Jekyll được viết bằng __ruby__ và yêu cầu ruby từ __version 2.
 ## 5. Cài đặt Jekyll
 
 ```
-gem install jekyll bundler
+gem install jekyll -v 3.7.4
+gem install bundler
 jekyll -v
 ```
 
