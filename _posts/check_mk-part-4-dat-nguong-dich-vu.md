@@ -54,7 +54,9 @@ set_order: 22
 
 ![omd-35](/images/img-omd/omd-35.png)
 
-![omd-36](/images/img-omd/omd-36.png)
+## Tổng kết
+
+Như vậy mình đã hướng dẫn mọi người cách để  thiết lập ngưỡng cảnh báo, để có thể áp dụng chúng ta cần thiết lập cấu hình cảnh báo, các bài hướng dẫn cấu hình cảnh báo sẽ có ở bài sau.
 
 ---
 
