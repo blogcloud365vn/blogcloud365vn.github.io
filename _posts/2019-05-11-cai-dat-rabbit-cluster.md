@@ -19,6 +19,12 @@ Trong bài này mình sẽ hướng dẫn các bạn triển khai hệ thống R
 
 ## Mô hình
 
+### Mô hình triển khai
+
+![](/images/img-rabbit-cluster/pic2.png)
+
+### Cấu hình
+
 ```
 HOSTNAME    rabbitmq94
 CPU         2 core
@@ -325,6 +331,18 @@ Cluster status of node rabbit@rabbitmq96
 ```
 
 Kiểm tra RabbitMQ Management
+
+![](/images/img-rabbit-cluster/pic1.png)
+
+## Tổng kết
+
+Tới đây mình đã hướng dẫn các bạn cấu hình RabbitMQ Cluster. Để biết thêm chi tiết các bạn vui lòng tham khảo các binh bên dưới
+
+## Nguồn
+
+https://www.rabbitmq.com/ha.html
+
+https://kipalog.com/posts/Tim-hieu-RabbitMQ---Phan-2
 
 ---
 
