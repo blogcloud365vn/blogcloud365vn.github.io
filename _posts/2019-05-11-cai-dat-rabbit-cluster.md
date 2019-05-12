@@ -11,6 +11,12 @@ set: high-availability
 set_order: 9
 ---
 
+## Tổng quan
+
+RabbitMQ là một message broker (message-oriented middleware) sử dụng giao thức AMQP - Advanced Message Queue Protocol (Đây là giao thức phổ biến, thực tế rabbitmq hỗ trợ nhiều giao thức). RabbitMQ được lập trình bằng ngôn ngữ Erlang. RabbitMQ cung cấp cho lập trình viên một phương tiện trung gian để giao tiếp giữa nhiều thành phần trong một hệ thống lớn ( VD: Openstack RabbitMQ ). RabbitMQ sẽ nhận message đến từ các thành phần khác nhau trong hệ thống, lưu trữ chúng an toàn trước khi đẩy đến đích.
+
+Trong bài này mình sẽ hướng dẫn các bạn triển khai hệ thống RabbitMQ theo mô hình Cluster
+
 ## Mô hình
 
 ```
