@@ -332,6 +332,8 @@ Cluster status of node rabbit@rabbitmq96
 
 Kiểm tra RabbitMQ Management
 
+Lưu ý: Các bạn đăng nhập với tài khoản `admin/Cloud365a@123`
+
 ![](/images/img-rabbit-cluster/pic1.png)
 
 ## Tổng kết
