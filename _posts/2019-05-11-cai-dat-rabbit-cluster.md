@@ -25,21 +25,18 @@ CPU         2 core
 RAM         2 GB
 Disk        vda: os
 Network     eth0: access network (10.10.10.94)
-Network     eth1: replicate network (10.10.11.94)
 
 HOSTNAME    rabbitmq95
 CPU         2 core
 RAM         2 GB
 Disk        vda: os
 Network     eth0: access network (10.10.10.95)
-Network     eth1: replicate network (10.10.11.95)
 
 HOSTNAME    rabbitmq96
 CPU         2 core
 RAM         2 GB
 Disk        vda: os
 Network     eth0: access network (10.10.10.96)
-Network     eth1: replicate network (10.10.11.96)
 ```
 
 ## Cài đặt
@@ -73,11 +70,6 @@ nmcli c modify eth0 ipv4.gateway 10.10.10.1
 nmcli c modify eth0 ipv4.dns 8.8.8.8
 nmcli c modify eth0 ipv4.method manual
 nmcli con mod eth0 connection.autoconnect yes
-
-echo "Setup IP eth1"
-nmcli c modify eth1 ipv4.addresses 10.10.11.94/24
-nmcli c modify eth1 ipv4.method manual
-nmcli con mod eth1 connection.autoconnect yes
 ```
 
 Tắt Firewall, SELinux
@@ -117,11 +109,6 @@ nmcli c modify eth0 ipv4.gateway 10.10.10.1
 nmcli c modify eth0 ipv4.dns 8.8.8.8
 nmcli c modify eth0 ipv4.method manual
 nmcli con mod eth0 connection.autoconnect yes
-
-echo "Setup IP eth1"
-nmcli c modify eth1 ipv4.addresses 10.10.11.95/24
-nmcli c modify eth1 ipv4.method manual
-nmcli con mod eth1 connection.autoconnect yes
 ```
 
 Tắt Firewall, SELinux
@@ -161,11 +148,6 @@ nmcli c modify eth0 ipv4.gateway 10.10.10.1
 nmcli c modify eth0 ipv4.dns 8.8.8.8
 nmcli c modify eth0 ipv4.method manual
 nmcli con mod eth0 connection.autoconnect yes
-
-echo "Setup IP eth1"
-nmcli c modify eth1 ipv4.addresses 10.10.11.96/24
-nmcli c modify eth1 ipv4.method manual
-nmcli con mod eth1 connection.autoconnect yes
 ```
 
 Tắt Firewall, SELinux
@@ -341,6 +323,8 @@ Cluster status of node rabbit@rabbitmq96
           {rabbit@rabbitmq95,[]},
           {rabbit@rabbitmq96,[]}]}]
 ```
+
+Kiểm tra RabbitMQ Management
 
 ---
 
