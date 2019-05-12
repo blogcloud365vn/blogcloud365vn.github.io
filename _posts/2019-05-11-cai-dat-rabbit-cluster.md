@@ -336,7 +336,7 @@ Kiểm tra RabbitMQ Management
 
 ## Tổng kết
 
-Tới đây mình đã hướng dẫn các bạn cấu hình RabbitMQ Cluster. Để biết thêm chi tiết các bạn vui lòng tham khảo các binh bên dưới
+Tới đây mình đã hướng dẫn các bạn cấu hình RabbitMQ Cluster. Để biết thêm chi tiết các bạn vui lòng tham khảo các link bên dưới. Chúc các bạn một ngày tốt lành.
 
 ## Nguồn
 
