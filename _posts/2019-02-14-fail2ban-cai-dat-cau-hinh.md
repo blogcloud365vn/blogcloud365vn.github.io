@@ -24,7 +24,7 @@ Mặc dù SSH là một giao thức đã được bảo mật hoạt động ở
 - OS: CentOS7
 - RAM: >= 1 GB
 - Disk: >= 10 GB
-- CPU: >= 1 Core 3
+- CPU: >= 1 Core
 - Update và cài đặt openssh-server
 - IP: 10.10.10.244/24
 
