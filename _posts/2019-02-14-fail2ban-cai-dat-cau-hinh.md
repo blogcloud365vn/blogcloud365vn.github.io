@@ -66,6 +66,7 @@ yum install fail2ban -y
 
 Cấu hình fail2ban
 ```sh 
+> /etc/fail2ban/jail.conf
 cat << EOF >> /etc/fail2ban/jail.conf
 [DEFAULT]
 ignoreip = 127.0.0.1
@@ -76,10 +77,10 @@ EOF
 ```
 
 Trong đó
-    - ignoreip: không block những địa chỉ này
-    - bantime: khoảng thời gian block mặc định (giây)
-    - findtime: khoảng thời gian (giây) một IP phải login thành công
-    - maxretry: số lần login false tối đa
+- ignoreip: không block những địa chỉ này
+- bantime: khoảng thời gian block mặc định (giây)
+- findtime: khoảng thời gian (giây) một IP phải login thành công
+- maxretry: số lần login false tối đa
 
 
 Cấu hình fail2ban cho ssh 
@@ -96,12 +97,12 @@ EOF
 ```
 
 Trong đó
-    - enabled: kích hoạt bảo vệ
-    - filter: giữ mặc định để sử dụng file cấu hình /etc/fail2ban/filter.d/sshd.conf
-    - action: fail2ban sẽ ban địa chỉ IP nếu match filter /etc/fail2ban/action.d/iptables.conf
-    - logpath: đường dẫn file log fail2ban 
-    - maxretry: số lần login false tối đa
-    - bantime: thời gian ban IP 3600 giây = 1 giờ
+- enabled: kích hoạt bảo vệ
+- filter: giữ mặc định để sử dụng file cấu hình /etc/fail2ban/filter.d/sshd.conf
+- action: fail2ban sẽ ban địa chỉ IP nếu match filter /etc/fail2ban/action.d/iptables.conf
+- logpath: đường dẫn file log fail2ban 
+- maxretry: số lần login false tối đa
+- bantime: thời gian ban IP 3600 giây = 1 giờ
 
 Start fail2ban 
 ```sh 
