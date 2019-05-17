@@ -19,6 +19,41 @@ Truy cập địa chỉ `http://ip-zabbix-server/zabbix/` để login vào zabbi
 
 ![](/images/img-ram-phan-tram/Screenshot_1482.png)
 
+## 2. Tạo item 	RAM USED % Current
+
+Lựa chọn template `Template OS Linux`.
+
+Click `Configuration -> Templates -> Template OS Linux`
+
+![](/images/img-ram-phan-tram/Screenshot_1483.png)
+
+- Tạo item `RAM cache B`: Tính giá trị dung lượng cache đơn vị là Byte
+
+Click `Items -> Create item`
+
+![](/images/img-ram-phan-tram/Screenshot_1484.png)
+
+Nhập các thông tin cho item.
+
+```
+Name: RAM cache B
+Type: Zabbix agent
+Key: vm.memory.size[cached]
+Type of information: Numneric(usigned)
+Unit: B
+Update interval: 1m
+Applications: Memory
+```
+
+![](/images/img-ram-phan-tram/Screenshot_1486.png)
+
+Click `Add`
+
+![](/images/img-ram-phan-tram/Screenshot_1487.png)
+
+
+
+
 
 
 
