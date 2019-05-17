@@ -1,9 +1,9 @@
 ---
 date: 2019-05-17
-title: Giới thiệu và cấu hình quản lý gói
+title: Giới thiệu và cấu hình quản lý gói trong Linux
 categories:
   - Linux
-description: Giới thiệu và cấu hình quản lý gói
+description: Giới thiệu và cấu hình quản lý gói trong Linux
 author: tuanda
 tags: [mirrors, linux, CentOS7, CentOS6, CentOS]
 type: Document
