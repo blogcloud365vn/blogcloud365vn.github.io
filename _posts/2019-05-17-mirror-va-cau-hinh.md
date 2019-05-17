@@ -1,11 +1,11 @@
 ---
 date: 2019-05-17
-title: Hướng dẫn đăng nhập zabbix khi quên mật khẩu Admin
+title: Hướng dẫn sử dụng Mirror Nhân Hòa
 categories:
-  - Monitor
-description: Hướng dẫn đăng nhập zabbix khi quên mật khẩu Admin
+  - Linux
+description: Hướng dẫn sử dụng Mirror Nhân Hòa
 author: tuanda
-tags: [mirrors, linux, CentOS7, CentOS6]
+tags: [mirrors, linux, CentOS7, CentOS6, CentOS]
 type: Document
 ---
 
@@ -35,7 +35,7 @@ Mirrors cung cấp các repo cho các OS. Có thể local mirror hoặc đăng k
 
 Ví dụ như : mirror.centos.org, mirrors.nhanhoa.com,..
 
-## Yum plugin
+## Yum plugins
 
 Các plugin sử dụng trong YUM, trong đó có plugin `fastestmirror` để xác định mirror có thời gian phản hồi tốt nhất.
 
@@ -45,8 +45,14 @@ Khi được cấu hình  `enabled=1` trong `[main]`, yum sẽ dựa vào thời
 
 ## Cấu hình sử dụng mirror Nhân Hòa trên CentOS 6:
 
+```sh
 sed -i "s/enabled=1/enabled=0/g" /etc/yum/pluginconf.d/fastestmirror.conf
 
+curl -o /etc/yum.repos.d/nhanhoa.repo https://raw.githubusercontent.com/anhtuan204/ghichep/master/TuanDA/script/nhanhoa-centos6.repo
+```
 
+Sau đó thực hiện cài đặt các gói và kiểm chứng:
+
+![](/images/img-mirrors/mirror_1.png)
 
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
