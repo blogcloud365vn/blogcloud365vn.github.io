@@ -1,23 +1,27 @@
 ---
 date: 2019-05-17
-title: Hướng dẫn sử dụng Mirror Nhân Hòa
+title: Giới thiệu và cấu hình quản lý gói
 categories:
   - Linux
-description: Hướng dẫn sử dụng Mirror Nhân Hòa
+description: Giới thiệu và cấu hình quản lý gói
 author: tuanda
 tags: [mirrors, linux, CentOS7, CentOS6, CentOS]
 type: Document
 ---
 
-## Yum
+## Giới thiệu
 
-Yellowdog Updater, Modified (viết tắt là yum) là một trình quản lý gói tin dòng lệnh mã nguồn mở cho các máy tính sử dụng hệ điều hành Linux dùng RPM Package Manager.
+Hầu hết các hệ điều hành giống Unix hiện đại đều cung cấp cơ chế tập trung cho việc tìm kiếm và cài đặt phần mềm. Phần mềm thường được phân phối dưới dạng gói (package), giữ trong kho lưu trữ (repo).
+
+Trong Debian và các hệ thống dựa trên nó, như Ubuntu, Linux Mint và Raspbian, định dạng gói là `.deb` . APT - Advanced Packaging Tool, cung cấp các lệnh được sử dụng cho các hoạt động phổ biến : Tìm kiếm, cài đặt,..
+
+CentOS, Fedora và các thành viên khác của gia đình Red Hat sử dụng các tệp RPM. Trong CentOS, yum được sử dụng để tương tác với cả tệp gói và kho lưu trữ
 
 ## Yum Repository
 
 Là kho tập hợp các phần mềm Linux (các gói `.rpm`).
 
-Việc khai báo Repo được thực hiện bằng khối `[repository]` trong file `/etc/yum.conf` hoặc định nghĩa bằng file có đuôi `.repo`trong thư mục : `/etc/yum.repos.d/`
+Việc khai báo Repo được thực hiện bằng khối `[repository]` trong file `/etc/yum.conf` hoặc định nghĩa bằng file có đuôi `.repo` trong thư mục : `/etc/yum.repos.d/`
 
 - Ví dụ, Repo của MariaDB:
 
