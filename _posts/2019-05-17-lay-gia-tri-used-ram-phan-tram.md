@@ -27,7 +27,7 @@ Click `Configuration -> Templates -> Template OS Linux`
 
 ![](/images/img-ram-phan-tram/Screenshot_1483.png)
 
-- Tạo item `RAM cache B`: Tính giá trị dung lượng cache đơn vị là Byte
+- Tạo item `RAM cache B`: Tính giá trị dung lượng RAM cache đơn vị là Byte
 
 Click `Items -> Create item`
 
@@ -51,6 +51,22 @@ Click `Add`
 
 ![](/images/img-ram-phan-tram/Screenshot_1487.png)
 
+- Tạo item `RAM cache %` hiển thị dung lượng RAM cache dạng %.
+
+Ở trong template `Template OS Linux` tạo item mới và nhập các thông tin.
+
+```
+Name: RAM cache %
+Type: Caculated
+Key: vm.memory.pcache
+Formula: 100*last("vm.memory.size[cached]")/last("vm.memory.size[total]")
+Type of information: Numneric(float)
+Unit: %
+Update interval: 1m
+Applications: Memory
+```
+
+![](/images/img-ram-phan-tram/Screenshot_1488.png)
 
 
 
