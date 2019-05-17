@@ -68,6 +68,23 @@ Applications: Memory
 
 ![](/images/img-ram-phan-tram/Screenshot_1488.png)
 
+- Tạo item `RAM pused` tính dung lượng RAM sử dụng dang phần trăm (có bao gồm cache).
+
+Ở trong template `Template OS Linux` tạo item mới và nhập các thông tin.
+
+```
+Name: RAM pused
+Type: Zabbix agent
+Key: vm.memory.size[pused]
+Type of information: Numneric(float)
+Unit: %
+Update interval: 1m
+Applications: Memory
+```
+
+![](/images/img-ram-phan-tram/Screenshot_1489.png)
+
+
 
 
 
