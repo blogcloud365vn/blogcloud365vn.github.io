@@ -53,7 +53,7 @@ Click `Add`
 
 - Tạo item `RAM cache %` hiển thị dung lượng RAM cache dạng %.
 
-Ở trong template `Template OS Linux` tạo item mới và nhập các thông tin.
+Ở trong giao diện template `Template OS Linux` tạo item mới và nhập các thông tin.
 
 ```
 Name: RAM cache %
@@ -70,7 +70,7 @@ Applications: Memory
 
 - Tạo item `RAM pused` tính dung lượng RAM sử dụng dang phần trăm (có bao gồm cache).
 
-Ở trong template `Template OS Linux` tạo item mới và nhập các thông tin.
+Ở trong giao diện template `Template OS Linux` tạo item mới và nhập các thông tin.
 
 ```
 Name: RAM pused
@@ -84,26 +84,35 @@ Applications: Memory
 
 ![](/images/img-ram-phan-tram/Screenshot_1489.png)
 
+- Tạo item `RAM USED % Current` tính dung lượng RAM sử dụng thực tế đã trừ đi giá trị `cache`.
+
+Tại giao diện template `Template OS Linux` tạo item mới và nhập các thông tin sau.
+
+```
+Name: RAM USED % Current
+Type: Caculated
+Key: vm.memory.pusednocache
+Formula: last("vm.memory.size[pused]")-last("vm.memory.pcache")
+Type of information: Numneric(float)
+Unit: %
+Update interval: 1m
+Applications: Memory
+```
+
+![](/images/img-ram-phan-tram/Screenshot_1490.png)
+
+Item mới được tạo.
+
+![](/images/img-ram-phan-tram/Screenshot_1491.png)
 
 
+## 3. Kiểm tra giá trị RAM USED % Current
 
+Click `Monitoring -> Lastest data -> Lựa chọn Host`
 
+![](/images/img-ram-phan-tram/Screenshot_1493.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Với hướng dẫn cơ bản trên giúp bạn giám sát thêm được thông tin về memory trông server linux.
 
 ---
 Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
