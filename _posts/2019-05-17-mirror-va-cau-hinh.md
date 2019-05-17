@@ -49,6 +49,8 @@ Khi được cấu hình  `enabled=1` trong `[main]`, yum sẽ dựa vào thời
 
 ## Cấu hình sử dụng mirror Nhân Hòa trên CentOS 6:
 
+Login SSH vào máy chủ cài đặt CentOS 6 và thực hiện 2 command sau:
+
 ```sh
 sed -i "s/enabled=1/enabled=0/g" /etc/yum/pluginconf.d/fastestmirror.conf
 
