@@ -1,6 +1,19 @@
+---
+date: 2019-04-19
+title: Hướng dẫn cơ bản sử dụng công cụ Easy Engine (Phần 2)
+categories:
+  - Linux
+description: Hướng dẫn cơ bản sử dụng công cụ Easy Engine (Phần 2)
+author: tuanda
+tags: [Linux]
+type: Document
+set: Gioi-thieu-EE
+set_order: 19
+---
+
 ## Các câu lệnh quản lý website cơ bản
 
-Sau khi tìm hiểu và làm quen với công cụ Easy Engine, bài viết này sẽ tập trung vào các thao tác cơ bản đối với website sử dụng Easy Engine.
+Sau khi tìm hiểu và làm quen với công cụ Easy Engine, các bạn đã nắm được sơ bộ các khái niệm, cũng như vị trí các file cấu hình, log. Bài viết này sẽ tập trung vào các hướng dẫn thao tác cơ bản bằng câu lệnh đối với 1 website sử dụng Easy Engine.
 
 ### Lệnh truy cập thư mục website
 
@@ -223,3 +236,6 @@ Sau khi chuyển xong, nên chạy lệnh `ee site update` để tự động c�
 ```sh
 ee site update domain.com --wpfc
 ```
+
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>

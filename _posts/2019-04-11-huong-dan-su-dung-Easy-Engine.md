@@ -1,3 +1,16 @@
+---
+date: 2019-04-11
+title: Hướng dẫn cơ bản sử dụng công cụ Easy Engine
+categories:
+  - Linux
+description: Hướng dẫn cơ bản sử dụng công cụ Easy Engine
+author: tuanda
+tags: [Linux]
+type: Document
+set: Gioi-thieu-EE
+set_order: 20
+---
+
 ## EasyEngine là gì?
 
 EasyEngine là một *UNIX script dành cho hệ điều hành Ubuntu/Debian giúp tự động cài đặt một webserver sử dụng NGINX và PHP-FPM hoàn chỉnh phục vụ riêng cho WordPress. Điều này có nghĩa là sẽ tự tối ưu hóa cho NGINX để làm việc với WordPress tốt nhất. 
@@ -117,3 +130,5 @@ Log
 - /var/www/example.com/htdocs – Thư mục gốc chứa dữ liệu website mà sẽ hiển thị ra ngoài, đây chính là thư mục public_html hay gặp.
 - /var/www/example.com/logs – Thư mục chứa log liên quan đến domain example.com
 
+---
+Thực hiện bởi <a href="https://cloud365.vn/" target="_blank">cloud365.vn</a>
