@@ -1,13 +1,14 @@
 ---
-title: Cài đặt NextCloud trên Ubuntu18
+title: "Nextcloud [Part 2] - Cài đặt Nextcloud trên Ubuntu18"
 categories:
-  - Linux
-description: Cài đặt NextCloud trên Ubuntu18
+  - Nextcloud
+description: Cài đặt Nextcloud trên Ubuntu18
 author: canhdx
-tags: [Beginer, Linux, Ubuntu, Other]
+tags: [Nextcloud]
 type: Document
+set: Nextcloud
+set_order: 2
 ---
-
 
 ## NextCloud 
 
@@ -15,7 +16,7 @@ type: Document
 <img src="/images/img-nextcloud/nextcloud-logo.jpeg">
 </p>
 
-Ở bài viết trước chúng ta đã cài đặt trên Hệ điều hành CentOS7. Bài hướng dẫn này sẽ hướng dẫn các bạn cài đặt trên Ubuntu18
+Ở bài viết [trước](blog.cloud365.vn/nextcloud/nextcloud-p1-cai-dat-tren-centos7/){:target="_blank"} chúng ta đã cài đặt trên Hệ điều hành CentOS7. Bài hướng dẫn này sẽ hướng dẫn các bạn cài đặt trên Ubuntu18
 
 ## Chuẩn bị môi trường cài đặt 
 
