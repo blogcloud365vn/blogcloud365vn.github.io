@@ -165,10 +165,11 @@ Comment lại những dòng sau:
 # }
 ```
 
-Restart lại nginx
+Restart và enable nginx
 
 ```
 service nginx restart
+systemctl enable nginx
 ```
 
 Cho phép Webvirtmgr khởi động cùng hệ thống
@@ -241,13 +242,14 @@ Trước tiên cần cài gói `libvirt`
 
 `yum install libvirt`
 
-Bỏ comment một số dòng sau trong file `/etc/libvirt/libvirtd.conf`
+Bỏ comment và chỉnh sửa một số dòng sau trong file `/etc/libvirt/libvirtd.conf`
 
 ```
 listen_tls = 0
 listen_tcp = 1
 tcp_port = "16509"
 listen_addr = "0.0.0.0"
+auth_tcp = "none"
 ```
 
 Bỏ comment các dòng trong file `/etc/libvirt/qemu.conf`
