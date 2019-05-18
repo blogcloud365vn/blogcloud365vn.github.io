@@ -38,11 +38,20 @@ Nhược điểm:
 - Khả năng mất dữ liệu cao khi một trong số các đĩa cứng bị hỏng.
 - Windows không thể nhận ra vùng dữ liệu của LVM. Nếu Dual-boot ,Windows sẽ không thể truy cập dữ liệu trong LVM.
 ## 3. Những thành phần trong LVM 
+
+![](../images/img_lvm/tong_quan/gioi-thieu-ve-logical-volume-manager-01.png)
+
 - HDD : là một thiết bị lưu trữ máy tính. Nó là loại bộ nhớ không thay đổi và không bị mất dữ liệu khi ta ngừng cung cấp nguồn điện cho chúng
 - Partition: là các phân vùng của ổ cứng. Mỗi một ổ cứng có 4 partition. Trong đó bao gồm 2 loại là primary partition và extended partition
   - primary partition: còn được gọi là phân vùng chính, có thể khởi động và mỗi ổ cứng chỉ có tối đa 4 phân vùng này
   - extended partition: Hay còn được gọi là phân vùng mở rộng của ổ cứng
 
+Cách thức hoạt động các tầng của LVM:
+- Tầng đầu tiên : hard drives là tầng các disk ban đầu khi chưa chia phân vùng 
+- Partitions: Sau đó ta chia các disk ra thành các phân vùng nhỏ hơn
+- Physical volume : từ một partitions ta sẽ tạo ra được một physical 
+- group volume : Ta sẽ ghép nhiều physical volume thành một group volume 
+- Logical volume : Ta sẽ có thể tạo ra được logical volume 
 ## II.Hướng dẫn sử dụng LVM 
 Để có thể nhìn rõ hơn về sự hoạt động của LVM thì dưới đây tôi sẽ làm một ví dụ về LVM để các bạn có thể hiểu rõ hơn về nó.
 
