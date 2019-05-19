@@ -58,7 +58,7 @@ Kịch bản client xin cấp DHCP từ modem
 
 1. DHCP DISCOVERY
 
-![](/images/img-dhcp/screenshot_17.png)
+![](../images/img-dhcp/screenshot_17.png)
 
 Trong đó 
 - 1: là địa chỉ đầu và địa chỉ cuối của gói tin ghi bằng MAC
@@ -70,7 +70,7 @@ Trong đó
 
 2.  DHCP OFFER
 
-![](/images/img-dhcp/screenshot_18.png)
+![](../images/img-dhcp/screenshot_18.png)
 
 Trong đó 
 - Option 54: chỉ đính danh DHCP server
@@ -82,7 +82,7 @@ Trong đó
 
 3. DHCP Request
 
-![](/images/img-dhcp/screenshot_19.png)
+![](../images/img-dhcp/screenshot_19.png)
 
 - Option 53: Kiểu tin nhắn
 - Option 55: Danh sách tham số yêu cầu
@@ -90,7 +90,7 @@ Trong đó
 
 4.  DHCP ACK
 
-![](/images/img-dhcp/screenshot_20.png)
+![](../images/img-dhcp/screenshot_20.png)
 
 - Nhiệm vụ của gói tin này là để xác nhận lại thông tin đã cấp cho client
 ## Tổng kết
@@ -100,4 +100,4 @@ Chúc các bạn thành công!
 
 Thực hiện bởi [cloud365](https://cloud365.vn/)
 
-Written by [Nguyễn Anh ĐỨc](https://nhanhoa.com/)
+Written by [Nguyễn Anh Đức](https://nhanhoa.com/)
