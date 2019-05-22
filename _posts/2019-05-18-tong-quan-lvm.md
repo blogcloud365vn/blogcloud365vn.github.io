@@ -70,11 +70,11 @@ Chuẩn bị:
 pvcreate /dev/(tên phân vùng)
 ```
 
-![](../images/img_lvm/tong_quan/screenshot_7.png)
+![](/images/img_lvm/tong_quan/screenshot_7.png)
 
 Ta kiểm tra lại bằng lệnh `pvs` xem ta tạo được thành công physical volume hay chưa 
 
-![](../images/img_lvm/tong_quan/screenshot.png)
+![](/images/img_lvm/tong_quan/screenshot.png)
 
 **Tạo một Group volume**
 - Ta sử dụng lệnh `vgcreate` theo cú pháp 
@@ -84,7 +84,7 @@ vgcreate (ten_group) /dev/(tên phân vùng 1) /dev/(tên phân vùng 2)
 
 Ta sử dụng lệnh vgs để kiểm tra xem group volume.
 
-![](../images/img_lvm/tong_quan/screenshot_1.png)
+![](/images/img_lvm/tong_quan/screenshot_1.png)
 
 **Tạo một Logical volume theo cú pháp** 
 ```
@@ -92,7 +92,7 @@ lvcreate -L size_volume -n (ten logical) (tên group volume)
 ```
 Để kiểm tra logical volume thì ta sử dụng lệnh `lvs`
 
-![](../images/img_lvm/tong_quan/screenshot_2.png)
+![](/images/img_lvm/tong_quan/screenshot_2.png)
 
 Sau khi tạo xong một logical thì sẽ phải định dạng xong một logical để có thể mount nó vào cây thư mục root như trong phần lệnh mount tôi đã hướng dẫn thực hiện mount một phân vùng thì ta mới có thể sử dụng được logical này.
 
@@ -113,7 +113,7 @@ resize2fs (tên group volume)(tên logical volume)
 ```
 ở đây tôi sẽ làm một kịch bảnvề việc thay đổi dung lượng. Đầu tiên tôi sẽ chọn ra logical mà tôi muốn thay đổi sau đó tôi sẽ thay đổi nó rồi kiểm tra lại xem nó thay đổi hay là chưa. sau khi thay đổi về dung lượng thì ta cần phải mount vào để có thể sử dụng nó.
 
-![](../images/img_lvm/tong_quan/screenshot_5.png)
+![](/images/img_lvm/tong_quan/screenshot_5.png)
 
 Muốn tăng dung lượng thì ta làm giống như với giảm dung lượng chỉ cần thay đổi lệnh `lvreduce` thành lệnh `lvextend` 
 
@@ -127,29 +127,29 @@ Tôi sẽ thêm vdb3 vào group g_volume
 
 Đầu tiên ta kiểm tra dung lượng của group 
 
-![](../images/img_lvm/tong_quan/screenshot_11.png)
+![](/images/img_lvm/tong_quan/screenshot_11.png)
 
 ```
 vgextend /dev/g_volume /dev/vdc2
 ```
-![](../images/img_lvm/tong_quan/screenshot_9.png)
+![](/images/img_lvm/tong_quan/screenshot_9.png)
 
 ta kiểm tra lại dung lượng của group bằng lệnh vgs một lần nữa và thấy sự thay đổi của nó
 
-![](../images/img_lvm/tong_quan/screenshot_10.png)
+![](/images/img_lvm/tong_quan/screenshot_10.png)
 
-## Thao tác xóa 
+## 3.Thao tác xóa 
 **Xóa một logical ta sử dụng lệnh theo cú pháp**
 ```
 lvremove /dev/(ten group)/(ten logical)
 ```
 Đầu tiên ta kiểm tra xem có những logical nào 
 
-![](../images/img_lvm/tong_quan/screenshot_4.png)
+![](/images/img_lvm/tong_quan/screenshot_4.png)
 
 Ở đây tôi chọn xóa logical cuối cùng khoanh đỏ 
 
-![](../images/img_lvm/tong_quan/screenshot_6.png)
+![](/images/img_lvm/tong_quan/screenshot_6.png)
 
 ở dòng cuối cùng đã ghi xóa thành công logical 
 
@@ -159,14 +159,14 @@ vgremove /dev/(tên group)
 ```
 Đầu tiên tôi kiểm tra xem có những group volume nào sau đó chọn ra một group. Ở đây tôi chọn xóa `g_volume` rồi kiểm tra lại xem nó đã bị xóa hay chưa. 
 
-![](../images/img_lvm/tong_quan/screenshot_12.png)
+![](/images/img_lvm/tong_quan/screenshot_12.png)
 
 **Xóa một physical volume ta thưc hiện theo cú pháp**
 ```
 pvremove /dev/(tên physical)
 ```
 
-![](../images/img_lvm/tong_quan/screenshot_13.png)
+![](/images/img_lvm/tong_quan/screenshot_13.png)
 
 *Tổng kết : Qua bài trên chúng ta đã tìm hiểu về cách sử dụng lvm và cách quản lý các phân vùng 1 cách tốt.*
 

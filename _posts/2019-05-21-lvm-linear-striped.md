@@ -15,7 +15,7 @@ type: Document
 ## Phân biệt hai kiểu lưu trữ 
 Mô hình hai kiểu lưu trữ 
 
-![](../images/img_lvm/linear_striperd/27-linear-vs-striped-logical-volume-overview.png)
+![](/images/img_lvm/linear_striperd/27-linear-vs-striped-logical-volume-overview.png)
 
 Khi ta lưu trữ ổ dữ liệu vào ổ đĩa thì ta sẽ có hai kiểu lưu trữ như trên đó là linear và striped. Giả sử ta có các phân vùng từ b tới i như trên thì các kiểu lưu trữ sẽ được lưu trữ như sau 
 - Linear : Dữ liệu sẽ được lưu hết phân vùng này rồi bắt đầu chuyển sang phân vùng khác để lưu trữ
@@ -41,19 +41,19 @@ Bước 1 : Đầu tiên ta cài gói wget cho VM bằng lệnh sau
 yum install wget
 ```
 
-![](../images/img_lvm/linear_striperd/screenshot_8.png)
+![](/images/img_lvm/linear_striperd/screenshot_8.png)
 
 Bước 2 : Sau khi download xong gói wget ta sử dụng wget để cài lệnh giám sát quá trình đọc ghi ổ đĩa bwn-ng 
 
-![](../images/img_lvm/linear_striperd/screenshot.png)
+![](/images/img_lvm/linear_striperd/screenshot.png)
 
 Bước 3 : Các gói cần thiết đã cài sau đó ta đến bước tạo ra các phân vùng để tạo 2 logical có 2 kiểu lưu trữ riêng biệt
 
-![](../images/img_lvm/linear_striperd/screenshot_1.png)
+![](/images/img_lvm/linear_striperd/screenshot_1.png)
 
 Bước 4: Tiếp theo ta sẽ tạo ra group-volume như bài trước về lvm tổng quan tôi đã hướng dẫn các bạn làm. Sau đó kiểm tra lại bằng lệnh `vgs`
 
-![](../images/img_lvm/linear_striperd/screenshot_2.png)
+![](/images/img_lvm/linear_striperd/screenshot_2.png)
 
 Bước 5: Ta sẽ tạo ra một logical với kiểu lưu trữ là linear và một logical với kiểu lưu trữ là striped. Ở đây tôi sẽ tạo ra logical có tên là `linear_logical` với group1 theo cú pháp 
 ```
@@ -64,28 +64,28 @@ và `striped_logical` với group2 theo cú pháp
 lvcreate --extents N%FREE --stripes (số physical) --stripesize (số dung lượng) --name (tên logical) (tên group )
 ```
 
-![](../images/img_lvm/linear_striperd/screenshot_3.png)
+![](/images/img_lvm/linear_striperd/screenshot_3.png)
 
 Bước 6: Sau đó ta đi tạo định dạng cho logical để có thể mount lại nó vào thư mục và dùng chúng 
 
-![](../images/img_lvm/linear_striperd/screenshot_4.png)
+![](/images/img_lvm/linear_striperd/screenshot_4.png)
 
 Bước 7: Ta mount nó lại vào cây thư mục root là có thể sử dụng chúng. Và để kiểm tra lại xem logical đã được mount hay chưa ta sử dụng lệnh `df -h` 
 
-![](../images/img_lvm/linear_striperd/screenshot_5.png)
+![](/images/img_lvm/linear_striperd/screenshot_5.png)
 
 Bước 8 sau khi đã thực hiện xong việc tạo ra 2 logical thì ra sẽ dùng lệnh dd copy file root vào 2 logical này để xem tốc độ độc ghi của nó và cách lưu trữ dữ liệu xem đúng như lý thuyết hay không.
 - Sử dụng với linear ta sử dụng 2 tab terminal với 2 lệnh sau 
 
-![](../images/img_lvm/linear_striperd/screenshot_6.png)
+![](/images/img_lvm/linear_striperd/screenshot_6.png)
 
-![](../images/img_lvm/linear_striperd/photo_2019-05-20_19-59-59.jpg)
+![](/images/img_lvm/linear_striperd/photo_2019-05-20_19-59-59.jpg)
 
 **kết quả ta thấy được rằng chỉ có ổ vdb1 là đang chạy để  lưu trữ khi ta copy phân vùng Ta để ý rằng khi copy vào logical linear sẽ mất 29,8092s ghi ở dòng cuối cùng cuả lệnh dd sau khi hoàn thành**
 
-![](../images/img_lvm/linear_striperd/screenshot_9.png)
+![](/images/img_lvm/linear_striperd/screenshot_9.png)
 
-![](../images/img_lvm/linear_striperd/screenshot_7.png)
+![](/images/img_lvm/linear_striperd/screenshot_7.png)
 
 **Còn kết quả ở logical striped ta thấy rằng cả physical vdc2 và vdb2 cùng chạy để  có thể lưu trữ được khi ta copy phân vùng. Và khi ta để ý rằng copy sẽ mất 19,2649s là hoàn thành được ghi ở dòng cuối cùng của lệnh dd sau khi hoàn thành**
 
