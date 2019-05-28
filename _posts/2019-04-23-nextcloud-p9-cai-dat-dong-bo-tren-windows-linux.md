@@ -97,6 +97,8 @@ Quá trình cài đặt sẽ đòi hỏi thêm các tham số bổ sung như yê
 <img src="/images/img-nextcloud/nextcloud-021.png">
 </p>
 
+> ## Lưu ý: Local folder nên đồng bộ tại ổ đĩa khác(như ổ D: thay vì ổ cài OS)
+
 Qúa trình đồng bộ dữ liệu sẽ được thực hiện khi đăng nhập thành công
 <p align="center">
 <img src="/images/img-nextcloud/nextcloud-022.png">
@@ -152,9 +154,12 @@ Chọn `Login`
 <img src="/images/img-nextcloud/nextcloud-032.png">
 </p>
 
+> ## Lưu ý: Local folder nên đồng bộ tại ổ đĩa khác ổ cài OS
+
 <p align="center">
 <img src="/images/img-nextcloud/nextcloud-033.png">
 </p>
+
 
 Truy cập thư mục lưu trữ của NextCloud trên Desktop và kiểm tra 
 <p align="center">
