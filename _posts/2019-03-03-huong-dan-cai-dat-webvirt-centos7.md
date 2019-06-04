@@ -24,7 +24,12 @@ Webvirtmgr là một trong những công cụ quản lý máy ảo KVM. Nó có 
 
 Vì đây là môi trường lap nên tôi dùng địa chỉ IP private nên chỉ có thể quản truy cập vào Webvirtmgr trong môi trường mạng LAN. Nếu bạn muốn truy cập vào Webvirtmgr ở bất kỳ đâu thì bạn Server cài Webvirt của bạn cần có IP public.
 
-Trong môi trường lab nên tôi tiến hành tắt firewalld trên server cài Webvirtmgr `systemctl stop firewalld`
+Trong môi trường lab nên tôi tiến hành tắt firewalld và selinux trên server cài Webvirtmgr 
+
+```
+systemctl stop firewalld
+setenforce 0
+```
 
 ## Server cài Webvirtmgr
 

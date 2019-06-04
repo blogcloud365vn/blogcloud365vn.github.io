@@ -162,16 +162,14 @@ Thêm vào cache='none' để tránh migrate tránh mất dữ liệu. Sau đó 
 
 Để có thể live migrate giữa hai host thì hai host này cần phải kết nối được với nhau. Để làm được việc này ta thực hiện các bước sau ở trên cả hai máy host KVM.
 
-Vào file `/etc/libvirt/libvirtd.conf` bỏ comment ở các dòng sau:
-
 ```
-listen_tls = 0
-listen_tcp = 1
-tcp_port = "16509"
-listen_addr = "0.0.0.0"
+sed -i 's/#listen_tls = 0/listen_tls = 0/g' /etc/libvirt/libvirtd.conf 
+sed -i 's/#listen_tcp = 1/listen_tcp = 1/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#tcp_port = "16509"/tcp_port = "16509"/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#listen_addr = "192.168.0.1"/listen_addr = "0.0.0.0"/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#auth_tcp = "sasl"/auth_tcp = "none"/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#LIBVIRTD_ARGS="--listen"/LIBVIRTD_ARGS="--listen"/g' /etc/sysconfig/libvirtd
 ```
-
-Bỏ comment ở dòng `LIBVIRTD_ARGS=”--listen”` trong `file /etc/sysconfig/libvirtd`.
 
 Restart lại libvirtd trên cả hai máy
 
