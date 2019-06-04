@@ -164,10 +164,11 @@ Comment lại những dòng sau
 #    }
 ```
 
-Khởi động lại nginx
+Khởi động lại nginx và cho nó khởi động cùng hệ thống
 
 ```
 service nginx restart
+systemctl enable nginx
 ```
 
 **Bước 4: Setup Supervisor**
@@ -207,11 +208,12 @@ redirect_stderr=true
 user=www-data
 ```
 
-Restart supervisor
+Restart và cho supervisor khởi động cùng hệ thống
 
 ```
 service supervisor stop
 service supervisor start
+systemctl enable supervisor
 ```
 
 Đến đây bạn đã cài đặt xong Webvirtmgr. Bạn mở trình duyệt và truy cập vào địa chỉ của server cài webvirtmgr. Kết quả như sau:
@@ -222,53 +224,33 @@ service supervisor start
 
 Để Webvirtmgr có thể kết nối đến Host KVM và quản lý được các VM trong host KVM ta cần cấu hình một số thông tin sau trên host KVM
 
-Mở file `libvirtd.conf`
+Thực hiện lần lượt các lệnh sau
 
 ```
-vi /etc/libvirt/libvirtd.conf
+sed -i 's/#listen_tls = 0/listen_tls = 0/g' /etc/libvirt/libvirtd.conf 
+sed -i 's/#listen_tcp = 1/listen_tcp = 1/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#tcp_port = "16509"/tcp_port = "16509"/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#listen_addr = "192.168.0.1"/listen_addr = "0.0.0.0"/g' /etc/libvirt/libvirtd.conf
 ```
 
-Bỏ comment ở các dòng sau:
+Lưu ý nếu bạn không muốn xác thực trong quá trình kết nối qemu+tcp ta thực hiện lệnh sau (chỉ nên dùng trong môi trường lab)
 
 ```
-listen_tls = 0
-listen_tcp = 1
-tcp_port = "16509"
-listen_addr = "0.0.0.0"
-unix_sock_group = "libvirtd"
-unix_sock_ro_perms = "0777"
-unix_sock_rw_perms = "0770"
-auth_unix_ro = "none"
-auth_unix_rw = "none"
-auth_tcp = "none"
+sed -i 's/#auth_tcp = "sasl"/auth_tcp = "none"/g' /etc/libvirt/libvirtd.conf
 ```
 
-Mở file `libvirt-bin`
+Còn nếu bạn muốn xác thực để tiến hành kết nối qemu+tcp bạn thực hiện câu lệnh sau
 
 ```
-vi /etc/default/libvirt-bin
+sed -i 's/#auth_tcp = "sasl"/auth_tcp = "sasl"/g' /etc/libvirt/libvirtd.conf
 ```
 
-Sửa lại như sau:
+Tiếp tục thực hiện các lệnh sau:
 
 ```
-start_libvirtd="yes"
-
-libvirtd_opts="-l -d"
-```
-
-Mở file `qemu.conf`
-
-```
-vi /etc/libvirt/qemu.conf
-```
-
-Bỏ comment ở các dòng 
-
-```
-user = "root"
-
-group = "root"
+sed -i 's/#user = "root"/user = "root"/g' /etc/libvirt/qemu.conf 
+sed -i 's/#group = "root"/group = "root"/g' /etc/libvirt/qemu.conf
+sed -i 's/#libvirtd_opts=""/libvirtd_opts="-l"/g' /etc/default/libvirt-bin
 ```
 
 Restart libvirt-bin
@@ -276,6 +258,42 @@ Restart libvirt-bin
 ```
 service libvirt-bin restart
 ```
+
+Nếu bên trên bạn để xác thực kết nối qemu+tcp thì bạn cần thực hiện thêm một lệnh sau:
+
+Tiến hành cài đặt gói `cyrus-sasl-md5`
+
+```
+apt-get install sasl2-bin
+sed -i 's/#sasldb_path: /etc/libvirt/passwd.db/#sasldb_path: /etc/libvirt/passwd.db/g' /etc/sasl2/libvirt.conf
+```
+
+Sau đó tiến hành restart lại libvirt-bin
+
+```
+service libvirt-bin restart
+```
+
+Sau đó ta cần tạo user để xác thực cho kết nối qemu+tcp
+
+Tạo user
+
+```
+saslpasswd2 -a libvirt username
+```
+
+Show các user
+
+```
+sasldblistusers2 -f /etc/libvirt/passwd.db
+```
+
+Để xóa user
+
+```
+saslpasswd2 -a libvirt -d username
+```
+
 
 Bạn có thể tham khảo cách sử dụng webvirtmgr <a href="https://blog.cloud365.vn/linux/huong-dan-cai-dat-webvirt-centos7/#su-dung" target="_blank">tại đây</a>
 
