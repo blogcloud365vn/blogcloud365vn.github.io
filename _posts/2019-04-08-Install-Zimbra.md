@@ -36,6 +36,13 @@ Bạn là một cá nhân hay một tổ chức, bạn muốn xây dựng email 
 <img src='https://i.imgur.com/tTDH0ak.png'>
 
 
+| | | | |
+|------|------|------|-----|
+| mail | A | 203.162.79.139 |
+| autodiscover | CNAME | mail.supportdao.com. |
+| autoconfig | CNAME | mail.supportdao.com. |
+|@	| MX	| mail.supportdao.com.|	10|
+
 ## Bước 2: Chuẩn bị môi trường trên máy chủ mail 
 
 - Update
@@ -59,8 +66,21 @@ vim /etc/hosts
 ```
 - Kiểm tra xem có dịch vụ nào đang sử dụng port mà zimbra sử dụng không bằng cách 
 
+- Nếu chưa cài đặt `netstat`
+
+```
+yum -y install net-tools
+```
+
 ```
 netstat -tulpn | grep -E -w '25|80|110|143|443|465|587|993|995|5222|5223|9071|7071'
+```
+- Nếu có service nào đang chạy trên các port trên thì tìm tách tắt đi hoặc thay thế 
+
+- Nếu chưa có `dig` thực hiện cài đặt 
+
+```
+yum install bind-utils
 ```
 
 - Kiểm tra lại bản ghi 
@@ -69,13 +89,6 @@ netstat -tulpn | grep -E -w '25|80|110|143|443|465|587|993|995|5222|5223|9071|70
 dig -t A mail.supportdao.com
 dig -t MX supportdao.com
 ```
-
-Nếu chưa có dig thực hiện cài đặt 
-
-```
-yum install bind-utils
-```
-
 
 ## Bước 3: Cài đặt Zimbra 
 
@@ -126,7 +139,7 @@ Use Zimbra's package repository [Y] Y
 The system will be modified.  Continue? [N] Y
 ```
 
-- Khai báo domain 
+- Khai báo domain. Chỗ này bạn sẽ create lại tên domain. Sửa lại như hình sau:
 
 <img src="https://i.imgur.com/MgRvDuZ.png">
 
@@ -211,6 +224,14 @@ DKIM Public signature:
 ```
 
 - Truy cập lại trang zonedns khai báo các bản ghi còn lại
+
+||||
+|-|-|-|
+| _dmarc | TXT | v=DMARC1; p=reject; rua=mailto:admin@supportdao.com |
+| @ | TXT | v=spf1 mx ~all |
+|9311B7B2-5781-11E9-8428-2F9914CF09B1._domainkey| TXT | Giá trị như trong ()|
+
+- Xem cụ thể hơn ở ảnh sau:
 
 <img src="https://i.imgur.com/dcNx18m.png">
 
