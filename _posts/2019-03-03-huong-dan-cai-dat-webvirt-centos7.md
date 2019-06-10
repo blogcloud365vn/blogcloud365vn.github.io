@@ -24,7 +24,12 @@ Webvirtmgr là một trong những công cụ quản lý máy ảo KVM. Nó có 
 
 Vì đây là môi trường lap nên tôi dùng địa chỉ IP private nên chỉ có thể quản truy cập vào Webvirtmgr trong môi trường mạng LAN. Nếu bạn muốn truy cập vào Webvirtmgr ở bất kỳ đâu thì bạn Server cài Webvirt của bạn cần có IP public.
 
-Trong môi trường lap nên tôi tiến hành tắt firewalld trên server cài Webvirtmgr `systemctl stop firewalld`
+Trong môi trường lab nên tôi tiến hành tắt firewalld và selinux trên server cài Webvirtmgr 
+
+```
+systemctl stop firewalld
+setenforce 0
+```
 
 ## Server cài Webvirtmgr
 
@@ -33,7 +38,7 @@ Trong môi trường lap nên tôi tiến hành tắt firewalld trên server cà
 ```
 yum install epel-release
 
-yum -y install git python-pip libvirt-python libxml2-python python-websockify supervisor nginx
+yum -y install git python-pip libvirt-python libxml2-python python-websockify supervisor nginx cyrus-sasl-md5
 
 yum -y install gcc python-devel
 
@@ -230,7 +235,7 @@ systemctl restart supervisord
 
 Để Webvirtmgr có thể kết nối đến Host KVM và quản lý được các VM trong host KVM ta cần cấu hình một số thông tin sau trên host KVM
 
-Trên môi trường lap nên tôi cũng tiến hành tắt firewalld 
+Trên môi trường lab nên tôi cũng tiến hành tắt firewalld 
 
 ```
 systemctl stop firewalld
@@ -242,29 +247,74 @@ Trước tiên cần cài gói `libvirt`
 
 `yum install libvirt`
 
-Bỏ comment và chỉnh sửa một số dòng sau trong file `/etc/libvirt/libvirtd.conf`
+Thực hiện lần lượt các lệnh sau
 
 ```
-listen_tls = 0
-listen_tcp = 1
-tcp_port = "16509"
-listen_addr = "0.0.0.0"
-auth_tcp = "none"
+sed -i 's/#listen_tls = 0/listen_tls = 0/g' /etc/libvirt/libvirtd.conf 
+sed -i 's/#listen_tcp = 1/listen_tcp = 1/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#tcp_port = "16509"/tcp_port = "16509"/g' /etc/libvirt/libvirtd.conf
+sed -i 's/#listen_addr = "192.168.0.1"/listen_addr = "0.0.0.0"/g' /etc/libvirt/libvirtd.conf
 ```
 
-Bỏ comment các dòng trong file `/etc/libvirt/qemu.conf`
+Lưu ý nếu bạn không muốn xác thực trong quá trình kết nối qemu+tcp ta thực hiện lệnh sau (chỉ nên dùng trong môi trường lab)
 
 ```
-user = "root"
-
-group = "root"
+sed -i 's/#auth_tcp = "sasl"/auth_tcp = "none"/g' /etc/libvirt/libvirtd.conf
 ```
 
-Bỏ comment dòng `LIBVIRTD_ARGS=”--listen”` trong file `/etc/sysconfig/libvirtd`.
+Còn nếu bạn muốn xác thực để tiến hành kết nối qemu+tcp bạn thực hiện câu lệnh sau
 
-Restart libvirtd
+```
+sed -i 's/#auth_tcp = "sasl"/auth_tcp = "sasl"/g' /etc/libvirt/libvirtd.conf
+```
+
+Tiếp tục thực hiện các lệnh sau:
+
+```
+sed -i 's/#user = "root"/user = "root"/g' /etc/libvirt/qemu.conf 
+sed -i 's/#group = "root"/group = "root"/g' /etc/libvirt/qemu.conf
+sed -i 's/#LIBVIRTD_ARGS="--listen"/LIBVIRTD_ARGS="--listen"/g' /etc/sysconfig/libvirtd
+```
+
+Restart lại libvirtd
+
+```
+systemctl restart libvirtd
+```
+
+Nếu bên trên bạn để xác thực kết nối qemu+tcp thì bạn cần thực hiện thêm một lệnh sau:
+
+Tiến hành cài đặt gói `cyrus-sasl-md5`
+
+```
+yum install cyrus-sasl-md5
+sed -i 's/mech_list: gssapi/#mech_list: gssapi/g' /etc/sasl2/libvirt.conf
+sed -i 's/#sasldb_path: /etc/libvirt/passwd.db/#sasldb_path: /etc/libvirt/passwd.db/g' /etc/sasl2/libvirt.conf
+```
+
+Sau đó tiến hành restart lại libvirtd
 
 `systemctl restart libvirtd`
+
+Sau đó ta cần tạo user để xác thực cho kết nối qemu+tcp
+
+Tạo user
+
+```
+saslpasswd2 -a libvirt username
+```
+
+Show các user
+
+```
+sasldblistusers2 -f /etc/libvirt/passwd.db
+```
+
+Để xóa user
+
+```
+saslpasswd2 -a libvirt -d username
+```
 
 ## Sử dụng
 
@@ -276,7 +326,7 @@ Ta dùng tài khoản ta tạo ở bên trên để đăng nhập vào. Để k�
 
 ![](/images/img-cai-dat-webvirtmgr/a1.png)
 
-Chỉ ra tên để phân biệt với các kết nối khác và IP của KVM muốn kết nối. Tên đăng nhập và mật khẩu là tên user và mật khẩu để đăng nhập vào server KVM.
+Chỉ ra tên để phân biệt với các kết nối khác và IP của KVM muốn kết nối. Tên đăng nhập và mật khẩu là tên user và mật khẩu bạn vừa tạo bên trên
 
 ![](/images/img-cai-dat-webvirtmgr/a2.png)
 
