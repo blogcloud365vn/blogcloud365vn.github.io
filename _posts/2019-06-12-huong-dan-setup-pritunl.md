@@ -11,6 +11,8 @@ type: Document
 # Hướng dẫn cài đặt Pritunl VPN trên Cloud365
 
 ![](/images/img-pritunl/pritunl1.png)
+## Giới thiệu
+Pritunl là phần mềm mã nguồn mở được sử dụng để ảo hóa VPN server trên hạ tầng các trung tâm dữ liệu. Đồng thời cung cấp phương thức truy cập từ xa đơn giản trong vòng vài phút
 
 ## Mục tiêu
 Mô hình này sử dụng 3 máy ảo, trong đó:
