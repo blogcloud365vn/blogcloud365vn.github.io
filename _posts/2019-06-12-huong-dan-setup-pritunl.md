@@ -10,7 +10,7 @@ type: Document
 ---
 # Hướng dẫn cài đặt Pritunl VPN trên Cloud365
 
-![](//images/img-pritunl/img-pritunl/pritunl1.png)
+![](/images/img-pritunl/img-pritunl/pritunl1.png)
 
 ## Mục tiêu
 Mô hình này sử dụng 3 máy ảo, trong đó:
@@ -19,7 +19,7 @@ Mô hình này sử dụng 3 máy ảo, trong đó:
 - `VM Target` sau khi cấu hình thành công khi máy remote quay VPN thành công và ping được tới dải Private LAN, và ra được internet.
 
 ## Mô hình
-![](//images/img-pritunl/img-pritunl/pritunl2.png)
+![](/images/img-pritunl/img-pritunl/pritunl2.png)
 
 ## Yêu cầu
 - Server Pritunl cài đặt hệ điều hành CentOS 7
