@@ -31,7 +31,7 @@ Nếu kết quả trả về là khác `0` thì CPU có hỗ trợ.
 
 Cài KVM và các gói phụ trợ liên quan
 
-`yum install qemu-kvm libvirt-bin libvirt bridge-utils virt-manager`
+`yum install qemu-kvm libvirt bridge-utils virt-manager`
 
 Trong đó:
 
@@ -77,16 +77,20 @@ Cài package `virt-viewer` để hiển thị quá trình tạo VM
 Cài máy ảo
 
 ```
-# virt-install \
-> --name=Centos7-test \
-> --vcpus=1 \
-> --memory=512 \
-> --cdrom=CentOS-7-x86_64-Minimal-1804.iso \
-> --disk=/var/lib/libvirt/images/centos7-test,size=3 \
-> --os-variant=rhel7 \
-> --network bridge=virbr0
+virt-install \
+--name=Centos7-test \
+--vcpus=1 \
+--memory=512 \
+--cdrom=CentOS-7-x86_64-Minimal-1804.iso \
+--disk=/var/lib/libvirt/images/centos7-test,size=3 \
+--os-variant=rhel7 \
+--network bridge=virbr0
+```
 
-Starting install...    # bắt đầu cài đặt
+Khi bắt đầu cài đặt bạn sẽ thấy
+
+```
+Starting install...    
 Allocating 'centos7-test'                                                             | 3.0 GB  00:00:00     
 Domain installation still in progress. Waiting for installation to complete.
 ```
