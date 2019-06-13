@@ -13,14 +13,16 @@ type: Document
 ## Giới thiệu
 Pritunl là phần mềm mã nguồn mở được sử dụng để ảo hóa VPN server trên hạ tầng các trung tâm dữ liệu. Đồng thời cung cấp phương thức truy cập từ xa đơn giản trong vòng vài phút
 
+## Mô hình
+![](/images/img-pritunl/pritunl.png)
+
 ## Mục tiêu
-Mô hình này sử dụng 3 máy ảo, trong đó:
+- Khi sử dụng Cloud trên hệ thống Cloud365, người dùng hoàn toàn có thể setup hệ thống LAN private giữa các VM với nhau và đi ra ngoài theo 1 IP public duy nhất. Khi đó, người dùng có thể dùng Pritunl Server làm VPN Server để các Client connect vào, sau đó kết nối tới các máy ảo thông qua đường Private  LAN.
+
+Mô hình thử nghiệm sử dụng 3 máy ảo, trong đó:
 - `VM Pritunl` đóng vai trò VPN Server.
 - `VM Client` đóng vai trò VPN Client.
 - `VM Target` sau khi cấu hình thành công khi máy remote quay VPN thành công và ping được tới dải Private LAN, và ra được internet.
-
-## Mô hình
-![](/images/img-pritunl/pritunl.png)
 
 ## Yêu cầu
 - Server Pritunl cài đặt hệ điều hành CentOS 7
@@ -49,7 +51,8 @@ EOF
 
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp;
+sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org
 sudo systemctl start mongod pritunl
 sudo systemctl enable mongod pritunl
