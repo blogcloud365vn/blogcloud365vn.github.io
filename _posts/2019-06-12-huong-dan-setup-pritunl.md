@@ -20,7 +20,7 @@ Mô hình này sử dụng 3 máy ảo, trong đó:
 - `VM Target` sau khi cấu hình thành công khi máy remote quay VPN thành công và ping được tới dải Private LAN, và ra được internet.
 
 ## Mô hình
-![](/images/img-pritunl/pritunl2.png)
+![](/images/img-pritunl/pritunl.png)
 
 ## Yêu cầu
 - Server Pritunl cài đặt hệ điều hành CentOS 7
