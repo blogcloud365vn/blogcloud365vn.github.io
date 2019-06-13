@@ -162,6 +162,7 @@ sudo pritunl default-password
 ![](/images/img-pritunl/pritunl23.png)
 
 - Test connect tới dải Private OK:
+
 ```sh
 ping 172.16.0.6
 
