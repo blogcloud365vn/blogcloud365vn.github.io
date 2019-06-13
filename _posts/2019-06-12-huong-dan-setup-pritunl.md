@@ -8,7 +8,6 @@ author: tuanda
 tags: [Linux]
 type: Document
 ---
-# Hướng dẫn cài đặt Pritunl VPN trên Cloud365
 
 ![](/images/img-pritunl/pritunl1.png)
 ## Giới thiệu
