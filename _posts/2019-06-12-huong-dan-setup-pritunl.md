@@ -132,6 +132,10 @@ sudo pritunl default-password
 
 ![](/images/img-pritunl/pritunl13.png)
 
+- Vào mục Server, chọn `Start Server`:
+
+![](/images/img-pritunl/pritunl15b.png)
+
 **Kết nối Client**
 
 - Lấy thông tin Client:
