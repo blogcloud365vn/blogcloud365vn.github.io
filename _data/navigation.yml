@@ -1,4 +1,6 @@
 - name: Blog
+  link: https://news.cloud365.vn
+- name: Blog
   link: /
 - name: Archives
   link: /archives/
